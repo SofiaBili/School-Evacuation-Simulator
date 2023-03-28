@@ -336,7 +336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &253092862
 Transform:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 315036215}
   m_Layer: 9
   m_Name: Second Floor
-  m_TagString: Untagged
+  m_TagString: Second Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3850,7 +3850,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 951
+    m_Bits: 4791
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 435513d28c4f1994b99fbe3b66c8a109, type: 2}
   m_TargetDisplay: 0
@@ -6043,7 +6043,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 439
+    m_Bits: 4535
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 0f61f6f7dab50fa43b68ce99b7a3dfed, type: 2}
   m_TargetDisplay: 0
@@ -6794,7 +6794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2337261126364647058, guid: 40479258fa30a3a46a3dcc9463806a39, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 3895
+      value: 12087
       objectReference: {fileID: 0}
     - target: {fileID: 2946884821712645377, guid: 40479258fa30a3a46a3dcc9463806a39, type: 3}
       propertyPath: m_RootOrder
