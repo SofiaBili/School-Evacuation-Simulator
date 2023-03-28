@@ -27,16 +27,14 @@ public class MapCreation : MonoBehaviour
     [SerializeField] GameObject corridor62;
 
     [SerializeField] GameObject mapGameObject;
+    public GameObject emptyGameObjectPrefab1;
+    public GameObject emptyGameObjectPrefab2;
     private Vector3 savedPosition;
-
-    private int mapRow=1,mapCol=5;
 
     void Awake(){
     }
 
     void Start(){
-        mapRow=1;
-        mapCol=5;
         savedPosition=mapGameObject.transform.position;
         PlaceRoomsMethod();
     }
@@ -44,12 +42,12 @@ public class MapCreation : MonoBehaviour
     void Update(){
         
     }
-    void RoomName(GameObject roomName, int i, int j, int axis, int xValue, float zValue, float degrees=0.0f, float yValue=0.0f){
+    void RoomName(GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
         GameObject instantiatedObject;
         savedPosition= savedPosition + new Vector3(-xValue, -yValue, -zValue);
         instantiatedObject=Instantiate(roomName);
-        instantiatedObject.name = ""+roomName +""+ (i+1).ToString() + " " + (j+1).ToString();
-        instantiatedObject.transform.SetParent(mapGameObject.transform);
+        instantiatedObject.name = ""+roomName +"";
+        instantiatedObject.transform.SetParent(floor.transform);
         instantiatedObject.transform.position = savedPosition;
         if(axis==1)
             instantiatedObject.transform.Rotate(degrees, 0.0f, 0.0f, Space.World);
@@ -59,54 +57,54 @@ public class MapCreation : MonoBehaviour
             instantiatedObject.transform.Rotate(0.0f, 0.0f, degrees, Space.World);
     }
     void PlaceRoomsMethod(){
-        int i=0,j=0;
-        //RoomName(labRoom,i,j,0,0);
-        //i++; j=0; savedPosition= savedPosition + new Vector3(-10.0f, 0.0f, mapCol*10.0f);
+        //First Floor
+        Instantiate(emptyGameObjectPrefab1, transform.position,Quaternion.identity);
+        emptyGameObjectPrefab1.name = "First Floor";
+        RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
+        RoomName(corridor4,2,0,10,emptyGameObjectPrefab1,90.0f);
+        RoomName(corridor4,2,0,10,emptyGameObjectPrefab1,90.0f);
+        RoomName(office1,0,0,10,emptyGameObjectPrefab1);
+        RoomName(office2,0,0,10,emptyGameObjectPrefab1);
+        RoomName(corridor22,2,0,10,emptyGameObjectPrefab1,90.0f);
+        RoomName(corridor21,2,0,10,emptyGameObjectPrefab1,90.0f);
         
-        //savedPosition= savedPosition + new Vector3(-10.0f, 0.0f, mapCol*10.0f);
-        RoomName(theaterRoom1,i,j,0,0,10);
-        RoomName(corridor4,i,j,2,0,10,90.0f);
-        RoomName(corridor4,i,j,2,0,10,90.0f);
-        RoomName(office1,i,j,0,0,10);
-        RoomName(office2,i,j,0,0,10);
-        RoomName(corridor22,i,j,2,0,10,90);
-        RoomName(corridor21,i,j,2,0,10,90);
-        //i+=1; j=0; savedPosition= savedPosition + new Vector3(-10.0f, 0.0f, mapCol*10.0f);
-        RoomName(labRoom2,i,j,2,10,0,-90);
-        RoomName(labRoom1,i,j,2,0,-10,-90);
-        //i-=2; j=0; savedPosition= savedPosition + new Vector3(-10.0f, 0.0f, mapCol*10.0f);
-        RoomName(wc,i,j,0,-20,10);
-        RoomName(classRoom,i,j,2,0,-10,90);
-        RoomName(office3,i,j,0,0,-10);
-        RoomName(office4,i,j,0,0,-10);
-        RoomName(elevator,i,j,0,0,-10);
-        RoomName(stairs,i,j,0,0,-10);
-        RoomName(theaterRoom2,i,j,0,0,-10);
+        RoomName(labRoom2,2,10,0,emptyGameObjectPrefab1,90.0f);
+        RoomName(labRoom1,2,0,-10,emptyGameObjectPrefab1,90.0f);
+        
+        RoomName(wc,0,-20,10,emptyGameObjectPrefab1);
+        RoomName(classRoom,2,0,-10,emptyGameObjectPrefab1,90.0f);
+        RoomName(office3,0,0,-10,emptyGameObjectPrefab1);
+        RoomName(office4,0,0,-10,emptyGameObjectPrefab1);
+        RoomName(elevator,0,0,-10,emptyGameObjectPrefab1);
+        RoomName(stairs,0,0,-10,emptyGameObjectPrefab1);
+        RoomName(theaterRoom2,0,0,-10,emptyGameObjectPrefab1);
         
         //Second Floor
-        RoomName(classRoom,i,j,2,0,-10,90,-5);
-        RoomName(classRoom,i,j,2,0,10,90,0);
-        RoomName(stairs,i,j,0,0,10,0,0);
-        RoomName(elevator,i,j,0,0,10,0,0);
-        RoomName(informatics,i,j,0,0,10,0,0);
-        RoomName(classRoom,i,j,2,0,20,90,0);
-        RoomName(wc,i,j,0,0,10,0,0);
-        RoomName(corridor21,i,j,0,10,0,0,0);
-        RoomName(corridor22,i,j,0,0,-10,0,0);
-        RoomName(corridor51,i,j,0,0,-10,0,0);
-        RoomName(corridor52,i,j,0,0,-10,0,0);
-        RoomName(corridor61,i,j,0,0,-10,0,0);
-        RoomName(corridor62,i,j,0,0,-10,0,0);
-        RoomName(corridor22,i,j,0,0,-10,0,0);
-        RoomName(corridor21,i,j,0,0,-10,0,0);
-        RoomName(classRoom,i,j,0,10,0,0,0);
-        RoomName(classRoom,i,j,0,0,10,0,0);
-        RoomName(classRoom,i,j,0,0,10,0,0);
-        RoomName(classRoom,i,j,0,0,30,0,0);
-        RoomName(classRoom,i,j,0,0,10,0,0);
-        RoomName(classRoom,i,j,0,0,10,0,0); 
+        Instantiate(emptyGameObjectPrefab2, transform.position,Quaternion.identity);
+        emptyGameObjectPrefab2.name = "Second Floor";
+        RoomName(classRoom,2,0,-10,emptyGameObjectPrefab2,90,-5);
+        RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,90,0);
+        RoomName(stairs,0,0,10,emptyGameObjectPrefab2);
+        RoomName(elevator,0,0,10,emptyGameObjectPrefab2);
+        RoomName(informatics,0,0,10,emptyGameObjectPrefab2);
+        RoomName(classRoom,2,0,20,emptyGameObjectPrefab2,90,0);
+        RoomName(wc,0,0,10,emptyGameObjectPrefab2);
 
-        //Place rooms
-        
+        RoomName(corridor21,2,10,0,emptyGameObjectPrefab2,90,0);
+        RoomName(corridor22,2,0,-10,emptyGameObjectPrefab2,90,0);
+        RoomName(corridor51,2,0,-10,emptyGameObjectPrefab2,180);
+        RoomName(corridor52,2,0,-10,emptyGameObjectPrefab2,180);
+        RoomName(corridor61,0,0,-10,emptyGameObjectPrefab2);
+        RoomName(corridor62,0,0,-10,emptyGameObjectPrefab2);
+        RoomName(corridor22,2,0,-10,emptyGameObjectPrefab2,270);
+        RoomName(corridor21,2,0,-10,emptyGameObjectPrefab2,270);
+
+        RoomName(classRoom,2,10,0,emptyGameObjectPrefab2,-90,0);
+        RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0);
+        RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0);
+        RoomName(classRoom,2,0,20,emptyGameObjectPrefab2,-90,0);
+        RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0);
+        RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0); 
+        RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0); 
     }
 }
