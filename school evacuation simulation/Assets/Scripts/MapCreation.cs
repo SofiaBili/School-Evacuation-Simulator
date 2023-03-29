@@ -76,7 +76,7 @@ public class MapCreation : MonoBehaviour
         RoomName(office3,0,0,-10,emptyGameObjectPrefab1);
         RoomName(office4,0,0,-10,emptyGameObjectPrefab1);
         RoomName(elevator,0,0,-10,emptyGameObjectPrefab1);
-        RoomName(stairs,0,0,-10,emptyGameObjectPrefab1);
+        RoomName(stairs,2,0,-10,emptyGameObjectPrefab1,270);
         RoomName(theaterRoom2,0,0,-10,emptyGameObjectPrefab1);
         
         //Second Floor
@@ -84,8 +84,8 @@ public class MapCreation : MonoBehaviour
         emptyGameObjectPrefab2.name = "Second Floor";
         RoomName(classRoom,2,0,-10,emptyGameObjectPrefab2,90,-5.001f);
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,90,0);
-        RoomName(stairs,0,0,10,emptyGameObjectPrefab2);
-        RoomName(elevator,0,0,10,emptyGameObjectPrefab2);
+        //RoomName(stairs,0,0,10,emptyGameObjectPrefab2);
+        RoomName(elevator,0,0,20,emptyGameObjectPrefab2);
         RoomName(informatics,0,0,10,emptyGameObjectPrefab2);
         RoomName(classRoom,2,0,20,emptyGameObjectPrefab2,90,0);
         RoomName(wc,0,0,10,emptyGameObjectPrefab2);
