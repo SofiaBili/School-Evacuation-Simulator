@@ -68,8 +68,8 @@ public class MapCreation : MonoBehaviour
         RoomName(corridor22,2,0,10,emptyGameObjectPrefab1,90.0f);
         RoomName(corridor21,2,0,10,emptyGameObjectPrefab1,90.0f);
         
-        RoomName(labRoom2,2,10,0,emptyGameObjectPrefab1,90.0f);
-        RoomName(labRoom1,2,0,-10,emptyGameObjectPrefab1,90.0f);
+        RoomName(labRoom2,2,10,0,emptyGameObjectPrefab1,270.0f);
+        RoomName(labRoom1,2,0,-10,emptyGameObjectPrefab1,270.0f);
         
         RoomName(wc,0,-20,10,emptyGameObjectPrefab1);
         RoomName(classRoom,2,0,-10,emptyGameObjectPrefab1,90.0f);
@@ -82,7 +82,7 @@ public class MapCreation : MonoBehaviour
         //Second Floor
         Instantiate(emptyGameObjectPrefab2, transform.position,Quaternion.identity);
         emptyGameObjectPrefab2.name = "Second Floor";
-        RoomName(classRoom,2,0,-10,emptyGameObjectPrefab2,90,-5);
+        RoomName(classRoom,2,0,-10,emptyGameObjectPrefab2,90,-5.001f);
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,90,0);
         RoomName(stairs,0,0,10,emptyGameObjectPrefab2);
         RoomName(elevator,0,0,10,emptyGameObjectPrefab2);
