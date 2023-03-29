@@ -18,13 +18,29 @@ public class MapCreation : MonoBehaviour
     [SerializeField] GameObject labRoom2;
     [SerializeField] GameObject informatics;
 
-    [SerializeField] GameObject corridor21;
-    [SerializeField] GameObject corridor22;
-    [SerializeField] GameObject corridor4;
-    [SerializeField] GameObject corridor51;
-    [SerializeField] GameObject corridor52;
-    [SerializeField] GameObject corridor61;
-    [SerializeField] GameObject corridor62;
+    [SerializeField] GameObject corridorEndWall;
+    [SerializeField] GameObject corridorAllWalls;
+    [SerializeField] GameObject corridorEndWallLeft;
+    [SerializeField] GameObject corridorEndWallRight;
+
+    [SerializeField] GameObject corridorLeftWall;
+    [SerializeField] GameObject corridorRightWall;
+    [SerializeField] GameObject corridorBothWalls;
+    [SerializeField] GameObject corridorNoWall;
+
+    [SerializeField] GameObject corridorEndWallDoor;
+    [SerializeField] GameObject corridorAllWallsFrontDoor;
+    [SerializeField] GameObject corridorAllWallsLeftDoor;
+    [SerializeField] GameObject corridorAllWallsRightDoor;
+    [SerializeField] GameObject corridorEndWallFrontDoorLeft;
+    [SerializeField] GameObject corridorEndWallFrontDoorRight;
+    [SerializeField] GameObject corridorEndWallLeftDoor;
+    [SerializeField] GameObject corridorEndWallRightDoor;
+    
+    [SerializeField] GameObject corridorBothWallsLeftDoor;
+    [SerializeField] GameObject corridorBothWallsRightDoor;
+    [SerializeField] GameObject corridorLeftWallDoor;
+    [SerializeField] GameObject corridorRightWallDoor;
 
     [SerializeField] GameObject mapGameObject;
     public GameObject emptyGameObjectPrefab1;
@@ -61,12 +77,12 @@ public class MapCreation : MonoBehaviour
         Instantiate(emptyGameObjectPrefab1, transform.position,Quaternion.identity);
         emptyGameObjectPrefab1.name = "First Floor";
         RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
-        RoomName(corridor4,2,0,10,emptyGameObjectPrefab1,90.0f);
-        RoomName(corridor4,2,0,10,emptyGameObjectPrefab1,90.0f);
+        RoomName(corridorLeftWallDoor,2,0,10,emptyGameObjectPrefab1,90);
+        RoomName(corridorLeftWall,2,0,10,emptyGameObjectPrefab1,90);
         RoomName(office1,0,0,10,emptyGameObjectPrefab1);
         RoomName(office2,0,0,10,emptyGameObjectPrefab1);
-        RoomName(corridor22,2,0,10,emptyGameObjectPrefab1,90.0f);
-        RoomName(corridor21,2,0,10,emptyGameObjectPrefab1,90.0f);
+        RoomName(corridorNoWall,2,0,10,emptyGameObjectPrefab1,90);
+        RoomName(corridorEndWallDoor,2,0,10,emptyGameObjectPrefab1,270);
         
         RoomName(labRoom2,2,10,0,emptyGameObjectPrefab1,270.0f);
         RoomName(labRoom1,2,0,-10,emptyGameObjectPrefab1,270.0f);
@@ -75,7 +91,7 @@ public class MapCreation : MonoBehaviour
         RoomName(classRoom,2,0,-10,emptyGameObjectPrefab1,90.0f);
         RoomName(office3,0,0,-10,emptyGameObjectPrefab1);
         RoomName(office4,0,0,-10,emptyGameObjectPrefab1);
-        RoomName(elevator,0,0,-10,emptyGameObjectPrefab1);
+        RoomName(elevator,2,0,-10,emptyGameObjectPrefab1,180);
         RoomName(stairs,2,0,-10,emptyGameObjectPrefab1,270);
         RoomName(theaterRoom2,0,0,-10,emptyGameObjectPrefab1);
         
@@ -85,19 +101,19 @@ public class MapCreation : MonoBehaviour
         RoomName(classRoom,2,0,-10,emptyGameObjectPrefab2,90,-5.001f);
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,90,0);
         //RoomName(stairs,0,0,10,emptyGameObjectPrefab2);
-        RoomName(elevator,0,0,20,emptyGameObjectPrefab2);
-        RoomName(informatics,0,0,10,emptyGameObjectPrefab2);
+        //RoomName(elevator,0,0,20,emptyGameObjectPrefab2);
+        RoomName(informatics,0,0,30,emptyGameObjectPrefab2);
         RoomName(classRoom,2,0,20,emptyGameObjectPrefab2,90,0);
         RoomName(wc,0,0,10,emptyGameObjectPrefab2);
 
-        RoomName(corridor21,2,10,0,emptyGameObjectPrefab2,90,0);
-        RoomName(corridor22,2,0,-10,emptyGameObjectPrefab2,90,0);
-        RoomName(corridor51,2,0,-10,emptyGameObjectPrefab2,180);
-        RoomName(corridor52,2,0,-10,emptyGameObjectPrefab2,180);
-        RoomName(corridor61,0,0,-10,emptyGameObjectPrefab2);
-        RoomName(corridor62,0,0,-10,emptyGameObjectPrefab2);
-        RoomName(corridor22,2,0,-10,emptyGameObjectPrefab2,270);
-        RoomName(corridor21,2,0,-10,emptyGameObjectPrefab2,270);
+        RoomName(corridorEndWall,2,10,0,emptyGameObjectPrefab2,90,0);
+        RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90,0);
+        RoomName(corridorRightWall,2,0,-10,emptyGameObjectPrefab2,90);
+        RoomName(corridorLeftWall,2,0,-10,emptyGameObjectPrefab2,90);
+        RoomName(corridorLeftWall,2,0,-10,emptyGameObjectPrefab2,90);
+        RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
+        RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
+        RoomName(corridorEndWall,2,0,-10,emptyGameObjectPrefab2,270);
 
         RoomName(classRoom,2,10,0,emptyGameObjectPrefab2,-90,0);
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0);

@@ -949,13 +949,26 @@ MonoBehaviour:
   labRoom1: {fileID: 6078041816860685924, guid: e15105bc6676236448f53ee08b8dcd79, type: 3}
   labRoom2: {fileID: 6078041816860685924, guid: 47949c95fac9ca7418ce0783a23d7208, type: 3}
   informatics: {fileID: 5652299575988859842, guid: 5898688791c256741a9dbf62c8fe5414, type: 3}
-  corridor21: {fileID: 985266020556173910, guid: ae7e7e483fb247441884b04bd7380590, type: 3}
-  corridor22: {fileID: 985266020556173910, guid: c2a3a28ca3799654eae5f847831531d8, type: 3}
-  corridor4: {fileID: 985266020556173910, guid: 7199f9e132ca01d49b2591966e8f57d9, type: 3}
-  corridor51: {fileID: 985266020556173910, guid: f679ed5b989198349a8c771e6c9e2b8e, type: 3}
-  corridor52: {fileID: 985266020556173910, guid: ba5e12d3582d8544d8aeaa94d64f0d88, type: 3}
-  corridor61: {fileID: 985266020556173910, guid: d8389a13d282c264e94fb1da9dc4c6f2, type: 3}
-  corridor62: {fileID: 985266020556173910, guid: e01208114be94ae47bdc4bffa9100bfb, type: 3}
+  corridorEndWall: {fileID: 985266020556173910, guid: ae7e7e483fb247441884b04bd7380590, type: 3}
+  corridorAllWalls: {fileID: 985266020556173910, guid: 05e38a354b4cc5b439de6650f4b94c55, type: 3}
+  corridorEndWallLeft: {fileID: 985266020556173910, guid: 14161517acefe564fb12c2ccb5b1c36d, type: 3}
+  corridorEndWallRight: {fileID: 985266020556173910, guid: 03daf63cf4241d14ea6b9a1af5349022, type: 3}
+  corridorLeftWall: {fileID: 985266020556173910, guid: f679ed5b989198349a8c771e6c9e2b8e, type: 3}
+  corridorRightWall: {fileID: 985266020556173910, guid: 9d220a8c9bea8e94e8ce77d4d8827a6d, type: 3}
+  corridorBothWalls: {fileID: 985266020556173910, guid: 5f6072954f75dc248afd5196a41782da, type: 3}
+  corridorNoWall: {fileID: 985266020556173910, guid: 28e3c224f392dd640a5c2279f125a068, type: 3}
+  corridorEndWallDoor: {fileID: 985266020556173910, guid: 4363c3043d5841e48b73434459e5b9d9, type: 3}
+  corridorAllWallsFrontDoor: {fileID: 985266020556173910, guid: 3f451e9d799405d4f8fd1570c77c1c17, type: 3}
+  corridorAllWallsLeftDoor: {fileID: 985266020556173910, guid: 9230b6d19b02d544e9005a2732601d62, type: 3}
+  corridorAllWallsRightDoor: {fileID: 985266020556173910, guid: ae9672cb2e047e243b8cfa84bc3fa308, type: 3}
+  corridorEndWallFrontDoorLeft: {fileID: 985266020556173910, guid: ccebf72a40fbdb14f8e74b07f119d0e3, type: 3}
+  corridorEndWallFrontDoorRight: {fileID: 985266020556173910, guid: 7c118df7d87e0194ebaf55baab379754, type: 3}
+  corridorEndWallLeftDoor: {fileID: 985266020556173910, guid: 2767150515e7c594e86f540d9b55662d, type: 3}
+  corridorEndWallRightDoor: {fileID: 985266020556173910, guid: df12268f391e1f54987c1e3f6d222633, type: 3}
+  corridorBothWallsLeftDoor: {fileID: 985266020556173910, guid: cd4089ae64aca59408738c03a754a546, type: 3}
+  corridorBothWallsRightDoor: {fileID: 985266020556173910, guid: 585fa1ddff0c0fd47b162e4488b0ebc1, type: 3}
+  corridorLeftWallDoor: {fileID: 985266020556173910, guid: f7193be0d5a582745983155cf6e5e9bd, type: 3}
+  corridorRightWallDoor: {fileID: 985266020556173910, guid: 53336918be61c6f4a83810ba77685786, type: 3}
   mapGameObject: {fileID: 940424394}
   emptyGameObjectPrefab1: {fileID: 1384601638}
   emptyGameObjectPrefab2: {fileID: 1948104693}
