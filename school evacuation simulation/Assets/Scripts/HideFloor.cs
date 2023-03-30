@@ -8,6 +8,7 @@ public class HideFloor : MonoBehaviour
     [SerializeField] GameObject secondFloor;
     [SerializeField] GameObject player;
     [SerializeField] Camera mapCamera;
+    [SerializeField] Camera miniMapCamera;
 
     // Start is called before the first frame update
     void Start(){
@@ -21,10 +22,14 @@ public class HideFloor : MonoBehaviour
             //secondFloor.SetActive(true);
             mapCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("FirstFloor"));
             mapCamera.cullingMask |=  (1 << LayerMask.NameToLayer("SecondFloor"));
+            miniMapCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("FirstFloor"));
+            miniMapCamera.cullingMask |=  (1 << LayerMask.NameToLayer("SecondFloor"));
         }else{
             //firstFloor.SetActive(true
             mapCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("SecondFloor"));
             mapCamera.cullingMask |=  (1 << LayerMask.NameToLayer("FirstFloor"));
+            miniMapCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("SecondFloor"));
+            miniMapCamera.cullingMask |=  (1 << LayerMask.NameToLayer("FirstFloor"));
             //secondFloor.SetActive(false);
         }
     }
