@@ -229,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &253092862
 Transform:
   m_ObjectHideFlags: 0
@@ -638,7 +638,7 @@ Camera:
   far clip plane: 50.3
   field of view: 73
   orthographic: 1
-  orthographic size: 41.104275
+  orthographic size: 50
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1106,8 +1106,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1384601639}
   m_Layer: 8
-  m_Name: Empty
-  m_TagString: Untagged
+  m_Name: First Floor
+  m_TagString: First Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1399,6 +1399,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8842579599979070695, guid: 40479258fa30a3a46a3dcc9463806a39, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 811526474}
+    - target: {fileID: 8842579599979070695, guid: 40479258fa30a3a46a3dcc9463806a39, type: 3}
+      propertyPath: mapCamera
+      value: 
+      objectReference: {fileID: 811526474}
+    - target: {fileID: 8842579599979070695, guid: 40479258fa30a3a46a3dcc9463806a39, type: 3}
+      propertyPath: firstFloor
+      value: 
+      objectReference: {fileID: 1384601638}
+    - target: {fileID: 8842579599979070695, guid: 40479258fa30a3a46a3dcc9463806a39, type: 3}
+      propertyPath: secondFloor
+      value: 
+      objectReference: {fileID: 1948104693}
     - target: {fileID: 8927305401185327405, guid: 40479258fa30a3a46a3dcc9463806a39, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1701,8 +1717,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1948104694}
   m_Layer: 9
-  m_Name: Empty (1)
-  m_TagString: Untagged
+  m_Name: Second Floor
+  m_TagString: Second Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

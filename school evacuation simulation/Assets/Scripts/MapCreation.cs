@@ -74,7 +74,6 @@ public class MapCreation : MonoBehaviour
     }
     void PlaceRoomsMethod(){
         //First Floor
-        Instantiate(emptyGameObjectPrefab1, transform.position,Quaternion.identity);
         emptyGameObjectPrefab1.name = "First Floor";
         RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
         RoomName(corridorLeftWallDoor,2,0,10,emptyGameObjectPrefab1,90);
@@ -96,7 +95,6 @@ public class MapCreation : MonoBehaviour
         RoomName(theaterRoom2,0,0,-10,emptyGameObjectPrefab1);
         
         //Second Floor
-        Instantiate(emptyGameObjectPrefab2, transform.position,Quaternion.identity);
         emptyGameObjectPrefab2.name = "Second Floor";
         RoomName(classRoom,2,0,-10,emptyGameObjectPrefab2,90,-5.001f);
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,90,0);
