@@ -69,13 +69,13 @@ public class MapCreation : MonoBehaviour
         if(floor.name=="First Floor"){
             instantiatedObject.layer = LayerMask.NameToLayer("FirstFloor");
             room = instantiatedObject.transform.Find("room");
-            Debug.Log(roomName);
+            //Debug.Log(roomName);
             if(room!=null){
-                Debug.Log(room);
+                //Debug.Log(room);
                 foreach(Transform thing in room.GetComponentsInChildren<Transform>())
                 {
-                    Debug.Log("wooooooooooooooooooooooooooooooooooooo");
-                    Debug.Log(thing);
+                    //Debug.Log("wooooooooooooooooooooooooooooooooooooo");
+                    //Debug.Log(thing);
                     thing.gameObject.layer = LayerMask.NameToLayer("FirstFloor");
                 }
             }
@@ -83,13 +83,13 @@ public class MapCreation : MonoBehaviour
         else if(floor.name=="Second Floor"){
             instantiatedObject.layer = LayerMask.NameToLayer("SecondFloor");
             room = instantiatedObject.transform.Find("room");
-            Debug.Log(roomName);
+            //Debug.Log(roomName);
             if(room!=null){
-            Debug.Log(room);
+            //Debug.Log(room);
                 foreach(Transform thing in room.GetComponentsInChildren<Transform>())
                 {
-                    Debug.Log("wooooooooooooooooooooooooooooooooooooo");
-                    Debug.Log(thing);
+                    //Debug.Log("wooooooooooooooooooooooooooooooooooooo");
+                    //Debug.Log(thing);
                     thing.gameObject.layer = LayerMask.NameToLayer("SecondFloor");
                 }
             }
