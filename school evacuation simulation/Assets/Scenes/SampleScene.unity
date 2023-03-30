@@ -570,6 +570,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &707577695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707577696}
+  m_Layer: 0
+  m_Name: Humans
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &707577696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707577695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0947199, y: 4.8542366, z: -6.28301}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &811526471
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +1016,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fedcb8dbf5700c4da4567659353130f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maleHumanPrefab: {fileID: 919132149155446097, guid: 2554a38cc41f05f4ebfc20b58a985dbc, type: 3}
+  femaleHumanPrefab: {fileID: 919132149155446097, guid: 00b1dba3aa85e594e83242450b2d4318, type: 3}
   mapGameObject: {fileID: 940424394}
+  humansGameObject: {fileID: 707577695}
 --- !u!1 &966299536
 GameObject:
   m_ObjectHideFlags: 0

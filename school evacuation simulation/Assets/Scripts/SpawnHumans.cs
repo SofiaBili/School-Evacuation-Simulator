@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class SpawnHumans : MonoBehaviour
 {
+
+    [SerializeField] GameObject maleHumanPrefab;
+    [SerializeField] GameObject femaleHumanPrefab;
     [SerializeField] GameObject mapGameObject;
+    [SerializeField] GameObject humansGameObject;
+
     List<Transform> spawns = new List<Transform>();
+    GameObject instantiatedObject;
     // Start is called before the first frame update
     void Start() {
         FindAllSpawns();
@@ -23,6 +29,28 @@ public class SpawnHumans : MonoBehaviour
                 spawns.Add(thing);
                 Debug.Log(spawns);
             }
+        }
+        SpawnAtRandomSpawnPoint();
+    }
+
+    void SpawnAtRandomSpawnPoint(){
+        int randomPos;
+        while (spawns.Count>0){
+            randomPos = Random.Range(0, spawns.Count);
+            Debug.Log(spawns.Count);
+            Debug.Log(randomPos);
+            if(Random.Range(0, 2)==0){
+                instantiatedObject=Instantiate(femaleHumanPrefab);
+                instantiatedObject.name = "Girl";
+            }    
+            else{
+                instantiatedObject=Instantiate(maleHumanPrefab);
+                instantiatedObject.name = "Boy";
+            }    
+            instantiatedObject.transform.SetParent(humansGameObject.transform);
+            instantiatedObject.transform.position = spawns[randomPos].transform.position;
+
+            spawns.RemoveAt(randomPos);
         }
     }
 }
