@@ -20,9 +20,11 @@ public class HideFloor : MonoBehaviour
             //firstFloor.SetActive(false);
             //secondFloor.SetActive(true);
             mapCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("FirstFloor"));
+            mapCamera.cullingMask |=  (1 << LayerMask.NameToLayer("SecondFloor"));
         }else{
             //firstFloor.SetActive(true
             mapCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("SecondFloor"));
+            mapCamera.cullingMask |=  (1 << LayerMask.NameToLayer("FirstFloor"));
             //secondFloor.SetActive(false);
         }
     }

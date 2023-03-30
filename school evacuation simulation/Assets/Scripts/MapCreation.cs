@@ -60,11 +60,40 @@ public class MapCreation : MonoBehaviour
     }
     void RoomName(GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
         GameObject instantiatedObject;
+        Transform room=null;
         savedPosition= savedPosition + new Vector3(-xValue, -yValue, -zValue);
         instantiatedObject=Instantiate(roomName);
         instantiatedObject.name = ""+roomName +"";
         instantiatedObject.transform.SetParent(floor.transform);
         instantiatedObject.transform.position = savedPosition;
+        if(floor.name=="First Floor"){
+            instantiatedObject.layer = LayerMask.NameToLayer("FirstFloor");
+            room = instantiatedObject.transform.Find("room");
+            Debug.Log(roomName);
+            if(room!=null){
+                Debug.Log(room);
+                foreach(Transform thing in room.GetComponentsInChildren<Transform>())
+                {
+                    Debug.Log("wooooooooooooooooooooooooooooooooooooo");
+                    Debug.Log(thing);
+                    thing.gameObject.layer = LayerMask.NameToLayer("FirstFloor");
+                }
+            }
+        }
+        else if(floor.name=="Second Floor"){
+            instantiatedObject.layer = LayerMask.NameToLayer("SecondFloor");
+            room = instantiatedObject.transform.Find("room");
+            Debug.Log(roomName);
+            if(room!=null){
+            Debug.Log(room);
+                foreach(Transform thing in room.GetComponentsInChildren<Transform>())
+                {
+                    Debug.Log("wooooooooooooooooooooooooooooooooooooo");
+                    Debug.Log(thing);
+                    thing.gameObject.layer = LayerMask.NameToLayer("SecondFloor");
+                }
+            }
+        }
         if(axis==1)
             instantiatedObject.transform.Rotate(degrees, 0.0f, 0.0f, Space.World);
         else if(axis==2)
