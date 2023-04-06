@@ -47,10 +47,12 @@ public class SpawnHumans : MonoBehaviour
                 instantiatedObject=Instantiate(maleHumanPrefab);
                 instantiatedObject.name = "Boy";
             }    
-            instantiatedObject.transform.SetParent(humansGameObject.transform);
+            instantiatedObject.transform.SetParent(spawns[randomPos].transform.parent.transform.parent);
             instantiatedObject.transform.position = spawns[randomPos].transform.position;
 
             spawns.RemoveAt(randomPos);
         }
+        femaleHumanPrefab.SetActive(false);
+        maleHumanPrefab.SetActive(false);
     }
 }
