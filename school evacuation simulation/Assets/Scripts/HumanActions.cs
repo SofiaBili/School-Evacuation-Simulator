@@ -7,6 +7,7 @@ public class HumanActions : MonoBehaviour
     Animator animator;
 
     private string currentState;
+    private bool fireFlag = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,16 @@ public class HumanActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangeAnimationState("Sitting");
+        if(!fireFlag){
+            ChangeAnimationState("Sitting");
+        }else{
+            ChangeAnimationState("Idle");
+        }
     }
 
+    public void FireDrillAction(){
+        fireFlag = true;
+    }
     public void ChangeAnimationState(string newState){
         currentState=newState;
         if(!animator.GetCurrentAnimatorStateInfo(0).IsName(currentState))

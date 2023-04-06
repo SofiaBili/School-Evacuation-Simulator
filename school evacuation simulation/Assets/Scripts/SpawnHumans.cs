@@ -11,6 +11,7 @@ public class SpawnHumans : MonoBehaviour
     [SerializeField] GameObject humansGameObject;
 
     List<Transform> spawns = new List<Transform>();
+    public List<GameObject> humans = new List<GameObject>();
     GameObject instantiatedObject;
     // Start is called before the first frame update
     void Start() {
@@ -49,6 +50,8 @@ public class SpawnHumans : MonoBehaviour
             }    
             instantiatedObject.transform.SetParent(spawns[randomPos].transform.parent.transform.parent);
             instantiatedObject.transform.position = spawns[randomPos].transform.position;
+
+            humans.Add(instantiatedObject);
 
             spawns.RemoveAt(randomPos);
         }
