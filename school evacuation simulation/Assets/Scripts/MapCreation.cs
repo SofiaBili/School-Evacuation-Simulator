@@ -48,11 +48,12 @@ public class MapCreation : MonoBehaviour
     private Vector3 savedPosition;
 
     void Awake(){
+        savedPosition=mapGameObject.transform.position;
+        PlaceRoomsMethod();
     }
 
     void Start(){
-        savedPosition=mapGameObject.transform.position;
-        PlaceRoomsMethod();
+        
     }
 
     void Update(){
