@@ -137,8 +137,8 @@ public class MapCreation : MonoBehaviour
         RoomName(corridorEndWall,2,10,0,emptyGameObjectPrefab2,90,0);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90,0);
         RoomName(corridorRightWall,2,0,-10,emptyGameObjectPrefab2,90);
-        RoomName(corridorLeftWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
+        RoomName(corridorLeftWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorEndWall,2,0,-10,emptyGameObjectPrefab2,270);
