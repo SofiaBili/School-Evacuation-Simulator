@@ -22,7 +22,10 @@ public class FireDrillHuman : MonoBehaviour
             pers.GetComponent<CapsuleCollider>().enabled=true;
             pers.GetComponent<BoxCollider>().enabled=false;
             pers.GetComponent<HumanActions>().FireDrillAction();
-
+        }
+        foreach (var pers in spawnHumansScript.humans){
+            pers.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
+            pers.GetComponent<NavMeshControl>().enabled=true;
         }
     }
 
