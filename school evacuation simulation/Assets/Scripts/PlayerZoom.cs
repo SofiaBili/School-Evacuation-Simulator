@@ -1,11 +1,11 @@
- using UnityEngine;
- using System.Collections;
+using UnityEngine;
+using System.Collections;
  
- public class PlayerZoom : MonoBehaviour {
+public class PlayerZoom : MonoBehaviour {
  
-     public Camera mainCamera ;
-
-     void Update () {
+    public Camera mainCamera ;
+        
+    void Update () {
         if(Input.GetKey(KeyCode.LeftControl)) {
             if (Input.GetAxis("Mouse ScrollWheel")>0 && mainCamera.fieldOfView > 30 ) // forward
             {
@@ -19,5 +19,5 @@
         else{
             mainCamera.fieldOfView = 55;
         }
-     }
- }
+    }
+}

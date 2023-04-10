@@ -6,12 +6,12 @@ public class LookAt : MonoBehaviour
 {
     GameObject target;
     GameObject targetParent;
+    public string objectToFind;
     // Start is called before the first frame update
     void Start()
     {
         targetParent = gameObject.transform.parent.gameObject;
-        target = targetParent.transform.Find("Board").gameObject;
-        //Debug.Log(gameObject.transform.parent.name);
+        target = targetParent.transform.Find(objectToFind).gameObject;
     }
 
     // Update is called once per frame
