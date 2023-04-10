@@ -7,17 +7,25 @@ public class RotatePlayer:MonoBehaviour {
     private float X;
     private float Y;
     private bool escapeFlag=false;
-    private bool cameraBoard=true;
+    public bool cameraBoardBoy;
+    public bool cameraBoardGirl;
     public Transform playerBody;
     float xRotation = 0f;
     Vector3 startLocation;
 
     void Update() {
-        if(cameraBoard){
+        if(cameraBoardBoy){
             GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=true;
             startLocation = transform.localPosition;
             transform.localPosition =  new Vector3(transform.localPosition.x, 1.352f, 0.3f);
-            cameraBoard=false;
+            cameraBoardBoy=false;
+            GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=false;
+        }
+        if(cameraBoardGirl){
+            GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=true;
+            startLocation = transform.localPosition;
+            transform.localPosition =  new Vector3(transform.localPosition.x, 1.352f, transform.localPosition.z);
+            cameraBoardGirl=false;
             GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=false;
         }
         if(!escapeFlag){

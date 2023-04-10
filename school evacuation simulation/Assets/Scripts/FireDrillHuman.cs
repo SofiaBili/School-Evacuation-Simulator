@@ -14,10 +14,6 @@ public class FireDrillHuman : MonoBehaviour
 
     public void humanStandUp(){
         foreach (var pers in spawnHumansScript.humans){
-            /*if(pers.transform.rotation.y<100)
-                pers.transform.position = pers.transform.position + new Vector3(-1.3f, 0, 0);
-            else
-                pers.transform.position = pers.transform.position + new Vector3(+1.3f, 0, 0);*/
             pers.transform.localPosition =  pers.transform.localPosition + new Vector3(0, 0, -1.3f);
             pers.GetComponent<CapsuleCollider>().enabled=true;
             pers.GetComponent<BoxCollider>().enabled=false;
