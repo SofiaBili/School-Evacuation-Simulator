@@ -59,14 +59,13 @@ public class SpawnHumans : MonoBehaviour
             //Debug.Log(spawns.Count);
             //Debug.Log(randomPos);
             if(playerSpawnFlag){
-                Rigidbody rb;
                 instantiatedObject=Instantiate(playerPrefab);
                 instantiatedObject.name = "Player";
                 playerSpawnFlag = false;
                 instantiatedObject.transform.SetParent(spawns[randomPos].transform.parent.transform.parent);
                 instantiatedObject.transform.position = spawns[randomPos].transform.position;
                 instantiatedObject.GetComponent<LookAt>().enabled=true;
-                instantiatedObject.GetComponent<LookAt>().enabled=false;
+                //instantiatedObject.GetComponent<LookAt>().enabled=false;
             }else{
                 if(Random.Range(0, 2)==0){
                     instantiatedObject=Instantiate(femaleHumanPrefab);
