@@ -1080,7 +1080,7 @@ RectTransform:
   m_Children:
   - {fileID: 6078918374792248306}
   m_Father: {fileID: 6731355647674594533}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1283,7 +1283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2990493340371923163
 Transform:
   m_ObjectHideFlags: 0
@@ -1698,6 +1698,39 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1 &6206317492617801311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 34ea5d851b76da14981f6b9d29d0c290, type: 3}
+  m_PrefabInstance: {fileID: 6548283548330873614}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6731355647674594533}
+  - component: {fileID: 3580027635520236464}
+  m_Layer: 0
+  m_Name: 'phone (Missing Prefab with guid: 34ea5d851b76da14981f6b9d29d0c290)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6731355647674594533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34ea5d851b76da14981f6b9d29d0c290, type: 3}
+  m_PrefabInstance: {fileID: 6548283548330873614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6206317492617801311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5697166709120336276}
+  m_Father: {fileID: 980494962637169089}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6433673933112419736
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,11 +4102,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34ea5d851b76da14981f6b9d29d0c290, type: 3}
---- !u!1 &6206317492617801311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 34ea5d851b76da14981f6b9d29d0c290, type: 3}
-  m_PrefabInstance: {fileID: 6548283548330873614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!208 &3580027635520236464
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4090,11 +4118,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!4 &6731355647674594533 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34ea5d851b76da14981f6b9d29d0c290, type: 3}
-  m_PrefabInstance: {fileID: 6548283548330873614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6580021111828581117
 PrefabInstance:
   m_ObjectHideFlags: 0

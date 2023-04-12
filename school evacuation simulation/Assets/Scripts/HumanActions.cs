@@ -30,8 +30,9 @@ public class HumanActions : MonoBehaviour
             ChangeAnimationState("Sitting");
         }
         else{
-            // if ( Vector3.Distance(targetPos, transform.position) > 1.0 ){
-            //         ChangeAnimationState("Walking");
+            // Debug.Log(Vector3.Distance(targetPos, transform.position));
+            // if ( Vector3.Distance(targetPos, transform.position) < 0.05 ){
+            //         ChangeAnimationState("Idle");
             // }
             // else{
             //     ChangeAnimationState("Walking");
@@ -62,6 +63,5 @@ public class HumanActions : MonoBehaviour
 
         gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
         gameObject.GetComponent<NavMeshControl>().enabled=true;
-        Debug.Log("daw");
     }
 }
