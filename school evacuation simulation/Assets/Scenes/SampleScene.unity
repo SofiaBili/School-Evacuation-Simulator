@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5382,6 +5382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ad559ad30cd0c45bd615ec6293015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireDrillHumanObject: {fileID: 940424394}
 --- !u!114 &575536253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6509,7 +6510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 168.47, y: -47.449997}
+  m_AnchoredPosition: {x: 168.47003, y: -47.450012}
   m_SizeDelta: {x: 336.93, y: 94.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746699399
@@ -8949,6 +8950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ad559ad30cd0c45bd615ec6293015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireDrillHumanObject: {fileID: 0}
 --- !u!114 &940915795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9582,7 +9584,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -141.6, y: 68.69}
+  m_AnchoredPosition: {x: -141.60004, y: 68.69}
   m_SizeDelta: {x: 283.21, y: 137.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &985498707
@@ -13826,6 +13828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ad559ad30cd0c45bd615ec6293015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireDrillHumanObject: {fileID: 940424394}
 --- !u!114 &1453541223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17030,7 +17033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 175.16, y: 72.59999}
+  m_AnchoredPosition: {x: 175.15997, y: 72.599976}
   m_SizeDelta: {x: 350.32, y: 145.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1873273554
@@ -17108,7 +17111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -112.16998, y: -52.240005}
+  m_AnchoredPosition: {x: -112.16998, y: -52.23999}
   m_SizeDelta: {x: 224.33, y: 104.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1874087856
@@ -18463,6 +18466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ad559ad30cd0c45bd615ec6293015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireDrillHumanObject: {fileID: 940424394}
 --- !u!114 &2016027955
 MonoBehaviour:
   m_ObjectHideFlags: 0
