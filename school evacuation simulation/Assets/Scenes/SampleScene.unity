@@ -154,7 +154,7 @@ Transform:
   - {fileID: 55097192}
   m_Father: {fileID: 1313593937}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98021, y: 0, z: 0}
 --- !u!1 &30751806
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +464,7 @@ Transform:
   - {fileID: 1793924418}
   m_Father: {fileID: 30258523}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.98021, y: -0.000013660382, z: 0}
 --- !u!1 &66459929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,7 +1265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &170220450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,8 +1487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 0, y: 44}
+  m_AnchoredPosition: {x: -0, y: -15}
+  m_SizeDelta: {x: -63.44, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172250008
 MonoBehaviour:
@@ -2076,7 +2076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &232818889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2960,8 +2960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60}
-  m_SizeDelta: {x: 400, y: 44}
+  m_AnchoredPosition: {x: -0, y: -60}
+  m_SizeDelta: {x: 336.56, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283092373
 MonoBehaviour:
@@ -6173,7 +6173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &539297611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8574,7 +8574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &790492658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15401,7 +15401,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313593936}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0.00032901147, y: 0.9996062, z: -0.024701713, w: -0.013314136}
   m_LocalPosition: {x: -50, y: -50, z: -0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -15410,7 +15410,7 @@ Transform:
   - {fileID: 1462113193}
   m_Father: {fileID: 30751807}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.83, y: 181.528, z: 0.075}
 --- !u!95 &1313593938
 Animator:
   serializedVersion: 5
@@ -15421,7 +15421,7 @@ Animator:
   m_GameObject: {fileID: 1313593936}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 707b944f06051734793367fc0c69bc07, type: 2}
+  m_Controller: {fileID: 9100000, guid: 051d9cc1de6926c41bc385dcb275ab63, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -18319,8 +18319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 400, y: 44}
+  m_AnchoredPosition: {x: -0, y: 30}
+  m_SizeDelta: {x: 336.56, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1511082584
 MonoBehaviour:
@@ -20093,7 +20093,7 @@ Transform:
   - {fileID: 54103574}
   m_Father: {fileID: 55097192}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.000010307133, y: 0.0000013285614, z: 11.945448}
 --- !u!1 &1715236007
 GameObject:
   m_ObjectHideFlags: 0
@@ -20766,7 +20766,7 @@ Transform:
   - {fileID: 1253425126}
   m_Father: {fileID: 55097192}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000103071325, y: 0.000025992196, z: -11.945448}
 --- !u!1 &1808950938
 GameObject:
   m_ObjectHideFlags: 0
@@ -23039,7 +23039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1965364376
 MonoBehaviour:
   m_ObjectHideFlags: 0
