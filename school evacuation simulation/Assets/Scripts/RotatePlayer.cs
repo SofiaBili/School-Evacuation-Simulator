@@ -14,7 +14,7 @@ public class RotatePlayer:MonoBehaviour {
     Vector3 startLocation;
 
     void Update() {
-        if(cameraBoardBoy){
+        /*if(cameraBoardBoy){
             GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=true;
             startLocation = transform.localPosition;
             transform.localPosition =  new Vector3(transform.localPosition.x, 1.352f, 0.3f);
@@ -22,12 +22,12 @@ public class RotatePlayer:MonoBehaviour {
             GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=false;
         }
         if(cameraBoardGirl){
-            GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=true;
+            //GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=true;
             startLocation = transform.localPosition;
             transform.localPosition =  new Vector3(transform.localPosition.x, 1.352f, transform.localPosition.z);
             cameraBoardGirl=false;
             GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=false;
-        }
+        }*/
         if(!escapeFlag){
             Cursor.lockState=CursorLockMode.Locked;
             X = Input.GetAxis("Mouse X") * speed*Time.deltaTime;

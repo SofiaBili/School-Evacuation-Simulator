@@ -13,6 +13,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     private string currentState;
     ToggleQuestionCanvas toggleQuestionCanvasScript;
     [SerializeField] GameObject toggleQuestionCanvasObject;
+    bool toggleCanvasFlag = true;
     void Awake(){
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
     }
@@ -33,9 +34,21 @@ public class StartQuestionProcedureScript : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Q)){
                 cameraAnimation.targetDisplay = 0;
                 ChangeAnimationState("LookAtBoard");
-                toggleQuestionCanvasScript.EnableRandomCanvas();
+                StartCoroutine(SomeCoroutine());
+                /*Debug.Log(gameObject.transform.parent.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+                if(gameObject.transform.parent.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length > gameObject.transform.parent.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime){
+                //if(gameObject.transform.parent.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("LookAtBoard")){
+                    
+                }*/
             }
         }   
+    }
+    private IEnumerator SomeCoroutine(){
+        yield return new WaitForSeconds (1.9f);
+        if(toggleCanvasFlag){
+            toggleQuestionCanvasScript.EnableRandomCanvas();
+            toggleCanvasFlag = false;
+        }
     }
     //when user exits disable canvas and camera animation back
     void OnTriggerExit(Collider other){
