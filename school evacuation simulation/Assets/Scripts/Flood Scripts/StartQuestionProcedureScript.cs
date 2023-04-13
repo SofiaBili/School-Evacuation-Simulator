@@ -11,13 +11,18 @@ public class StartQuestionProcedureScript : MonoBehaviour
     [SerializeField] Camera cameraAnimation;
     [SerializeField] Animator animatorQuestion;
     private string currentState;
+    ToggleQuestionCanvas toggleQuestionCanvasScript;
+    [SerializeField] GameObject toggleQuestionCanvasObject;
+    void Awake(){
+        toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        canvasMultiple1 = GameObject.Find("Multiple Choise Questions Canvas");
+        /*canvasMultiple1 = GameObject.Find("Multiple Choise Questions Canvas");
         canvasMultiple2 = GameObject.Find("Multiple Cubed Choise Questions Canvas");
         canvasTrueFalse = GameObject.Find("True False Questions Canvas");
-        Debug.Log(canvasMultiple1);
+        Debug.Log(canvasMultiple1);*/
     }
 
     private void OnTriggerEnter(Collider other){
@@ -26,15 +31,9 @@ public class StartQuestionProcedureScript : MonoBehaviour
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
             if(Input.GetKeyDown(KeyCode.Q)){
-                int randomCanvas = Random.Range(0, 2);
-                if(randomCanvas==0)
-                    canvasMultiple1.SetActive(true);
-                else if(randomCanvas==1)
-                    canvasMultiple2.SetActive(true);
-                else
-                    canvasTrueFalse.SetActive(true);
                 cameraAnimation.targetDisplay = 0;
-                ChangeAnimationState("ClickPhone");
+                ChangeAnimationState("LookAtBoard");
+                toggleQuestionCanvasScript.EnableRandomCanvas();
             }
         }   
     }

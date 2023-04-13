@@ -1085,11 +1085,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexagonHitbox: {fileID: 1044230914200645099}
-  canvasMultiple1: {fileID: 2587253737654870091}
-  canvasMultiple2: {fileID: 8020058205700109265}
-  canvasTrueFalse: {fileID: 4771287850274048040}
   cameraAnimation: {fileID: 8647184351688570403}
   animatorQuestion: {fileID: 335806284622693450}
+  toggleQuestionCanvasObject: {fileID: 1678422381966161186, guid: 6fe17e1d344b76f4baf03793dc023306, type: 3}
 --- !u!1 &1075599461500777487
 GameObject:
   m_ObjectHideFlags: 0
