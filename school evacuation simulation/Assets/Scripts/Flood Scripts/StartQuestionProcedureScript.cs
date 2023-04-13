@@ -2,31 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartQuestion : MonoBehaviour
+public class StartQuestionProcedureScript : MonoBehaviour
 {
     [SerializeField] GameObject hexagonHitbox;
-    [SerializeField] GameObject canvasMultiple1;
-    [SerializeField] GameObject canvasMultiple2;
-    [SerializeField] GameObject canvasTrueFalse;
-    [SerializeField] GameObject miniCameraCanvas;
-    [SerializeField] Camera cameraRoom;
+    GameObject canvasMultiple1;
+    GameObject canvasMultiple2;
+    GameObject canvasTrueFalse;
     [SerializeField] Camera cameraAnimation;
+    [SerializeField] Animator animatorQuestion;
+    private string currentState;
     // Start is called before the first frame update
     void Start()
     {
-        
+        canvasMultiple1 = GameObject.Find("Multiple Choise Questions Canvas");
+        canvasMultiple2 = GameObject.Find("Multiple Cubed Choise Questions Canvas");
+        canvasTrueFalse = GameObject.Find("True False Questions Canvas");
+        Debug.Log(canvasMultiple1);
     }
+
+    private void OnTriggerEnter(Collider other){
+    }
+    
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
             if(Input.GetKeyDown(KeyCode.Q)){
-                randomCanvas = Random.Range(0, 2);
-                miniCameraCanvas.SetActive(false);
+                int randomCanvas = Random.Range(0, 2);
                 if(randomCanvas==0)
                     canvasMultiple1.SetActive(true);
                 else if(randomCanvas==1)
                     canvasMultiple2.SetActive(true);
                 else
                     canvasTrueFalse.SetActive(true);
+                cameraAnimation.targetDisplay = 0;
+                ChangeAnimationState("ClickPhone");
             }
         }   
     }
@@ -38,5 +46,11 @@ public class StartQuestion : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    public void ChangeAnimationState(string newState){
+        currentState=newState;
+        if(!animatorQuestion.GetCurrentAnimatorStateInfo(0).IsName(currentState))
+            animatorQuestion.Play(newState);
     }
 }

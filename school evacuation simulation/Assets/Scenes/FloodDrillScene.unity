@@ -4589,6 +4589,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00b1dba3aa85e594e83242450b2d4318, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00b1dba3aa85e594e83242450b2d4318, type: 3}
 --- !u!4 &407315860 stripped
@@ -10561,7 +10565,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879846785}
-  - component: {fileID: 879846786}
   m_Layer: 0
   m_Name: Outside
   m_TagString: Untagged
@@ -10587,21 +10590,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &879846786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879846784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05ab6ff058848b47aab7b4a2cb0d8a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  surfaces:
-  - {fileID: 900360339}
-  objectsToRotate: []
 --- !u!1 &887640454
 GameObject:
   m_ObjectHideFlags: 0
