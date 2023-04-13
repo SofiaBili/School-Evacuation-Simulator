@@ -5,25 +5,20 @@ using UnityEngine;
 public class StartQuestionProcedureScript : MonoBehaviour
 {
     [SerializeField] GameObject hexagonHitbox;
-    GameObject canvasMultiple1;
-    GameObject canvasMultiple2;
-    GameObject canvasTrueFalse;
     [SerializeField] Camera cameraAnimation;
     [SerializeField] Animator animatorQuestion;
     private string currentState;
     ToggleQuestionCanvas toggleQuestionCanvasScript;
     [SerializeField] GameObject toggleQuestionCanvasObject;
     bool toggleCanvasFlag = true;
+    bool closeCanvasFlag = true;
+    bool isCanvasOpen = false;
     void Awake(){
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        /*canvasMultiple1 = GameObject.Find("Multiple Choise Questions Canvas");
-        canvasMultiple2 = GameObject.Find("Multiple Cubed Choise Questions Canvas");
-        canvasTrueFalse = GameObject.Find("True False Questions Canvas");
-        Debug.Log(canvasMultiple1);*/
     }
 
     private void OnTriggerEnter(Collider other){
@@ -32,22 +27,27 @@ public class StartQuestionProcedureScript : MonoBehaviour
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
             if(Input.GetKeyDown(KeyCode.Q)){
+                isCanvasOpen=true;
                 cameraAnimation.targetDisplay = 0;
                 ChangeAnimationState("LookAtBoard");
-                StartCoroutine(SomeCoroutine());
-                /*Debug.Log(gameObject.transform.parent.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
-                if(gameObject.transform.parent.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length > gameObject.transform.parent.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime){
-                //if(gameObject.transform.parent.transform.parent.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("LookAtBoard")){
-                    
-                }*/
+                StartCoroutine(ShowCanvas());
             }
         }   
     }
-    private IEnumerator SomeCoroutine(){
-        yield return new WaitForSeconds (1.9f);
+    private IEnumerator ShowCanvas(){
         if(toggleCanvasFlag){
+            yield return new WaitForSeconds (1.9f);
             toggleQuestionCanvasScript.EnableRandomCanvas();
             toggleCanvasFlag = false;
+            closeCanvasFlag=true;
+        }
+    }
+    private IEnumerator CloseCanvas(){
+        if(closeCanvasFlag){
+            yield return new WaitForSeconds (0.1f);
+            toggleQuestionCanvasScript.CloseSpecificCanvas();
+            closeCanvasFlag = false;
+            toggleCanvasFlag = true;
         }
     }
     //when user exits disable canvas and camera animation back
@@ -57,7 +57,12 @@ public class StartQuestionProcedureScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.B) && isCanvasOpen){
+            cameraAnimation.targetDisplay = 2;
+            StartCoroutine(CloseCanvas());
+            ChangeAnimationState("Idle");
+            isCanvasOpen=false;
+        }
     }
     
     public void ChangeAnimationState(string newState){
