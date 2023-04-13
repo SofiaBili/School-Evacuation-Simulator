@@ -20,14 +20,16 @@ public class ToggleQuestionCanvas : MonoBehaviour
     void Update()
     {
         if(showCanvas){
-            randomCanvas= Random.Range(0, 3);
+            
+            canvasTrueFalse.SetActive(true);
+            /*randomCanvas= Random.Range(0, 3);
             if(randomCanvas==0){
                 canvasMultiple1.SetActive(true);
             }else if(randomCanvas==1){
                 canvasMultiple2.SetActive(true);
             }else{
                 canvasTrueFalse.SetActive(true);
-            }
+            }*/
             canvasCamera.enabled = true;
             showCanvas = false;
         }
@@ -35,23 +37,5 @@ public class ToggleQuestionCanvas : MonoBehaviour
 
     public void EnableRandomCanvas(){
         showCanvas = true;
-        //randomCanvas= Random.Range(0, 3);
-        //if(randomCanvas==0){
-            //EnableCanvas(canvasMultiple1);
-           //canvasMultiple1.enabled = true;
-            //Debug.Log(canvasMultiple1.active);
-        //}
-        //else if(randomCanvas==1){
-        //    EnableCanvas(canvasMultiple2);
-            //canvasMultiple2.SetActive(true);
-            //canvasMultiple1.enabled = true;
-            //Debug.Log(canvasMultiple2.active);
-        //}
-        //else{
-        //    EnableCanvas(canvasTrueFalse);
-           // canvasMultiple1.enabled = true;
-            //Debug.Log(canvasTrueFalse.active);
-        //}
     }
 }
-
