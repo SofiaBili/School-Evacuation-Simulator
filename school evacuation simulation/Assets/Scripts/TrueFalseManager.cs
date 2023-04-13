@@ -25,4 +25,18 @@ public class TrueFalseManager : MonoBehaviour
 		factText.text = currentQuestion.fact;
 		unansweredQuestions.RemoveAt(randomQuestionIndex);
 	}
+	public void UserSelectTrue(){
+		if(currentQuestion.isTrue){
+			Debug.Log("Cor");
+		}else{
+			Debug.Log("WRONG");
+		}
+	}
+	public void UserSelectFalse(){
+		if(currentQuestion.isTrue){
+			Debug.Log("WRONG");
+		}else{
+			Debug.Log("Cor");
+		}
+	}
 }
