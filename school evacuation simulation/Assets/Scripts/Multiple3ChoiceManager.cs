@@ -11,6 +11,9 @@ public class Multiple3ChoiceManager : MonoBehaviour
 	private static List<Multiple3ChoiceQuestios> unansweredQuestions;
 	private Multiple3ChoiceQuestios currentQuestion;
 	[SerializeField] private TextMeshProUGUI factText;
+	[SerializeField] private TextMeshProUGUI ans0Text;
+	[SerializeField] private TextMeshProUGUI ans1Text;
+	[SerializeField] private TextMeshProUGUI ans2Text;
 
 	void Start(){
 		if(unansweredQuestions == null || unansweredQuestions.Count==0){
@@ -23,6 +26,9 @@ public class Multiple3ChoiceManager : MonoBehaviour
 		int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
 		currentQuestion = unansweredQuestions[randomQuestionIndex];
 		factText.text = currentQuestion.question;
+		ans0Text.text = currentQuestion.ans1;
+		ans1Text.text = currentQuestion.ans2;
+		ans2Text.text = currentQuestion.ans3;
 		unansweredQuestions.RemoveAt(randomQuestionIndex);
 	}
 }
