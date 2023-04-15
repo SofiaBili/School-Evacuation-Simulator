@@ -7,13 +7,16 @@ public class StartQuestionProcedureScript : MonoBehaviour
     [SerializeField] GameObject hexagonHitbox;
     [SerializeField] Camera cameraAnimation;
     [SerializeField] Animator animatorQuestion;
-    private string currentState;
-    ToggleQuestionCanvas toggleQuestionCanvasScript;
     [SerializeField] GameObject toggleQuestionCanvasObject;
-    bool toggleCanvasFlag = true;
-    bool closeCanvasFlag = true;
-    bool isCanvasOpen = false;
+    private static string currentState;
+    static ToggleQuestionCanvas toggleQuestionCanvasScript;
+    static bool toggleCanvasFlag = true;
+    static bool closeCanvasFlag = true;
+    static bool isCanvasOpen = false;
+    static public StartQuestionProcedureScript instance;
+
     void Awake(){
+        instance = this; //set our static reference to our newly initialized instance
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
     }
     // Start is called before the first frame update
@@ -62,15 +65,26 @@ public class StartQuestionProcedureScript : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.B) && isCanvasOpen){
-            ChangeAnimationState("ReturnToPlayerCamera");
-            StartCoroutine(CloseCanvas());
-            isCanvasOpen=false;
+            StopAnimationAndCloseCanvas();
         }
     }
     
     public void ChangeAnimationState(string newState){
         currentState=newState;
-        if(!animatorQuestion.GetCurrentAnimatorStateInfo(0).IsName(currentState))
-            animatorQuestion.Play(newState);
+        if(!animatorQuestion.GetCurrentAnimatorStateInfo(0).IsName(currentState)){
+            Debug.Log(newState);
+            animatorQuestion.Play(newState);}
+    }
+    public static void CallChangeAnimationState(){
+        instance.ChangeAnimationState("ReturnToPlayerCamera");
+    }
+    public static void StopAnimationAndCloseCanvas(){
+        CallChangeAnimationState();
+        instance.StartCoroutine(instance.CloseCanvas());
+        isCanvasOpen=false;
+        
+    }
+    public void DeleteHexagon(){
+
     }
 }

@@ -11,7 +11,13 @@ public class TrueFalseManager : MonoBehaviour
 	private static List<TrueFalseQuestions> unansweredQuestions;
 	private TrueFalseQuestions currentQuestion;
 	[SerializeField] private TextMeshProUGUI factText;
+	
+    StartQuestionProcedureScript startQuestionProcedureScript;
+    [SerializeField] GameObject startQuestionProcedureScriptObject;
 
+	void Awake(){
+        startQuestionProcedureScript = startQuestionProcedureScriptObject.GetComponent<StartQuestionProcedureScript>();
+	}
 	void Start(){
 		if(unansweredQuestions == null || unansweredQuestions.Count==0){
 			unansweredQuestions = questions.ToList<TrueFalseQuestions>();
@@ -24,6 +30,9 @@ public class TrueFalseManager : MonoBehaviour
 		currentQuestion = unansweredQuestions[randomQuestionIndex];
 		factText.text = currentQuestion.fact;
 		unansweredQuestions.RemoveAt(randomQuestionIndex);
+	}
+	public void UserSelectExit(){
+		StartQuestionProcedureScript.StopAnimationAndCloseCanvas();
 	}
 	public void UserSelectTrue(){
 		if(currentQuestion.isTrue){

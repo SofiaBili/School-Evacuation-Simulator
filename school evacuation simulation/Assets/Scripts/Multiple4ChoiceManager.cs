@@ -33,6 +33,9 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		ans3Text.text = currentQuestion.ans4;
 		unansweredQuestions.RemoveAt(randomQuestionIndex);
 	}
+	public void UserSelectExit(){
+		StartQuestionProcedureScript.StopAnimationAndCloseCanvas();
+	}
 	public void UserSelect0(){
 		if(currentQuestion.corrAns == 0){
 			Debug.Log("Cor");

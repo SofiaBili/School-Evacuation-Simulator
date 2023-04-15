@@ -32,6 +32,9 @@ public class Multiple3ChoiceManager : MonoBehaviour
 		unansweredQuestions.RemoveAt(randomQuestionIndex);
 	}
 	
+	public void UserSelectExit(){
+		StartQuestionProcedureScript.StopAnimationAndCloseCanvas();
+	}
 	public void UserSelect0(){
 		if(currentQuestion.corrAns == 0){
 			Debug.Log("Cor");
