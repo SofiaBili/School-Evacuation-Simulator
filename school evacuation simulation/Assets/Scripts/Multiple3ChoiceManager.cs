@@ -31,4 +31,28 @@ public class Multiple3ChoiceManager : MonoBehaviour
 		ans2Text.text = currentQuestion.ans3;
 		unansweredQuestions.RemoveAt(randomQuestionIndex);
 	}
+	
+	public void UserSelect0(){
+		if(currentQuestion.corrAns == 0){
+			Debug.Log("Cor");
+		}else{
+			Debug.Log("WRONG");
+		}
+	}
+	
+	public void UserSelect1(){
+		if(currentQuestion.corrAns == 1){
+			Debug.Log("Cor");
+		}else{
+			Debug.Log("WRONG");
+		}
+	}
+	
+	public void UserSelect2(){
+		if(currentQuestion.corrAns == 2){
+			Debug.Log("Cor");
+		}else{
+			Debug.Log("WRONG");
+		}
+	}
 }

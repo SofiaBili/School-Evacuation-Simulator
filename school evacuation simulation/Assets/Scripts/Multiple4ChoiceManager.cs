@@ -33,18 +33,32 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		ans3Text.text = currentQuestion.ans4;
 		unansweredQuestions.RemoveAt(randomQuestionIndex);
 	}
-	/*public void UserSelectTrue(){
-		if(currentQuestion.isTrue){
+	public void UserSelect0(){
+		if(currentQuestion.corrAns == 0){
 			Debug.Log("Cor");
 		}else{
 			Debug.Log("WRONG");
 		}
 	}
-	public void UserSelectFalse(){
-		if(currentQuestion.isTrue){
-			Debug.Log("WRONG");
-		}else{
+	public void UserSelect1(){
+		if(currentQuestion.corrAns == 1){
 			Debug.Log("Cor");
+		}else{
+			Debug.Log("WRONG");
 		}
-	}*/
+	}
+	public void UserSelect2(){
+		if(currentQuestion.corrAns == 2){
+			Debug.Log("Cor");
+		}else{
+			Debug.Log("WRONG");
+		}
+	}
+	public void UserSelect3(){
+		if(currentQuestion.corrAns == 3){
+			Debug.Log("Cor");
+		}else{
+			Debug.Log("WRONG");
+		}
+	}
 }
