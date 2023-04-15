@@ -45,7 +45,11 @@ public class StartQuestionProcedureScript : MonoBehaviour
     private IEnumerator CloseCanvas(){
         if(closeCanvasFlag){
             yield return new WaitForSeconds (0.1f);
+            
             toggleQuestionCanvasScript.CloseSpecificCanvas();
+            yield return new WaitForSeconds (1.9f);
+            ChangeAnimationState("Idle");
+            cameraAnimation.targetDisplay = 2;
             closeCanvasFlag = false;
             toggleCanvasFlag = true;
         }
@@ -58,9 +62,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.B) && isCanvasOpen){
-            cameraAnimation.targetDisplay = 2;
+            ChangeAnimationState("ReturnToPlayerCamera");
             StartCoroutine(CloseCanvas());
-            ChangeAnimationState("Idle");
             isCanvasOpen=false;
         }
     }
