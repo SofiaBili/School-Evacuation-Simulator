@@ -23,9 +23,14 @@ public class TrueFalseManager : MonoBehaviour
 
 	
 	[SerializeField] Camera canvasCamera;
+	
+    [SerializeField] GameObject slimeObject;
+	Animator slimeAnimator;
+    private string currentState;
 
 	void Awake(){
 		toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
+        slimeAnimator = slimeObject.GetComponent<Animator>();
 	}
 	void Start(){
 		if(unansweredQuestions == null || unansweredQuestions.Count==0){
@@ -45,12 +50,12 @@ public class TrueFalseManager : MonoBehaviour
 	}
 	
     private IEnumerator ChangeButtonColour(Button btn){
-		yield return new WaitForSeconds (0.2f);
+		yield return new WaitForSeconds (1.9f);
 		btn.GetComponent<Image>().color = Color.white;
 	}
 	
     private IEnumerator ChangeQuestion(){
-		yield return new WaitForSeconds (0.23f);
+		yield return new WaitForSeconds (2.1f);
 		canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
 		//canvasCamera.cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
 		SetCurrentQuestion();
@@ -66,10 +71,12 @@ public class TrueFalseManager : MonoBehaviour
 			trueButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
+			ChangeAnimationState("congratulations");
 		}else{
 			trueButton.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
+			ChangeAnimationState("disappoint");
 		}
 		StartCoroutine(ChangeButtonColour(trueButton));
 		StartCoroutine(ChangeQuestion());
@@ -80,13 +87,20 @@ public class TrueFalseManager : MonoBehaviour
 			falseButton.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
+			ChangeAnimationState("disappoint");
 		}else{
 			Debug.Log("Cor");
 			falseButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
+			ChangeAnimationState("congratulations");
 		}
 		StartCoroutine(ChangeButtonColour(falseButton));
 		StartCoroutine(ChangeQuestion());
 	}
+	public void ChangeAnimationState(string newState){
+        currentState=newState;
+        if(!slimeAnimator.GetCurrentAnimatorStateInfo(0).IsName(currentState))
+            slimeAnimator.Play(newState);
+    }
 }

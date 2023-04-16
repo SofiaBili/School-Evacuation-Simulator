@@ -32,8 +32,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Q)){
                 isCanvasOpen=true;
                 cameraAnimation.targetDisplay = 0;
-                ChangeAnimationState("LookAtBoard");
                 GameObject.Find("Camera").GetComponent<Camera>().cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
+                ChangeAnimationState("LookAtBoard");
                 StartCoroutine(ShowCanvas());
             }
         }   
@@ -48,9 +48,10 @@ public class StartQuestionProcedureScript : MonoBehaviour
     }
     private IEnumerator CloseCanvas(){
         if(closeCanvasFlag){
-            yield return new WaitForSeconds (0.25f);
+            yield return new WaitForSeconds (2.2f);
+            ChangeAnimationState("ReturnToPlayerCamera");
             toggleQuestionCanvasScript.CloseSpecificCanvas();
-            yield return new WaitForSeconds (1.85f);
+            yield return new WaitForSeconds (1.9f);
             ChangeAnimationState("Idle");
             cameraAnimation.targetDisplay = 2;
             closeCanvasFlag = false;
@@ -81,7 +82,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
             animatorQuestion.Play(newState);}
     }
     public void CallChangeAnimationState(){
-        ChangeAnimationState("ReturnToPlayerCamera");
+        //ChangeAnimationState("ReturnToPlayerCamera");
     }
     public void StopAnimationAndCloseCanvas(){
         CallChangeAnimationState();
