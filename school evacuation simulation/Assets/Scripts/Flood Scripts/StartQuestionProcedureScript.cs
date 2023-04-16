@@ -33,6 +33,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
                 isCanvasOpen=true;
                 cameraAnimation.targetDisplay = 0;
                 ChangeAnimationState("LookAtBoard");
+                GameObject.Find("Camera").GetComponent<Camera>().cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
                 StartCoroutine(ShowCanvas());
             }
         }   

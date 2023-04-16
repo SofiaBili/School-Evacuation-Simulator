@@ -19,8 +19,10 @@ public class TrueFalseManager : MonoBehaviour
 
 	[SerializeField] Button trueButton;
 	[SerializeField] Button falseButton;
-	static bool changeBtnColour = false;
 	static int randomQuestionIndex;
+
+	
+	[SerializeField] Camera canvasCamera;
 
 	void Awake(){
 		toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
@@ -29,7 +31,6 @@ public class TrueFalseManager : MonoBehaviour
 		if(unansweredQuestions == null || unansweredQuestions.Count==0){
 			unansweredQuestions = questions.ToList<TrueFalseQuestions>();
 		}
-
 		SetCurrentQuestion();
 	}
 	void SetCurrentQuestion(){
@@ -40,14 +41,23 @@ public class TrueFalseManager : MonoBehaviour
 	public void UserSelectExit(){
         startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		startQuestionProcedureScript.StopAnimationAndCloseCanvas();
+		StartCoroutine(ChangeQuestion());
 	}
 	
     private IEnumerator ChangeButtonColour(Button btn){
-		if(changeBtnColour){
-			yield return new WaitForSeconds (0.17f);
-			btn.GetComponent<Image>().color = Color.white;
-			changeBtnColour = false;
-		}
+		yield return new WaitForSeconds (0.2f);
+		btn.GetComponent<Image>().color = Color.white;
+	}
+	
+    private IEnumerator ChangeQuestion(){
+		yield return new WaitForSeconds (0.23f);
+		canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
+		//canvasCamera.cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
+		SetCurrentQuestion();
+		yield return new WaitForSeconds (0.09f);
+		//canvasCamera.cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
+		//canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
+		Debug.Log(unansweredQuestions.Count);
 	}
 	public void UserSelectTrue(){
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
@@ -61,8 +71,8 @@ public class TrueFalseManager : MonoBehaviour
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 		}
-		changeBtnColour = true;
 		StartCoroutine(ChangeButtonColour(trueButton));
+		StartCoroutine(ChangeQuestion());
 	}
 	public void UserSelectFalse(){
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
@@ -76,7 +86,7 @@ public class TrueFalseManager : MonoBehaviour
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
 		}
-		changeBtnColour = true;
 		StartCoroutine(ChangeButtonColour(falseButton));
+		StartCoroutine(ChangeQuestion());
 	}
 }
