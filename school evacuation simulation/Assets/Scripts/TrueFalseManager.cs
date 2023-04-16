@@ -45,7 +45,7 @@ public class TrueFalseManager : MonoBehaviour
 	}
 	public void UserSelectExit(){
         startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
-		startQuestionProcedureScript.StopAnimationAndCloseCanvas();
+		startQuestionProcedureScript.StopAnimationAndCloseCanvasFromExit();
 		StartCoroutine(ChangeQuestion());
 	}
 	

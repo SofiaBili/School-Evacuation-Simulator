@@ -46,9 +46,10 @@ public class StartQuestionProcedureScript : MonoBehaviour
             closeCanvasFlag=true;
         }
     }
-    private IEnumerator CloseCanvas(){
+    private IEnumerator CloseCanvas(bool check){
         if(closeCanvasFlag){
-            yield return new WaitForSeconds (2.2f);
+            if(!check)
+                yield return new WaitForSeconds (2.2f);
             ChangeAnimationState("ReturnToPlayerCamera");
             toggleQuestionCanvasScript.CloseSpecificCanvas();
             yield return new WaitForSeconds (1.9f);
@@ -82,11 +83,15 @@ public class StartQuestionProcedureScript : MonoBehaviour
             animatorQuestion.Play(newState);}
     }
     public void CallChangeAnimationState(){
-        //ChangeAnimationState("ReturnToPlayerCamera");
+        ChangeAnimationState("ReturnToPlayerCamera");
     }
     public void StopAnimationAndCloseCanvas(){
-        CallChangeAnimationState();
-        StartCoroutine(CloseCanvas());
+        //CallChangeAnimationState();
+        StartCoroutine(CloseCanvas(false));
+        isCanvasOpen=false;
+    }
+    public void StopAnimationAndCloseCanvasFromExit(){
+        StartCoroutine(CloseCanvas(true));
         isCanvasOpen=false;
     }
     public void DeleteHexagon(){
