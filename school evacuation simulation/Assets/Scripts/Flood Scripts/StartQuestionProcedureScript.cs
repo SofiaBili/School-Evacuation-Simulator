@@ -12,11 +12,11 @@ public class StartQuestionProcedureScript : MonoBehaviour
     static ToggleQuestionCanvas toggleQuestionCanvasScript;
     static bool toggleCanvasFlag = true;
     static bool closeCanvasFlag = true;
+    static bool deleteHexagonFlag = false;
     static bool isCanvasOpen = false;
     static public StartQuestionProcedureScript instance;
 
     void Awake(){
-        instance = this; //set our static reference to our newly initialized instance
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
     }
     // Start is called before the first frame update
@@ -55,6 +55,11 @@ public class StartQuestionProcedureScript : MonoBehaviour
             cameraAnimation.targetDisplay = 2;
             closeCanvasFlag = false;
             toggleCanvasFlag = true;
+            if(deleteHexagonFlag){
+                yield return new WaitForSeconds (0.01f);
+                deleteHexagonFlag = false;
+                hexagonHitbox.SetActive(false);
+            }
         }
     }
     //when user exits disable canvas and camera animation back
@@ -72,18 +77,21 @@ public class StartQuestionProcedureScript : MonoBehaviour
     public void ChangeAnimationState(string newState){
         currentState=newState;
         if(!animatorQuestion.GetCurrentAnimatorStateInfo(0).IsName(currentState)){
-            Debug.Log(newState);
+           // Debug.Log(newState);
             animatorQuestion.Play(newState);}
     }
     public void CallChangeAnimationState(){
         ChangeAnimationState("ReturnToPlayerCamera");
     }
-    public  void StopAnimationAndCloseCanvas(){
+    public void StopAnimationAndCloseCanvas(){
         CallChangeAnimationState();
         StartCoroutine(CloseCanvas());
         isCanvasOpen=false;
     }
     public void DeleteHexagon(){
-
+        deleteHexagonFlag = true;
+        StopAnimationAndCloseCanvas();
+        //hexagonHitbox.SetActive(false);
+        //hexagonHitbox.enabled = false;
     }
 }

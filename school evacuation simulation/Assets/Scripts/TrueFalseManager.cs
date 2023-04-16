@@ -38,17 +38,23 @@ public class TrueFalseManager : MonoBehaviour
 		startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 	}
 	public void UserSelectTrue(){
+		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.isTrue){
 			Debug.Log("Cor");
+			startQuestionProcedureScript.DeleteHexagon();
 		}else{
+			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 		}
 	}
 	public void UserSelectFalse(){
+		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.isTrue){
+			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 		}else{
 			Debug.Log("Cor");
+			startQuestionProcedureScript.DeleteHexagon();
 		}
 	}
 }

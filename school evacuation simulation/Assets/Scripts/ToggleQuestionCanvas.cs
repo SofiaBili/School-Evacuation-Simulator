@@ -56,7 +56,7 @@ public class ToggleQuestionCanvas : MonoBehaviour
             closeCanvas = false;
             
         }
-        Debug.Log(currHitbox);
+        //Debug.Log(currHitbox);
     }
     public void CloseSpecificCanvas(){
         closeCanvas = true;
