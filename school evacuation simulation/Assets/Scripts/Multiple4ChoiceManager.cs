@@ -34,7 +34,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		unansweredQuestions.RemoveAt(randomQuestionIndex);
 	}
 	public void UserSelectExit(){
-		StartQuestionProcedureScript.StopAnimationAndCloseCanvas();
+		//StartQuestionProcedureScript.StopAnimationAndCloseCanvas();
 	}
 	public void UserSelect0(){
 		if(currentQuestion.corrAns == 0){

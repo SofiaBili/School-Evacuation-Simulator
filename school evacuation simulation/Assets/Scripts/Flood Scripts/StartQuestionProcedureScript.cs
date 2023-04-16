@@ -40,7 +40,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     private IEnumerator ShowCanvas(){
         if(toggleCanvasFlag){
             yield return new WaitForSeconds (1.9f);
-            toggleQuestionCanvasScript.EnableRandomCanvas();
+            toggleQuestionCanvasScript.EnableRandomCanvas(hexagonHitbox);
             toggleCanvasFlag = false;
             closeCanvasFlag=true;
         }
@@ -75,14 +75,13 @@ public class StartQuestionProcedureScript : MonoBehaviour
             Debug.Log(newState);
             animatorQuestion.Play(newState);}
     }
-    public static void CallChangeAnimationState(){
-        instance.ChangeAnimationState("ReturnToPlayerCamera");
+    public void CallChangeAnimationState(){
+        ChangeAnimationState("ReturnToPlayerCamera");
     }
-    public static void StopAnimationAndCloseCanvas(){
+    public  void StopAnimationAndCloseCanvas(){
         CallChangeAnimationState();
-        instance.StartCoroutine(instance.CloseCanvas());
+        StartCoroutine(CloseCanvas());
         isCanvasOpen=false;
-        
     }
     public void DeleteHexagon(){
 

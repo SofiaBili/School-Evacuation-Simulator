@@ -8,9 +8,17 @@ public class ToggleQuestionCanvas : MonoBehaviour
     [SerializeField] GameObject canvasMultiple2;
     [SerializeField] GameObject canvasTrueFalse;
     [SerializeField] Camera canvasCamera;
+
+    static GameObject currHitbox;
     static bool showCanvas = false;
     static bool closeCanvas = false;
     int randomCanvas=-1;
+    public void SetCurrHitbox(GameObject currentHitbox){
+        currHitbox = currentHitbox;
+    }
+    public GameObject GetCurrHitbox(){
+        return currHitbox;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +30,7 @@ public class ToggleQuestionCanvas : MonoBehaviour
     {
         if(showCanvas){
             //canvasTrueFalse.SetActive(true);
-            randomCanvas = Random.Range(0, 3);
+            randomCanvas = 2;//Random.Range(0, 3);
             Debug.Log(randomCanvas);
             if(randomCanvas==0){
                 canvasMultiple1.SetActive(true);
@@ -48,11 +56,15 @@ public class ToggleQuestionCanvas : MonoBehaviour
             closeCanvas = false;
             
         }
+        Debug.Log(currHitbox);
     }
     public void CloseSpecificCanvas(){
         closeCanvas = true;
     }
-    public void EnableRandomCanvas(){
+    public void EnableRandomCanvas(GameObject currentHitbox){
         showCanvas = true;
+        SetCurrHitbox(currentHitbox);
+        //currHitbox = currentHitbox;
+        //Debug.Log(currentHitbox);
     }
 }

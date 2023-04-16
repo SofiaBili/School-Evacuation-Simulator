@@ -33,7 +33,7 @@ public class Multiple3ChoiceManager : MonoBehaviour
 	}
 	
 	public void UserSelectExit(){
-		StartQuestionProcedureScript.StopAnimationAndCloseCanvas();
+		//StartQuestionProcedureScript.StopAnimationAndCloseCanvas();
 	}
 	public void UserSelect0(){
 		if(currentQuestion.corrAns == 0){
