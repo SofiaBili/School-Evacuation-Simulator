@@ -47,10 +47,9 @@ public class StartQuestionProcedureScript : MonoBehaviour
     }
     private IEnumerator CloseCanvas(){
         if(closeCanvasFlag){
-            yield return new WaitForSeconds (0.1f);
-            
+            yield return new WaitForSeconds (0.25f);
             toggleQuestionCanvasScript.CloseSpecificCanvas();
-            yield return new WaitForSeconds (1.9f);
+            yield return new WaitForSeconds (1.85f);
             ChangeAnimationState("Idle");
             cameraAnimation.targetDisplay = 2;
             closeCanvasFlag = false;
