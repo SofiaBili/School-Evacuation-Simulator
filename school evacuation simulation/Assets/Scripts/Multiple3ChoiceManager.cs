@@ -24,16 +24,19 @@ public class Multiple3ChoiceManager : MonoBehaviour
 	[SerializeField] Button but2;
 	[SerializeField] Button but3;
 	static int randomQuestionIndex;
-
 	
 	[SerializeField] Camera canvasCamera;
 	
     [SerializeField] GameObject slimeObject;
 	Animator slimeAnimator;
     private string currentState;
+	
+    FillBarScript fillBarScript;
+    [SerializeField] GameObject fillBarObject;
 
 	void Awake(){
 		toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
+		fillBarScript = fillBarObject.GetComponent<FillBarScript>();
         slimeAnimator = slimeObject.GetComponent<Animator>();
 	}
 	void Start(){
@@ -80,11 +83,13 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
 			ChangeAnimationState("congratulations");
+			fillBarScript.RightAnswer();
 		}else{
 			but1.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
+			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but1));
 		StartCoroutine(ChangeQuestion());
@@ -97,11 +102,13 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
 			ChangeAnimationState("congratulations");
+			fillBarScript.RightAnswer();
 		}else{
 			but2.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
+			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but2));
 		StartCoroutine(ChangeQuestion());
@@ -114,11 +121,13 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
 			ChangeAnimationState("congratulations");
+			fillBarScript.RightAnswer();
 		}else{
 			but3.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
+			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but3));
 		StartCoroutine(ChangeQuestion());
