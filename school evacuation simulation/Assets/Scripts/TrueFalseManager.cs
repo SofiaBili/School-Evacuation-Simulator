@@ -27,9 +27,15 @@ public class TrueFalseManager : MonoBehaviour
     [SerializeField] GameObject slimeObject;
 	Animator slimeAnimator;
     private string currentState;
+	
+    FillBarScript fillBarScript;
+    [SerializeField] GameObject fillBarObject;
 
 	void Awake(){
 		toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
+
+		fillBarScript = fillBarObject.GetComponent<FillBarScript>();
+
         slimeAnimator = slimeObject.GetComponent<Animator>();
 	}
 	void Start(){
@@ -72,11 +78,13 @@ public class TrueFalseManager : MonoBehaviour
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
 			ChangeAnimationState("congratulations");
+			fillBarScript.RightAnswer();
 		}else{
 			trueButton.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
+			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(trueButton));
 		StartCoroutine(ChangeQuestion());
@@ -88,12 +96,14 @@ public class TrueFalseManager : MonoBehaviour
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
+			fillBarScript.WrongAnswer();
 		}else{
 			Debug.Log("Cor");
 			falseButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
 			ChangeAnimationState("congratulations");
+			fillBarScript.RightAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(falseButton));
 		StartCoroutine(ChangeQuestion());
@@ -103,4 +113,5 @@ public class TrueFalseManager : MonoBehaviour
         if(!slimeAnimator.GetCurrentAnimatorStateInfo(0).IsName(currentState))
             slimeAnimator.Play(newState);
     }
+
 }
