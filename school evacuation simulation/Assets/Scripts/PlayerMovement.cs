@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGrounded;
 
+    static bool stopMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,14 +36,21 @@ public class PlayerMovement : MonoBehaviour
         if(isGrounded && velocity.y<0){
             velocity.y = -2f;
         }
+        if(!stopMovement){
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         
         Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput ;
         controller.Move(move*movementSpeed*Time.deltaTime);
-        
+        }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+    public void StopMovement(){
+        stopMovement = true;
+    }
 
+    public void StartMovement(){
+        stopMovement = false;
+    }
 }

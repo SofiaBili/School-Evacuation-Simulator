@@ -60,8 +60,10 @@ public class Multiple3ChoiceManager : MonoBehaviour
 		btn.GetComponent<Image>().color = Color.white;
 	}
 	
-    private IEnumerator ChangeQuestion(){
-		yield return new WaitForSeconds (2.1f);
+    private IEnumerator ChangeQuestion(bool show){
+		if(show)
+			yield return new WaitForSeconds (2.1f);
+		GetComponent<CanvasGroup>().interactable = true;
 		canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
 		//canvasCamera.cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
 		SetCurrentQuestion();
@@ -71,11 +73,13 @@ public class Multiple3ChoiceManager : MonoBehaviour
 		Debug.Log(unansweredQuestions.Count);
 	}
 	public void UserSelectExit(){
+		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		startQuestionProcedureScript.StopAnimationAndCloseCanvasFromExit();
-		StartCoroutine(ChangeQuestion());
+		StartCoroutine(ChangeQuestion(false));
 	}
 	public void UserSelect0(){
+		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 0){
 			Debug.Log("Cor");
@@ -92,9 +96,10 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but1));
-		StartCoroutine(ChangeQuestion());
+		StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelect1(){
+		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 1){
 			Debug.Log("Cor");
@@ -111,9 +116,10 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but2));
-		StartCoroutine(ChangeQuestion());
+		StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelect2(){
+		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 2){
 			Debug.Log("Cor");
@@ -130,7 +136,7 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but3));
-		StartCoroutine(ChangeQuestion());
+		StartCoroutine(ChangeQuestion(true));
 	}
 	public void ChangeAnimationState(string newState){
         currentState=newState;

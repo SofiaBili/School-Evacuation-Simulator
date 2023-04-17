@@ -50,9 +50,10 @@ public class TrueFalseManager : MonoBehaviour
 		factText.text = currentQuestion.fact;
 	}
 	public void UserSelectExit(){
+		GetComponent<CanvasGroup>().interactable = false;
         startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		startQuestionProcedureScript.StopAnimationAndCloseCanvasFromExit();
-		StartCoroutine(ChangeQuestion());
+		StartCoroutine(ChangeQuestion(false));
 	}
 	
     private IEnumerator ChangeButtonColour(Button btn){
@@ -60,17 +61,16 @@ public class TrueFalseManager : MonoBehaviour
 		btn.GetComponent<Image>().color = Color.white;
 	}
 	
-    private IEnumerator ChangeQuestion(){
-		yield return new WaitForSeconds (2.1f);
+    private IEnumerator ChangeQuestion(bool show){
+		if(show)
+			yield return new WaitForSeconds (2.1f);
+		GetComponent<CanvasGroup>().interactable = true;
 		canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
-		//canvasCamera.cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
 		SetCurrentQuestion();
-		yield return new WaitForSeconds (0.09f);
-		//canvasCamera.cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
-		//canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
 		Debug.Log(unansweredQuestions.Count);
 	}
 	public void UserSelectTrue(){
+		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.isTrue){
 			Debug.Log("Cor");
@@ -87,9 +87,10 @@ public class TrueFalseManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(trueButton));
-		StartCoroutine(ChangeQuestion());
+		StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelectFalse(){
+		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.isTrue){
 			falseButton.GetComponent<Image>().color = Color.red;
@@ -106,7 +107,7 @@ public class TrueFalseManager : MonoBehaviour
 			fillBarScript.RightAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(falseButton));
-		StartCoroutine(ChangeQuestion());
+		StartCoroutine(ChangeQuestion(true));
 	}
 	public void ChangeAnimationState(string newState){
         currentState=newState;

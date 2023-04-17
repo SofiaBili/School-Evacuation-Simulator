@@ -31,6 +31,12 @@ public class StartQuestionProcedureScript : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             if(Input.GetKeyDown(KeyCode.Q)){
                 isCanvasOpen=true;
+                //σταματάμε την κίνηση του χρήστη
+                toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StopMovement();
+                GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = false;
+                GameObject.Find("Main Camera").GetComponent<PlayerZoom>().enabled = false;
+                Cursor.lockState=CursorLockMode.None;
+                
                 cameraAnimation.targetDisplay = 0;
                 GameObject.Find("Camera").GetComponent<Camera>().cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
                 ChangeAnimationState("LookAtBoard");
@@ -62,6 +68,11 @@ public class StartQuestionProcedureScript : MonoBehaviour
                 deleteHexagonFlag = false;
                 hexagonHitbox.SetActive(false);
             }
+            //επιτρέπουμε την κίνηση του χρήστη πάλι
+            toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StartMovement();
+            GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = true;
+            GameObject.Find("Main Camera").GetComponent<PlayerZoom>().enabled = true;
+            Cursor.lockState=CursorLockMode.Locked;
         }
     }
     //when user exits disable canvas and camera animation back
