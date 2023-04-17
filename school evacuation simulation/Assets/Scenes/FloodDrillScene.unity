@@ -18166,6 +18166,7 @@ MonoBehaviour:
   but3: {fileID: 384263258}
   canvasCamera: {fileID: 84419094}
   slimeObject: {fileID: 53733920}
+  fillBarObject: {fileID: 586593481}
 --- !u!224 &1838382863 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 878041135932665576, guid: def918d0812a8804e94a992be7d856db, type: 3}
@@ -21799,6 +21800,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 878041135905888920, guid: def918d0812a8804e94a992be7d856db, type: 3}
+      propertyPath: far clip plane
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 878041135932665576, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -22310,6 +22315,7 @@ MonoBehaviour:
   but4: {fileID: 747923713}
   canvasCamera: {fileID: 84419094}
   slimeObject: {fileID: 1441326634}
+  fillBarObject: {fileID: 586593481}
 --- !u!224 &878041136098653520 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 878041134757436071, guid: def918d0812a8804e94a992be7d856db, type: 3}
