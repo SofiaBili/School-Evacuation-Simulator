@@ -15,6 +15,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
     static bool deleteHexagonFlag = false;
     static bool isCanvasOpen = false;
     static public StartQuestionProcedureScript instance;
+    public string firstCameraAnimationName;
+    public string secondCameraAnimationName;
 
     void Awake(){
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
@@ -36,10 +38,10 @@ public class StartQuestionProcedureScript : MonoBehaviour
                 GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = false;
                 GameObject.Find("Main Camera").GetComponent<PlayerZoom>().enabled = false;
                 Cursor.lockState=CursorLockMode.None;
-                
+
                 cameraAnimation.targetDisplay = 0;
                 GameObject.Find("Camera").GetComponent<Camera>().cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
-                ChangeAnimationState("LookAtBoard");
+                ChangeAnimationState(firstCameraAnimationName);
                 StartCoroutine(ShowCanvas());
             }
         }   
@@ -56,7 +58,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
         if(closeCanvasFlag){
             if(!check)
                 yield return new WaitForSeconds (2.2f);
-            ChangeAnimationState("ReturnToPlayerCamera");
+            ChangeAnimationState(secondCameraAnimationName);
             toggleQuestionCanvasScript.CloseSpecificCanvas();
             yield return new WaitForSeconds (1.9f);
             ChangeAnimationState("Idle");
@@ -92,9 +94,6 @@ public class StartQuestionProcedureScript : MonoBehaviour
         if(!animatorQuestion.GetCurrentAnimatorStateInfo(0).IsName(currentState)){
            // Debug.Log(newState);
             animatorQuestion.Play(newState);}
-    }
-    public void CallChangeAnimationState(){
-        ChangeAnimationState("ReturnToPlayerCamera");
     }
     public void StopAnimationAndCloseCanvas(){
         //CallChangeAnimationState();
