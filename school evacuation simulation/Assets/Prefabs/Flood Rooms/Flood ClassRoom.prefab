@@ -1897,6 +1897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Look at Board Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8631271378430742033, guid: 2cba7c559dc1d4945a005248eb9b15e1, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65463
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cba7c559dc1d4945a005248eb9b15e1, type: 3}
 --- !u!4 &2500869718924674677 stripped
