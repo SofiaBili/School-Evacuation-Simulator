@@ -8,8 +8,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
     [SerializeField] Camera cameraAnimation;
     [SerializeField] Animator animatorQuestion;
     [SerializeField] GameObject toggleQuestionCanvasObject;
-    private static string currentState;
     static ToggleQuestionCanvas toggleQuestionCanvasScript;
+    private static string currentState;
     static bool toggleCanvasFlag = true;
     static bool closeCanvasFlag = true;
     static bool deleteHexagonFlag = false;
@@ -18,12 +18,18 @@ public class StartQuestionProcedureScript : MonoBehaviour
     public string firstCameraAnimationName;
     public string secondCameraAnimationName;
 
+    MapCreation mapCreationScript;
+    [SerializeField] GameObject mapCreationObject;
+    FillBarScript fillBarScript;
+
     void Awake(){
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
+        fillBarScript = toggleQuestionCanvasObject.transform.Find("Point Level Canvas").GetComponent<FillBarScript>();
     }
     // Start is called before the first frame update
     void Start()
     {
+        mapCreationScript = transform.parent.parent.parent.gameObject.GetComponent<MapCreation>();
     }
 
     private void OnTriggerEnter(Collider other){
@@ -65,10 +71,16 @@ public class StartQuestionProcedureScript : MonoBehaviour
             cameraAnimation.targetDisplay = 2;
             closeCanvasFlag = false;
             toggleCanvasFlag = true;
+
             if(deleteHexagonFlag){
+                mapCreationScript.SetHexagonNumber(mapCreationScript.GetHexagonNumber()-1);
+                if(!fillBarScript.ShowWinningCanvas() && mapCreationScript.GetHexagonNumber() == 0){
+                    Debug.Log("jjjjjjjjjj");
+                    fillBarScript.ShowLosingCanvas();
+                }
                 yield return new WaitForSeconds (0.01f);
-                deleteHexagonFlag = false;
-                hexagonHitbox.SetActive(false);
+                //deleteHexagonFlag = false;
+                //hexagonHitbox.SetActive(false);
             }
             //επιτρέπουμε την κίνηση του χρήστη πάλι
             toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StartMovement();
@@ -84,9 +96,6 @@ public class StartQuestionProcedureScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.B) && isCanvasOpen){
-            StopAnimationAndCloseCanvas();
-        }
     }
     
     public void ChangeAnimationState(string newState){
@@ -107,6 +116,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
     public void DeleteHexagon(){
         deleteHexagonFlag = true;
         StopAnimationAndCloseCanvas();
+        Debug.Log(mapCreationScript.GetHexagonNumber());
+        
         //hexagonHitbox.SetActive(false);
         //hexagonHitbox.enabled = false;
     }

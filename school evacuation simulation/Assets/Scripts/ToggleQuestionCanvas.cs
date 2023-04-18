@@ -31,7 +31,7 @@ public class ToggleQuestionCanvas : MonoBehaviour
         if(showCanvas){
             //canvasTrueFalse.SetActive(true);
             randomCanvas = Random.Range(0, 3);
-            Debug.Log(randomCanvas);
+            ///Debug.Log(randomCanvas);
             if(randomCanvas==0){
                 canvasMultiple1.SetActive(true);
             }else if(randomCanvas==1){

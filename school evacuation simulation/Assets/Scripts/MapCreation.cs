@@ -48,7 +48,7 @@ public class MapCreation : MonoBehaviour
     private Vector3 savedPosition;
     
     public List<GameObject> hitboxes = new List<GameObject>();
-
+    public static int hexagonNumber=0;
     void Awake(){
         savedPosition=mapGameObject.transform.position;
         PlaceRoomsMethod();
@@ -61,6 +61,12 @@ public class MapCreation : MonoBehaviour
 
     void Update(){
         
+    }
+    public int GetHexagonNumber(){
+        return hexagonNumber;
+    }
+    public void SetHexagonNumber(int newNum){
+        hexagonNumber = newNum;        
     }
     void RoomName(GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
         GameObject instantiatedObject;
@@ -99,9 +105,9 @@ public class MapCreation : MonoBehaviour
 
         //For flood check hexagon
         if(instantiatedObject.name.Contains("Stairs")){
-            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox 0").gameObject);
-            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox 1").gameObject);
-            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox 2").gameObject);
+            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
+            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox (1)").gameObject);
+            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox (2)").gameObject);
         }
         else if(instantiatedObject.transform.Find("Hexagon Hitbox")){
             AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
@@ -110,7 +116,7 @@ public class MapCreation : MonoBehaviour
     void PlaceRoomsMethod(){
         //First Floor
         emptyGameObjectPrefab1.name = "First Floor";
-        RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
+        //RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
         RoomName(corridorLeftWallDoor,2,0,10,emptyGameObjectPrefab1,90);
         RoomName(corridorLeftWall,2,0,10,emptyGameObjectPrefab1,90);
         RoomName(office1,0,0,10,emptyGameObjectPrefab1);
@@ -162,13 +168,12 @@ public class MapCreation : MonoBehaviour
     }
     void ShowHitboxes(){
         int randomNumber;
-        int i;
         if(hitboxes.Count<=15){
-            for(i=0; i<hitboxes.Count; i++){
-                hitboxes[i].SetActive(true);
+            for(hexagonNumber=0; hexagonNumber<hitboxes.Count; hexagonNumber++){
+                hitboxes[hexagonNumber].SetActive(true);
             }
         }else{
-            for(i=0; i<15; i++){
+            for(hexagonNumber=0; hexagonNumber<15; hexagonNumber++){
                 randomNumber = Random.Range(0, hitboxes.Count);
                 hitboxes[randomNumber].SetActive(true);
                 hitboxes.RemoveAt(randomNumber);
