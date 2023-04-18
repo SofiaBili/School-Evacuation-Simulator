@@ -46,10 +46,13 @@ public class MapCreation : MonoBehaviour
     public GameObject emptyGameObjectPrefab1;
     public GameObject emptyGameObjectPrefab2;
     private Vector3 savedPosition;
+    
+    public List<GameObject> hitboxes = new List<GameObject>();
 
     void Awake(){
         savedPosition=mapGameObject.transform.position;
         PlaceRoomsMethod();
+        ShowHitboxes();
     }
 
     void Start(){
@@ -93,6 +96,16 @@ public class MapCreation : MonoBehaviour
             instantiatedObject.transform.Rotate(0.0f, degrees, 0.0f, Space.World);
         else if(axis==3)
             instantiatedObject.transform.Rotate(0.0f, 0.0f, degrees, Space.World);
+
+        //For flood check hexagon
+        if(instantiatedObject.name.Contains("Stairs")){
+            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox 0").gameObject);
+            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox 1").gameObject);
+            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox 2").gameObject);
+        }
+        else if(instantiatedObject.transform.Find("Hexagon Hitbox")){
+            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
+        }
     }
     void PlaceRoomsMethod(){
         //First Floor
@@ -142,5 +155,24 @@ public class MapCreation : MonoBehaviour
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0);
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0); 
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0); 
+    }
+    
+    void AddHitboxToList(GameObject hitbox){
+        hitboxes.Add(hitbox);
+    }
+    void ShowHitboxes(){
+        int randomNumber;
+        int i;
+        if(hitboxes.Count<=15){
+            for(i=0; i<hitboxes.Count; i++){
+                hitboxes[i].SetActive(true);
+            }
+        }else{
+            for(i=0; i<15; i++){
+                randomNumber = Random.Range(0, hitboxes.Count);
+                hitboxes[randomNumber].SetActive(true);
+                hitboxes.RemoveAt(randomNumber);
+            }
+        }
     }
 }

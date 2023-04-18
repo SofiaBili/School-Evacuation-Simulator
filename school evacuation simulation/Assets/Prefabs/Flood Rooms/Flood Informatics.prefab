@@ -3500,6 +3500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon Hitbox
       objectReference: {fileID: 0}
+    - target: {fileID: 3773028609865346167, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
 --- !u!4 &4944208408567758421 stripped
