@@ -13,7 +13,6 @@ public class StartQuestionProcedureScript : MonoBehaviour
     static bool toggleCanvasFlag = true;
     static bool closeCanvasFlag = true;
     static bool deleteHexagonFlag = false;
-    static bool isCanvasOpen = false;
     static public StartQuestionProcedureScript instance;
     public string firstCameraAnimationName;
     public string secondCameraAnimationName;
@@ -38,7 +37,6 @@ public class StartQuestionProcedureScript : MonoBehaviour
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
             if(Input.GetKeyDown(KeyCode.Q)){
-                isCanvasOpen=true;
                 //σταματάμε την κίνηση του χρήστη
                 toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StopMovement();
                 GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = false;
@@ -107,11 +105,9 @@ public class StartQuestionProcedureScript : MonoBehaviour
     public void StopAnimationAndCloseCanvas(){
         //CallChangeAnimationState();
         StartCoroutine(CloseCanvas(false));
-        isCanvasOpen=false;
     }
     public void StopAnimationAndCloseCanvasFromExit(){
         StartCoroutine(CloseCanvas(true));
-        isCanvasOpen=false;
     }
     public void DeleteHexagon(){
         deleteHexagonFlag = true;

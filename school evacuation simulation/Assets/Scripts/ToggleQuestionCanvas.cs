@@ -13,6 +13,7 @@ public class ToggleQuestionCanvas : MonoBehaviour
     static bool showCanvas = false;
     static bool closeCanvas = false;
     int randomCanvas=-1;
+    int previousRandom=-1;
     public void SetCurrHitbox(GameObject currentHitbox){
         currHitbox = currentHitbox;
     }
@@ -31,6 +32,10 @@ public class ToggleQuestionCanvas : MonoBehaviour
         if(showCanvas){
             //canvasTrueFalse.SetActive(true);
             randomCanvas = Random.Range(0, 3);
+            while(previousRandom == randomCanvas){
+                randomCanvas = Random.Range(0, 3);
+            }
+            previousRandom = randomCanvas;
             ///Debug.Log(randomCanvas);
             if(randomCanvas==0){
                 canvasMultiple1.SetActive(true);
