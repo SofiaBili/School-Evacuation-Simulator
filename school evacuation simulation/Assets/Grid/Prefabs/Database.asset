@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75b2ecc449d0f2499c7cf398aad3e2a, type: 3}
+  m_Name: Database
+  m_EditorClassIdentifier: 
+  objectsData:
+  - <Name>k__BackingField: Classroom
+    <ID>k__BackingField: 0
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 681c852998db87348bb2e971192c0773, type: 3}
+  - <Name>k__BackingField: LabRoom
+    <ID>k__BackingField: 1
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: e7f6ebdf6762ac14f92ecd25ced63190, type: 3}
+  - <Name>k__BackingField: TheaterRoom
+    <ID>k__BackingField: 2
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 1f074dc88dc8e1d46a86fbe69251821c, type: 3}
+  - <Name>k__BackingField: Office
+    <ID>k__BackingField: 3
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: ba43a817a72079a44a03bb8631e8f779, type: 3}
+  - <Name>k__BackingField: WC
+    <ID>k__BackingField: 4
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 152e15e54a8ee154093fe231e1a83add, type: 3}
+  - <Name>k__BackingField: Stairs
+    <ID>k__BackingField: 5
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: b77ad114ac318a04bb18d35aece627f1, type: 3}
+  - <Name>k__BackingField: Elevator
+    <ID>k__BackingField: 6
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 60d1e9df53b36184c89008858a936e7b, type: 3}
