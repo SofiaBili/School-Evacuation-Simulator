@@ -67,7 +67,7 @@ public class PreviewSystem : MonoBehaviour
 
         }
 
-        MoveCursor(position);
+        MoveCursor(position);//cursor is never null
         ApplyFeedbackToCursor(validity);
     }
 
@@ -100,7 +100,7 @@ public class PreviewSystem : MonoBehaviour
     internal void StartShowingRemovePreview()
     {
         cellIndicator.SetActive(true);
-        PrepareCursor(Vector2Int.one);
+        PrepareCursor(Vector2Int.one);//see one cell(red/white)
         ApplyFeedbackToCursor(false);
     }
 }
