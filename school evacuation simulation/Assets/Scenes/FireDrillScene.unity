@@ -1265,7 +1265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &170220450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,7 +1487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -15}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: -63.44, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172250008
@@ -2960,7 +2960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -60}
+  m_AnchoredPosition: {x: 0, y: -60}
   m_SizeDelta: {x: 336.56, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283092373
@@ -10423,6 +10423,8 @@ MonoBehaviour:
   mapGameObject: {fileID: 940424394}
   emptyGameObjectPrefab1: {fileID: 1384601638}
   emptyGameObjectPrefab2: {fileID: 1948104693}
+  hitboxes: []
+  isFlood: 0
 --- !u!114 &940424397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16222,7 +16224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1378433244
 Transform:
   m_ObjectHideFlags: 0
@@ -18319,7 +18321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 30}
+  m_AnchoredPosition: {x: 0, y: 30}
   m_SizeDelta: {x: 336.56, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1511082584

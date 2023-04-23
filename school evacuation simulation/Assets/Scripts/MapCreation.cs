@@ -49,6 +49,7 @@ public class MapCreation : MonoBehaviour
     
     public List<GameObject> hitboxes = new List<GameObject>();
     public static int hexagonNumber=0;
+    public bool isFlood = false;
     void Awake(){
         savedPosition=mapGameObject.transform.position;
         PlaceRoomsMethod();
@@ -103,15 +104,17 @@ public class MapCreation : MonoBehaviour
         else if(axis==3)
             instantiatedObject.transform.Rotate(0.0f, 0.0f, degrees, Space.World);
 
-        /*//For flood check hexagon
-        if(instantiatedObject.name.Contains("Stairs")){
-            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
-            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox (1)").gameObject);
-            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox (2)").gameObject);
+        if(isFlood){
+            //For flood check hexagon
+            if(instantiatedObject.name.Contains("Stairs")){
+                AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
+                AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox (1)").gameObject);
+                AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox (2)").gameObject);
+            }
+            else if(instantiatedObject.transform.Find("Hexagon Hitbox")){
+                AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
+            }
         }
-        else if(instantiatedObject.transform.Find("Hexagon Hitbox")){
-            AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
-        }*/
     }
     void PlaceRoomsMethod(){
         //First Floor
