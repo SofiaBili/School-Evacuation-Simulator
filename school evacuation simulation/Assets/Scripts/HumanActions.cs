@@ -61,6 +61,7 @@ public class HumanActions : MonoBehaviour
         gameObject.GetComponent<BoxCollider>().enabled=false;
         FireDrillAction();
 
+        yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
         gameObject.GetComponent<NavMeshControl>().enabled=true;
     }

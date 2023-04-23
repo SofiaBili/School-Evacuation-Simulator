@@ -7,6 +7,7 @@ public class ToggleQuestionCanvas : MonoBehaviour
     [SerializeField] GameObject canvasMultiple1;
     [SerializeField] GameObject canvasMultiple2;
     [SerializeField] GameObject canvasTrueFalse;
+    [SerializeField] GameObject miniMapCanvas;
     [SerializeField] Camera canvasCamera;
 
     static GameObject currHitbox;
@@ -44,6 +45,7 @@ public class ToggleQuestionCanvas : MonoBehaviour
             }else{
                 canvasTrueFalse.SetActive(true);
             }
+            miniMapCanvas.SetActive(false);
             canvasCamera.enabled = true;
             showCanvas = false;
             
@@ -58,6 +60,7 @@ public class ToggleQuestionCanvas : MonoBehaviour
                 canvasTrueFalse.SetActive(false);
             }
             canvasCamera.enabled = false;
+            miniMapCanvas.SetActive(true);
             closeCanvas = false;
             
         }

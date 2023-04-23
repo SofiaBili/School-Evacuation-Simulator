@@ -8,6 +8,7 @@ public class LookAt : MonoBehaviour
     GameObject targetParent;
     public string objectToFind;
     bool oneTimeFlag = true;
+    public bool isPlayerFlag = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,11 @@ public class LookAt : MonoBehaviour
     void Update()
     {
         if(oneTimeFlag){
-            targetParent = gameObject.transform.parent.gameObject;
+            if(!isPlayerFlag){
+                targetParent = gameObject.transform.parent.gameObject;
+            }else{
+                targetParent = gameObject.transform.parent.transform.parent.gameObject;
+            }
             target = targetParent.transform.Find(objectToFind).gameObject;
             transform.LookAt(target.transform);
             transform.rotation = Quaternion.Euler(0,transform.rotation.eulerAngles.y,0);
