@@ -103,7 +103,7 @@ public class MapCreation : MonoBehaviour
         else if(axis==3)
             instantiatedObject.transform.Rotate(0.0f, 0.0f, degrees, Space.World);
 
-        //For flood check hexagon
+        /*//For flood check hexagon
         if(instantiatedObject.name.Contains("Stairs")){
             AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
             AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox (1)").gameObject);
@@ -111,12 +111,12 @@ public class MapCreation : MonoBehaviour
         }
         else if(instantiatedObject.transform.Find("Hexagon Hitbox")){
             AddHitboxToList(instantiatedObject.transform.Find("Hexagon Hitbox").gameObject);
-        }
+        }*/
     }
     void PlaceRoomsMethod(){
         //First Floor
         emptyGameObjectPrefab1.name = "First Floor";
-        //RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
+        RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
         RoomName(corridorLeftWallDoor,2,0,10,emptyGameObjectPrefab1,90);
         RoomName(corridorLeftWall,2,0,10,emptyGameObjectPrefab1,90);
         RoomName(office1,0,0,10,emptyGameObjectPrefab1);
