@@ -77,8 +77,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
                     fillBarScript.ShowLosingCanvas();
                 }
                 yield return new WaitForSeconds (0.01f);
-                //deleteHexagonFlag = false;
-                //hexagonHitbox.SetActive(false);
+                deleteHexagonFlag = false;
+                hexagonHitbox.SetActive(false);
             }
             //επιτρέπουμε την κίνηση του χρήστη πάλι
             toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StartMovement();
