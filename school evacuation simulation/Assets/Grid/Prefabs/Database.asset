@@ -17,27 +17,51 @@ MonoBehaviour:
     <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 681c852998db87348bb2e971192c0773, type: 3}
-  - <Name>k__BackingField: LabRoom
+  - <Name>k__BackingField: LabRoom 0
     <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 2, y: 1}
     <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: e7f6ebdf6762ac14f92ecd25ced63190, type: 3}
-  - <Name>k__BackingField: TheaterRoom
+  - <Name>k__BackingField: LabRoom 90
     <ID>k__BackingField: 2
+    <Size>k__BackingField: {x: 1, y: 2}
+    <Prefab>k__BackingField: {fileID: 3639456792802924990, guid: 10a146349678fe442b187967744487bd, type: 3}
+  - <Name>k__BackingField: LabRoom 180
+    <ID>k__BackingField: 3
+    <Size>k__BackingField: {x: 2, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 754308ccb83568042bc43f586b6fd1f1, type: 3}
+  - <Name>k__BackingField: LabRoom 270
+    <ID>k__BackingField: 4
+    <Size>k__BackingField: {x: 1, y: 2}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: d3baa40f0f6d2374ca82f0cb2ae30d01, type: 3}
+  - <Name>k__BackingField: TheaterRoom 0
+    <ID>k__BackingField: 5
     <Size>k__BackingField: {x: 2, y: 1}
     <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 1f074dc88dc8e1d46a86fbe69251821c, type: 3}
+  - <Name>k__BackingField: TheaterRoom 90
+    <ID>k__BackingField: 10
+    <Size>k__BackingField: {x: 1, y: 2}
+    <Prefab>k__BackingField: {fileID: 3639456792802924990, guid: 5dad74376fae546499ac6bdeab4be704, type: 3}
+  - <Name>k__BackingField: TheaterRoom 180
+    <ID>k__BackingField: 11
+    <Size>k__BackingField: {x: 2, y: 1}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: acf200eae4314ab4ca5b38c576738c5e, type: 3}
+  - <Name>k__BackingField: TheaterRoom 270
+    <ID>k__BackingField: 12
+    <Size>k__BackingField: {x: 1, y: 2}
+    <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: fb69a20a81c2b27458b8e98296b855af, type: 3}
   - <Name>k__BackingField: Office
-    <ID>k__BackingField: 3
+    <ID>k__BackingField: 6
     <Size>k__BackingField: {x: 2, y: 2}
     <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: ba43a817a72079a44a03bb8631e8f779, type: 3}
   - <Name>k__BackingField: WC
-    <ID>k__BackingField: 4
+    <ID>k__BackingField: 7
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 152e15e54a8ee154093fe231e1a83add, type: 3}
   - <Name>k__BackingField: Stairs
-    <ID>k__BackingField: 5
+    <ID>k__BackingField: 8
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: b77ad114ac318a04bb18d35aece627f1, type: 3}
   - <Name>k__BackingField: Elevator
-    <ID>k__BackingField: 6
+    <ID>k__BackingField: 9
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 6292865939462404956, guid: 60d1e9df53b36184c89008858a936e7b, type: 3}

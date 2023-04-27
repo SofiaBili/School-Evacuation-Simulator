@@ -103,4 +103,10 @@ public class PreviewSystem : MonoBehaviour
         PrepareCursor(Vector2Int.one);//see one cell(red/white)
         ApplyFeedbackToCursor(false);
     }
+    internal void StartShowingRotatePreview()
+    {
+        cellIndicator.SetActive(true);
+        PrepareCursor(Vector2Int.one);//see one cell(red/white)
+        ApplyFeedbackToCursor(false);
+    }
 }
