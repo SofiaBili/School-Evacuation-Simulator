@@ -24,4 +24,12 @@ public class ToggleButton : MonoBehaviour
         otherCanvas3.SetActive(false);
         otherCanvas4.SetActive(false);
     }
+	public void CloseAllCanvas() {
+		canvas.SetActive(false);
+        otherCanvas0.SetActive(false);
+        otherCanvas1.SetActive(false);
+        otherCanvas2.SetActive(false);
+        otherCanvas3.SetActive(false);
+        otherCanvas4.SetActive(false);
+    }
 }
