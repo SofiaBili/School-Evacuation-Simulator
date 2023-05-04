@@ -29,7 +29,7 @@ public class GridData
     public bool CanPlaceObjectAt(Vector3Int gridPosition, Vector2Int objectSize){
         List<Vector3Int> positionToOccupy = CalculatePosition(gridPosition, objectSize);
         foreach(var pos in positionToOccupy){
-            if(placedObjects.ContainsKey(pos)){
+            if(placedObjects.ContainsKey(pos) || pos[0]>4 || pos[2]>4){
                 return false;
             }
         }

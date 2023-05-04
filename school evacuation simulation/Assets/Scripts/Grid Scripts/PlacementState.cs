@@ -53,25 +53,17 @@ public class PlacementState : IBuildingState
             return;
         }
         //soundFeedback.PlaySound(SoundType.Place);
-        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab,
-            grid.CellToWorld(gridPosition));
+        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPosition));
 
-        GridData selectedData = database.objectsData[selectedObjectIndex].ID == 0 ?
-            floorData :
-            furnitureData;
-        selectedData.AddObjectAt(gridPosition,
-            database.objectsData[selectedObjectIndex].Size,
-            database.objectsData[selectedObjectIndex].ID,
-            index);
+        GridData selectedData = database.objectsData[selectedObjectIndex].ID == -1 ? floorData : furnitureData;
+        selectedData.AddObjectAt(gridPosition, database.objectsData[selectedObjectIndex].Size, database.objectsData[selectedObjectIndex].ID, index);
 
         previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), false);
     }
 
     private bool CheckPlacementValidity(Vector3Int gridPosition, int selectedObjectIndex)
     {
-        GridData selectedData = database.objectsData[selectedObjectIndex].ID == 0 ?
-            floorData :
-            furnitureData;
+        GridData selectedData = database.objectsData[selectedObjectIndex].ID == -1 ? floorData : furnitureData;
 
         return selectedData.CanPlaceObjectAt(gridPosition, database.objectsData[selectedObjectIndex].Size);
     }
