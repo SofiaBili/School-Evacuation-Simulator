@@ -1916,6 +1916,7 @@ GameObject:
   - component: {fileID: 417590966}
   - component: {fileID: 417590965}
   - component: {fileID: 417590964}
+  - component: {fileID: 417590967}
   m_Layer: 5
   m_Name: "\u03A4\u03B5\u03C1\u03BC\u03B1\u03C4\u03B9\u03BA\u03BF\u03AF \u0394\u03B9\u03AC\u03B4\u03C1\u03BF\u03BC\u03BF\u03B9"
   m_TagString: Untagged
@@ -1989,25 +1990,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 417590967}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2051,6 +2040,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417590962}
   m_CullTransparentMesh: 1
+--- !u!114 &417590967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417590962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962659df2f0a5b0419c62089a9dded08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1664246590}
 --- !u!1 &435282660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2968,6 +2970,7 @@ GameObject:
   - component: {fileID: 618773221}
   - component: {fileID: 618773220}
   - component: {fileID: 618773219}
+  - component: {fileID: 618773222}
   m_Layer: 5
   m_Name: "\u0394\u03B9\u03AC\u03B4\u03C1\u03BF\u03BC\u03BF\u03B9"
   m_TagString: Untagged
@@ -3041,10 +3044,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2104591315}
-        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
-        m_MethodName: StartPlacement
-        m_Mode: 3
+      - m_Target: {fileID: 618773222}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3091,6 +3094,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618773217}
   m_CullTransparentMesh: 1
+--- !u!114 &618773222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618773217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962659df2f0a5b0419c62089a9dded08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 883507625}
 --- !u!1 &622531551
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,6 +3119,7 @@ GameObject:
   - component: {fileID: 622531555}
   - component: {fileID: 622531554}
   - component: {fileID: 622531553}
+  - component: {fileID: 622531556}
   m_Layer: 5
   m_Name: LabRoom Btn
   m_TagString: Untagged
@@ -3176,17 +3193,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1269916532}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 622531556}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &622531554
 MonoBehaviour:
@@ -3226,6 +3243,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622531551}
   m_CullTransparentMesh: 1
+--- !u!114 &622531556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622531551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962659df2f0a5b0419c62089a9dded08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1269916532}
 --- !u!1 &633340835
 GameObject:
   m_ObjectHideFlags: 0
@@ -6487,6 +6517,7 @@ GameObject:
   - component: {fileID: 1490080355}
   - component: {fileID: 1490080354}
   - component: {fileID: 1490080353}
+  - component: {fileID: 1490080356}
   m_Layer: 5
   m_Name: "\u0394\u03B9\u03AC\u03B4\u03C1\u03BF\u03BC\u03BF\u03B9 \u03BC\u03B5 \u03C0\u03CC\u03C1\u03C4\u03B5\u03C2"
   m_TagString: Untagged
@@ -6560,10 +6591,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 87358301}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1490080356}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6610,6 +6641,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490080351}
   m_CullTransparentMesh: 1
+--- !u!114 &1490080356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490080351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962659df2f0a5b0419c62089a9dded08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 87358301}
 --- !u!1 &1490244520
 GameObject:
   m_ObjectHideFlags: 0
@@ -9764,6 +9808,7 @@ GameObject:
   - component: {fileID: 2004671819}
   - component: {fileID: 2004671818}
   - component: {fileID: 2004671817}
+  - component: {fileID: 2004671820}
   m_Layer: 5
   m_Name: TheaterRoom Btn
   m_TagString: Untagged
@@ -9837,25 +9882,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1490244520}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 2004671820}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9899,6 +9932,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004671815}
   m_CullTransparentMesh: 1
+--- !u!114 &2004671820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004671815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962659df2f0a5b0419c62089a9dded08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1490244520}
 --- !u!1 &2021486738
 GameObject:
   m_ObjectHideFlags: 0
@@ -10499,6 +10545,7 @@ GameObject:
   - component: {fileID: 2116161268}
   - component: {fileID: 2116161267}
   - component: {fileID: 2116161266}
+  - component: {fileID: 2116161269}
   m_Layer: 5
   m_Name: "\u03A4\u03B5\u03C1\u03BC\u03B1\u03C4\u03B9\u03BA\u03BF\u03AF \u0394\u03B9\u03AC\u03B4\u03C1\u03BF\u03BC\u03BF\u03B9
     \u03BC\u03B5 \u03C0\u03CC\u03C1\u03C4\u03B5\u03C2"
@@ -10573,10 +10620,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2104591315}
-        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
-        m_MethodName: StartPlacement
-        m_Mode: 3
+      - m_Target: {fileID: 2116161269}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleCanvas
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10623,6 +10670,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116161264}
   m_CullTransparentMesh: 1
+--- !u!114 &2116161269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116161264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962659df2f0a5b0419c62089a9dded08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1507640196}
 --- !u!1 &2132370968
 GameObject:
   m_ObjectHideFlags: 0
