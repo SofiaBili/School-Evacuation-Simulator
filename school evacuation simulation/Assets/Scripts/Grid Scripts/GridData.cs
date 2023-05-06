@@ -2,9 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class GridData
 {
     Dictionary<Vector3Int, PlacementData> placedObjects = new();
+    
+    public static string[,,] schoolMapArray = new string[11,11,2];//10x10x2
+    //ObjectPlacer objectPlacer;
+
     public void AddObjectAt(Vector3Int gridPosition, Vector2Int objectSize, int ID, int placedObjectIndex){
         List<Vector3Int> positionToOccupy = CalculatePosition(gridPosition, objectSize);
         PlacementData data = new PlacementData(positionToOccupy, ID, placedObjectIndex);
@@ -15,6 +20,27 @@ public class GridData
             }
             placedObjects[pos] = data;//assign to each occupied grid pos the data so that it can access it
         }
+    }
+    public void CompeleteMap(ObjectPlacer objectPlacer){
+        int gameObjectIndex = -1;
+        int i=0, j=0;
+        for(int x=4; x>=-5; x--){
+            j=0;
+            for(int y=-5; y<=4; y++){
+                Vector3Int vf = new Vector3Int(x,0,y);
+                if(placedObjects.ContainsKey(vf)){
+                    gameObjectIndex = GetRepresentationIndex(vf);
+                    string roomID = placedObjects[vf].ID.ToString();
+                    string rotation = objectPlacer.TakeObjectRotation(gameObjectIndex).ToString();
+                    schoolMapArray[i,j,0] = roomID + "/" + rotation;
+                    Debug.Log(i);
+                    Debug.Log(j);
+                }
+                j++;
+            }
+            i++;   
+        }
+        SceneManager.LoadScene("FloodDrillScene");
     }
     private List<Vector3Int> CalculatePosition(Vector3Int gridPosition, Vector2Int objectSize){
         List<Vector3Int> returnVal = new();
@@ -39,6 +65,7 @@ public class GridData
     {
         if (placedObjects.ContainsKey(gridPosition) == false)
             return -1;
+            
         return placedObjects[gridPosition].PlacedObjectIndex;
     }
     public void RemoveObjectAt(Vector3Int gridPosition)
@@ -46,6 +73,7 @@ public class GridData
         //remove allthe keys representing the object
         foreach (var pos in placedObjects[gridPosition].occupiedPositions)
         {
+            //Debug.Log(placedObjects[gridPosition].ID);
             placedObjects.Remove(pos);
         }
     }
@@ -56,7 +84,7 @@ public class PlacementData{
     public List<Vector3Int> occupiedPositions;//positions occupied by this obj
     public int ID{get; private set;}
     public int PlacedObjectIndex{get; private set;}
-    //comstractor
+    //constractor
     public PlacementData(List<Vector3Int> occupiedPositions, int iD, int placedObjectIndex){
         this.occupiedPositions = occupiedPositions;
         ID = iD;

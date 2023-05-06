@@ -50,9 +50,11 @@ public class MapCreation : MonoBehaviour
     public List<GameObject> hitboxes = new List<GameObject>();
     public static int hexagonNumber=0;
     public bool isFlood = false;
+    
     void Awake(){
         savedPosition=mapGameObject.transform.position;
-        PlaceRoomsMethod();
+        //PlaceRoomsMethod();
+        PlaceCustomRoomsMethod();
         ShowHitboxes();
     }
 
@@ -116,6 +118,23 @@ public class MapCreation : MonoBehaviour
             }
         }
     }
+    void PlaceCustomRoomsMethod(){
+        for(int x=0; x<10; x++){
+            for(int y=0; y<10; y++){
+                string[] splitArray = GridData.schoolMapArray[x,y,0].Split(char.Parse("/"));
+                if(int.Parse(splitArray[0])==0){
+                    //GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
+                    
+                    RoomName(classRoom,2,x,10,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                }else if(int.Parse(splitArray[0])==6){
+                    //GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
+                    
+                    RoomName(office1,2,x,10,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                }
+            }
+        }
+    }
+
     void PlaceRoomsMethod(){
         //First Floor
         emptyGameObjectPrefab1.name = "First Floor";

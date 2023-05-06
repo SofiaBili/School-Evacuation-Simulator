@@ -32,4 +32,8 @@ public class ObjectPlacer : MonoBehaviour
         Debug.Log(placedGameObjects[gameObjectIndex].transform.GetChild(0));
         placedGameObjects[gameObjectIndex].transform.GetChild(0).transform.Rotate(0.0f, 90f, 0f, Space.World);
     }
+     public int TakeObjectRotation(int gameObjectIndex)
+    {
+        return (int)placedGameObjects[gameObjectIndex].transform.GetChild(0).transform.localEulerAngles.y;
+    }
 }

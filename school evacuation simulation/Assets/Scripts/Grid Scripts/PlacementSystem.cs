@@ -42,6 +42,19 @@ public class PlacementSystem : MonoBehaviour
 		inputManager.OnClicked += PlaceStructure;
 		inputManager.OnExit += StopPlacement;
 	}
+	public void CompleteMap(){
+		StopPlacement();
+		gridVisualization.SetActive(true);
+		CompleteState();
+		inputManager.OnExit += StopPlacement;
+	}
+	
+    public void CompleteState()
+    {
+        Debug.Log("ssssssssss");
+       	GridData selectedData = furnitureData;
+        selectedData.CompeleteMap(objectPlacer);
+    }
 	public void StartRotating(){
 		StopPlacement();
 		gridVisualization.SetActive(true);
