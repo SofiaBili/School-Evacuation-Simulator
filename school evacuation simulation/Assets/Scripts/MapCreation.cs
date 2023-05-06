@@ -124,19 +124,20 @@ public class MapCreation : MonoBehaviour
     bool changeLineFlag = false;
     bool changeRowFlag = false;
     int yflag=1,xflag=0;
+    int roomID;
     for(int x=0; x<10; x++){
         for(int y=0; y<10; y++){
             string[] splitArray = GridData.schoolMapArray[x,y,0].Split(char.Parse("/"));
-            if(int.Parse(splitArray[0])==-1){
+            roomID = int.Parse(splitArray[0]);
+            if(roomID==-1){
                 RoomName(empty,2,xflag,10*yflag,emptyGameObjectPrefab2,0,0f);
             }
-            if(int.Parse(splitArray[0])==0){
+            if(roomID==0){
                 //GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
 
                 RoomName(classRoom,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
-            }else if(int.Parse(splitArray[0])==6){
+            }else if(roomID==6){
                 //GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
-
                 RoomName(office1,2,x,10,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
             }
             if(changeRowFlag){
