@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MapCreation : MonoBehaviour
 {
+    [SerializeField] GameObject empty;
+
     [SerializeField] GameObject theaterRoom1;
     [SerializeField] GameObject theaterRoom2;
     [SerializeField] GameObject stairs;
@@ -119,21 +121,49 @@ public class MapCreation : MonoBehaviour
         }
     }
     void PlaceCustomRoomsMethod(){
-        for(int x=0; x<10; x++){
-            for(int y=0; y<10; y++){
-                string[] splitArray = GridData.schoolMapArray[x,y,0].Split(char.Parse("/"));
-                if(int.Parse(splitArray[0])==0){
-                    //GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
-                    
-                    RoomName(classRoom,2,x,10,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
-                }else if(int.Parse(splitArray[0])==6){
-                    //GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
-                    
-                    RoomName(office1,2,x,10,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+    bool changeLineFlag = false;
+    bool changeRowFlag = false;
+    int yflag=1,xflag=0;
+    for(int x=0; x<10; x++){
+        for(int y=0; y<10; y++){
+            string[] splitArray = GridData.schoolMapArray[x,y,0].Split(char.Parse("/"));
+            if(int.Parse(splitArray[0])==-1){
+                RoomName(empty,2,xflag,10*yflag,emptyGameObjectPrefab2,0,0f);
+            }
+            if(int.Parse(splitArray[0])==0){
+                //GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
+
+                RoomName(classRoom,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+            }else if(int.Parse(splitArray[0])==6){
+                //GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
+
+                RoomName(office1,2,x,10,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+            }
+            if(changeRowFlag){
+                xflag=0;
+                changeRowFlag=false;
+                if(!changeLineFlag){
+                    yflag=1;
+                }
+                else{
+                    yflag=-1;
                 }
             }
+
+        }
+        changeRowFlag=true;
+        yflag=0;
+        xflag=10;
+
+        if(!changeLineFlag){
+            changeLineFlag=true;
+        }
+        else{
+            changeLineFlag=false;
         }
     }
+
+}
 
     void PlaceRoomsMethod(){
         //First Floor

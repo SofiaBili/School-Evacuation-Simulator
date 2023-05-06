@@ -35,6 +35,8 @@ public class GridData
                     schoolMapArray[i,j,0] = roomID + "/" + rotation;
                     Debug.Log(i);
                     Debug.Log(j);
+                }else{
+                    schoolMapArray[i,j,0] = "-1";
                 }
                 j++;
             }
