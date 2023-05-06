@@ -79,6 +79,9 @@ public class GridData
             placedObjects.Remove(pos);
         }
     }
+    public int GetId(Vector3Int gridPosition){
+        return placedObjects[gridPosition].ID;
+    }
 }
 
 
