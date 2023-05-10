@@ -22,16 +22,26 @@ public class PlacementSystem : MonoBehaviour
 
 	IBuildingState buildingState;
 
+	GameObject parentObj;
+	int ID;
+
 	private void Start(){
 		StopPlacement();
 		floorData = new GridData();
 		furnitureData = new GridData();
 		
 	}
-	public void StartPlacement(int ID){
+	public void SplitBtnParameter(string par){
+		string[] splitPar = par.Split('/');
+		ID = int.Parse(splitPar[0]);
+		parentObj = GameObject.Find(splitPar[1]);
+	}
+	public void StartPlacement(string IdAndFloor){
 		StopPlacement();
+		SplitBtnParameter(IdAndFloor);
 		gridVisualization.SetActive(true);
-		buildingState = new PlacementState(ID, grid, preview, database, floorData, furnitureData, objectPlacer);
+		buildingState = new PlacementState(ID, grid, preview, database, floorData, furnitureData, objectPlacer, parentObj);
+		//buildingState.parentObj = parObj;
 		inputManager.OnClicked += PlaceStructure;
 		inputManager.OnExit += StopPlacement;
 	}

@@ -16,7 +16,6 @@ public class ToggleButton : MonoBehaviour
 	public void ToggleCanvas() {
 		state = canvas.activeSelf;
         state = !state;
-		Debug.Log(state);
         canvas.SetActive(state);
         otherCanvas0.SetActive(false);
         otherCanvas1.SetActive(false);

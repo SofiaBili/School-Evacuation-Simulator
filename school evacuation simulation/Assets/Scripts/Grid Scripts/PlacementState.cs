@@ -13,9 +13,11 @@ public class PlacementState : IBuildingState
     GridData floorData;
     GridData furnitureData;
     ObjectPlacer objectPlacer;
+
+    GameObject parentObj;
     //SoundFeedback soundFeedback;
 
-    public PlacementState(int iD, Grid grid, PreviewSystem previewSystem, ObjectsDatabase database, GridData floorData, GridData furnitureData, ObjectPlacer objectPlacer)//, SoundFeedback soundFeedback)
+    public PlacementState(int iD, Grid grid, PreviewSystem previewSystem, ObjectsDatabase database, GridData floorData, GridData furnitureData, ObjectPlacer objectPlacer, GameObject parObj)//, SoundFeedback soundFeedback)
     {
         ID = iD;
         this.grid = grid;
@@ -24,6 +26,7 @@ public class PlacementState : IBuildingState
         this.floorData = floorData;
         this.furnitureData = furnitureData;
         this.objectPlacer = objectPlacer;
+        this.parentObj = parObj;
         //this.soundFeedback = soundFeedback;
 
         selectedObjectIndex = database.objectsData.FindIndex(data => data.ID == ID);
@@ -41,7 +44,6 @@ public class PlacementState : IBuildingState
     {
         previewSystem.StopShowingPreview();
     }
-
 //what happens when we want to create an action on button press
     public void OnAction(Vector3Int gridPosition)
     {
@@ -53,7 +55,7 @@ public class PlacementState : IBuildingState
             return;
         }
         //soundFeedback.PlaySound(SoundType.Place);
-        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPosition));
+        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPosition), parentObj);
 
         GridData selectedData = database.objectsData[selectedObjectIndex].ID == -1 ? floorData : furnitureData;
         selectedData.AddObjectAt(gridPosition, database.objectsData[selectedObjectIndex].Size, database.objectsData[selectedObjectIndex].ID, index);
