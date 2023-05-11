@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 public class GridData
 {
     Dictionary<Vector3Int, PlacementData> placedObjects = new();
@@ -24,7 +25,7 @@ public class GridData
     public void CompeleteMap(ObjectPlacer objectPlacer){
         int gameObjectIndex = -1;
         int i=0, j=0;
-        for(int x=4; x>=-5; x--){
+        for(int x=-5; x<=4; x++){
             j=0;
             for(int y=-5; y<=4; y++){
                 Vector3Int vf = new Vector3Int(x,0,y);
@@ -43,6 +44,10 @@ public class GridData
             i++;   
         }
         SceneManager.LoadScene("FloodDrillScene");
+        Save();
+    }
+    private void Save(){
+        File.WriteAllText(Application.dataPath+"/save.txt","test");
     }
     private List<Vector3Int> CalculatePosition(Vector3Int gridPosition, Vector2Int objectSize){
         List<Vector3Int> returnVal = new();

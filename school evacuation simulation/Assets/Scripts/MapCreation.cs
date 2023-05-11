@@ -177,7 +177,7 @@ public class MapCreation : MonoBehaviour
             }else if(roomID==28){
                 RoomName(corridorEndWall,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
             }else if(roomID==29){
-                //RoomName(corridorBothWalls,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                RoomName(corridorBothWallsLeftDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
             }else if(roomID==30){
                 RoomName(corridorLeftWallDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
             }else if(roomID==31){
