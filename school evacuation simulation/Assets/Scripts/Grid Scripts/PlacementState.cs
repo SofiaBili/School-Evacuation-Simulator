@@ -51,6 +51,7 @@ public class PlacementState : IBuildingState
         bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
         if (placementValidity == false)
         {
+            SpeachText.instance.SetAndShowPanel("Δεν μπορείς να τοποθετήσεις αυτό το αντικείμενο εδώ");
           //  soundFeedback.PlaySound(SoundType.wrongPlacement);
             return;
         }

@@ -11,6 +11,8 @@ public class RotatingState : IBuildingState
     GridData floorData;
     GridData furnitureData;
     ObjectPlacer objectPlacer;
+
+    public string message;
     //SoundFeedback soundFeedback; 
 
     public RotatingState(Grid grid,  PreviewSystem previewSystem, GridData floorData, GridData furnitureData, ObjectPlacer objectPlacer)//, SoundFeedback soundFeedback)
@@ -54,11 +56,15 @@ public class RotatingState : IBuildingState
             if (gameObjectIndex == -1)
                 return;
             //if room is lab
-            if (furnitureData.GetId(gridPosition) == 1 || furnitureData.GetId(gridPosition) == 2 || furnitureData.GetId(gridPosition) == 3 || furnitureData.GetId(gridPosition) == 4)
+            if (furnitureData.GetId(gridPosition) == 1 || furnitureData.GetId(gridPosition) == 2 || furnitureData.GetId(gridPosition) == 3 || furnitureData.GetId(gridPosition) == 4){
+                SpeachText.instance.SetAndShowPanel("Αυτό το αντικείμενο δεν περιστρέφεται");
                 return;
+            }
             //if room is theater
-            if (furnitureData.GetId(gridPosition) == 5 || furnitureData.GetId(gridPosition) == 10 || furnitureData.GetId(gridPosition) == 11 || furnitureData.GetId(gridPosition) == 12)
+            if (furnitureData.GetId(gridPosition) == 5 || furnitureData.GetId(gridPosition) == 10 || furnitureData.GetId(gridPosition) == 11 || furnitureData.GetId(gridPosition) == 12){
+                SpeachText.instance.SetAndShowPanel("Αυτό το αντικείμενο δεν περιστρέφεται");
                 return;
+            }
             //rotate the object
             Debug.Log("LLLLLLLLL"+furnitureData.GetId(gridPosition));
             objectPlacer.RotateObjectAt(gameObjectIndex);
