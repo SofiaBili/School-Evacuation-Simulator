@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.IO;
 
 public class PlacementSystem : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class PlacementSystem : MonoBehaviour
 	int ID;
 
 	private void Start(){
+        if(File.Exists(Application.dataPath + "/save.txt")){
+            File.Delete (Application.dataPath + "/save.txt");
+        }
 		StopPlacement();
 		floorData = new GridData();
 		furnitureData = new GridData();
@@ -52,18 +56,18 @@ public class PlacementSystem : MonoBehaviour
 		inputManager.OnClicked += PlaceStructure;
 		inputManager.OnExit += StopPlacement;
 	}
-	public void CompleteMap(){
+	public void CompleteMap(int floor){
 		StopPlacement();
 		gridVisualization.SetActive(true);
-		CompleteState();
+		CompleteState(floor);
 		inputManager.OnExit += StopPlacement;
 	}
 	
-    public void CompleteState()
+    public void CompleteState(int floor)
     {
-        Debug.Log("ssssssssss");
+		Debug.Log(floor);
        	GridData selectedData = furnitureData;
-        selectedData.CompeleteMap(objectPlacer);
+        selectedData.CompeleteMap(objectPlacer, floor);
     }
 	public void StartRotating(){
 		StopPlacement();

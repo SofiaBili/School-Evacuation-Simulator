@@ -22,7 +22,7 @@ public class GridData
             placedObjects[pos] = data;//assign to each occupied grid pos the data so that it can access it
         }
     }
-    public void CompeleteMap(ObjectPlacer objectPlacer){
+    public void CompeleteMap(ObjectPlacer objectPlacer, int floor){
         int gameObjectIndex = -1;
         int i=0, j=0;
         for(int x=-5; x<=4; x++){
@@ -33,21 +33,29 @@ public class GridData
                     gameObjectIndex = GetRepresentationIndex(vf);
                     string roomID = placedObjects[vf].ID.ToString();
                     string rotation = objectPlacer.TakeObjectRotation(gameObjectIndex).ToString();
-                    schoolMapArray[i,j,0] = roomID + "/" + rotation;
-                    Debug.Log(i);
-                    Debug.Log(j);
+                    schoolMapArray[i,j,floor] = roomID + "/" + rotation+"/"+floor;
+                    //Debug.Log(i);
+                    //Debug.Log(j);
                 }else{
-                    schoolMapArray[i,j,0] = "-1";
+                    schoolMapArray[i,j,floor] = "-1/0/"+floor;
                 }
                 j++;
             }
             i++;   
         }
+        Save(floor);
         SceneManager.LoadScene("FloodDrillScene");
-        Save();
     }
-    private void Save(){
-        File.WriteAllText(Application.dataPath+"/save.txt","test");
+    private void Save(int floor){
+        string saveData = null;
+        for(int i=0; i<10; i++){
+            for(int j=0; j<10; j++){
+                saveData += schoolMapArray[i,j,floor]+"#";
+                //Debug.Log(saveData);
+            }
+        }
+        if(!String.IsNullOrEmpty(saveData))
+            File.AppendAllText(Application.dataPath+"/save.txt",saveData);
     }
     private List<Vector3Int> CalculatePosition(Vector3Int gridPosition, Vector2Int objectSize){
         List<Vector3Int> returnVal = new();
