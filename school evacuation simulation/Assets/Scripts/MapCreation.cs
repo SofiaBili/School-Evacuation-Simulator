@@ -140,7 +140,7 @@ public class MapCreation : MonoBehaviour
                 }else{
                     x++; y=0;
                 }
-                    Debug.Log("   x="+x+"    y="+y);
+                   // Debug.Log("   x="+x+"    y="+y);
             }else{
                 schoolMapArray[k,l,1] = splitAtHashtag[i];
                 if(l<9){
@@ -148,7 +148,7 @@ public class MapCreation : MonoBehaviour
                 }else{
                     k++; l=0;
                 }
-                    Debug.Log("l="+l+"    k="+k);
+                   // Debug.Log("l="+l+"    k="+k);
             }
         }
         Debug.Log("l="+l+"    k="+k +"   x="+x+"    y="+y);
@@ -178,6 +178,7 @@ public class MapCreation : MonoBehaviour
         int yflag,xflag;
         int roomID;
         string[] splitArray;
+        bool labroom0Flag = true, labroom90Flag = true;
         LoadFile();
         Debug.Log(schoolMapArray.GetLength(0));
         Debug.Log(schoolMapArray.GetLength(1));
@@ -199,12 +200,28 @@ public class MapCreation : MonoBehaviour
                         splitArray = schoolMapArray[x,9-y,f].Split(char.Parse("/"));
                     }
                     roomID = int.Parse(splitArray[0]);
-
                     if(roomID==-1){
                         RoomName(empty,2,xflag,10*yflag,emptyGameObjectPrefab2,0,0f);
-                    }
-                    if(roomID==0){
+                    }else if(roomID==0){
                         RoomName(classRoom,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==1){
+                        RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==-2){
+                        RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==2){
+                        RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
+                    }else if(roomID==-3){
+                        RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
+                        labroom90Flag=true;
+                    }else if(roomID==3){
+                        RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==-4){
+                        RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==4){
+                        RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
+                    }else if(roomID==-5){
+                        RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
+                        labroom90Flag=true;
                     }else if(roomID==7){
                         RoomName(wc,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
                     }else if(roomID==8){

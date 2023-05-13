@@ -25,6 +25,7 @@ public class GridData
     public void CompeleteMap(ObjectPlacer objectPlacer, int floor){
         int gameObjectIndex = -1;
         int i=0, j=0;
+        string o;
         for(int x=-5; x<=4; x++){
             j=0;
             for(int y=-5; y<=4; y++){
@@ -33,7 +34,21 @@ public class GridData
                     gameObjectIndex = GetRepresentationIndex(vf);
                     string roomID = placedObjects[vf].ID.ToString();
                     string rotation = objectPlacer.TakeObjectRotation(gameObjectIndex).ToString();
-                    schoolMapArray[i,j,floor] = roomID + "/" + rotation+"/"+floor;
+                    if(schoolMapArray[i,j,floor]==null){
+                        schoolMapArray[i,j,floor] = roomID + "/" + rotation+"/"+floor;
+                        /*if(roomID=="1"){
+                            o="1/0/"+floor;
+                            if(j>0){
+                                if(schoolMapArray[i-1,j,floor] ==o){
+                                    schoolMapArray[i,j,floor] ="-2/0/"+floor;
+                                }
+                            }
+                        }*/
+                        if(roomID=="1"){roomID="-2"; schoolMapArray[i+1,j,floor] = roomID + "/" + rotation+"/"+floor;}
+                        if(roomID=="2"){roomID="-3"; schoolMapArray[i,j+1,floor] = roomID + "/" + rotation+"/"+floor;}
+                        if(roomID=="3"){roomID="-4"; schoolMapArray[i+1,j,floor] = roomID + "/" + rotation+"/"+floor;}
+                        if(roomID=="4"){roomID="-5"; schoolMapArray[i,j+1,floor] = roomID + "/" + rotation+"/"+floor;}
+                    }
                     //Debug.Log(i);
                     //Debug.Log(j);
                 }else{
