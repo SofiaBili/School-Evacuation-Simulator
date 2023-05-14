@@ -236,6 +236,8 @@ public class MapCreation : MonoBehaviour
                         RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
                     }else if(roomID==-13){
                         RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
+                    }else if(roomID==6){
+                        RoomName(office3,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
                     }else if(roomID==7){
                         RoomName(wc,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
                     }else if(roomID==8){
