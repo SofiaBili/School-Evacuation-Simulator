@@ -212,7 +212,6 @@ public class MapCreation : MonoBehaviour
                         RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
                     }else if(roomID==-3){
                         RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
-                        labroom90Flag=true;
                     }else if(roomID==3){
                         RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
                     }else if(roomID==-4){
@@ -221,7 +220,22 @@ public class MapCreation : MonoBehaviour
                         RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
                     }else if(roomID==-5){
                         RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
-                        labroom90Flag=true;
+                    }else if(roomID==5){
+                        RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==-6){
+                        RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==10){
+                        RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
+                    }else if(roomID==-11){
+                        RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
+                    }else if(roomID==11){
+                        RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==-12){
+                        RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==12){
+                        RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
+                    }else if(roomID==-13){
+                        RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
                     }else if(roomID==7){
                         RoomName(wc,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
                     }else if(roomID==8){
