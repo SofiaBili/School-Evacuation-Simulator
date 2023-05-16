@@ -67,7 +67,8 @@ public class PlacementSystem : MonoBehaviour
     {
 		Debug.Log(floor);
        	GridData selectedData = furnitureData;
-        selectedData.CompeleteMap(objectPlacer, floor);
+		if(selectedData!=null)
+        	selectedData.CompeleteMap(objectPlacer, floor);
     }
 	public void StartRotating(){
 		StopPlacement();

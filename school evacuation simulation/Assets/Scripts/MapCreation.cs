@@ -59,8 +59,8 @@ public class MapCreation : MonoBehaviour
 
     void Awake(){
         savedPosition=mapGameObject.transform.position;
-        //PlaceRoomsMethod();
-        PlaceCustomRoomsMethod();
+        PlaceRoomsMethod();
+        //PlaceCustomRoomsMethod();
         ShowHitboxes();
     }
 
@@ -313,7 +313,7 @@ public class MapCreation : MonoBehaviour
         emptyGameObjectPrefab2.name = "Second Floor";
         RoomName(classRoom,2,0,-10,emptyGameObjectPrefab2,90,-5.001f);
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,90,0);
-        RoomName(informatics,0,0,30,emptyGameObjectPrefab2);
+        RoomName(informatics,2,0,30,emptyGameObjectPrefab2,90);
         RoomName(classRoom,2,0,20,emptyGameObjectPrefab2,90,0);
         RoomName(wc,2,0,10,emptyGameObjectPrefab2,90);
 
