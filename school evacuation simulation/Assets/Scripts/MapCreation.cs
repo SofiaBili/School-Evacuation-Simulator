@@ -59,8 +59,8 @@ public class MapCreation : MonoBehaviour
 
     void Awake(){
         savedPosition=mapGameObject.transform.position;
-        PlaceRoomsMethod();
-        //PlaceCustomRoomsMethod();
+        //PlaceRoomsMethod();
+        PlaceCustomRoomsMethod();
         ShowHitboxes();
     }
 
@@ -254,6 +254,8 @@ public class MapCreation : MonoBehaviour
                         RoomName(corridorLeftWallDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
                     }else if(roomID==31){
                         RoomName(corridorLeftWall,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                    }else if(roomID==32){
+                        RoomName(informatics,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
                     }
                     if(changeRowFlag){
                         //empty room to go one right and one pos above grid
