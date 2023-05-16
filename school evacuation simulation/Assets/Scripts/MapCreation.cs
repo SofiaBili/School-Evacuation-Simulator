@@ -59,8 +59,8 @@ public class MapCreation : MonoBehaviour
 
     void Awake(){
         savedPosition=mapGameObject.transform.position;
-        //PlaceRoomsMethod();
-        PlaceCustomRoomsMethod();
+        PlaceRoomsMethod();
+        //PlaceCustomRoomsMethod();
         ShowHitboxes();
     }
 
@@ -140,7 +140,6 @@ public class MapCreation : MonoBehaviour
                 }else{
                     x++; y=0;
                 }
-                   // Debug.Log("   x="+x+"    y="+y);
             }else{
                 schoolMapArray[k,l,1] = splitAtHashtag[i];
                 if(l<9){
@@ -148,29 +147,8 @@ public class MapCreation : MonoBehaviour
                 }else{
                     k++; l=0;
                 }
-                   // Debug.Log("l="+l+"    k="+k);
             }
         }
-        Debug.Log("l="+l+"    k="+k +"   x="+x+"    y="+y);
-        //for(int i=0; i<splitAtHashtag.Length-1; i++){//-1 because last # is empty
-            /*if(int.Parse(splitAtHashtag[i].Split(char.Parse("/"))[2]) == 0){
-                Debug.Log(splitAtHashtag[i]);
-                schoolMapArray[x,y,0] = splitAtHashtag[i];
-                x++;y++;
-            }else{
-                schoolMapArray[k,l,1] = splitAtHashtag[i];
-                k++;l++;
-            }*/
-        //}
-       /* while(int.Parse(splitAtHashtag[i].Split(char.Parse("/"))[2]) == 0){
-            for(int x=0; x<10; x++){
-                for(int y=0; y<10; y++){
-                    schoolMapArray[x,y,0] = splitAtHashtag.Split(char.Parse("/"));
-                }
-            }
-        //Debug.Log(saveString);
-            i++;
-        }*/
     }
     void PlaceCustomRoomsMethod(){
         bool changeLineFlag = false;
@@ -182,12 +160,6 @@ public class MapCreation : MonoBehaviour
         LoadFile();
         Debug.Log(schoolMapArray.GetLength(0));
         Debug.Log(schoolMapArray.GetLength(1));
-        /*for(int x=0; x<schoolMapArray.GetLength(0)-1; x++){
-            for(int y=0; y<schoolMapArray.GetLength(1)-1; y++){
-                splitArray = schoolMapArray[x,y,0].Split(char.Parse("/"));
-                Debug.Log(schoolMapArray[x,y,0]);
-            }
-        }*/
         for(int f=0; f<2; f++){
             yflag=1; xflag=0;
             for(int x=0; x<schoolMapArray.GetLength(0)-1; x++){
@@ -317,7 +289,7 @@ public class MapCreation : MonoBehaviour
         //First Floor
         emptyGameObjectPrefab1.name = "First Floor";
         RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
-        RoomName(corridorLeftWallDoor,2,0,10,emptyGameObjectPrefab1,90);
+        RoomName(corridorLeftWallDoor,2,0,10,emptyGameObjectPrefab1,-90);
         RoomName(corridorLeftWall,2,0,10,emptyGameObjectPrefab1,90);
         RoomName(office1,0,0,10,emptyGameObjectPrefab1);
         RoomName(office2,0,0,10,emptyGameObjectPrefab1);
@@ -327,12 +299,12 @@ public class MapCreation : MonoBehaviour
         RoomName(labRoom2,2,10,0,emptyGameObjectPrefab1,270.0f);
         RoomName(labRoom1,2,0,-10,emptyGameObjectPrefab1,270.0f);
         
-        RoomName(wc,0,-20,10,emptyGameObjectPrefab1);
+        RoomName(wc,2,-20,10,emptyGameObjectPrefab1,90f);
         RoomName(classRoom,2,0,-10,emptyGameObjectPrefab1,90.0f);
-        RoomName(office3,0,0,-10,emptyGameObjectPrefab1);
+        RoomName(office3,2,0,-10,emptyGameObjectPrefab1,90f);
         RoomName(office4,0,0,-10,emptyGameObjectPrefab1);
-        RoomName(elevator,2,0,-10,emptyGameObjectPrefab1,180);
-        RoomName(stairs,2,0,-10,emptyGameObjectPrefab1,270);
+        RoomName(elevator,2,0,-10,emptyGameObjectPrefab1,90);
+        RoomName(stairs,2,0,-10,emptyGameObjectPrefab1,90);
         RoomName(theaterRoom2,0,0,-10,emptyGameObjectPrefab1);
         
         //Second Floor
@@ -341,16 +313,16 @@ public class MapCreation : MonoBehaviour
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,90,0);
         RoomName(informatics,0,0,30,emptyGameObjectPrefab2);
         RoomName(classRoom,2,0,20,emptyGameObjectPrefab2,90,0);
-        RoomName(wc,0,0,10,emptyGameObjectPrefab2);
+        RoomName(wc,2,0,10,emptyGameObjectPrefab2,90);
 
-        RoomName(corridorEndWall,2,10,0,emptyGameObjectPrefab2,90,0);
+        RoomName(corridorEndWall,2,10,0,emptyGameObjectPrefab2,180,0);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90,0);
         RoomName(corridorRightWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorLeftWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
-        RoomName(corridorEndWall,2,0,-10,emptyGameObjectPrefab2,270);
+        RoomName(corridorEndWall,2,0,-10,emptyGameObjectPrefab2,0);
 
         RoomName(classRoom,2,10,0,emptyGameObjectPrefab2,-90,0);
         RoomName(classRoom,2,0,10,emptyGameObjectPrefab2,-90,0);
