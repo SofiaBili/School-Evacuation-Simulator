@@ -59,8 +59,8 @@ public class MapCreation : MonoBehaviour
 
     void Awake(){
         savedPosition=mapGameObject.transform.position;
-        PlaceRoomsMethod();
-        //PlaceCustomRoomsMethod();
+        //PlaceRoomsMethod();
+        PlaceCustomRoomsMethod();
         ShowHitboxes();
     }
 
