@@ -73,7 +73,6 @@ public class StartQuestionProcedureScript : MonoBehaviour
             if(deleteHexagonFlag){
                 mapCreationScript.SetHexagonNumber(mapCreationScript.GetHexagonNumber()-1);
                 if(!fillBarScript.ShowWinningCanvas() && mapCreationScript.GetHexagonNumber() == 0){
-                    Debug.Log("jjjjjjjjjj");
                     fillBarScript.ShowLosingCanvas();
                 }
                 yield return new WaitForSeconds (0.01f);

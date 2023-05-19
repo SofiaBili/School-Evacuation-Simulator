@@ -46,5 +46,8 @@ public class TimerScript : MonoBehaviour
     public void StopTimer(){
         stopTimer = true;
     }
+    public void SetTimer(float val){
+        timerValue = val;
+    }
 
 }
