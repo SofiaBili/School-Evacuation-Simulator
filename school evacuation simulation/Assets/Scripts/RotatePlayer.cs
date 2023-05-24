@@ -11,6 +11,7 @@ public class RotatePlayer:MonoBehaviour {
     public bool cameraBoardGirl;
     public Transform playerBody;
     float xRotation = 0f;
+    public float zRotation = 63f;
     Vector3 startLocation;
 
     void Update() {
@@ -34,7 +35,7 @@ public class RotatePlayer:MonoBehaviour {
             Y = Input.GetAxis("Mouse Y") * speed*Time.deltaTime;
             xRotation -= Y;
 
-            xRotation = Mathf.Clamp(xRotation, -90f, 63f);
+            xRotation = Mathf.Clamp(xRotation, -90f, zRotation);
 
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up*X);

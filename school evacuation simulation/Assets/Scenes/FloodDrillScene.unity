@@ -23518,6 +23518,7 @@ MonoBehaviour:
   cameraBoardBoy: 0
   cameraBoardGirl: 1
   playerBody: {fileID: 940915790}
+  zRotation: 63
 --- !u!114 &1598214327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32854,6 +32855,10 @@ PrefabInstance:
     - target: {fileID: 878041134750646981, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 878041134750646982, guid: def918d0812a8804e94a992be7d856db, type: 3}
+      propertyPath: zRotation
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 878041134757436068, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: m_Camera
