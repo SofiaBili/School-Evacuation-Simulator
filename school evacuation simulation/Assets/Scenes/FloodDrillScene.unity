@@ -1791,7 +1791,6 @@ GameObject:
   - component: {fileID: 142782061}
   - component: {fileID: 142782060}
   - component: {fileID: 142782059}
-  - component: {fileID: 142782058}
   m_Layer: 15
   m_Name: Multiple Choise Questions Canvas
   m_TagString: Untagged
@@ -1825,131 +1824,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &142782058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142782056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100ca2df3561f6f4887f32dae4f1ec2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questions:
-  - question: "\u0391\u03BD \u03B2\u03C1\u03B9\u03C3\u03BA\u03CC\u03BC\u03B1\u03C3\u03C4\u03B5
-      \u03C3\u03B5 \u03B1\u03BD\u03BF\u03B9\u03C7\u03C4\u03CC \u03C7\u03CE\u03C1\u03BF
-      \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9:"
-    ans1: "\u0394\u03B5\u03BD \u03C7\u03C1\u03B5\u03B9\u03AC\u03B6\u03B5\u03C4\u03B1\u03B9
-      \u03BD\u03B1 \u03BA\u03AC\u03BD\u03BF\u03C5\u03BC\u03B5 \u03BA\u03AC\u03C4\u03B9,
-      \u03B5\u03AF\u03BC\u03B1\u03C3\u03C4\u03B5 \u03B1\u03C3\u03C6\u03B1\u03BB\u03B5\u03AF\u03C2."
-    ans2: "\u039D\u03B1 \u03C0\u03C1\u03BF\u03C3\u03AD\u03C7\u03BF\u03C5\u03BC\u03B5
-      \u03C4\u03B1 \u03B7\u03BB\u03B5\u03BA\u03C4\u03C1\u03BF\u03C6\u03CC\u03C1\u03B1
-      \u03BA\u03B1\u03BB\u03CE\u03B4\u03B9\u03B1."
-    ans3: "\u039D\u03B1 \u03C0\u03AC\u03BC\u03B5 \u03C3\u03B5 \u03BA\u03BB\u03B5\u03B9\u03C3\u03C4\u03CC
-      \u03C7\u03CE\u03C1\u03BF."
-    corrAns: 1
-  - question: "\u0391\u03BD \u03B2\u03C1\u03B9\u03C3\u03BA\u03CC\u03BC\u03B1\u03C3\u03C4\u03B5
-      \u03BC\u03AD\u03C3\u03B1 \u03C3\u03B5 \u03BA\u03C4\u03AF\u03C1\u03B9\u03BF
-      \u03C3\u03B5 \u03C0\u03B5\u03C1\u03AF\u03C0\u03C4\u03C9\u03C3\u03B7 \u03C0\u03BB\u03B7\u03BC\u03BC\u03CD\u03C1\u03B1\u03C2
-      \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9:"
-    ans1: "\u039D\u03B1 \u03C0\u03AC\u03BC\u03B5 \u03C3\u03B5 \u03C5\u03C0\u03CC\u03B3\u03B5\u03B9\u03BF
-      \u03C7\u03CE\u03C1\u03BF."
-    ans2: "\u039D\u03B1 \u03BC\u03B5\u03C4\u03B1\u03BA\u03B9\u03BD\u03B7\u03B8\u03BF\u03CD\u03BC\u03B5
-      \u03C3\u03B5 \u03B1\u03C3\u03C6\u03B1\u03BB\u03AD\u03C2 \u03C5\u03C8\u03B7\u03BB\u03CC
-      \u03C3\u03B7\u03BC\u03B5\u03AF\u03BF \u03BA\u03B1\u03B9 \u03BD\u03B1 \u03C6\u03CD\u03B3\u03BF\u03C5\u03BC\u03B5
-      \u03B1\u03C0\u03CC \u03C5\u03C0\u03CC\u03B3\u03B5\u03B9\u03BF\u03C5\u03C2 \u03C7\u03CE\u03C1\u03BF\u03C5\u03C2."
-    ans3: "\u039D\u03B1 \u03BC\u03B5\u03AF\u03BD\u03BF\u03C5\u03BC\u03B5 \u03C3\u03C4\u03B1\u03B8\u03B5\u03C1\u03BF\u03AF."
-    corrAns: 1
-  - question: "\u0397\u202F\u03BA\u03BB\u03B9\u03BC\u03B1\u03C4\u03B9\u03BA\u03AE\u202F\u03B1\u03BB\u03BB\u03B1\u03B3\u03AE\u202F\u03AD\u03C7\u03B5\u03B9\u202F\u03C3\u03C7\u03AD\u03C3\u03B7:\u202F"
-    ans1: "\u039C\u03B5\u202F\u03C4\u03B9\u03C2\u202F\u03B1\u03BD\u03B8\u03C1\u03CE\u03C0\u03B9\u03BD\u03B5\u03C2\u202F\u03B4\u03C1\u03B1\u03C3\u03C4\u03B7\u03C1\u03B9\u03CC\u03C4\u03B7\u03C4\u03B5\u03C2"
-    ans2: "\u039C\u03B5\u202F\u03C4\u03B7\u202F\u03C3\u03C7\u03BF\u03BB\u03B9\u03BA\u03AE\u202F\u03B5\u03BA\u03C0\u03B1\u03AF\u03B4\u03B5\u03C5\u03C3\u03B7"
-    ans3: "\u039C\u03B5 \u03C4\u03AF\u03C0\u03BF\u03C4\u03B1 \u03B1\u03C0\u03CC \u03C4\u03B1
-      \u03C0\u03B1\u03C1\u03B1\u03C0\u03AC\u03BD\u03C9"
-    corrAns: 0
-  - question: "\u03A4\u03B9\u202F\u03B1\u03C6\u03BF\u03C1\u03AC\u202F\u03C4\u03BF\u202F\u03C6\u03B1\u03B9\u03BD\u03CC\u03BC\u03B5\u03BD\u03BF\u202F\u03C4\u03BF\u03C5\u202F\u03B8\u03B5\u03C1\u03BC\u03BF\u03BA\u03B7\u03C0\u03AF\u03BF\u03C5\u202F;\u202F\u202F"
-    ans1: "\u0388\u03BD\u03B1 \u03C6\u03B1\u03B9\u03BD\u03CC\u03BC\u03B5\u03BD\u03BF\u202F\u03C0\u03BF\u03C5\u202F\u03B1\u03C6\u03BF\u03C1\u03AC\u202F\u03C4\u03BF\u03C5\u03C2\u202F\u03B8\u03B5\u03C1\u03BC\u03BF\u03CD\u03C2\u202F\u03BA\u03AE\u03C0\u03BF\u03C5\u03C2"
-    ans2: "\u03A3\u03C5\u03BC\u03B2\u03AC\u03BB\u03BB\u03B5\u03B9\u202F\u03C3\u03C4\u03B7\u03BD\u202F\u03B1\u03CD\u03BE\u03B7\u03C3\u03B7\u202F\u03C4\u03B7\u03C2\u202F\u03B8\u03B5\u03C1\u03BC\u03BF\u03BA\u03C1\u03B1\u03C3\u03AF\u03B1\u03C2\u202F\u03C4\u03B7\u03C2\u202F\u03B1\u03C4\u03BC\u03CC\u03C3\u03C6\u03B1\u03B9\u03C1\u03B1\u03C2
-      \u03C0\u03BF\u03C5\u202F\u03C0\u03BB\u03AE\u03C4\u03C4\u03B5\u03B9\u202F\u03C4\u03BF\u202F\u03BA\u03BB\u03AF\u03BC\u03B1
-      \u03BA\u03B1\u03B9\u202F\u03C4\u03BF\u202F\u03C0\u03B5\u03C1\u03B9\u03B2\u03AC\u03BB\u03BB\u03BF\u03BD."
-    ans3: "\u03A4\u03B7\u03BD\u202F\u03C0\u03B1\u03C1\u03B1\u03B3\u03C9\u03B3\u03AE\u202F\u03C6\u03C1\u03BF\u03CD\u03C4\u03C9\u03BD\u202F\u03BA\u03B1\u03B9
-      \u03BB\u03B1\u03C7\u03B1\u03BD\u03B9\u03BA\u03CE\u03BD\u202F\u03C3\u03C4\u03B1\u202F\u03B8\u03B5\u03C1\u03BC\u03BF\u03BA\u03AE\u03C0\u03B9\u03B1 "
-    corrAns: 1
-  - question: "\u03A0\u03BF\u03B9\u03B1 \u03B1\u03C0\u03CC \u03C4\u03B1 \u03C0\u03B9\u03BF\u202F\u03BA\u03AC\u03C4\u03C9\u202F\u03C6\u03B1\u03B9\u03BD\u03CC\u03BC\u03B5\u03BD\u03B1\u202F\u03C3\u03C5\u03BD\u03B4\u03AD\u03BF\u03BD\u03C4\u03B1\u03B9\u202F\u03BC\u03B5\u202F\u03C4\u03B7\u03BD\u202F\u03BA\u03BB\u03B9\u03BC\u03B1\u03C4\u03B9\u03BA\u03AE\u202F\u03B1\u03BB\u03BB\u03B1\u03B3\u03AE:"
-    ans1: "\u0397 \u03C0\u03B5\u03C1\u03B9\u03B2\u03B1\u03BB\u03BB\u03BF\u03BD\u03C4\u03B9\u03BA\u03AE\u202F\u03B5\u03BA\u03C0\u03B1\u03AF\u03B4\u03B5\u03C5\u03C3\u03B7"
-    ans2: "\u0397\u202F\u03B5\u03BE\u03AD\u03BB\u03B9\u03BE\u03B7\u202F\u03C4\u03C9\u03BD\u202F\u03B5\u03B9\u03B4\u03CE\u03BD"
-    ans3: "\u03A4\u03BF\u202F\u03BB\u03B9\u03CE\u03C3\u03B9\u03BC\u03BF\u202F\u03C4\u03C9\u03BD\u202F\u03C0\u03AC\u03B3\u03C9\u03BD,
-      \u03B7 \u03B1\u03CD\u03BE\u03B7\u03C3\u03B7\u202F\u03C4\u03B7\u03C2\u202F\u03C3\u03C4\u03AC\u03B8\u03BC\u03B7\u03C2\u202F\u03C4\u03C9\u03BD\u202F\u03C5\u03B4\u03AC\u03C4\u03C9\u03BD\u202F
-      \u03BA\u03B1\u03B9 \u03C4\u03B1 \u03C0\u03B9\u03BF\u202F\u03AD\u03BD\u03C4\u03BF\u03BD\u03B1\u202F\u03BA\u03BB\u03B9\u03BC\u03B1\u03C4\u03B9\u03BA\u03AC\u202F\u03C6\u03B1\u03B9\u03BD\u03CC\u03BC\u03B5\u03BD\u03B1"
-    corrAns: 2
-  - question: "\u03A0\u03BF\u03B9\u03BF\u03B9\u202F\u03C0\u03B1\u03C1\u03AC\u03B3\u03BF\u03BD\u03C4\u03B5\u03C2\u202F\u03C3\u03C5\u03BC\u03B2\u03AC\u03BB\u03BB\u03BF\u03C5\u03BD\u202F\u03C3\u03C4\u03B7\u202F\u03B4\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1\u202F\u03C4\u03BF\u03C5\u202F\u03C6\u03B1\u03B9\u03BD\u03BF\u03BC\u03AD\u03BD\u03BF\u03C5\u202F
-      \u03C4\u03BF\u03C5\u202F\u03B8\u03B5\u03C1\u03BC\u03BF\u03BA\u03B7\u03C0\u03AF\u03BF\u03C5
-      ;"
-    ans1: "\u0397\u202F\u03BD\u03BF\u03BC\u03BF\u03B8\u03B5\u03C3\u03AF\u03B1 \u03C0\u03BF\u03C5\u202F\u03C0\u03C1\u03BF\u03C9\u03B8\u03B5\u03AF\u03C4\u03B1\u03B9\u202F\u03C3\u03B5\u202F\u03B4\u03B9\u03B5\u03B8\u03BD\u03AD\u03C2\u202F\u03B5\u03C0\u03AF\u03C0\u03B5\u03B4\u03BF\u202F\u03B3\u03B9\u03B1\u202F
-      \u03C4\u03B7\u03BD\u202F\u03C0\u03C1\u03BF\u03C3\u03C4\u03B1\u03C3\u03AF\u03B1\u202F\u03C4\u03BF\u03C5\u202F\u03C0\u03B5\u03C1\u03B9\u03B2\u03AC\u03BB\u03BB\u03BF\u03BD\u03C4\u03BF\u03C2 "
-    ans2: "\u0397 \u03B1\u03B3\u03C1\u03BF\u03C4\u03B9\u03BA\u03AE\u202F\u03C0\u03B1\u03C1\u03B1\u03B3\u03C9\u03B3\u03AE\u202F\u03C3\u03C4\u03B1\u202F\u03B8\u03B5\u03C1\u03BC\u03BF\u03BA\u03AE\u03C0\u03B9\u03B1"
-    ans3: "\u039F\u03B9\u202F\u03B1\u03AD\u03C1\u03B9\u03BF\u03B9\u202F\u03C1\u03CD\u03C0\u03BF\u03B9\u202F\u03C0\u03BF\u03C5\u202F\u03B1\u03C5\u03BE\u03AC\u03BD\u03BF\u03C5\u03BD\u202F\u03C4\u03B7\u202F\u03B8\u03B5\u03C1\u03BC\u03BF\u03BA\u03C1\u03B1\u03C3\u03AF\u03B1\u202F\u03C4\u03B7\u03C2\u202F
-      \u03B1\u03C4\u03BC\u03CC\u03C3\u03C6\u03B1\u03B9\u03C1\u03B1\u03C2 \u03C0\u03BB\u03AE\u03C4\u03C4\u03BF\u03BD\u03C4\u03B1\u03C2\u202F\u03C4\u03BF\u202F\u03BA\u03BB\u03AF\u03BC\u03B1
-      \u03BA\u03B1\u03B9\u202F\u03C4\u03BF\u202F\u03C0\u03B5\u03C1\u03B9\u03B2\u03AC\u03BB\u03BB\u03BF\u03BD "
-    corrAns: 2
-  - question: "\u0393\u03B9\u03B1 \u03BD\u03B1 \u03C0\u03C1\u03BF\u03C3\u03C4\u03B1\u03C4\u03B5\u03C5\u03C4\u03BF\u03CD\u03BC\u03B5\u202F\u03B1\u03C0\u03CC\u202F\u03C4\u03B9\u03C2\u202F\u03C0\u03BB\u03B7\u03BC\u03BC\u03CD\u03C1\u03B5\u03C2\u202F\u03C0\u03C1\u03AD\u03C0\u03B5\u03B9:\u202F"
-    ans1: "\u039D\u03B1 \u03C5\u03C0\u03AC\u03C1\u03C7\u03B5\u03B9\u202F\u03C3\u03C9\u03C3\u03C4\u03AE\u202F\u03B5\u03BA\u03C0\u03B1\u03AF\u03B4\u03B5\u03C5\u03C3\u03B7\u202F\u03C4\u03BF\u03C5\u202F\u03C0\u03BB\u03B7\u03B8\u03C5\u03C3\u03BC\u03BF\u03CD
-      \u03CE\u03C3\u03C4\u03B5 \u03BD\u03B1 \u03B3\u03BD\u03C9\u03C1\u03AF\u03B6\u03B5\u03B9 
-      \u03BF \u03BA\u03B1\u03B8\u03AD\u03BD\u03B1\u03C2 \u03C4\u03B9 \u03BA\u03AC\u03BD\u03B5\u03B9
-      \u03C0\u03C1\u03B9\u03BD, \u03BA\u03B1\u03C4\u03AC \u03BA\u03B1\u03B9 \u03BC\u03B5\u03C4\u03AC
-      \u03C4\u03B7\u03BD \u03C0\u03BB\u03B7\u03BC\u03BC\u03CD\u03C1\u03B1 "
-    ans2: "\u039D\u03B1 \u03C3\u03C0\u03B1\u03C4\u03B1\u03BB\u03AC\u03BC\u03B5\u202F\u03C4\u03BF\u202F\u03BD\u03B5\u03C1\u03CC
-      \u03CE\u03C3\u03C4\u03B5 \u03BD\u03B1 \u03BC\u03B7\u03BD \u03BC\u03B5\u03B3\u03B1\u03BB\u03CE\u03BD\u03B5\u03B9
-      \u03B7 \u03B4\u03B9\u03B1\u03B8\u03B5\u03C3\u03B9\u03BC\u03CC\u03C4\u03B7\u03C4\u03AC
-      \u03C4\u03BF\u03C5"
-    ans3: "\u039C\u03CC\u03BB\u03B9\u03C2\u202F\u03BE\u03B5\u03BA\u03B9\u03BD\u03AC\u03B5\u03B9\u202F\u03B2\u03C1\u03BF\u03C7\u03CC\u03C0\u03C4\u03C9\u03C3\u03B7\u202F\u03BD\u03B1\u202F\u03C6\u03B5\u03CD\u03B3\u03BF\u03C5\u03BC\u03B5\u202F\u03BA\u03B1\u03C4\u03B5\u03C5\u03B8\u03B5\u03AF\u03B1\u03BD
-      \u03B1\u03C0\u03CC\u202F\u03C4\u03BF\u202F\u03C3\u03C0\u03AF\u03C4\u03B9\u202F\u03BC\u03B1\u03C2"
-    corrAns: 0
-  - question: "\u03A0\u03BF\u03B9\u03B5\u03C2 \u03B1\u03C0\u03CC \u03C4\u03B9\u03C2
-      \u03C0\u03B1\u03C1\u03B1\u03BA\u03AC\u03C4\u03C9 \u03B5\u03AF\u03BD\u03B1\u03B9
-      \u03B1\u03B9\u03C4\u03AF\u03B5\u03C2 \u03C0\u03BB\u03B7\u03BC\u03BC\u03CD\u03C1\u03B1\u03C2"
-    ans1: "\u038C\u03BB\u03B1 \u03CC\u03C3\u03B1 \u03B1\u03BD\u03B1\u03C6\u03AD\u03C1\u03BF\u03BD\u03C4\u03B1\u03B9
-      \u03B5\u03B4\u03CE"
-    ans2: "\u0388\u03BD\u03C4\u03BF\u03BD\u03B7 \u03B2\u03C1\u03BF\u03C7\u03AE \u03BA\u03B1\u03B9
-      \u03AC\u03BD\u03BF\u03B4\u03BF\u03C2 \u03C3\u03C4\u03AC\u03B8\u03BC\u03B7\u03C2
-      \u03C0\u03BF\u03C4\u03B1\u03BC\u03BF\u03CD \u03AE \u03BB\u03AF\u03BC\u03BD\u03B7\u03C2 "
-    ans3: "\u03A3\u03C5\u03C3\u03C3\u03CE\u03C1\u03B5\u03C5\u03C3\u03B7 \u03C3\u03BA\u03BF\u03C5\u03C0\u03B9\u03B4\u03B9\u03CE\u03BD
-      & \u03BC\u03C0\u03B1\u03B6\u03CE\u03BD \u03C3\u03C4\u03B9\u03C2 \u03BA\u03BF\u03AF\u03C4\u03B5\u03C2
-      \u03C4\u03C9\u03BD \u03C1\u03B5\u03BC\u03AC\u03C4\u03C9\u03BD, \u03C4\u03C9\u03BD
-      \u03C0\u03BF\u03C4\u03B1\u03BC\u03CE\u03BD \u03AE \u03C3\u03C4\u03BF\u03C5\u03C2
-      \u03C5\u03C0\u03BF\u03BD\u03CC\u03BC\u03BF\u03C5\u03C2 \u03C4\u03C9\u03BD \u03C0\u03CC\u03BB\u03B5\u03C9\u03BD"
-    corrAns: 0
-  - question: "\u0391\u03BD \u03B3\u03AF\u03BD\u03B5\u03C4\u03B1\u03B9 \u03C0\u03BB\u03B7\u03BC\u03BC\u03CD\u03C1\u03B1
-      \u03BA\u03B1\u03B9 \u03B5\u03AF\u03C3\u03B1\u03B9 \u03BC\u03CC\u03BD\u03BF\u03C2/\u03B7
-      \u03C3\u03C0\u03AF\u03C4\u03B9 , \u03C4\u03CC\u03C4\u03B5\u2026"
-    ans1: "\u03A0\u03B1\u03AF\u03C1\u03BD\u03B5\u03B9\u03C2 \u03C4\u03B7\u03BB\u03AD\u03C6\u03C9\u03BD\u03BF
-      \u03C4\u03BF\u03BD \u03C6\u03AF\u03BB\u03BF \u03C3\u03BF\u03C5 \u03BA\u03B1\u03B9
-      \u03C0\u03B1\u03C2 \u03B1\u03C0\u03CC \u03C4\u03BF \u03C3\u03C0\u03AF\u03C4\u03B9
-      \u03C4\u03BF\u03C5  \u03C3\u03C4\u03B7 \u03B3\u03B5\u03B9\u03C4\u03BF\u03BD\u03B9\u03BA\u03AE
-      \u03C0\u03BF\u03BB\u03C5\u03BA\u03B1\u03C4\u03BF\u03B9\u03BA\u03AF\u03B1 \u03CE\u03C3\u03C4\u03B5
-      \u03BD\u03B1 \u03BC\u03B7\u03BD \u03B5\u03AF\u03C3\u03B1\u03B9 \u03BC\u03CC\u03BD\u03BF\u03C2/\u03BC\u03CC\u03BD\u03B7 "
-    ans2: "\u0392\u03AC\u03B6\u03B5\u03B9\u03C2 \u03BC\u03B9\u03B1 \u03C4\u03B1\u03B9\u03BD\u03AF\u03B1
-      \u03C3\u03C4\u03B7\u03BD \u03C4\u03B7\u03BB\u03B5\u03CC\u03C1\u03B1\u03C3\u03B7,
-      \u03BA\u03AC\u03BD\u03B5\u03B9\u03C2 \u03B1\u03C3\u03BA\u03AE\u03C3\u03B5\u03B9\u03C2
-      \u03B3\u03B9\u03CC\u03B3\u03BA\u03B1  \u03BA\u03B1\u03B9 \u03CC,\u03C4\u03B9
-      \u03C7\u03C1\u03B5\u03B9\u03AC\u03B6\u03B5\u03C4\u03B1\u03B9 \u03B3\u03B9\u03B1
-      \u03BD\u03B1 \u03BC\u03B7\u03BD \u03C6\u03BF\u03B2\u03AC\u03C3\u03B1\u03B9  "
-    ans3: "\u039A\u03BB\u03B5\u03AF\u03BD\u03B5\u03B9\u03C2 \u03C4\u03B9\u03C2 \u03C0\u03B1\u03C1\u03BF\u03C7\u03AD\u03C2
-      \u03B7\u03BB\u03B5\u03BA\u03C4\u03C1\u03B9\u03BA\u03BF\u03CD, \u03BD\u03B5\u03C1\u03BF\u03CD
-      \u03BA\u03B1\u03B9 \u03B3\u03BA\u03B1\u03B6\u03B9\u03BF\u03CD"
-    corrAns: 2
-  factText: {fileID: 1253408846}
-  ans0Text: {fileID: 1931546754}
-  ans1Text: {fileID: 2021613080}
-  ans2Text: {fileID: 1567434056}
-  toggleQuestionCanvasObject: {fileID: 1173539974}
-  but1: {fileID: 1680288253}
-  but2: {fileID: 309685020}
-  but3: {fileID: 1479430341}
-  canvasCamera: {fileID: 84419094}
-  slimeObject: {fileID: 536616455}
-  fillBarObject: {fileID: 586593481}
 --- !u!225 &142782059
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2867,7 +2741,7 @@ RectTransform:
   - {fileID: 746699398}
   - {fileID: 177371501}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4508,7 +4382,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 142782058}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Multiple3ChoiceManager, Assembly-CSharp
         m_MethodName: UserSelect1
         m_Mode: 1
@@ -5508,7 +5382,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 142782058}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Multiple3ChoiceManager, Assembly-CSharp
         m_MethodName: UserSelectExit
         m_Mode: 1
@@ -8877,7 +8751,7 @@ RectTransform:
   - {fileID: 1874087855}
   - {fileID: 309444441}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10422,8 +10296,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695443577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.9069, y: 0.14, z: -23.0153}
-  m_LocalScale: {x: 5.7814, y: 1, z: 5.7231}
+  m_LocalPosition: {x: 0.7501, y: -0.2, z: 0.3777}
+  m_LocalScale: {x: 10.004272, y: 1, z: 10.009487}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 879846785}
@@ -10438,7 +10312,7 @@ MeshCollider:
   m_GameObject: {fileID: 695443577}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -11042,7 +10916,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &708403733 stripped
 GameObject:
@@ -11485,7 +11359,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &743624682
 GameObject:
@@ -12476,7 +12350,7 @@ RectTransform:
   - {fileID: 1873273553}
   - {fileID: 415028401}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13592,7 +13466,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879846784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -13602,7 +13476,7 @@ Transform:
   - {fileID: 1481132699}
   - {fileID: 695443578}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &891469043
 GameObject:
@@ -14174,7 +14048,7 @@ Transform:
   - {fileID: 1384601639}
   - {fileID: 1948104694}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &940424396
 MonoBehaviour:
@@ -21814,7 +21688,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 142782058}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Multiple3ChoiceManager, Assembly-CSharp
         m_MethodName: UserSelect2
         m_Mode: 1
@@ -25168,7 +25042,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 142782058}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Multiple3ChoiceManager, Assembly-CSharp
         m_MethodName: UserSelect0
         m_Mode: 1
@@ -26344,6 +26218,7 @@ MonoBehaviour:
   sound: {fileID: 1773056861}
   showLosingCanvas: {fileID: 401402949}
   stopTimer: 0
+  waterPlane: {fileID: 695443577}
 --- !u!95 &1773056864
 Animator:
   serializedVersion: 5
@@ -29600,7 +29475,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1926560931
 GameObject:
@@ -30419,7 +30294,7 @@ RectTransform:
   - {fileID: 985498706}
   - {fileID: 1507085095}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -32845,7 +32720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 839310825498796872, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 839310825498796872, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33311,6 +33186,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3311060259007734782, guid: def918d0812a8804e94a992be7d856db, type: 3}
+      propertyPath: waterPlane
+      value: 
+      objectReference: {fileID: 695443577}
     - target: {fileID: 3458362367087527625, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: m_Layer
       value: 15
@@ -33395,6 +33274,10 @@ PrefabInstance:
       propertyPath: pointBar
       value: 
       objectReference: {fileID: 878041136098653523}
+    - target: {fileID: 6155072756457939746, guid: def918d0812a8804e94a992be7d856db, type: 3}
+      propertyPath: waterPlane
+      value: 
+      objectReference: {fileID: 695443577}
     - target: {fileID: 6155072756457939746, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: showWinningCanvas
       value: 

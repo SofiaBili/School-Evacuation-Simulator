@@ -58,6 +58,8 @@ public class GuideScript : MonoBehaviour
         Destroy(room);
         timerG.SetTimer(180);
         timerB.SetTimer(180);
+        timerG.AdjustWater();
+        timerB.AdjustWater();
     }
     void Plan(){
         personGirl.GetComponent<PlayerMovement>().StopMovement();
