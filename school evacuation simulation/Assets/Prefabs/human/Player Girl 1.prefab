@@ -294,6 +294,7 @@ MonoBehaviour:
   canvasMultiple1: {fileID: 878041135932665580}
   canvasMultiple2: {fileID: 878041134757436075}
   canvasTrueFalse: {fileID: 878041136375525486}
+  miniMapCanvas: {fileID: 0}
   canvasCamera: {fileID: 0}
 --- !u!1 &162414615332629974
 GameObject:
@@ -1481,6 +1482,7 @@ MonoBehaviour:
   cameraBoardBoy: 0
   cameraBoardGirl: 1
   playerBody: {fileID: 839310825498796872}
+  zRotation: 63
 --- !u!114 &878041134750646983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2528,10 +2530,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 7715181001967329880}
-  timerValue: 180
   sound: {fileID: 6431941680903221890}
   showLosingCanvas: {fileID: 8790590575322918396}
   stopTimer: 0
+  waterPlane: {fileID: 0}
 --- !u!114 &6155072756457939746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10010,7 +10012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6594714622715925004
 RectTransform:
   m_ObjectHideFlags: 0

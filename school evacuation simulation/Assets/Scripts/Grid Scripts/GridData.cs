@@ -25,7 +25,6 @@ public class GridData
     public void CompeleteMap(ObjectPlacer objectPlacer, int floor){
         int gameObjectIndex = -1;
         int i=0, j=0;
-        string o;
         for(int x=-5; x<=4; x++){
             j=0;
             for(int y=-5; y<=4; y++){

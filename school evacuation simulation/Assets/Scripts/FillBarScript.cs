@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FillBarScript : MonoBehaviour
 {
     public static int maxPoints = 100;
-    public static int currentPoints = 0;
+    public static int currentPoints = 90;
     public PointBar pointBar;
     public GameObject showWinningCanvas;
     public GameObject showLosingCanvas;
@@ -13,6 +14,8 @@ public class FillBarScript : MonoBehaviour
     public static TimerScript  timerScript;
     [SerializeField] GameObject timerScriptObject;
 
+    static int rightAns=0;
+    static int wrongAns=0;
     static bool setLosingCanvasActive = false;
     
     void Awake(){
@@ -43,20 +46,30 @@ public class FillBarScript : MonoBehaviour
     }
 
     public void ShowLosingCanvas(){
-            Debug.Log("gggggggggggggggg");
-            timerScript.StopTimer();
-            setLosingCanvasActive=true;
-        //
+        Debug.Log("gggggggggggggggg");
+        timerScript.StopTimer();
+        setLosingCanvasActive=true;
     }
     public void RightAnswer(){
         if(currentPoints<100)
             currentPoints+=10;
         pointBar.SetPoints(currentPoints);
+        rightAns++;
         ShowWinningCanvas();
     }
     public void WrongAnswer(){
         if(currentPoints>0)
             currentPoints-=10;
+        wrongAns++;
         pointBar.SetPoints(currentPoints);
+    }
+    public void ShowWinningScene(){
+        SceneManager.LoadScene("WinningFloodScene");
+    }
+    public static int GetRightAns(){
+        return rightAns;
+    }
+    public static int GetWrongAns(){
+        return wrongAns;
     }
 }

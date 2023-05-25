@@ -7,7 +7,7 @@ using TMPro;
 public class TimerScript : MonoBehaviour
 {
 	public TextMeshProUGUI timer;
-    public float timerValue = 160;
+    public static float timerValue = 160;
     public AudioSource sound;
     bool playSound = true;
     public GameObject showLosingCanvas;
@@ -56,6 +56,9 @@ public class TimerScript : MonoBehaviour
     }
     public void SetTimer(float val){
         timerValue = val;
+    } 
+    public static float GetTimer(){
+        return timerValue;
     }
 
 }
