@@ -31,9 +31,8 @@ public class TimerScript : MonoBehaviour
         InvokeRepeating("AddWater", 0.1f, 1f);
     }
     void AddWater(){
-        if(waterPlane.transform.localPosition.y<0.5){
-            Debug.Log(waterPlane.transform.localPosition.y);
-            waterPlane.transform.localPosition = new Vector3(waterPlane.transform.localPosition.x, waterPlane.transform.localPosition.y+(0.6f/180), waterPlane.transform.localPosition.z);
+        if(waterPlane.transform.localPosition.y<0.35 && timerValue<150){
+            waterPlane.transform.localPosition = new Vector3(waterPlane.transform.localPosition.x, waterPlane.transform.localPosition.y+(0.4f/180f), waterPlane.transform.localPosition.z);
         }
     }
     void DisplayTime(float timeToDisplay){

@@ -156,10 +156,7 @@ public class MapCreation : MonoBehaviour
         int yflag,xflag;
         int roomID;
         string[] splitArray;
-        bool labroom0Flag = true, labroom90Flag = true;
         LoadFile();
-        Debug.Log(schoolMapArray.GetLength(0));
-        Debug.Log(schoolMapArray.GetLength(1));
         for(int f=0; f<2; f++){
             yflag=1; xflag=0;
             for(int x=0; x<schoolMapArray.GetLength(0)-1; x++){
@@ -292,7 +289,7 @@ public class MapCreation : MonoBehaviour
         emptyGameObjectPrefab1.name = "First Floor";
         RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
         RoomName(corridorLeftWallDoor,2,0,10,emptyGameObjectPrefab1,-90);
-        RoomName(corridorLeftWall,2,0,10,emptyGameObjectPrefab1,90);
+        RoomName(corridorLeftWall,2,0,10,emptyGameObjectPrefab1,-90);
         RoomName(office1,0,0,10,emptyGameObjectPrefab1);
         RoomName(office2,0,0,10,emptyGameObjectPrefab1);
         RoomName(corridorNoWall,2,0,10,emptyGameObjectPrefab1,90);
