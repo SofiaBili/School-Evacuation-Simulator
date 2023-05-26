@@ -82,7 +82,7 @@ public class GuideScript : MonoBehaviour
             canvasUpLeft.SetActive(false);
             yield return new WaitForSeconds (0.1f);
             canvasDownLeft.SetActive(true);
-            textDownLeft.text = "Στα δωμάτια με τις ερωτήσεις θα σου εμφανίζεται στην μέση της οθόνης σου ένα κουμπί που θα σου λέει \" Πάτα \"Q\" για να απαντήσεις σε μιά ερώτηση\"";
+            textDownLeft.text = "Στα δωμάτια με τις ερωτήσεις θα σου εμφανίζεται στην οθόνη σου ένα κουμπί που θα σου λέει \" Πάτησε \"Q\" για να απαντήσεις σε μιά ερώτηση\"";
             yield return new WaitForSeconds (10f);
             textDownLeft.text = "Κάτω αριστερά θα μπορείς να βλέπεις τον χρόνο που σου μένει για να ολοκληρώσεις την πίστα.";
             yield return new WaitForSeconds (8f);

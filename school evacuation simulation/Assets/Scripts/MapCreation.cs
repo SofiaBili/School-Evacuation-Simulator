@@ -79,7 +79,7 @@ public class MapCreation : MonoBehaviour
     }
     void RoomName(GameObject roomName, int axis, int xValue, float zValue, GameObject floor, float degrees=0.0f, float yValue=0.0f){
         GameObject instantiatedObject;
-        Transform room=null;
+        Transform room=null, hitbox = null;
         savedPosition= savedPosition + new Vector3(-xValue, -yValue, -zValue);
         instantiatedObject=Instantiate(roomName);
         instantiatedObject.name = ""+roomName +"";
@@ -88,8 +88,15 @@ public class MapCreation : MonoBehaviour
         if(floor.name=="First Floor"){
             instantiatedObject.layer = LayerMask.NameToLayer("FirstFloor");
             room = instantiatedObject.transform.Find("room");
+            hitbox = instantiatedObject.transform.Find("Hexagon Hitbox");
             if(room!=null){
                 foreach(Transform thing in room.GetComponentsInChildren<Transform>())
+                {
+                    thing.gameObject.layer = LayerMask.NameToLayer("FirstFloor");
+                }
+            }
+            if(hitbox!=null){
+                foreach(Transform thing in hitbox.GetComponentsInChildren<Transform>())
                 {
                     thing.gameObject.layer = LayerMask.NameToLayer("FirstFloor");
                 }
@@ -98,8 +105,15 @@ public class MapCreation : MonoBehaviour
         else if(floor.name=="Second Floor"){
             instantiatedObject.layer = LayerMask.NameToLayer("SecondFloor");
             room = instantiatedObject.transform.Find("room");
+            hitbox = instantiatedObject.transform.Find("Hexagon Hitbox");
             if(room!=null){
                 foreach(Transform thing in room.GetComponentsInChildren<Transform>())
+                {
+                    thing.gameObject.layer = LayerMask.NameToLayer("SecondFloor");
+                }
+            }
+            if(hitbox!=null){
+                foreach(Transform thing in hitbox.GetComponentsInChildren<Transform>())
                 {
                     thing.gameObject.layer = LayerMask.NameToLayer("SecondFloor");
                 }
@@ -316,9 +330,9 @@ public class MapCreation : MonoBehaviour
 
         RoomName(corridorEndWall,2,10,0,emptyGameObjectPrefab2,180,0);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90,0);
-        RoomName(corridorRightWall,2,0,-10,emptyGameObjectPrefab2,90);
+        RoomName(corridorRightWall,2,0,-10,emptyGameObjectPrefab2,-90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
-        RoomName(corridorLeftWall,2,0,-10,emptyGameObjectPrefab2,90);
+        RoomName(corridorLeftWall,2,0,-10,emptyGameObjectPrefab2,-90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorNoWall,2,0,-10,emptyGameObjectPrefab2,90);
         RoomName(corridorEndWall,2,0,-10,emptyGameObjectPrefab2,0);

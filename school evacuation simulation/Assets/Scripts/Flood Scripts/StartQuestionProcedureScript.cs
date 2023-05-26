@@ -8,6 +8,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     [SerializeField] Camera cameraAnimation;
     [SerializeField] Animator animatorQuestion;
     [SerializeField] GameObject toggleQuestionCanvasObject;
+    [SerializeField] GameObject pressQCanvas;
     static ToggleQuestionCanvas toggleQuestionCanvasScript;
     private static string currentState;
     static bool toggleCanvasFlag = true;
@@ -21,6 +22,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
     [SerializeField] GameObject mapCreationObject;
     FillBarScript fillBarScript;
 
+    bool showQCanvas=true;
+
     void Awake(){
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
         fillBarScript = toggleQuestionCanvasObject.transform.Find("Point Level Canvas").GetComponent<FillBarScript>();
@@ -29,6 +32,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     void Start()
     {
         mapCreationScript = transform.parent.parent.parent.gameObject.GetComponent<MapCreation>();
+        pressQCanvas.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other){
@@ -36,7 +40,10 @@ public class StartQuestionProcedureScript : MonoBehaviour
     
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
+            if(showQCanvas) pressQCanvas.SetActive(true);
             if(Input.GetKeyDown(KeyCode.Q)){
+                pressQCanvas.SetActive(false);
+                showQCanvas = false;
                 //σταματάμε την κίνηση του χρήστη
                 toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StopMovement();
                 GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = false;
@@ -84,11 +91,12 @@ public class StartQuestionProcedureScript : MonoBehaviour
             GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = true;
             GameObject.Find("Main Camera").GetComponent<PlayerZoom>().enabled = true;
             Cursor.lockState=CursorLockMode.Locked;
+            showQCanvas = true;
         }
     }
     //when user exits disable canvas and camera animation back
     void OnTriggerExit(Collider other){
-        
+        pressQCanvas.SetActive(false);
     }
     // Update is called once per frame
     void Update()

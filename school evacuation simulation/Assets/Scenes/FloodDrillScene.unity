@@ -6064,6 +6064,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8888032826549866619, guid: ce8e0e54920978649a180c71ad858200, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce8e0e54920978649a180c71ad858200, type: 3}
 --- !u!4 &395915017 stripped
@@ -33101,6 +33105,10 @@ PrefabInstance:
     - target: {fileID: 878041134725467542, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 878041134750646976, guid: def918d0812a8804e94a992be7d856db, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 69431
       objectReference: {fileID: 0}
     - target: {fileID: 878041134750646977, guid: def918d0812a8804e94a992be7d856db, type: 3}
       propertyPath: mapCamera

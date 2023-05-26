@@ -28,11 +28,11 @@ public class TimerScript : MonoBehaviour
         }
     }
     public void AdjustWater(){
-        InvokeRepeating("AddWater", 0.1f, 1f);
+        InvokeRepeating("AddWater", 0.1f, 0.1f);
     }
     void AddWater(){
-        if(waterPlane.transform.localPosition.y<0.35 && timerValue<150){
-            waterPlane.transform.localPosition = new Vector3(waterPlane.transform.localPosition.x, waterPlane.transform.localPosition.y+(0.4f/180f), waterPlane.transform.localPosition.z);
+        if(timerValue>0 && timerValue<150){
+            waterPlane.transform.localPosition = new Vector3(waterPlane.transform.localPosition.x, waterPlane.transform.localPosition.y+(0.4f/(2.5f*60*24)), waterPlane.transform.localPosition.z);
         }
     }
     void DisplayTime(float timeToDisplay){
