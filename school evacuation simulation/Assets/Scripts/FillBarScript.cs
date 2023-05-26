@@ -46,7 +46,6 @@ public class FillBarScript : MonoBehaviour
     }
 
     public void ShowLosingCanvas(){
-        Debug.Log("gggggggggggggggg");
         timerScript.StopTimer();
         setLosingCanvasActive=true;
     }
@@ -65,6 +64,9 @@ public class FillBarScript : MonoBehaviour
     }
     public void ShowWinningScene(){
         SceneManager.LoadScene("WinningFloodScene");
+    }
+    public void ShowLosingScene(){
+        SceneManager.LoadScene("LosingFloodScene");
     }
     public static int GetRightAns(){
         return rightAns;
