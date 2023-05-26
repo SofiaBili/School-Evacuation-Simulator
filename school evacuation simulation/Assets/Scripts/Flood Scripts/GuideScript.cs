@@ -74,6 +74,7 @@ public class GuideScript : MonoBehaviour
     
     public IEnumerator StartGuide(){
         if(!stop){
+            yield return new WaitForSeconds (8.1f);
             canvasUpLeft.SetActive(true);
             textUpLeft.text = "Καλώς ήρθες στην πίστα: Πλυμμήρα! Σε αυτό το μέρος υπάρχουν κρυμμένες ερωτήσεις στις αίθουσες. Μπορείς να τις βρεις όλες πριν τελειώσει ο χρόνος;";
             yield return new WaitForSeconds (8f);
@@ -82,30 +83,32 @@ public class GuideScript : MonoBehaviour
             canvasUpLeft.SetActive(false);
             yield return new WaitForSeconds (0.1f);
             canvasDownLeft.SetActive(true);
-            textDownLeft.text = "Στα δωμάτια με τις ερωτήσεις θα σου εμφανίζεται στην οθόνη σου ένα κουμπί που θα σου λέει \" Πάτησε \"Q\" για να απαντήσεις σε μιά ερώτηση\"";
-            yield return new WaitForSeconds (10f);
+            textDownLeft.text = "Στα δωμάτια με τις ερωτήσεις θα σου εμφανίζεται στην οθόνη σου ένα κουμπί που θα σου λέει \" Πάτησε \"Q\" για να απαντήσεις σε μια ερώτηση\"";
+            yield return new WaitForSeconds (5.3f);
             textDownLeft.text = "Κάτω αριστερά θα μπορείς να βλέπεις τον χρόνο που σου μένει για να ολοκληρώσεις την πίστα.";
-            yield return new WaitForSeconds (8f);
+            yield return new WaitForSeconds (5.3f);
         
             canvasDownLeft.SetActive(false);
             yield return new WaitForSeconds (0.1f);
             canvasUpLeft.SetActive(true);
             textUpLeft.text = "Προσοχή! Μπορείς να πατήσεις το x πάνω δεξιά σε κάποια ερώτηση σε περίπτωση που δεν την ξέρεις.";
-            yield return new WaitForSeconds (10f);
+            yield return new WaitForSeconds (8f);
             textUpLeft.text = "Υπάρχει η πιθανότητα να σου εμφανιστεί άλλη ερώτηση όταν ξαναδοκιμάσεις. Έτσι δεν θα χάσεις πόντους.";
-            yield return new WaitForSeconds (10f);
+            yield return new WaitForSeconds (5.3f);
             canvasUpLeft.SetActive(false);
             canvasUpRight.SetActive(true);
             textUpRight.text = "Ο χάρτης αυτός δίπλα μου θα σε βοηθήσει να μετακινηθείς πιο εύκολα μέσα στο σχολείο.";
-            yield return new WaitForSeconds (10f);
+            yield return new WaitForSeconds (5.3f);
         
             canvasUpRight.SetActive(false);
             yield return new WaitForSeconds (0.1f);
             canvasDownRight.SetActive(true);
             textDownRight.text = "Για κάθε λάθος απάντηση η μπάρα σου θα αδειάζει και για κάθε σωστή θα γεμίζει!";
-            yield return new WaitForSeconds (10f);
+            yield return new WaitForSeconds (5.3f);
             textDownRight.text = "Πρέπει να απαντήσεις σωστά τουλάχιστον 10 ερωτήσεις, αλλιώς αν ξεμείνεις από χρόνο ή από ερωτήσεις θα χάσεις.";
-            yield return new WaitForSeconds (10f); 
+            yield return new WaitForSeconds (5.3f);
+            canvasDownRight.SetActive(false);
+            yield return new WaitForSeconds (3f);
             animationCam1.targetDisplay = 2;
             
             canvasDownRight.SetActive(false);

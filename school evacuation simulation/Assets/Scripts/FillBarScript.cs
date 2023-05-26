@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class FillBarScript : MonoBehaviour
 {
     public static int maxPoints = 100;
-    public static int currentPoints = 90;
+    public static int currentPoints = 0;
     public PointBar pointBar;
     public GameObject showWinningCanvas;
     public GameObject showLosingCanvas;
