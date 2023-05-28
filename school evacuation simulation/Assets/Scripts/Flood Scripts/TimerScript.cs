@@ -8,8 +8,9 @@ public class TimerScript : MonoBehaviour
 {
 	public TextMeshProUGUI timer;
     public static float timerValue = 160;
-    public AudioSource sound;
-    bool playSound = true;
+    public AudioSource countSound;
+    bool playCountSound = true;
+    public AudioSource lightningSound;
     public GameObject showLosingCanvas;
     public bool stopTimer = false;
     public GameObject waterPlane;
@@ -43,10 +44,13 @@ public class TimerScript : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay%60);
         if(minutes == 0 && seconds < 11){
             timer.color = new Color(255, 0, 0, 255);
-            if(playSound){
-                sound.Play();
-                playSound = false;
+            if(playCountSound){
+                countSound.Play();
+                playCountSound = false;
             } 
+        }
+        if(minutes == 2 && seconds==30){ 
+            lightningSound.Play();
         }
         timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
