@@ -31,6 +31,9 @@ public class TrueFalseManager : MonoBehaviour
     FillBarScript fillBarScript;
     [SerializeField] GameObject fillBarObject;
 
+    public AudioSource loseAudio;
+    public AudioSource winAudio;
+
 	void Awake(){
 		toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
 
@@ -73,6 +76,7 @@ public class TrueFalseManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.isTrue){
+			winAudio.Play(0);
 			Debug.Log("Cor");
 			trueButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
@@ -80,6 +84,7 @@ public class TrueFalseManager : MonoBehaviour
 			ChangeAnimationState("congratulations");
 			fillBarScript.RightAnswer();
 		}else{
+			loseAudio.Play(0);
 			trueButton.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
@@ -93,12 +98,14 @@ public class TrueFalseManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.isTrue){
+			loseAudio.Play(0);
 			falseButton.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
 			fillBarScript.WrongAnswer();
 		}else{
+			winAudio.Play(0);
 			Debug.Log("Cor");
 			falseButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();

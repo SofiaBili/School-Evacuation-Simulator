@@ -33,6 +33,9 @@ public class Multiple3ChoiceManager : MonoBehaviour
 	
     FillBarScript fillBarScript;
     [SerializeField] GameObject fillBarObject;
+	
+    public AudioSource loseAudio;
+    public AudioSource winAudio;
 
 	void Awake(){
 		toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
@@ -82,6 +85,7 @@ public class Multiple3ChoiceManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 0){
+			winAudio.Play(0);
 			Debug.Log("Cor");
 			but1.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
@@ -89,6 +93,7 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			ChangeAnimationState("congratulations");
 			fillBarScript.RightAnswer();
 		}else{
+			loseAudio.Play(0);
 			but1.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
@@ -102,6 +107,7 @@ public class Multiple3ChoiceManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 1){
+			winAudio.Play(0);
 			Debug.Log("Cor");
 			but2.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
@@ -109,6 +115,7 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			ChangeAnimationState("congratulations");
 			fillBarScript.RightAnswer();
 		}else{
+			loseAudio.Play(0);
 			but2.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
@@ -122,6 +129,7 @@ public class Multiple3ChoiceManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 2){
+			winAudio.Play(0);
 			Debug.Log("Cor");
 			but3.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
@@ -129,6 +137,7 @@ public class Multiple3ChoiceManager : MonoBehaviour
 			ChangeAnimationState("congratulations");
 			fillBarScript.RightAnswer();
 		}else{
+			loseAudio.Play(0);
 			but3.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
 			Debug.Log("WRONG");
