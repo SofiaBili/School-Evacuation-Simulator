@@ -21,6 +21,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
     MapCreation mapCreationScript;
     [SerializeField] GameObject mapCreationObject;
     FillBarScript fillBarScript;
+    
+    public AudioSource audioData;
 
     bool showQCanvas=true;
 
@@ -59,7 +61,9 @@ public class StartQuestionProcedureScript : MonoBehaviour
     }
     private IEnumerator ShowCanvas(){
         if(toggleCanvasFlag){
+            audioData.Play(0);
             yield return new WaitForSeconds (1.9f);
+            audioData.Stop();
             toggleQuestionCanvasScript.EnableRandomCanvas(hexagonHitbox);
             toggleCanvasFlag = false;
             closeCanvasFlag=true;
@@ -71,6 +75,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
                 yield return new WaitForSeconds (2.2f);
             ChangeAnimationState(secondCameraAnimationName);
             yield return new WaitForSeconds (0.12f);
+            audioData.Play(0);
             toggleQuestionCanvasScript.CloseSpecificCanvas();
             yield return new WaitForSeconds (1.9f);
             ChangeAnimationState("Idle");
@@ -87,6 +92,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
                 deleteHexagonFlag = false;
                 hexagonHitbox.SetActive(false);
             }
+            audioData.Stop();
             //επιτρέπουμε την κίνηση του χρήστη πάλι
             toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StartMovement();
             GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = true;
