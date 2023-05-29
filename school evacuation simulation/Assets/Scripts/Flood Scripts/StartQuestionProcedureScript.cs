@@ -70,6 +70,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
             if(!check)
                 yield return new WaitForSeconds (2.2f);
             ChangeAnimationState(secondCameraAnimationName);
+            yield return new WaitForSeconds (0.12f);
             toggleQuestionCanvasScript.CloseSpecificCanvas();
             yield return new WaitForSeconds (1.9f);
             ChangeAnimationState("Idle");
