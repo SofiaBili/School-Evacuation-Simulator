@@ -44,7 +44,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
             if(showQCanvas) pressQCanvas.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.Q)){
+            if(Input.GetKeyDown(KeyCode.Q) && showQCanvas){
                 pressQCanvas.SetActive(false);
                 showQCanvas = false;
                 //σταματάμε την κίνηση του χρήστη
