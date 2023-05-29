@@ -534,7 +534,7 @@ Transform:
   m_GameObject: {fileID: 2217847278077435735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.000414, y: 4.090006, z: -2.7500057}
-  m_LocalScale: {x: 1.0072037, y: 0.906, z: 1}
+  m_LocalScale: {x: 1.0133477, y: 0.906, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7697458183867613903}
@@ -2966,6 +2966,10 @@ PrefabInstance:
       propertyPath: secondCameraAnimationName
       value: ReturnFromStairs
       objectReference: {fileID: 0}
+    - target: {fileID: 2652455750039094760, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2991960055016748393, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3048,6 +3052,10 @@ PrefabInstance:
       propertyPath: secondCameraAnimationName
       value: ReturnFromStairs3
       objectReference: {fileID: 0}
+    - target: {fileID: 2652455750039094760, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2991960055016748393, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3129,6 +3137,10 @@ PrefabInstance:
     - target: {fileID: 2576188389210703146, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
       propertyPath: secondCameraAnimationName
       value: ReturnFromStairs2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652455750039094760, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2991960055016748393, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
       propertyPath: m_RootOrder
