@@ -1991,9 +1991,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 5227002334447739179}
     m_Modifications:
     - target: {fileID: 496512957723368044, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: Priority
+      value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 496512957723368044, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2576188389210703146, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
+      propertyPath: audioData
+      value: 
+      objectReference: {fileID: 2217432977807410212}
     - target: {fileID: 2576188389210703146, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
       propertyPath: playSound
       value: 0
@@ -2070,7 +2078,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 496512957723368044, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
 --- !u!4 &311781306635345017 stripped
 Transform:

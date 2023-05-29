@@ -6000,6 +6000,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1865002948717839542, guid: ce8e0e54920978649a180c71ad858200, type: 3}
+      propertyPath: playSound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2098035533300745700, guid: ce8e0e54920978649a180c71ad858200, type: 3}
       propertyPath: m_Layer
       value: 10
