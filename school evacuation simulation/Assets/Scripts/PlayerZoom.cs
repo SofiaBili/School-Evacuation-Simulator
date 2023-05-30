@@ -5,19 +5,24 @@ public class PlayerZoom : MonoBehaviour {
  
     public Camera mainCamera ;
         
+    public bool isEarthquake = false;
     void Update () {
-        if(Input.GetKey(KeyCode.LeftControl)) {
-            if (Input.GetAxis("Mouse ScrollWheel")>0 && mainCamera.fieldOfView > 30 ) // forward
-            {
-                mainCamera.fieldOfView -= 2;
+        if(isEarthquake){
+            if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
+        }else{
+            if(Input.GetKey(KeyCode.LeftControl)) {
+                if (Input.GetAxis("Mouse ScrollWheel")>0 && mainCamera.fieldOfView > 30 ) // forward
+                {
+                    mainCamera.fieldOfView -= 2;
+                }
+                else if (Input.GetAxis("Mouse ScrollWheel") <0 && mainCamera.fieldOfView < 55 ) // backwards
+                {
+                    mainCamera.fieldOfView += 2;
+                }
             }
-            else if (Input.GetAxis("Mouse ScrollWheel") <0 && mainCamera.fieldOfView < 55 ) // backwards
-            {
-                mainCamera.fieldOfView += 2;
+            else{
+                mainCamera.fieldOfView = 55;
             }
-        }
-        else{
-            mainCamera.fieldOfView = 55;
         }
     }
 }

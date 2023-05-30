@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     static bool stopMovement;
 
+    public bool isEarthquake = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,20 +32,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
-        if(isGrounded && velocity.y<0){
-            velocity.y = -2f;
+        if(isEarthquake){
+            if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
+        }else{
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            
+            if(isGrounded && velocity.y<0){
+                velocity.y = -2f;
+            }
+            if(!stopMovement){
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+            
+            Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput ;
+            controller.Move(move*movementSpeed*Time.deltaTime);
+            }
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
         }
-        if(!stopMovement){
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        
-        Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput ;
-        controller.Move(move*movementSpeed*Time.deltaTime);
-        }
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
     }
     public void StopMovement(){
         stopMovement = true;

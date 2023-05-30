@@ -6,39 +6,25 @@ public class EarthquakeGuideScript : MonoBehaviour
 {
     public GameObject room;
 
-    public GameObject personGirl;
-    public GameObject personBoy;
-    public Camera cameraPersonGirl;
-    public Camera cameraPersonBoy;
+    public static bool guideIsOver = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        personGirl.GetComponent<PlayerMovement>().StopMovement();
-        personBoy.GetComponent<PlayerMovement>().StopMovement();
-        cameraPersonGirl.GetComponent<RotatePlayer>().enabled = false;
-        cameraPersonBoy.GetComponent<RotatePlayer>().enabled = false;
-        cameraPersonGirl.GetComponent<PlayerZoom>().enabled = false;
-        cameraPersonBoy.GetComponent<PlayerZoom>().enabled = false;
 		StartCoroutine(StartGuide());
     }
 
     public void End(){
         StopAllCoroutines();
 
-        personGirl.GetComponent<PlayerMovement>().StartMovement();
-        personBoy.GetComponent<PlayerMovement>().StartMovement();
-        cameraPersonGirl.GetComponent<RotatePlayer>().enabled = true;
-        cameraPersonBoy.GetComponent<RotatePlayer>().enabled = true;
-        cameraPersonGirl.GetComponent<PlayerZoom>().enabled = true;
-        cameraPersonBoy.GetComponent<PlayerZoom>().enabled = true;
-
         Destroy(room);
         LookAt.GuideEnd();
+        guideIsOver = true;
+        ToggleCanvas.ToggleOneCanvas();
     }
     
     public IEnumerator StartGuide(){
-        yield return new WaitForSeconds (36f);
+        yield return new WaitForSeconds (16f);
     }
 
     // Update is called once per frame
