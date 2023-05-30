@@ -11,8 +11,6 @@ public class EarthquakeGuideScript : MonoBehaviour
     public Camera cameraPersonGirl;
     public Camera cameraPersonBoy;
 
-    public AudioSource talkingSound1;
-    public AudioSource talkingSound2;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +20,10 @@ public class EarthquakeGuideScript : MonoBehaviour
         cameraPersonBoy.GetComponent<RotatePlayer>().enabled = false;
         cameraPersonGirl.GetComponent<PlayerZoom>().enabled = false;
         cameraPersonBoy.GetComponent<PlayerZoom>().enabled = false;
+		StartCoroutine(StartGuide());
     }
 
     public void End(){
-        talkingSound1.Stop();
-        talkingSound2.Stop();
         StopAllCoroutines();
 
         personGirl.GetComponent<PlayerMovement>().StartMovement();
@@ -37,7 +34,13 @@ public class EarthquakeGuideScript : MonoBehaviour
         cameraPersonBoy.GetComponent<PlayerZoom>().enabled = true;
 
         Destroy(room);
+        LookAt.GuideEnd();
     }
+    
+    public IEnumerator StartGuide(){
+        yield return new WaitForSeconds (36f);
+    }
+
     // Update is called once per frame
     void Update()
     {

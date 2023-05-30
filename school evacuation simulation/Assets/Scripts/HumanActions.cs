@@ -20,7 +20,7 @@ public class HumanActions : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        StartCoroutine(AfterXSeconds(10));
+        //StartCoroutine(AfterXSeconds(10));
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class HumanActions : MonoBehaviour
         FireDrillAction();
 
         yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
-        gameObject.GetComponent<NavMeshControl>().enabled=true;
+        //gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
+        //gameObject.GetComponent<NavMeshControl>().enabled=true;
     }
 }

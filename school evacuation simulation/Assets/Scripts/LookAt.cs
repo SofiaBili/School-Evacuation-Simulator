@@ -9,16 +9,19 @@ public class LookAt : MonoBehaviour
     public string objectToFind;
     bool oneTimeFlag = true;
     public bool isPlayerFlag = false;
+    static bool guideEnd = false;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    public static void GuideEnd(){
+        guideEnd=true;
+    }
     // Update is called once per frame
     void Update()
     {
-        if(oneTimeFlag){
+        if(oneTimeFlag && guideEnd){
             if(!isPlayerFlag){
                 targetParent = gameObject.transform.parent.gameObject;
             }else{

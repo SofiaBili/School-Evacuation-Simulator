@@ -14,7 +14,7 @@ public class NavMeshControl : MonoBehaviour
         agent.enabled = false;
 
         // Invoke is used as a workaround for enabling NavMeshAgent on NavMeshSurface
-        Invoke("EnableNavMeshAgent", 0.1f);
+        Invoke("EnableNavMeshAgent", 35f);
         
     }
     private void EnableNavMeshAgent ()
@@ -26,7 +26,7 @@ public class NavMeshControl : MonoBehaviour
     {
             //Ray movePos = Camera.main.ScreenPointToRay(Input.mousePosition);
             //if(Physics.Raycast(movePos, out var hitInfo)){
-            agent.SetDestination(wayPoint.transform.position);
+           // agent.SetDestination(wayPoint.transform.position);
             //}
     }
 }
