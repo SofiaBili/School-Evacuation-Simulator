@@ -15,6 +15,8 @@ public class EarthquakeClassScript : MonoBehaviour
 	public GameObject trueFalseCanvas;
 	public GameObject mult3Canvas;
 	public GameObject mult4Canvas;
+
+	public AudioSource alarm;
     // Start is called before the first frame update
     void Start(){
         earthquakeAnimator = GetComponent<Animator>();
@@ -29,14 +31,19 @@ public class EarthquakeClassScript : MonoBehaviour
         	yield return new WaitForSeconds (10f);
 			ChangeAnimationState("earthquake");
 			worriedTeacher = true;
+			alarm.Play(0);
         	yield return new WaitForSeconds (5f);
+			alarm.Stop();
 			dustParticles.SetActive(true);
-			//alarm
         	yield return new WaitForSeconds (1f);
 			stopMovement = true;
 			//Time.timeScale = 0;
 			//RotatePlayer.escapeFlag = true;
 			mult3Canvas.SetActive(true);
+			Multiple3EarthquakeManager.GetQuestion(0);
+			/*if(Multiple3EarthquakeManager.IsAnswered()){	
+				Multiple3EarthquakeManager.GetQuestion(1);
+			}*/
 		}
 	}
 	public void ChangeAnimationState(string newState){

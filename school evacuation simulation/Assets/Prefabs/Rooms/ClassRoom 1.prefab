@@ -473,6 +473,7 @@ GameObject:
   - component: {fileID: 335806284622693450}
   - component: {fileID: 4098324110330961136}
   - component: {fileID: 6077098589625267283}
+  - component: {fileID: 3680950390869994671}
   m_Layer: 8
   m_Name: ClassRoom 1
   m_TagString: Untagged
@@ -567,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a82f0c37415d774cb656b3fc36d1c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  earthquakeAnimator: {fileID: 0}
+  earthquakeAnimator: {fileID: 335806284622693450}
   hitbox1: {fileID: 4017248777239660234}
   hitbox2: {fileID: 7259485104222526694}
   hitbox3: {fileID: 7765275902225697427}
@@ -577,6 +578,103 @@ MonoBehaviour:
   trueFalseCanvas: {fileID: 4637611170301703541}
   mult3Canvas: {fileID: 2548430120211939068}
   mult4Canvas: {fileID: 8559006221219359073}
+  alarm: {fileID: 3680950390869994671}
+--- !u!82 &3680950390869994671
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19324758387459077}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1718259731464144641, guid: 2d121a37aa5170444b38070944c46fc9, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 7a3c3f9465bd3a94488b64febf749af9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.01
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &19324758391192949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,6 +1696,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3912389831965700142}
+        m_TargetAssemblyTypeName: Multiple3EarthquakeManager, Assembly-CSharp
+        m_MethodName: UserSelect0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1591718053131564880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,14 +2350,14 @@ GameObject:
   - component: {fileID: 7765981401441004742}
   - component: {fileID: 5876346128359152562}
   - component: {fileID: 4611308121460620075}
-  - component: {fileID: 226131044738247802}
+  - component: {fileID: 3912389831965700142}
   m_Layer: 15
   m_Name: Multiple Cubed Choise Questions Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1323955564231677104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2633,7 +2743,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &226131044738247802
+--- !u!114 &3912389831965700142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2642,7 +2752,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2548430120211939068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100ca2df3561f6f4887f32dae4f1ec2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 03b093b4bdce54d42b1f16e4f61ff5ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
@@ -2662,20 +2772,23 @@ MonoBehaviour:
     ans3: "\u039D\u03B1 \u03C6\u03CD\u03B3\u03B5\u03B9\u03C2 \u03B3\u03C1\u03AE\u03B3\u03BF\u03C1\u03B1
       \u03B1\u03C0\u03CC \u03C4\u03B7\u03BD \u03B1\u03AF\u03B8\u03BF\u03C5\u03C3\u03B1"
     corrAns: 0
+  - question: "\u03A4\u03B9 \u03BC\u03B5\u03C4\u03B1\u03C6\u03AD\u03C1\u03B5\u03B9
+      \u03B7 \u03C3\u03B5\u03B9\u03C3\u03BC\u03B9\u03BA\u03AE \u03B4\u03CC\u03BD\u03B7\u03C3\u03B7;"
+    ans1: "\u03A7\u03CE\u03BC\u03B1"
+    ans2: "\u0395\u03BD\u03AD\u03C1\u03B3\u03B5\u03B9\u03B1"
+    ans3: "\u03A4\u03AF\u03C0\u03BF\u03C4\u03B1"
+    corrAns: 1
   factText: {fileID: 2535983305932559925}
   ans0Text: {fileID: 7792757805925755111}
   ans1Text: {fileID: 5533654700981953330}
   ans2Text: {fileID: 1342604778096762405}
-  toggleQuestionCanvasObject: {fileID: 0}
   but1: {fileID: 7289118896763221684}
   but2: {fileID: 7284219358674213720}
   but3: {fileID: 3803180950629416545}
   canvasCamera: {fileID: 4454631502145955570}
-  slimeObject: {fileID: 8100904011927744676}
-  fillBarObject: {fileID: 0}
+  slimeObject: {fileID: 4045915360626496869}
   loseAudio: {fileID: 5876346128359152562}
   winAudio: {fileID: 4611308121460620075}
-  isEarthquake: 1
 --- !u!1 &2659373116626643561
 GameObject:
   m_ObjectHideFlags: 0
@@ -5593,6 +5706,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3912389831965700142}
+        m_TargetAssemblyTypeName: Multiple3EarthquakeManager, Assembly-CSharp
+        m_MethodName: UserSelect1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7214612126122806922
 GameObject:
   m_ObjectHideFlags: 0
@@ -5718,6 +5843,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7765981401441004742}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3912389831965700142}
+        m_TargetAssemblyTypeName: Multiple3EarthquakeManager, Assembly-CSharp
+        m_MethodName: UserSelect2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6477,6 +6614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8112924493175980273}
+  - component: {fileID: 518683010757048851}
   m_Layer: 15
   m_Name: Slime
   m_TagString: Untagged
@@ -6502,9 +6640,30 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -13, y: 1}
+  m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &518683010757048851
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100904011927744676}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 051d9cc1de6926c41bc385dcb275ab63, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8311625706136754744
 GameObject:
   m_ObjectHideFlags: 0
@@ -6738,7 +6897,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -35.4}
+  m_AnchoredPosition: {x: 0, y: -35.399994}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8559006221219359073
