@@ -6,7 +6,7 @@ public class RotatePlayer:MonoBehaviour {
     public float speed = 150f;
     private float X;
     private float Y;
-    private bool escapeFlag=false;
+    public static bool escapeFlag=false;
     public bool cameraBoardBoy;
     public bool cameraBoardGirl;
     public Transform playerBody;
@@ -14,7 +14,6 @@ public class RotatePlayer:MonoBehaviour {
     public float zRotation = 63f;
     Vector3 startLocation;
     public bool isEarthquake = false;
-
     void Update() {
         /*if(cameraBoardBoy){
             GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=true;
@@ -30,8 +29,9 @@ public class RotatePlayer:MonoBehaviour {
             cameraBoardGirl=false;
             GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=false;
         }*/
-        if(isEarthquake){
+        if(isEarthquake || EarthquakeClassScript.stopMovement){
             if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
+            if(EarthquakeClassScript.stopMovement) Cursor.lockState=CursorLockMode.None;
         }else{
             if(!escapeFlag){
                 Cursor.lockState=CursorLockMode.Locked;

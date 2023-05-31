@@ -60,8 +60,8 @@ public class GuideScript : MonoBehaviour
         cameraPersonBoy.GetComponent<PlayerZoom>().enabled = true;
 
         Destroy(room);
-        timerG.SetTimer(180);
-        timerB.SetTimer(180);
+        timerG.SetTimer(300);
+        timerB.SetTimer(300);
         timerG.AdjustWater();
         timerB.AdjustWater();
     }

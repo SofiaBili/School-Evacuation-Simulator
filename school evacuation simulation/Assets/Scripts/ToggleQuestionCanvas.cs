@@ -39,16 +39,20 @@ public class ToggleQuestionCanvas : MonoBehaviour
             previousRandom = randomCanvas;
             ///Debug.Log(randomCanvas);
             if(randomCanvas==0){
+                if(Multiple3ChoiceManager.UnansweredQuestionsCount())
                 canvasMultiple1.SetActive(true);
             }else if(randomCanvas==1){
+                if(Multiple4ChoiceManager.UnansweredQuestionsCount())
                 canvasMultiple2.SetActive(true);
             }else{
-                canvasTrueFalse.SetActive(true);
+                if(TrueFalseManager.UnansweredQuestionsCount1())
+                    canvasTrueFalse.SetActive(true);
             }
-            miniMapCanvas.SetActive(false);
-            canvasCamera.enabled = true;
-            showCanvas = false;
-            
+            if(TrueFalseManager.UnansweredQuestionsCount1() || Multiple3ChoiceManager.UnansweredQuestionsCount() || Multiple4ChoiceManager.UnansweredQuestionsCount()){
+                miniMapCanvas.SetActive(false);
+                canvasCamera.enabled = true;
+                showCanvas = false;
+            }
         }
         if(closeCanvas){
             //canvasTrueFalse.SetActive(false);

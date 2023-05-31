@@ -51,6 +51,12 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		}
 
 		SetCurrentQuestion();
+		transform.gameObject.SetActive(false);
+	}
+	public static bool UnansweredQuestionsCount(){
+		Debug.Log(unansweredQuestions.Count);
+		if(unansweredQuestions.Count == 0) return false;
+		return true;
 	}
 	void SetCurrentQuestion(){
 		int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
@@ -83,7 +89,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		startQuestionProcedureScript.StopAnimationAndCloseCanvasFromExit();
-		StartCoroutine(ChangeQuestion(false));
+		if(UnansweredQuestionsCount()) StartCoroutine(ChangeQuestion(false));
 	}
 	public void UserSelect0(){
 		GetComponent<CanvasGroup>().interactable = false;
@@ -105,7 +111,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but1));
-		StartCoroutine(ChangeQuestion(true));
+		if(UnansweredQuestionsCount()) StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelect1(){
 		GetComponent<CanvasGroup>().interactable = false;
@@ -127,7 +133,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but2));
-		StartCoroutine(ChangeQuestion(true));
+		if(UnansweredQuestionsCount()) StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelect2(){
 		GetComponent<CanvasGroup>().interactable = false;
@@ -149,7 +155,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but3));
-		StartCoroutine(ChangeQuestion(true));
+		if(UnansweredQuestionsCount()) StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelect3(){
 		GetComponent<CanvasGroup>().interactable = false;
@@ -171,7 +177,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(but4));
-		StartCoroutine(ChangeQuestion(true));
+		if(UnansweredQuestionsCount()) StartCoroutine(ChangeQuestion(true));
 	}
 	public void ChangeAnimationState(string newState){
         currentState=newState;

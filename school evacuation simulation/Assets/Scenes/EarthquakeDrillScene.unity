@@ -4019,12 +4019,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u039D\u03B1 \u03C0\u03B5\u03C1\u03B9\u03BC\u03AD\u03BD\u03B5\u03B9\u03C2
-    \u03C4\u03B9\u03C2 \u03BF\u03B4\u03B7\u03B3\u03AF\u03B5\u03C2 \u03C4\u03BF\u03C5
-    \u03B4\u03B1\u03C3\u03BA\u03AC\u03BB\u03BF\u03C5 \u03C3\u03BF\u03C5"
+  m_text: "\u039D\u03B1 \u03C6\u03CD\u03B3\u03B5\u03B9\u03C2 \u03B3\u03C1\u03AE\u03B3\u03BF\u03C1\u03B1
+    \u03B1\u03C0\u03CC \u03C4\u03B7\u03BD \u03B1\u03AF\u03B8\u03BF\u03C5\u03C3\u03B1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4084,7 +4083,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 4.501877, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9561,8 +9560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d90d2be746cb9840ab46689508a51c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  currentState: 
 --- !u!114 &575536255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13601,11 +13598,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u039D\u03B1 \u03C0\u03B1\u03C2 \u03BA\u03AC\u03C4\u03C9 \u03B1\u03C0\u03CC
-    \u03C4\u03BF \u03B8\u03C1\u03B1\u03BD\u03AF\u03BF \u03C3\u03BF\u03C5"
+  m_text: "\u039D\u03B1 \u03BC\u03C0\u03B5\u03B9\u03C2 \u03BA\u03AC\u03C4\u03C9 \u03B1\u03C0\u03CC
+    \u03C4\u03BF \u03B8\u03C1\u03B1\u03BD\u03AF\u03BF \u03C3\u03BF\u03C5 \u03BA\u03B1\u03B9
+    \u03BD\u03B1 \u03BA\u03B1\u03BB\u03CD\u03C8\u03B5\u03B9\u03C2 \u03C4\u03BF \u03BA\u03B5\u03C6\u03AC\u03BB\u03B9
+    \u03C3\u03BF\u03C5 \u03BA\u03B1\u03B9 \u03C4\u03B7\u03BD \u03C3\u03C0\u03BF\u03BD\u03B4\u03C5\u03BB\u03B9\u03BA\u03AE
+    \u03C3\u03BF\u03C5 \u03C3\u03C4\u03AE\u03BB\u03B7"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13629,8 +13629,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13665,7 +13665,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 5.5104218, y: 0, z: 3.7522278, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -14084,8 +14084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d90d2be746cb9840ab46689508a51c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  currentState: 
 --- !u!95 &940915796
 Animator:
   serializedVersion: 5
@@ -19575,8 +19573,8 @@ MonoBehaviour:
     \u03C0\u03B9\u03B8\u03B1\u03BD\u03CE\u03C2 \u03B5\u03AF\u03BD\u03B1\u03B9 \u03BB\u03AC\u03B8\u03BF\u03C2
     \u03C3\u03C5\u03BD\u03B1\u03B3\u03B5\u03C1\u03BC\u03CC\u03C2"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19636,7 +19634,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 4.501877, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -23074,8 +23072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d90d2be746cb9840ab46689508a51c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  currentState: 
 --- !u!114 &1453541221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28939,11 +28935,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u03A4\u03B9 \u03C0\u03C1\u03AD\u03C0\u03B5\u03B9 \u03BD\u03B1 \u03BA\u03AC\u03BD\u03B5\u03B9\u03C2
-    \u03CC\u03C4\u03B1\u03BD \u03C7\u03C4\u03C5\u03C0\u03AC\u03B5\u03B9 \u03BF \u03C3\u03C5\u03BD\u03B1\u03B3\u03B5\u03C1\u03BC\u03CC\u03C2
-    \u03C6\u03C9\u03C4\u03B9\u03AC\u03C2;"
+    \u03C3\u03C4\u03B7\u03BD \u03C0\u03B5\u03C1\u03AF\u03C0\u03C4\u03C9\u03C3\u03B7
+    \u03C0\u03BF\u03C5 \u03B1\u03BA\u03BF\u03CD\u03C3\u03B5\u03B9\u03C2 \u03C4\u03BF\u03BD
+    \u03C3\u03C5\u03BD\u03B1\u03B3\u03B5\u03C1\u03BC\u03CC \u03B3\u03B9\u03B1 \u03C3\u03B5\u03B9\u03C3\u03BC\u03CC;"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -31839,8 +31836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d90d2be746cb9840ab46689508a51c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  currentState: 
 --- !u!114 &2016027953
 MonoBehaviour:
   m_ObjectHideFlags: 0

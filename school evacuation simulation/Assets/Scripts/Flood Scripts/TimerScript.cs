@@ -7,7 +7,7 @@ using TMPro;
 public class TimerScript : MonoBehaviour
 {
 	public TextMeshProUGUI timer;
-    public static float timerValue = 160;
+    public static float timerValue = 300;
     public AudioSource countSound;
     bool playCountSound = true;
     public AudioSource lightningSound;

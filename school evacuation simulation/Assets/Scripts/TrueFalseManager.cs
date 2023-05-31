@@ -8,7 +8,7 @@ using TMPro;
 public class TrueFalseManager : MonoBehaviour
 {
 	public TrueFalseQuestions[] questions;
-	private static List<TrueFalseQuestions> unansweredQuestions;
+	private static List<TrueFalseQuestions> unansweredQuestions1;
 	private TrueFalseQuestions currentQuestion;
 	[SerializeField] private TextMeshProUGUI factText;
 	
@@ -42,21 +42,27 @@ public class TrueFalseManager : MonoBehaviour
         slimeAnimator = slimeObject.GetComponent<Animator>();
 	}
 	void Start(){
-		if(unansweredQuestions == null || unansweredQuestions.Count==0){
-			unansweredQuestions = questions.ToList<TrueFalseQuestions>();
+		if(unansweredQuestions1 == null || unansweredQuestions1.Count==0){
+			unansweredQuestions1 = questions.ToList<TrueFalseQuestions>();
 		}
 		SetCurrentQuestion();
+		transform.gameObject.SetActive(false);
+	}
+	public static bool UnansweredQuestionsCount1(){
+		Debug.Log(unansweredQuestions1.Count);
+		if(unansweredQuestions1.Count == 0) return false;
+		return true;
 	}
 	void SetCurrentQuestion(){
-		randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
-		currentQuestion = unansweredQuestions[randomQuestionIndex];
+		randomQuestionIndex = Random.Range(0, unansweredQuestions1.Count);
+		currentQuestion = unansweredQuestions1[randomQuestionIndex];
 		factText.text = currentQuestion.fact;
 	}
 	public void UserSelectExit(){
 		GetComponent<CanvasGroup>().interactable = false;
         startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		startQuestionProcedureScript.StopAnimationAndCloseCanvasFromExit();
-		StartCoroutine(ChangeQuestion(false));
+		if(UnansweredQuestionsCount1()) StartCoroutine(ChangeQuestion(false));
 	}
 	
     private IEnumerator ChangeButtonColour(Button btn){
@@ -70,7 +76,7 @@ public class TrueFalseManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = true;
 		canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
 		SetCurrentQuestion();
-		Debug.Log(unansweredQuestions.Count);
+		Debug.Log(unansweredQuestions1.Count);
 	}
 	public void UserSelectTrue(){
 		GetComponent<CanvasGroup>().interactable = false;
@@ -80,7 +86,7 @@ public class TrueFalseManager : MonoBehaviour
 			Debug.Log("Cor");
 			trueButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
-			unansweredQuestions.RemoveAt(randomQuestionIndex);
+			unansweredQuestions1.RemoveAt(randomQuestionIndex);
 			ChangeAnimationState("congratulations");
 			fillBarScript.RightAnswer();
 		}else{
@@ -92,7 +98,7 @@ public class TrueFalseManager : MonoBehaviour
 			fillBarScript.WrongAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(trueButton));
-		StartCoroutine(ChangeQuestion(true));
+		if(UnansweredQuestionsCount1()) StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelectFalse(){
 		GetComponent<CanvasGroup>().interactable = false;
@@ -109,12 +115,12 @@ public class TrueFalseManager : MonoBehaviour
 			Debug.Log("Cor");
 			falseButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
-			unansweredQuestions.RemoveAt(randomQuestionIndex);
+			unansweredQuestions1.RemoveAt(randomQuestionIndex);
 			ChangeAnimationState("congratulations");
 			fillBarScript.RightAnswer();
 		}
 		StartCoroutine(ChangeButtonColour(falseButton));
-		StartCoroutine(ChangeQuestion(true));
+		if(UnansweredQuestionsCount1()) StartCoroutine(ChangeQuestion(true));
 	}
 	public void ChangeAnimationState(string newState){
         currentState=newState;

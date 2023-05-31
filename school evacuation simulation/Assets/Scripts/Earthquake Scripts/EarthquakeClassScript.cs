@@ -10,13 +10,17 @@ public class EarthquakeClassScript : MonoBehaviour
 	public GameObject dustParticles;
 	public static bool worriedTeacher = false;
     private string currentState;
+	public static bool stopMovement = false;
+
+	public GameObject trueFalseCanvas;
+	public GameObject mult3Canvas;
+	public GameObject mult4Canvas;
     // Start is called before the first frame update
     void Start(){
         earthquakeAnimator = GetComponent<Animator>();
     }
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
-			Debug.Log("ppppppppp");
 			StartCoroutine(StartEarthquake());
 		}
 	}
@@ -27,6 +31,12 @@ public class EarthquakeClassScript : MonoBehaviour
 			worriedTeacher = true;
         	yield return new WaitForSeconds (5f);
 			dustParticles.SetActive(true);
+			//alarm
+        	yield return new WaitForSeconds (1f);
+			stopMovement = true;
+			//Time.timeScale = 0;
+			//RotatePlayer.escapeFlag = true;
+			mult3Canvas.SetActive(true);
 		}
 	}
 	public void ChangeAnimationState(string newState){

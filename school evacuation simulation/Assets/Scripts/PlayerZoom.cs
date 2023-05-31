@@ -7,7 +7,7 @@ public class PlayerZoom : MonoBehaviour {
         
     public bool isEarthquake = false;
     void Update () {
-        if(isEarthquake){
+        if(isEarthquake || EarthquakeClassScript.stopMovement){
             if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
         }else{
             if(Input.GetKey(KeyCode.LeftControl)) {
