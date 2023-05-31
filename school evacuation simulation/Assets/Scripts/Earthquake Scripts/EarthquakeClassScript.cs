@@ -41,9 +41,6 @@ public class EarthquakeClassScript : MonoBehaviour
 			//RotatePlayer.escapeFlag = true;
 			mult3Canvas.SetActive(true);
 			Multiple3EarthquakeManager.GetQuestion(0);
-			/*if(Multiple3EarthquakeManager.IsAnswered()){	
-				Multiple3EarthquakeManager.GetQuestion(1);
-			}*/
 		}
 	}
 	public void ChangeAnimationState(string newState){

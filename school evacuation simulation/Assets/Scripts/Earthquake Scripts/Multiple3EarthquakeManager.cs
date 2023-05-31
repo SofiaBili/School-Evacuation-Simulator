@@ -73,7 +73,6 @@ public class Multiple3EarthquakeManager : MonoBehaviour
     private IEnumerator ChangeButtonColour(Button btn){
 		yield return new WaitForSeconds (1.9f);
 		btn.GetComponent<Image>().color = Color.white;
-		//transform.gameObject.SetActive(false);
 	}
 	
     private IEnumerator ChangeQuestion(bool show){
@@ -81,17 +80,13 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 		if(show)
 			yield return new WaitForSeconds (2.1f);
 		GetComponent<CanvasGroup>().interactable = true;
-		//canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
 		isAnsweredCorrect = true;
-		//SetCurrentQuestion();
-		//yield return new WaitForSeconds (0.09f);
 	}
 	public void UserSelect0(){
 		//GetComponent<CanvasGroup>().interactable = false;
 		if(currentQuestion.corrAns == 0){
 			winAudio.Play(0);
 			but1.GetComponent<Image>().color = Color.green;
-			//unansweredQuestions.RemoveAt(randomQuestionIndex);
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion(true));
 		}else{
@@ -100,14 +95,11 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
 		StartCoroutine(ChangeButtonColour(but1));
-		//if(UnansweredQuestionsCount()) StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelect1(){
-		//GetComponent<CanvasGroup>().interactable = false;
 		if(currentQuestion.corrAns == 1){
 			winAudio.Play(0);
 			but2.GetComponent<Image>().color = Color.green;
-			//unansweredQuestions.RemoveAt(randomQuestionIndex);
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion(true));
 		}else{
@@ -116,14 +108,11 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
 		StartCoroutine(ChangeButtonColour(but2));
-		//if(UnansweredQuestionsCount()) StartCoroutine(ChangeQuestion(true));
 	}
 	public void UserSelect2(){
-		//GetComponent<CanvasGroup>().interactable = false;
 		if(currentQuestion.corrAns == 2){
 			winAudio.Play(0);
 			but3.GetComponent<Image>().color = Color.green;
-			//unansweredQuestions.RemoveAt(randomQuestionIndex);
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion(true));
 		}else{
@@ -132,7 +121,6 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
 		StartCoroutine(ChangeButtonColour(but3));
-		//if(UnansweredQuestionsCount()) StartCoroutine(ChangeQuestion(true));
 	}
 	public IEnumerator ChangeAnimationState(string newState){
         currentState=newState;
