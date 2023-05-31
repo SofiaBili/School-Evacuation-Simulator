@@ -33,7 +33,8 @@ public class SchoolBtnsScript : MonoBehaviour
 	Button button11;
 	Button button12;
 	Button button13;
-
+	
+	public bool isSecondFloor = false;
 	int check = -1;
 
 	void Start(){
@@ -52,12 +53,13 @@ public class SchoolBtnsScript : MonoBehaviour
 		button5 = btn5.GetComponent<Button>();
 		button5.onClick.AddListener(TaskOnClick5);
 
-		button6 = btn6.GetComponent<Button>();
-		button6.onClick.AddListener(TaskOnClick6);
-		
-		button7 = btn7.GetComponent<Button>();
-		button7.onClick.AddListener(TaskOnClick7);
-
+		if(!isSecondFloor){
+			button6 = btn6.GetComponent<Button>();
+			button6.onClick.AddListener(TaskOnClick6);
+			
+			button7 = btn7.GetComponent<Button>();
+			button7.onClick.AddListener(TaskOnClick7);
+		}
 		button8 = btn8.GetComponent<Button>();
 		button8.onClick.AddListener(TaskOnClick8);
 		
