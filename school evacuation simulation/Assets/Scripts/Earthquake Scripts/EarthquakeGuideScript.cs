@@ -24,7 +24,8 @@ public class EarthquakeGuideScript : MonoBehaviour
     }
     
     public IEnumerator StartGuide(){
-        yield return new WaitForSeconds (16f);
+        yield return new WaitForSeconds (40f);
+        End();
     }
 
     // Update is called once per frame
