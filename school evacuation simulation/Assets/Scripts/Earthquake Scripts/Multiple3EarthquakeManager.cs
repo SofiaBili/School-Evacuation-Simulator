@@ -49,6 +49,7 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 		return true;
 	}
 	public static void GetQuestion(int index){
+		EarthquakeClassScript.flag = false;
 		isAnsweredCorrect = false;
 		randomQuestionIndex = index;
 		currentQuestion = unansweredQuestions[randomQuestionIndex];
@@ -80,12 +81,14 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 	}
 	
     private IEnumerator ChangeQuestion(){
-		yield return new WaitForSeconds (2.3f);
 		GetComponent<CanvasGroup>().interactable = false;
-		//GetComponent<CanvasGroup>().interactable = true;
+		yield return new WaitForSeconds (2.3f);
 		isAnsweredCorrect = true;
-		if(unansweredQuestions[randomQuestionIndex+1]!=null)
-			EarthquakeClassScript.NextMult3QuestionAndAnimation(randomQuestionIndex+1);
+		EarthquakeClassScript.flag = true;
+		EarthquakeClassScript.step++;
+		transform.gameObject.SetActive(false);
+		//if(unansweredQuestions[randomQuestionIndex+1]!=null)
+			//EarthquakeClassScript.NextMult3QuestionAndAnimation(randomQuestionIndex+1);
 	}
 	public void UserSelect0(){
 		//GetComponent<CanvasGroup>().interactable = false;
