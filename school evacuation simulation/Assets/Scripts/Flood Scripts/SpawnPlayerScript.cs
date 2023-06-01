@@ -9,7 +9,6 @@ public class SpawnPlayerScript : MonoBehaviour
     [SerializeField] GameObject mapGameObject;
 
     List<Transform> spawns = new List<Transform>();
-    GameObject instantiatedObject;
     // Start is called before the first frame update
     void Start() {
         FindAllSpawns();
@@ -32,13 +31,9 @@ public class SpawnPlayerScript : MonoBehaviour
             randomPos = Random.Range(0, spawns.Count);
             //Debug.Log(spawns.Count);
             //Debug.Log(randomPos);
-            instantiatedObject=Instantiate(playerPrefab);
-            instantiatedObject.name = "Player";
-            instantiatedObject.transform.SetParent(spawns[randomPos].transform.parent);
-            instantiatedObject.transform.position = spawns[randomPos].transform.position;
+            playerPrefab.transform.position = spawns[randomPos].transform.position;
             //instantiatedObject.GetComponent<LookAt>().enabled=false;
             spawns.RemoveAt(randomPos);
         }
-        playerPrefab.SetActive(false);
     }
 }
