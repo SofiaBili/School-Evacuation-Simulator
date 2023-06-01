@@ -51,8 +51,8 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 	public static void GetQuestion(int index){
 		isAnsweredCorrect = false;
 		randomQuestionIndex = index;
-		changeQuest = true;
 		currentQuestion = unansweredQuestions[randomQuestionIndex];
+		changeQuest = true;
 
 	}
 	public static bool IsAnswered(){
@@ -64,23 +64,28 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 		}
 	}
 	void SetCurrentQuestion(){
+		GetComponent<CanvasGroup>().interactable = true;
 		changeQuest = false;
+		Debug.Log(randomQuestionIndex);
 		factText.text = currentQuestion.question;
 		ans0Text.text = currentQuestion.ans1;
 		ans1Text.text = currentQuestion.ans2;
 		ans2Text.text = currentQuestion.ans3;
 	}
-    private IEnumerator ChangeButtonColour(Button btn){
+    private IEnumerator ChangeButtonColour(){
 		yield return new WaitForSeconds (1.9f);
-		btn.GetComponent<Image>().color = Color.white;
+		but1.GetComponent<Image>().color = Color.white;
+		but2.GetComponent<Image>().color = Color.white;
+		but3.GetComponent<Image>().color = Color.white;
 	}
 	
-    private IEnumerator ChangeQuestion(bool show){
+    private IEnumerator ChangeQuestion(){
+		yield return new WaitForSeconds (2.3f);
 		GetComponent<CanvasGroup>().interactable = false;
-		if(show)
-			yield return new WaitForSeconds (2.1f);
-		GetComponent<CanvasGroup>().interactable = true;
+		//GetComponent<CanvasGroup>().interactable = true;
 		isAnsweredCorrect = true;
+		if(unansweredQuestions[randomQuestionIndex+1]!=null)
+			EarthquakeClassScript.NextMult3QuestionAndAnimation(randomQuestionIndex+1);
 	}
 	public void UserSelect0(){
 		//GetComponent<CanvasGroup>().interactable = false;
@@ -88,39 +93,40 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			winAudio.Play(0);
 			but1.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
-			StartCoroutine(ChangeQuestion(true));
+			StartCoroutine(ChangeQuestion());
+			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
 			but1.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
-		StartCoroutine(ChangeButtonColour(but1));
+		//StartCoroutine(ChangeButtonColour(but1));
 	}
 	public void UserSelect1(){
 		if(currentQuestion.corrAns == 1){
 			winAudio.Play(0);
 			but2.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
-			StartCoroutine(ChangeQuestion(true));
+			StartCoroutine(ChangeQuestion());
 		}else{
 			loseAudio.Play(0);
 			but2.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
-		StartCoroutine(ChangeButtonColour(but2));
+		//StartCoroutine(ChangeButtonColour(but2));
 	}
 	public void UserSelect2(){
 		if(currentQuestion.corrAns == 2){
 			winAudio.Play(0);
 			but3.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
-			StartCoroutine(ChangeQuestion(true));
+			StartCoroutine(ChangeQuestion());
 		}else{
 			loseAudio.Play(0);
 			but3.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
-		StartCoroutine(ChangeButtonColour(but3));
+		//StartCoroutine(ChangeButtonColour(but3));
 	}
 	public IEnumerator ChangeAnimationState(string newState){
         currentState=newState;
