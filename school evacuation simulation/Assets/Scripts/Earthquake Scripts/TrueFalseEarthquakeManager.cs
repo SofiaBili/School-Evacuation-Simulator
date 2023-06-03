@@ -71,8 +71,8 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 	}
 	
     private IEnumerator ChangeQuestion(){
-		yield return new WaitForSeconds (2.3f);
 		GetComponent<CanvasGroup>().interactable = false;
+		yield return new WaitForSeconds (2.3f);
 		EarthquakeClassScript.flag = true;
 		isAnsweredCorrect = true;
 		EarthquakeClassScript.step++;

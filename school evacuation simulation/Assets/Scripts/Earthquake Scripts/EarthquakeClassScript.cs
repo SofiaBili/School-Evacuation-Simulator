@@ -14,7 +14,8 @@ public class EarthquakeClassScript : MonoBehaviour
 
 	public GameObject trueFalseCanvas;
 	public GameObject mult3Canvas;
-	public GameObject mult4Canvas;
+	public GameObject chooseDeskPosCanvas;
+	public GameObject infoCanvas;
 
 	public AudioSource alarm;
 	public static bool startFirstCoroutine = true;
@@ -60,15 +61,26 @@ public class EarthquakeClassScript : MonoBehaviour
 				case 0:
 					StopCoroutine(StartEarthquake());
 					mult3Canvas.SetActive(false);
-					trueFalseCanvas.SetActive(true);
+					chooseDeskPosCanvas.SetActive(true);
 					TrueFalseEarthquakeManager.GetQuestion(0);
 					break;
 				case 1:
-					trueFalseCanvas.SetActive(false);
-					mult3Canvas.SetActive(true);
-					Multiple3EarthquakeManager.GetQuestion(1);
+					chooseDeskPosCanvas.SetActive(false);
+					trueFalseCanvas.SetActive(true);
+					TrueFalseEarthquakeManager.GetQuestion(1);
 					break;
 				case 2:
+					trueFalseCanvas.SetActive(false);
+					ShowDesk.startShowDesk = true;
+					if(ShowDesk.continueQuest){
+						mult3Canvas.SetActive(true);
+						Multiple3EarthquakeManager.GetQuestion(1);
+						ShowDesk.continueQuest = false;
+					}
+					break;
+				case 3:
+					mult3Canvas.SetActive(false);
+					infoCanvas.SetActive(true);
 					break;
 			}
 		}

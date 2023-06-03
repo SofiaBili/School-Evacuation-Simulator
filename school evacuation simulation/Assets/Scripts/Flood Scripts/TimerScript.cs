@@ -23,6 +23,7 @@ public class TimerScript : MonoBehaviour
                 timerValue -= Time.deltaTime;
             }else{
                 timerValue = 0;
+                Cursor.lockState=CursorLockMode.None;
                 showLosingCanvas.SetActive(true);
             }
             DisplayTime(timerValue);

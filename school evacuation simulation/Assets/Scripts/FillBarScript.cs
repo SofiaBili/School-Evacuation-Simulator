@@ -38,6 +38,7 @@ public class FillBarScript : MonoBehaviour
     }
     public bool ShowWinningCanvas(){
         if(currentPoints == 100){
+            Cursor.lockState=CursorLockMode.None;
             showWinningCanvas.SetActive(true);
             timerScript.StopTimer();
             return true;

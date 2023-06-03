@@ -20,6 +20,7 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 	[SerializeField] Button but3;
 	
 	[SerializeField] Camera canvasCamera;
+	[SerializeField] GameObject canvasCameraObj;
 	
     [SerializeField] GameObject slimeObject;
 	Animator slimeAnimator;
@@ -61,6 +62,10 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 	}
 	void Update(){
 		if(changeQuest){
+			canvasCameraObj.SetActive(false);
+			canvasCameraObj.SetActive(true);
+			canvasCamera.targetDisplay = 1;
+			canvasCamera.targetDisplay = 0;
 			SetCurrentQuestion();
 		}
 	}
