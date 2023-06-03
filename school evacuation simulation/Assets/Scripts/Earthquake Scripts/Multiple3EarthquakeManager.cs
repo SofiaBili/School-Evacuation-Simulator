@@ -89,8 +89,8 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		yield return new WaitForSeconds (2.3f);
 		isAnsweredCorrect = true;
-		EarthquakeClassScript.flag = true;
 		EarthquakeClassScript.step++;
+		EarthquakeClassScript.flag = true;
 		transform.gameObject.SetActive(false);
 		//if(unansweredQuestions[randomQuestionIndex+1]!=null)
 			//EarthquakeClassScript.NextMult3QuestionAndAnimation(randomQuestionIndex+1);
@@ -116,6 +116,7 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			but2.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion());
+			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
 			but2.GetComponent<Image>().color = Color.red;
@@ -129,6 +130,7 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			but3.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion());
+			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
 			but3.GetComponent<Image>().color = Color.red;

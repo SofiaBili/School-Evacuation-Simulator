@@ -14,8 +14,11 @@ public class EarthquakeClassScript : MonoBehaviour
 
 	public GameObject trueFalseCanvas;
 	public GameObject mult3Canvas;
+	public GameObject mult4Canvas;
 	public GameObject chooseDeskPosCanvas;
 	public GameObject infoCanvas;
+	public GameObject infoCanvas1;
+	public GameObject putClassmatesInOrderCanvas;
 
 	public AudioSource alarm;
 	public static bool startFirstCoroutine = true;
@@ -27,6 +30,7 @@ public class EarthquakeClassScript : MonoBehaviour
 	public static int step=-1;
 
 	public static bool flag = true;
+	public bool playerFlag = false;
 
     // Start is called before the first frame update
     void Start(){
@@ -34,6 +38,7 @@ public class EarthquakeClassScript : MonoBehaviour
     }
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
+			playerFlag = true;
 			if(startFirstCoroutine)
 				StartCoroutine(StartEarthquake());
 		}
@@ -55,8 +60,8 @@ public class EarthquakeClassScript : MonoBehaviour
 		}
 	}
 	void Update(){
-		Debug.Log(flag);
-		if(EarthquakeGuideScript.guideIsOver && flag){
+		//Debug.Log(flag);
+		if(EarthquakeGuideScript.guideIsOver && flag && playerFlag){
 			switch(step) {
 				case 0:
 					StopCoroutine(StartEarthquake());
@@ -82,8 +87,41 @@ public class EarthquakeClassScript : MonoBehaviour
 					mult3Canvas.SetActive(false);
 					infoCanvas.SetActive(true);
 					break;
+				case 4:
+					infoCanvas.SetActive(false);
+					mult4Canvas.SetActive(true);
+					Multiple4EarthquakeManager.GetQuestion(0);
+					break;
+				case 5:
+					mult4Canvas.SetActive(false);
+					infoCanvas1.SetActive(true);
+					break;
+				case 6:
+					infoCanvas1.SetActive(false);
+					trueFalseCanvas.SetActive(true);
+					TrueFalseEarthquakeManager.GetQuestion(2);
+					break;
+				case 7:
+					trueFalseCanvas.SetActive(false);
+					mult4Canvas.SetActive(true);
+					Multiple4EarthquakeManager.GetQuestion(3);
+					ShowDesk.stopShowDesk = true;
+					break;
+				case 8:
+					mult4Canvas.SetActive(false);
+					putClassmatesInOrderCanvas.SetActive(true);
+					MatchingManager.startFlag = true;
+					break;
+				case 9:
+					putClassmatesInOrderCanvas.SetActive(false);
+					mult4Canvas.SetActive(true);
+					Multiple4EarthquakeManager.GetQuestion(1);
+					break;
 			}
 		}
+	}
+	public void AddStep(){
+		step++;
 	}
 	public static void NextMult3QuestionAndAnimation(int i){
 		stopCoroutine = true;

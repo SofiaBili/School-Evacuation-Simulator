@@ -20,8 +20,8 @@ public class ShowDesk : MonoBehaviour
 	}
 
 	public void ChangeCamera(){
-		cameraObject.SetActive(true);
 		startShowDesk = false;
+		cameraObject.SetActive(true);
 		cameraAnimation.targetDisplay = 0;
 		continueQuest = true;
     }

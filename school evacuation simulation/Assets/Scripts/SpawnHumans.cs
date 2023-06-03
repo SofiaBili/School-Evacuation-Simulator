@@ -65,11 +65,14 @@ public class SpawnHumans : MonoBehaviour
                 instantiatedObject.transform.SetParent(spawns[randomPos].transform.parent.transform.parent);
                 instantiatedObject.transform.position = spawns[randomPos].transform.position;
                 instantiatedObject.GetComponent<LookAt>().enabled=true;
+                if(SelectedCharacterScript.character==0)
+                    spawns[randomPos].GetComponent<WhatIsInSpawn>().isGirl=true;
                 //instantiatedObject.GetComponent<LookAt>().enabled=false;
             }else{
                 if(Random.Range(0, 2)==0){
                     instantiatedObject=Instantiate(femaleHumanPrefab);
                     instantiatedObject.name = "Girl";
+                    spawns[randomPos].GetComponent<WhatIsInSpawn>().isGirl=true;
                 }    
                 else{
                     instantiatedObject=Instantiate(maleHumanPrefab);

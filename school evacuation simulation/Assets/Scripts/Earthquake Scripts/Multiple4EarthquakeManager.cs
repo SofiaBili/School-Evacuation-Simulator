@@ -5,17 +5,24 @@ using System.Linq;
 using UnityEngine.UI;
 using TMPro;
 
-public class TrueFalseEarthquakeManager : MonoBehaviour
+public class Multiple4EarthquakeManager : MonoBehaviour
 {
-    public TrueFalseQuestions[] questions;
-	private static List<TrueFalseQuestions> unansweredQuestions;
-	private static TrueFalseQuestions currentQuestion;
+    public Multiple4ChoiceQuestions[] questions;
+	private static List<Multiple4ChoiceQuestions> unansweredQuestions;
+	private static Multiple4ChoiceQuestions currentQuestion;
 	[SerializeField] private TextMeshProUGUI factText;
+	[SerializeField] private TextMeshProUGUI ans0Text;
+	[SerializeField] private TextMeshProUGUI ans1Text;
+	[SerializeField] private TextMeshProUGUI ans2Text;
+	[SerializeField] private TextMeshProUGUI ans3Text;
 
-	[SerializeField] Button trueButton;
-	[SerializeField] Button falseButton;
+	[SerializeField] Button but1;
+	[SerializeField] Button but2;
+	[SerializeField] Button but3;
+	[SerializeField] Button but4;
 	
 	[SerializeField] Camera canvasCamera;
+	[SerializeField] GameObject canvasCameraObj;
 	
     [SerializeField] GameObject slimeObject;
 	Animator slimeAnimator;
@@ -33,8 +40,10 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 	}
 	void Start(){
 		if(unansweredQuestions == null || unansweredQuestions.Count==0){
-			unansweredQuestions = questions.ToList<TrueFalseQuestions>();
+			unansweredQuestions = questions.ToList<Multiple4ChoiceQuestions>();
 		}
+
+		//SetCurrentQuestion();
 		transform.gameObject.SetActive(false);
 	}
 	public static bool UnansweredQuestionsCount(){
@@ -62,12 +71,18 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = true;
 		changeQuest = false;
 		Debug.Log(randomQuestionIndex);
-		factText.text = currentQuestion.fact;
+		factText.text = currentQuestion.question;
+		ans0Text.text = currentQuestion.ans1;
+		ans1Text.text = currentQuestion.ans2;
+		ans2Text.text = currentQuestion.ans3;
+		ans3Text.text = currentQuestion.ans4;
 	}
     private IEnumerator ChangeButtonColour(){
 		yield return new WaitForSeconds (1.9f);
-		trueButton.GetComponent<Image>().color = Color.white;
-		falseButton.GetComponent<Image>().color = Color.white;
+		but1.GetComponent<Image>().color = Color.white;
+		but2.GetComponent<Image>().color = Color.white;
+		but3.GetComponent<Image>().color = Color.white;
+		but4.GetComponent<Image>().color = Color.white;
 	}
 	
     private IEnumerator ChangeQuestion(){
@@ -77,40 +92,67 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 		EarthquakeClassScript.step++;
 		EarthquakeClassScript.flag = true;
 		transform.gameObject.SetActive(false);
-		/*if(unansweredQuestions[randomQuestionIndex+1]!=null)
-			EarthquakeClassScript.NextTrueFalseQuestionAndAnimation(randomQuestionIndex+1);*/
 	}
-	public void UserSelectTrue(){
-		if(currentQuestion.isTrue){
+	public void UserSelect0(){
+		//GetComponent<CanvasGroup>().interactable = false;
+		if(currentQuestion.corrAns == 0){
 			winAudio.Play(0);
-			Debug.Log("Cor");
-			trueButton.GetComponent<Image>().color = Color.green;
+			but1.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion());
 			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
-			trueButton.GetComponent<Image>().color = Color.red;
+			but1.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
+		//StartCoroutine(ChangeButtonColour(but1));
 	}
-	public void UserSelectFalse(){
-		if(currentQuestion.isTrue){
-			loseAudio.Play(0);
-			falseButton.GetComponent<Image>().color = Color.red;
-			StartCoroutine(ChangeAnimationState("disappoint"));
-		}else{
+	public void UserSelect1(){
+		if(currentQuestion.corrAns == 1){
 			winAudio.Play(0);
-			falseButton.GetComponent<Image>().color = Color.green;
+			but2.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion());
 			StartCoroutine(ChangeButtonColour());
+		}else{
+			loseAudio.Play(0);
+			but2.GetComponent<Image>().color = Color.red;
+			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
+		//StartCoroutine(ChangeButtonColour(but2));
+	}
+	public void UserSelect2(){
+		if(currentQuestion.corrAns == 2){
+			winAudio.Play(0);
+			but3.GetComponent<Image>().color = Color.green;
+			StartCoroutine(ChangeAnimationState("congratulations"));
+			StartCoroutine(ChangeQuestion());
+			StartCoroutine(ChangeButtonColour());
+		}else{
+			loseAudio.Play(0);
+			but3.GetComponent<Image>().color = Color.red;
+			StartCoroutine(ChangeAnimationState("disappoint"));
+		}
+		//StartCoroutine(ChangeButtonColour(but3));
+	}
+	public void UserSelect3(){
+		if(currentQuestion.corrAns == 3){
+			winAudio.Play(0);
+			but4.GetComponent<Image>().color = Color.green;
+			StartCoroutine(ChangeAnimationState("congratulations"));
+			StartCoroutine(ChangeQuestion());
+			StartCoroutine(ChangeButtonColour());
+		}else{
+			loseAudio.Play(0);
+			but4.GetComponent<Image>().color = Color.red;
+			StartCoroutine(ChangeAnimationState("disappoint"));
+		}
+		//StartCoroutine(ChangeButtonColour(but3));
 	}
 	public IEnumerator ChangeAnimationState(string newState){
         currentState=newState;
         if(!slimeAnimator.GetCurrentAnimatorStateInfo(0).IsName(currentState)){
-			Debug.Log("oooooooooooo");
             slimeAnimator.Play(newState);
 			yield return new WaitForSeconds (2.3f);
 		}

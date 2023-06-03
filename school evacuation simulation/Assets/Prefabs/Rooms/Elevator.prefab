@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 5227002333885503629}
   - component: {fileID: 5227002333885503618}
   - component: {fileID: 2164190054331676801}
+  - component: {fileID: 4917391155181669769}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -704,6 +705,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &4917391155181669769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227002333885503616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.284038, y: 2.8985362, z: 10.000002}
+  m_Center: {x: 1.1420174, y: 1.4258795, z: -2.0181915e-15}
 --- !u!1 &5227002334005542938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4521447638339281212}
   - component: {fileID: 8165453885391292804}
+  - component: {fileID: 646589319021435126}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -1419,6 +1434,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &646589319021435126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574720546969456381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.18376, y: 1, z: 9.626661}
+  m_Center: {x: 3.5918803, y: 0, z: 0.00856185}
 --- !u!1 &6599552957784695004
 GameObject:
   m_ObjectHideFlags: 0
