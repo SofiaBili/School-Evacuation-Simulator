@@ -35,10 +35,10 @@ public class MatchingManager : MonoBehaviour
 	}
     public void StartImageSpawn(){
 		startFlag=false;
-		Debug.Log("aaaaaaaaaaaaaaaa"+spawnA.GetComponent<WhatIsInSpawn>().isGirl);
-		Debug.Log("aaaaaaaaaaaaaaaa"+spawnB.GetComponent<WhatIsInSpawn>().isGirl);
-		Debug.Log("aaaaaaaaaaaaaaaa"+spawnC.GetComponent<WhatIsInSpawn>().isGirl);
-		Debug.Log("aaaaaaaaaaaaaaaa"+spawnD.GetComponent<WhatIsInSpawn>().isGirl);
+//		Debug.Log("aaaaaaaaaaaaaaaa"+spawnA.GetComponent<WhatIsInSpawn>().isGirl);
+//		Debug.Log("aaaaaaaaaaaaaaaa"+spawnB.GetComponent<WhatIsInSpawn>().isGirl);
+//		Debug.Log("aaaaaaaaaaaaaaaa"+spawnC.GetComponent<WhatIsInSpawn>().isGirl);
+//		Debug.Log("aaaaaaaaaaaaaaaa"+spawnD.GetComponent<WhatIsInSpawn>().isGirl);
 		if(spawnA.GetComponent<WhatIsInSpawn>().isGirl){
 			girlImageA.SetActive(true);
 		}else{

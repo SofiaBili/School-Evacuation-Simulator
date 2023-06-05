@@ -35,8 +35,11 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 	static bool changeQuest = false;
 	static bool isAnsweredCorrect = false;
 
+	private HealthPlayer health;
+
 	void Awake(){
         slimeAnimator = slimeObject.GetComponent<Animator>();
+		//health = gameObject.transform.parent.parent.parent.transform.Find("Player").GetComponent<HealthPlayer>();
 	}
 	void Start(){
 		if(unansweredQuestions == null || unansweredQuestions.Count==0){
@@ -70,7 +73,7 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 	void SetCurrentQuestion(){
 		GetComponent<CanvasGroup>().interactable = true;
 		changeQuest = false;
-		Debug.Log(randomQuestionIndex);
+//		Debug.Log(randomQuestionIndex);
 		factText.text = currentQuestion.question;
 		ans0Text.text = currentQuestion.ans1;
 		ans1Text.text = currentQuestion.ans2;
@@ -102,6 +105,7 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeQuestion());
 			StartCoroutine(ChangeButtonColour());
 		}else{
+			HealthPlayer.RemoveHeart();
 			loseAudio.Play(0);
 			but1.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
@@ -116,6 +120,7 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeQuestion());
 			StartCoroutine(ChangeButtonColour());
 		}else{
+			HealthPlayer.RemoveHeart();
 			loseAudio.Play(0);
 			but2.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
@@ -130,6 +135,7 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeQuestion());
 			StartCoroutine(ChangeButtonColour());
 		}else{
+			HealthPlayer.RemoveHeart();
 			loseAudio.Play(0);
 			but3.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
@@ -145,6 +151,7 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
+			HealthPlayer.RemoveHeart();
 			but4.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}

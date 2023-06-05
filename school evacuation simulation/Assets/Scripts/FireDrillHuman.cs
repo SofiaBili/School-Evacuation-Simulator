@@ -5,23 +5,31 @@ using UnityEngine;
 public class FireDrillHuman : MonoBehaviour
 {
     
-    // SpawnHumans spawnHumansScript;
-    // [SerializeField] GameObject spawnHumansObject;
+    SpawnHumans spawnHumansScript;
+    [SerializeField] GameObject spawnHumansObject;
+    public static bool startEvacFlag = false;
 
-    // void Awake(){
-    //     spawnHumansScript = spawnHumansObject.GetComponent<SpawnHumans>();
-    // }
+    void Awake(){
+        spawnHumansScript = spawnHumansObject.GetComponent<SpawnHumans>();
+    }
 
-    // public void humanStandUp(){
-    //     foreach (var pers in spawnHumansScript.humans){
-    //         pers.transform.localPosition =  pers.transform.localPosition + new Vector3(0, 0, -1.3f);
-    //         pers.GetComponent<CapsuleCollider>().enabled=true;
-    //         pers.GetComponent<BoxCollider>().enabled=false;
-    //         pers.GetComponent<HumanActions>().FireDrillAction();
-    //     }
-    //     foreach (var pers in spawnHumansScript.humans){
-    //         pers.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
-    //         pers.GetComponent<NavMeshControl>().enabled=true;
-    //     }
-    // }
+    void Update(){
+        if(startEvacFlag){
+            humanStandUp();
+        }
+    }
+    public void humanStandUp(){
+        startEvacFlag=false;
+        foreach (var pers in spawnHumansScript.humans){
+            pers.GetComponent<CapsuleCollider>().enabled=true;
+            pers.GetComponent<BoxCollider>().enabled=false;
+            pers.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
+            pers.GetComponent<Rigidbody>().isKinematic = true; 
+            pers.GetComponent<NavMeshControl>().enabled=true;
+        }
+		NavMeshControl.startNavmesh = true;
+        foreach (var pers in spawnHumansScript.humans){
+            pers.GetComponent<HumanActions>().FireDrillAction();
+        }
+    }
 }

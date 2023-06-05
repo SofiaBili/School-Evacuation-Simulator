@@ -6,7 +6,7 @@ public class ShowDesk : MonoBehaviour
 {
     [SerializeField] Camera cameraAnimation;
     [SerializeField] GameObject cameraObject;
-	GameObject room;
+	public GameObject room;
 	public static bool startShowDesk = false;
 	public static bool stopShowDesk = false;
 	public static bool continueQuest = false;
@@ -27,7 +27,7 @@ public class ShowDesk : MonoBehaviour
     }
 	public void DestroyRoom(){
 		stopShowDesk = false;
-        Destroy(room);
 		cameraAnimation.GetComponent<Camera>().cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
+        Destroy(room);				
 	}
 }

@@ -56,8 +56,6 @@ public class SpawnHumans : MonoBehaviour
         }
         while (spawns.Count>0){
             randomPos = Random.Range(0, spawns.Count);
-            //Debug.Log(spawns.Count);
-            //Debug.Log(randomPos);
             if(playerSpawnFlag){
                 instantiatedObject=Instantiate(playerPrefab);
                 instantiatedObject.name = "Player";
@@ -67,16 +65,17 @@ public class SpawnHumans : MonoBehaviour
                 instantiatedObject.GetComponent<LookAt>().enabled=true;
                 if(SelectedCharacterScript.character==0)
                     spawns[randomPos].GetComponent<WhatIsInSpawn>().isGirl=true;
-                //instantiatedObject.GetComponent<LookAt>().enabled=false;
             }else{
                 if(Random.Range(0, 2)==0){
                     instantiatedObject=Instantiate(femaleHumanPrefab);
                     instantiatedObject.name = "Girl";
                     spawns[randomPos].GetComponent<WhatIsInSpawn>().isGirl=true;
+                    spawns[randomPos].GetComponent<WhatIsInSpawn>().human=instantiatedObject;
                 }    
                 else{
                     instantiatedObject=Instantiate(maleHumanPrefab);
                     instantiatedObject.name = "Boy";
+                    spawns[randomPos].GetComponent<WhatIsInSpawn>().human=instantiatedObject;
                 }    
                 humans.Add(instantiatedObject);
                 instantiatedObject.transform.SetParent(spawns[randomPos].transform.parent.transform.parent);

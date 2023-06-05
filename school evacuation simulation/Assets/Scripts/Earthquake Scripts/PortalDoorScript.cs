@@ -9,6 +9,9 @@ public class PortalDoorScript : MonoBehaviour
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
 		    SceneManager.LoadScene(sceneName);
+        }else{
+            Debug.Log(other);
+            Destroy(other.gameObject);
         }
 	}
 }

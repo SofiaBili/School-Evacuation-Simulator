@@ -9726,7 +9726,7 @@ CharacterController:
   m_Enabled: 0
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -9958,6 +9958,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1133185134}
+--- !u!114 &575536258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575536245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b286f6df856ec87418f2d758f1e66364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1133185134}
+  hearts:
+  - {fileID: 789898755}
+  - {fileID: 162445151}
+  - {fileID: 498197783}
+  count: 2
 --- !u!1 &585953702
 GameObject:
   m_ObjectHideFlags: 0
@@ -14204,6 +14222,7 @@ GameObject:
   - component: {fileID: 940424395}
   - component: {fileID: 940424397}
   - component: {fileID: 940424396}
+  - component: {fileID: 940424398}
   m_Layer: 8
   m_Name: Map
   m_TagString: Untagged
@@ -14298,6 +14317,19 @@ MonoBehaviour:
   mapGameObject: {fileID: 940424394}
   humansGameObject: {fileID: 707577695}
   humans: []
+--- !u!114 &940424398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940424394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d324aa83329f564b8e3d46be790456d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnHumansObject: {fileID: 940424394}
 --- !u!1001 &940915788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14451,18 +14483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireDrillHumanObject: {fileID: 0}
---- !u!114 &940915795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940915789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d90d2be746cb9840ab46689508a51c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &940915796
 Animator:
   serializedVersion: 5
@@ -18667,7 +18687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1133185135
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22325,6 +22345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraAnimation: {fileID: 757057016}
   cameraObject: {fileID: 757057009}
+  room: {fileID: 1352964497}
 --- !u!1 &1360589762
 GameObject:
   m_ObjectHideFlags: 0
@@ -22611,7 +22632,7 @@ MonoBehaviour:
   cameraBoardBoy: 0
   cameraBoardGirl: 1
   playerBody: {fileID: 575536251}
-  zRotation: 10
+  zRotation: 30
   isEarthquake: 1
 --- !u!114 &1370060684
 MonoBehaviour:
@@ -24021,10 +24042,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  m_Radius: 0.5
+  m_Radius: 0.05329965
   m_Height: 1.9543827
   m_Direction: 1
-  m_Center: {x: 0, y: 0.93718755, z: 0}
+  m_Center: {x: -0.0036882388, y: 0.93718755, z: 0}
 --- !u!95 &1453541219
 Animator:
   serializedVersion: 5
@@ -24121,7 +24142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1453541226}
-  wayPoint: {fileID: 1481132698}
+  mapGameObject: {fileID: 940424394}
+  doors: []
+  closestDoor: {fileID: 0}
 --- !u!1 &1456230157
 GameObject:
   m_ObjectHideFlags: 0
@@ -32778,10 +32801,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  m_Radius: 0.39622104
+  m_Radius: 0.044763412
   m_Height: 1.5911176
   m_Direction: 1
-  m_Center: {x: 0.0068750517, y: 0.7855228, z: 0}
+  m_Center: {x: 0.016638089, y: 0.7855228, z: 0.16881646}
 --- !u!95 &2016027951
 Animator:
   serializedVersion: 5
@@ -32841,8 +32864,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43859518, y: 1.145493, z: 0.6352042}
-  m_Center: {x: 0.000000037413585, y: 0.86511445, z: -0.15945433}
+  m_Size: {x: 0.43859518, y: 1.1169697, z: 0.63520414}
+  m_Center: {x: 0.000000040588795, y: 0.8793761, z: -0.15945433}
 --- !u!195 &2016027958
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -32878,7 +32901,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2016027958}
-  wayPoint: {fileID: 1481132698}
+  mapGameObject: {fileID: 940424394}
+  doors: []
+  closestDoor: {fileID: 0}
 --- !u!1 &2018083468
 GameObject:
   m_ObjectHideFlags: 0

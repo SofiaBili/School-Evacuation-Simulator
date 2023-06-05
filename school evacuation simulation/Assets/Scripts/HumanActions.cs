@@ -8,6 +8,7 @@ public class HumanActions : MonoBehaviour
     private Vector3 targetPos;
     private string currentState;
     private bool fireFlag = false;
+    private bool earthquakeFlag = false;
 
     FireDrillHuman fireDrillHuman;
     [SerializeField] GameObject fireDrillHumanObject;
@@ -26,19 +27,14 @@ public class HumanActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!fireFlag){
+        if(!fireFlag && !earthquakeFlag){
             ChangeAnimationState("Sitting");
-        }
-        else{
-            // Debug.Log(Vector3.Distance(targetPos, transform.position));
-            // if ( Vector3.Distance(targetPos, transform.position) < 0.05 ){
-            //         ChangeAnimationState("Idle");
-            // }
-            // else{
-            //     ChangeAnimationState("Walking");
-            // }   
+        }else if(earthquakeFlag && !fireFlag){
+            ChangeAnimationState("Idle");
+        }else{
             ChangeAnimationState("Walking");
         }
+        
         targetPos=transform.position;
     }
 
@@ -46,6 +42,9 @@ public class HumanActions : MonoBehaviour
         fireFlag = true;
     }
 
+    public void EarthquakeDrillAction(){
+        earthquakeFlag = true;
+    }
     public void ChangeAnimationState(string newState){
         currentState=newState;
         if(!animator.GetCurrentAnimatorStateInfo(0).IsName(currentState)){

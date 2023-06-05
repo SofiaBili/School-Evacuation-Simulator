@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EarthquakeClassScript : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class EarthquakeClassScript : MonoBehaviour
 	public GameObject chooseDeskPosCanvas;
 	public GameObject infoCanvas;
 	public GameObject infoCanvas1;
+	public GameObject infoCanvas2;
+	public GameObject infoCanvas3;
+	public TextMeshProUGUI infoCanvas1Text;
 	public GameObject putClassmatesInOrderCanvas;
 
 	public AudioSource alarm;
@@ -32,17 +36,29 @@ public class EarthquakeClassScript : MonoBehaviour
 	public static bool flag = true;
 	public bool playerFlag = false;
 
+
+	public GameObject spawn1, spawn2, spawn3, spawn4;
+	GameObject thisPlayer;
+	public bool spawn1Free=false, spawn2Free=false, spawn3Free=false, spawn4Free=false;
     // Start is called before the first frame update
     void Start(){
+		infoCanvas1Text = GetComponent<TextMeshProUGUI>();
+		infoCanvas1.SetActive(false);
+		hitbox1.SetActive(false);
+		hitbox2.SetActive(false);
+		hitbox3.SetActive(false);
+		hitbox4.SetActive(false);
         earthquakeAnimator = GetComponent<Animator>();
     }
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
 			playerFlag = true;
+			thisPlayer = GameObject.Find("Player");
 			if(startFirstCoroutine)
 				StartCoroutine(StartEarthquake());
 		}
 	}
+	
 	public IEnumerator StartEarthquake(){
 		if(EarthquakeGuideScript.guideIsOver){
 			startFirstCoroutine = false;
@@ -104,8 +120,8 @@ public class EarthquakeClassScript : MonoBehaviour
 				case 7:
 					trueFalseCanvas.SetActive(false);
 					mult4Canvas.SetActive(true);
-					Multiple4EarthquakeManager.GetQuestion(3);
 					ShowDesk.stopShowDesk = true;
+					Multiple4EarthquakeManager.GetQuestion(3);
 					break;
 				case 8:
 					mult4Canvas.SetActive(false);
@@ -117,11 +133,84 @@ public class EarthquakeClassScript : MonoBehaviour
 					mult4Canvas.SetActive(true);
 					Multiple4EarthquakeManager.GetQuestion(1);
 					break;
+				case 10:
+					mult4Canvas.SetActive(false);
+					
+					if(spawn1.GetComponent<WhatIsInSpawn>().human!=null){
+						spawn1.GetComponent<WhatIsInSpawn>().human.transform.position =  spawn1.GetComponent<WhatIsInSpawn>().hitbox.transform.position;
+						spawn1.GetComponent<WhatIsInSpawn>().human.GetComponent<CapsuleCollider>().enabled=true;
+						spawn1.GetComponent<WhatIsInSpawn>().human.GetComponent<BoxCollider>().enabled=false;
+						spawn1.GetComponent<WhatIsInSpawn>().human.GetComponent<Rigidbody>().isKinematic = true; 
+						spawn1.GetComponent<WhatIsInSpawn>().human.GetComponent<HumanActions>().EarthquakeDrillAction();
+					}else{
+						hitbox1.SetActive(true);
+					}
+					
+					if(spawn2.GetComponent<WhatIsInSpawn>().human!=null){
+						spawn2.GetComponent<WhatIsInSpawn>().human.transform.position =  spawn2.GetComponent<WhatIsInSpawn>().hitbox.transform.position;
+						spawn2.GetComponent<WhatIsInSpawn>().human.GetComponent<CapsuleCollider>().enabled=true;
+						spawn2.GetComponent<WhatIsInSpawn>().human.GetComponent<BoxCollider>().enabled=false;
+						spawn2.GetComponent<WhatIsInSpawn>().human.GetComponent<Rigidbody>().isKinematic = true; 
+						spawn2.GetComponent<WhatIsInSpawn>().human.GetComponent<HumanActions>().EarthquakeDrillAction();
+					}else{
+						hitbox2.SetActive(true);
+					}
+					
+					if(spawn3.GetComponent<WhatIsInSpawn>().human!=null){
+						spawn3.GetComponent<WhatIsInSpawn>().human.transform.position =  spawn3.GetComponent<WhatIsInSpawn>().hitbox.transform.position;
+						spawn3.GetComponent<WhatIsInSpawn>().human.GetComponent<CapsuleCollider>().enabled=true;
+						spawn3.GetComponent<WhatIsInSpawn>().human.GetComponent<BoxCollider>().enabled=false;
+						spawn3.GetComponent<WhatIsInSpawn>().human.GetComponent<Rigidbody>().isKinematic = true; 
+						spawn3.GetComponent<WhatIsInSpawn>().human.GetComponent<HumanActions>().EarthquakeDrillAction();
+					}else{
+						hitbox3.SetActive(true);
+					}
+					
+					if(spawn4.GetComponent<WhatIsInSpawn>().human!=null){
+						spawn4.GetComponent<WhatIsInSpawn>().human.transform.position =  spawn4.GetComponent<WhatIsInSpawn>().hitbox.transform.position;
+						spawn4.GetComponent<WhatIsInSpawn>().human.GetComponent<CapsuleCollider>().enabled=true;
+						spawn4.GetComponent<WhatIsInSpawn>().human.GetComponent<BoxCollider>().enabled=false;
+						spawn4.GetComponent<WhatIsInSpawn>().human.GetComponent<Rigidbody>().isKinematic = true; 
+						spawn4.GetComponent<WhatIsInSpawn>().human.GetComponent<HumanActions>().EarthquakeDrillAction();
+					}else{
+						hitbox4.SetActive(true);
+					}
+					infoCanvas2.SetActive(true);
+					break;
+				case 11:
+					infoCanvas2.SetActive(false);
+					ReturnPlayer();
+					break;
+				case 12:
+					infoCanvas3.SetActive(true);
+					break;
+				case 13:
+					stopMovement=false;
+					infoCanvas3.SetActive(false);
+					flag = false;
+					break;
 			}
 		}
 	}
 	public void AddStep(){
 		step++;
+	}
+	public static void LeaveRoomInfo(){
+		stopMovement=true;
+		flag = true;
+		step++;
+	}
+	public void ReturnPlayer(){
+		flag = false;
+		stopMovement=false;
+		thisPlayer.transform.localPosition =  thisPlayer.transform.localPosition + new Vector3(0, 0, -0.3f);
+		thisPlayer.GetComponent<CharacterController>().enabled = true;
+		thisPlayer.GetComponent<BoxCollider>().enabled=false;
+		thisPlayer.GetComponent<HumanActions>().enabled = false;
+		thisPlayer.GetComponent<CapsuleCollider>().enabled=true;
+		thisPlayer.GetComponent<PlayerMovement>().enabled = true;
+		Cursor.lockState=CursorLockMode.Locked;
+
 	}
 	public static void NextMult3QuestionAndAnimation(int i){
 		stopCoroutine = true;

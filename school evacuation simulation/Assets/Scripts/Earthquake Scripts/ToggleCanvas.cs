@@ -10,6 +10,7 @@ public class ToggleCanvas : MonoBehaviour
 	static bool state = false;
 	static GameObject staticCanvas;
 	void Start(){
+        canvas.SetActive(false);
 		staticCanvas = canvas;
 	}
 	public static void ToggleOneCanvas() {

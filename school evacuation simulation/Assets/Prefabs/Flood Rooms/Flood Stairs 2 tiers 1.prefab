@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 8766184589441790321}
   - component: {fileID: 2732531165302293718}
   - component: {fileID: 4690338658960026242}
+  - component: {fileID: 2206736863237230792}
   m_Layer: 10
   m_Name: Floor_stairs_bottom_Snaps014(Clone)
   m_TagString: Untagged
@@ -204,6 +205,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: de487eab193decb40a5ddce256ac5cd7, type: 2}
+--- !u!65 &2206736863237230792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275006414997920204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 8.000658, y: 8.089977, z: 8.249999}
+  m_Center: {x: -4.000329, y: 4.045022, z: -4.1249995}
 --- !u!1 &281636326185422296
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +426,7 @@ GameObject:
   - component: {fileID: 174284711808524013}
   - component: {fileID: 1910378035961972962}
   - component: {fileID: 7489709826788861634}
+  - component: {fileID: 1344715396881572924}
   m_Layer: 0
   m_Name: Windows_04_Frame_Snaps014
   m_TagString: Untagged
@@ -506,6 +521,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 16d7c2af5f8de9645901dc5cc27f8373, type: 2}
+--- !u!65 &1344715396881572924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278457665628006700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.000415, y: 1.9000005, z: 0.21000044}
+  m_Center: {x: -2.5002074, y: 0.95000046, z: 0.10000024}
 --- !u!1 &2217847278077435735
 GameObject:
   m_ObjectHideFlags: 0

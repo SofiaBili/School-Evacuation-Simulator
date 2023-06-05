@@ -28,6 +28,8 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 	static bool changeQuest = false;
 	static bool isAnsweredCorrect = false;
 
+	private HealthPlayer health;
+
 	void Awake(){
         slimeAnimator = slimeObject.GetComponent<Animator>();
 	}
@@ -36,6 +38,7 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 			unansweredQuestions = questions.ToList<TrueFalseQuestions>();
 		}
 		transform.gameObject.SetActive(false);
+		//health = gameObject.transform.parent.parent.parent.transform.Find("Player").GetComponent<HealthPlayer>();
 	}
 	public static bool UnansweredQuestionsCount(){
 		Debug.Log(unansweredQuestions.Count);
@@ -83,19 +86,21 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 	public void UserSelectTrue(){
 		if(currentQuestion.isTrue){
 			winAudio.Play(0);
-			Debug.Log("Cor");
+			//Debug.Log("Cor");
 			trueButton.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion());
 			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
+			HealthPlayer.RemoveHeart();
 			trueButton.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
 	}
 	public void UserSelectFalse(){
 		if(currentQuestion.isTrue){
+			HealthPlayer.RemoveHeart();
 			loseAudio.Play(0);
 			falseButton.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
@@ -110,7 +115,7 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 	public IEnumerator ChangeAnimationState(string newState){
         currentState=newState;
         if(!slimeAnimator.GetCurrentAnimatorStateInfo(0).IsName(currentState)){
-			Debug.Log("oooooooooooo");
+//			Debug.Log("oooooooooooo");
             slimeAnimator.Play(newState);
 			yield return new WaitForSeconds (2.3f);
 		}

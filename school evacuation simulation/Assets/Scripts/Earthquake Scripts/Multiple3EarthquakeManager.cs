@@ -33,14 +33,15 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 	static bool changeQuest = false;
 	static bool isAnsweredCorrect = false;
 
+
 	void Awake(){
         slimeAnimator = slimeObject.GetComponent<Animator>();
+		//health = gameObject.transform.parent.parent.parent.transform.Find("Player").GetComponent<HealthPlayer>();
 	}
 	void Start(){
 		if(unansweredQuestions == null || unansweredQuestions.Count==0){
 			unansweredQuestions = questions.ToList<Multiple3ChoiceQuestios>();
 		}
-
 		//SetCurrentQuestion();
 		transform.gameObject.SetActive(false);
 	}
@@ -105,6 +106,7 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
+			HealthPlayer.RemoveHeart();
 			but1.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
@@ -119,6 +121,7 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
+			HealthPlayer.RemoveHeart();
 			but2.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}
@@ -133,6 +136,7 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 			StartCoroutine(ChangeButtonColour());
 		}else{
 			loseAudio.Play(0);
+			HealthPlayer.RemoveHeart();
 			but3.GetComponent<Image>().color = Color.red;
 			StartCoroutine(ChangeAnimationState("disappoint"));
 		}

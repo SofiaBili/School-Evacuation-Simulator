@@ -15,20 +15,6 @@ public class RotatePlayer:MonoBehaviour {
     Vector3 startLocation;
     public bool isEarthquake = false;
     void Update() {
-        /*if(cameraBoardBoy){
-            GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=true;
-            startLocation = transform.localPosition;
-            transform.localPosition =  new Vector3(transform.localPosition.x, 1.352f, 0.3f);
-            cameraBoardBoy=false;
-            GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=false;
-        }
-        if(cameraBoardGirl){
-            //GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=true;
-            startLocation = transform.localPosition;
-            transform.localPosition =  new Vector3(transform.localPosition.x, 1.352f, transform.localPosition.z);
-            cameraBoardGirl=false;
-            GetComponent<Camera>().transform.GetComponent<LookAt>().enabled=false;
-        }*/
         if(isEarthquake || EarthquakeClassScript.stopMovement){
             if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
             if(EarthquakeClassScript.stopMovement) Cursor.lockState=CursorLockMode.None;

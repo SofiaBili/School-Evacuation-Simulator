@@ -11,7 +11,6 @@ public class PutPhotoInBtn : MonoBehaviour
 	public Image boyImage;
 
 	void Start(){
-		Debug.Log("kkkkkkkkkkkkk");
 		if(spawn.GetComponent<WhatIsInSpawn>().isGirl){
 			girlImage.enabled = true;
 		}else{

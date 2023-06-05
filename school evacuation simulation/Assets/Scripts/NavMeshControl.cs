@@ -6,27 +6,46 @@ using UnityEngine.AI;
 public class NavMeshControl : MonoBehaviour
 {
     public NavMeshAgent agent;
-    [SerializeField] GameObject wayPoint;
-    // Start is called before the first frame update
+    public static bool startNavmesh = false;
+    [SerializeField] GameObject mapGameObject;
+    [SerializeField] List<Transform> doors;
+    public Transform closestDoor;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.enabled = false;
-
-        // Invoke is used as a workaround for enabling NavMeshAgent on NavMeshSurface
-        Invoke("EnableNavMeshAgent", 35f);
+        //agent.enabled = false;
+        foreach(Transform thing in mapGameObject.GetComponentsInChildren<Transform>()){
+            if(thing.name.Contains("Transport")){
+                doors.Add(thing);
+            }
+        }
+        closestDoor=GetClosestDoor();
         
     }
-    private void EnableNavMeshAgent ()
-    {
-        agent.enabled = true;
+    public void EnableNavMeshAgent(){
+        
     }
     // Update is called once per frame
-    void Update()
-    {
-            //Ray movePos = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //if(Physics.Raycast(movePos, out var hitInfo)){
-           // agent.SetDestination(wayPoint.transform.position);
-            //}
+    void Update(){
+        if(startNavmesh){
+            agent.SetDestination(closestDoor.position);
+        }
+    }
+    public static void StartNavmesh(){
+        startNavmesh = true;
+    }
+    Transform GetClosestDoor(){
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+        foreach(Transform potentialTarget in doors){
+            Vector3 directionToTarget = potentialTarget.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if(dSqrToTarget < closestDistanceSqr){
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget;
+            }
+        }
+        return bestTarget;
     }
 }
