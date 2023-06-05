@@ -89,6 +89,7 @@ public class Multiple3EarthquakeManager : MonoBehaviour
     private IEnumerator ChangeQuestion(){
 		GetComponent<CanvasGroup>().interactable = false;
 		yield return new WaitForSeconds (2.3f);
+		HealthPlayer.RightAnswer();
 		isAnsweredCorrect = true;
 		EarthquakeClassScript.step++;
 		EarthquakeClassScript.flag = true;

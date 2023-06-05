@@ -92,6 +92,7 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		yield return new WaitForSeconds (2.3f);
 		isAnsweredCorrect = true;
+		HealthPlayer.RightAnswer();
 		EarthquakeClassScript.step++;
 		EarthquakeClassScript.flag = true;
 		transform.gameObject.SetActive(false);

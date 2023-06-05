@@ -30,15 +30,14 @@ public class MatchingManager : MonoBehaviour
 	public GameObject girlImageD;
 	public GameObject boyImageD;
 	public static bool startFlag=false;
+	
+	public AudioSource corrSound, wrongSound;
+	
 	void Update(){
 		if(startFlag) StartImageSpawn();
 	}
     public void StartImageSpawn(){
 		startFlag=false;
-//		Debug.Log("aaaaaaaaaaaaaaaa"+spawnA.GetComponent<WhatIsInSpawn>().isGirl);
-//		Debug.Log("aaaaaaaaaaaaaaaa"+spawnB.GetComponent<WhatIsInSpawn>().isGirl);
-//		Debug.Log("aaaaaaaaaaaaaaaa"+spawnC.GetComponent<WhatIsInSpawn>().isGirl);
-//		Debug.Log("aaaaaaaaaaaaaaaa"+spawnD.GetComponent<WhatIsInSpawn>().isGirl);
 		if(spawnA.GetComponent<WhatIsInSpawn>().isGirl){
 			girlImageA.SetActive(true);
 		}else{
@@ -64,6 +63,7 @@ public class MatchingManager : MonoBehaviour
 		if(inputA.text != "3"){
 			inputA.image.color = Color.red;
 			countRight=0;
+			StartCoroutine(WrongChoices());
 		}else{
 			inputA.image.color = Color.green;
 			countRight++;
@@ -71,6 +71,7 @@ public class MatchingManager : MonoBehaviour
 		if(inputB.text != "1"){
 			inputB.image.color = Color.red;
 			countRight=0;
+			StartCoroutine(WrongChoices());
 		}else{
 			inputB.image.color = Color.green;
 			countRight++;
@@ -78,6 +79,7 @@ public class MatchingManager : MonoBehaviour
 		if(inputC.text != "4"){
 			inputC.image.color = Color.red;
 			countRight=0;
+			StartCoroutine(WrongChoices());
 		}else{
 			inputC.image.color = Color.green;
 			countRight++;
@@ -85,12 +87,27 @@ public class MatchingManager : MonoBehaviour
 		if(inputD.text != "2"){
 			inputD.image.color = Color.red;
 			countRight=0;
+			StartCoroutine(WrongChoices());
 		}else{
 			inputD.image.color = Color.green;
 			countRight++;
 		}
 		if(countRight==4){
-			EarthquakeClassScript.step++;
+			StartCoroutine(PlaySound());
 		}
+	}
+	private IEnumerator WrongChoices(){
+		HealthPlayer.removing = true;
+		wrongSound.Play();
+		yield return new WaitForSeconds (3f);
+		wrongSound.Stop();
+	}
+	private IEnumerator PlaySound(){
+		GetComponent<CanvasGroup>().interactable = false;
+		HealthPlayer.RightAnswer();
+		corrSound.Play();
+		yield return new WaitForSeconds (3f);
+		corrSound.Stop();
+		EarthquakeClassScript.step++;
 	}
 }

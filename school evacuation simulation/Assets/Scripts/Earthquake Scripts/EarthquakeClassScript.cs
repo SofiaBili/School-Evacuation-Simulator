@@ -37,6 +37,8 @@ public class EarthquakeClassScript : MonoBehaviour
 	public bool playerFlag = false;
 
 
+	public List<GameObject> chairs;
+
 	public GameObject spawn1, spawn2, spawn3, spawn4;
 	GameObject thisPlayer;
 	public bool spawn1Free=false, spawn2Free=false, spawn3Free=false, spawn4Free=false;
@@ -61,6 +63,7 @@ public class EarthquakeClassScript : MonoBehaviour
 	
 	public IEnumerator StartEarthquake(){
 		if(EarthquakeGuideScript.guideIsOver){
+			Cursor.lockState=CursorLockMode.Locked;
 			startFirstCoroutine = false;
         	yield return new WaitForSeconds (4f);
 			ChangeAnimationState("earthquake");
@@ -175,16 +178,37 @@ public class EarthquakeClassScript : MonoBehaviour
 					}else{
 						hitbox4.SetActive(true);
 					}
-					infoCanvas2.SetActive(true);
+					trueFalseCanvas.SetActive(true);
+					TrueFalseEarthquakeManager.GetQuestion(3);
 					break;
 				case 11:
-					infoCanvas2.SetActive(false);
-					ReturnPlayer();
+					trueFalseCanvas.SetActive(false);
+					mult3Canvas.SetActive(true);
+					Multiple3EarthquakeManager.GetQuestion(2);
 					break;
 				case 12:
-					infoCanvas3.SetActive(true);
+					mult3Canvas.SetActive(false);
+					mult4Canvas.SetActive(true);
+					Multiple4EarthquakeManager.GetQuestion(2);
 					break;
 				case 13:
+					mult4Canvas.SetActive(false);
+					mult3Canvas.SetActive(true);
+					Multiple3EarthquakeManager.GetQuestion(3);
+					break;
+				case 14:
+					infoCanvas2.SetActive(true);
+					break;
+				case 15:
+					foreach(GameObject thing in chairs){
+						thing.GetComponent<MeshCollider>().enabled = false;
+					}
+					ReturnPlayer();
+					break;
+				case 16:
+					infoCanvas3.SetActive(true);
+					break;
+				case 17:
 					stopMovement=false;
 					infoCanvas3.SetActive(false);
 					flag = false;
@@ -201,6 +225,7 @@ public class EarthquakeClassScript : MonoBehaviour
 		step++;
 	}
 	public void ReturnPlayer(){
+		infoCanvas2.SetActive(false);
 		flag = false;
 		stopMovement=false;
 		thisPlayer.transform.localPosition =  thisPlayer.transform.localPosition + new Vector3(0, 0, -0.3f);

@@ -78,15 +78,13 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 		yield return new WaitForSeconds (2.3f);
 		isAnsweredCorrect = true;
 		EarthquakeClassScript.step++;
+		HealthPlayer.RightAnswer();
 		EarthquakeClassScript.flag = true;
 		transform.gameObject.SetActive(false);
-		/*if(unansweredQuestions[randomQuestionIndex+1]!=null)
-			EarthquakeClassScript.NextTrueFalseQuestionAndAnimation(randomQuestionIndex+1);*/
 	}
 	public void UserSelectTrue(){
 		if(currentQuestion.isTrue){
 			winAudio.Play(0);
-			//Debug.Log("Cor");
 			trueButton.GetComponent<Image>().color = Color.green;
 			StartCoroutine(ChangeAnimationState("congratulations"));
 			StartCoroutine(ChangeQuestion());
@@ -115,7 +113,6 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 	public IEnumerator ChangeAnimationState(string newState){
         currentState=newState;
         if(!slimeAnimator.GetCurrentAnimatorStateInfo(0).IsName(currentState)){
-//			Debug.Log("oooooooooooo");
             slimeAnimator.Play(newState);
 			yield return new WaitForSeconds (2.3f);
 		}

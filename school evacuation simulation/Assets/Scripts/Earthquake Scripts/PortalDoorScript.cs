@@ -11,7 +11,7 @@ public class PortalDoorScript : MonoBehaviour
 		    SceneManager.LoadScene(sceneName);
         }else{
             Debug.Log(other);
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
 	}
 }

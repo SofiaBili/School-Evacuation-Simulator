@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isEarthquake || EarthquakeClassScript.stopMovement){
+        if(isEarthquake || EarthquakeClassScript.stopMovement || groundCheck==null){
             if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
         }else{
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

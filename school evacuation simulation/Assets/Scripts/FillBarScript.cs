@@ -33,7 +33,6 @@ public class FillBarScript : MonoBehaviour
     {
         if(setLosingCanvasActive){
             showLosingCanvas.SetActive(true);
-            Debug.Log(showLosingCanvas.activeSelf);
         }
     }
     public bool ShowWinningCanvas(){

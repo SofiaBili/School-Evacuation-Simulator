@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthPlayer : MonoBehaviour
 {
 	public GameObject canvas;
 	public List<GameObject> hearts;
-	public int count=2;
+	public static int count=2;
 	public static bool removing=false;
-	
+	public static int rightAns = 0;
+	public static int totalAns = 13;
+	public string sceneName;
+
 	void Update(){
 		if(removing){
 			Process();
 		}
 	}
+	public static void RightAnswer(){
+        rightAns++;
+    }
 	public void Process(){
 		removing=false;
 		hearts[count].SetActive(false);
@@ -25,5 +32,17 @@ public class HealthPlayer : MonoBehaviour
 		removing=true;
     }
     public void PlayerLost(){
+        SceneManager.LoadScene(sceneName);
+    }
+	
+    public static int GetRightAns(){
+        return rightAns;
+    }
+	public static int GetTotalAns(){
+        return totalAns;
+    }
+	
+	public static int GetWrongAns(){
+        return 2-count;
     }
 }
