@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     static bool stopMovement;
 
     public bool isEarthquake = false;
+    public bool isFire = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isEarthquake || EarthquakeClassScript.stopMovement || groundCheck==null){
+        if(isEarthquake || EarthquakeClassScript.stopMovement || groundCheck==null || FireClassScript.stopMovement){
             if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
         }else{
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

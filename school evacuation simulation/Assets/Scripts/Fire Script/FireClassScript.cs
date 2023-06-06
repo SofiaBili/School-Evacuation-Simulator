@@ -59,32 +59,33 @@ public class FireClassScript : MonoBehaviour
 	
 	public IEnumerator StartAnimation(){
 		if(FireGuideScript.guideIsOver){
+			Cursor.lockState=CursorLockMode.Locked;
+			startFirstCoroutine = false;
 			StartFireAnimation.startAnimation = true;
-			yield return new WaitForSeconds (4f);
+			yield return new WaitForSeconds (10f);
+			StartCoroutine(StartFireDrill());
 		}
 	}
 	public IEnumerator StartFireDrill(){
 		if(FireGuideScript.guideIsOver){
-			Cursor.lockState=CursorLockMode.Locked;
-			startFirstCoroutine = false;
-        	yield return new WaitForSeconds (4f);
-			ChangeAnimationState("earthquake");
+			StartFireAnimation.destroyAnimation = true;
+        	yield return new WaitForSeconds (10f);
 			worriedTeacher = true;
 			alarm.Play(0);
         	yield return new WaitForSeconds (3f);
-			alarm.Stop();
-			dustParticles.SetActive(true);
-        	yield return new WaitForSeconds (1f);
 			stopMovement = true;
 			mult3Canvas.SetActive(true);
 			Multiple3EarthquakeManager.GetQuestion(0);
+			alarm.Stop();
 		}
 	}
 	void Update(){
-		//Debug.Log(flag);
-		if(EarthquakeGuideScript.guideIsOver && flag && playerFlag){
+		if(FireGuideScript.guideIsOver && flag && playerFlag){
 			switch(step) {
 				case 0:
+					mult3Canvas.SetActive(false);
+					mult4Canvas.SetActive(true);
+					Multiple4EarthquakeManager.GetQuestion(0);
 					break;
 				case 1:
 					break;
@@ -103,6 +104,7 @@ public class FireClassScript : MonoBehaviour
 				case 8:
 					break;
 				case 9:
+					infoCanvas.SetActive(true);
 					break;
 				case 10:
 					

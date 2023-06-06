@@ -14,7 +14,7 @@ public class AnimationManager : MonoBehaviour
         animator = GetComponent<Animator>();    
     }
     void Update(){
-        if(EarthquakeClassScript.worriedTeacher){
+        if(EarthquakeClassScript.worriedTeacher || FireClassScript.worriedTeacher){
             ChangeAnimationState("mixamo_com");
         }
     }
