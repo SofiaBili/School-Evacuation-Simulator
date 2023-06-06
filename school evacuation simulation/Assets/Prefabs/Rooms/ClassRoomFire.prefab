@@ -471,8 +471,8 @@ GameObject:
   m_Component:
   - component: {fileID: 19324758387459074}
   - component: {fileID: 4098324110330961136}
-  - component: {fileID: 6077098589625267283}
   - component: {fileID: 3680950390869994671}
+  - component: {fileID: 8668008318343837631}
   m_Layer: 8
   m_Name: ClassRoomFire
   m_TagString: Untagged
@@ -536,54 +536,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.3336926, y: 5.676397, z: 9.403749}
   m_Center: {x: -1.2763577, y: 2.338198, z: 0.3261509}
---- !u!114 &6077098589625267283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19324758387459077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a82f0c37415d774cb656b3fc36d1c73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  earthquakeAnimator: {fileID: 0}
-  hitbox1: {fileID: 7989421872357712869}
-  hitbox2: {fileID: 7259485104222526694}
-  hitbox3: {fileID: 7765275902225697427}
-  hitbox4: {fileID: 4017248777239660234}
-  floorHitBox: {fileID: 0}
-  dustParticles: {fileID: 6599354220585009080}
-  trueFalseCanvas: {fileID: 4637611170301703541}
-  mult3Canvas: {fileID: 2548430120211939068}
-  mult4Canvas: {fileID: 8559006221219359073}
-  chooseDeskPosCanvas: {fileID: 0}
-  infoCanvas: {fileID: 0}
-  infoCanvas1: {fileID: 0}
-  infoCanvas2: {fileID: 5397603422138107887}
-  infoCanvas3: {fileID: 633027367311013338}
-  infoCanvas1Text: {fileID: 0}
-  putClassmatesInOrderCanvas: {fileID: 2089556023611014478}
-  alarm: {fileID: 3680950390869994671}
-  playerFlag: 0
-  chairs:
-  - {fileID: 515311607105772436}
-  - {fileID: 8412858596593758268}
-  - {fileID: 3621002674060092603}
-  - {fileID: 4212226334813822714}
-  - {fileID: 3168034431448559485}
-  - {fileID: 6513498737044586410}
-  - {fileID: 6281761268928312673}
-  - {fileID: 4016718721150069472}
-  spawn1: {fileID: 8702388574392177079}
-  spawn2: {fileID: 7247250771432101594}
-  spawn3: {fileID: 4458567544557900835}
-  spawn4: {fileID: 1102274176283374657}
-  spawn1Free: 0
-  spawn2Free: 0
-  spawn3Free: 0
-  spawn4Free: 0
 --- !u!82 &3680950390869994671
 AudioSource:
   m_ObjectHideFlags: 0
@@ -680,6 +632,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8668008318343837631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19324758387459077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718572f09fef6754392388af422f5522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireAnimator: {fileID: 0}
+  hitbox1: {fileID: 7989421872357712869}
+  hitbox2: {fileID: 7259485104222526694}
+  hitbox3: {fileID: 7765275902225697427}
+  hitbox4: {fileID: 4017248777239660234}
+  floorHitBox: {fileID: 0}
+  dustParticles: {fileID: 0}
+  trueFalseCanvas: {fileID: 4637611170301703541}
+  mult3Canvas: {fileID: 2548430120211939068}
+  mult4Canvas: {fileID: 8559006221219359073}
+  chooseDeskPosCanvas: {fileID: 2089556023611014478}
+  infoCanvas: {fileID: 5397603422138107887}
+  exitCanvas: {fileID: 633027367311013338}
+  putClassmatesInOrderCanvas: {fileID: 2089556023611014478}
+  numbersCanvas: {fileID: 3575323187392453004}
+  alarm: {fileID: 3680950390869994671}
+  playerFlag: 0
+  chairs:
+  - {fileID: 4016718721150069472}
+  - {fileID: 6281761268928312673}
+  - {fileID: 515311607105772436}
+  - {fileID: 8412858596593758268}
+  - {fileID: 4212226334813822714}
+  - {fileID: 3621002674060092603}
+  - {fileID: 6513498737044586410}
+  - {fileID: 3168034431448559485}
+  spawn1: {fileID: 8702388574392177079}
+  spawn2: {fileID: 7247250771432101594}
+  spawn3: {fileID: 4458567544557900835}
+  spawn4: {fileID: 1102274176283374657}
+  spawn1Free: 0
+  spawn2Free: 0
+  spawn3Free: 0
+  spawn4Free: 0
 --- !u!1 &19324758391192949
 GameObject:
   m_ObjectHideFlags: 0
@@ -6388,12 +6386,12 @@ GameObject:
   - component: {fileID: 4611308121460620075}
   - component: {fileID: 3912389831965700142}
   m_Layer: 15
-  m_Name: Multiple Cubed Choise Questions Canvas
+  m_Name: Multiple 3 Choise Questions Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1323955564231677104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11242,7 +11240,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6077098589625267283}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EarthquakeClassScript, Assembly-CSharp
         m_MethodName: AddStep
         m_Mode: 1
@@ -12439,7 +12437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8469107674347705220
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20719,12 +20717,12 @@ GameObject:
   - component: {fileID: 5647073671525544395}
   - component: {fileID: 6658168688873249322}
   m_Layer: 15
-  m_Name: Multiple Cubed Choise Questions Canvas
+  m_Name: Multiple 4 Choise Questions Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6418841061944412256
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22375,7 +22373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6168185630409488677
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22916,7 +22914,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6077098589625267283}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EarthquakeClassScript, Assembly-CSharp
         m_MethodName: AddStep
         m_Mode: 1
@@ -26284,11 +26282,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ca4c580b3888314581688fa46fb142d, type: 3}
---- !u!1 &6599354220585009080 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000012882023006, guid: 5ca4c580b3888314581688fa46fb142d, type: 3}
-  m_PrefabInstance: {fileID: 6599480116335291878}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6600066827636743320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010002477438, guid: 5ca4c580b3888314581688fa46fb142d, type: 3}
