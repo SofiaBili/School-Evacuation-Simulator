@@ -11,7 +11,6 @@ public class GuideScript : MonoBehaviour
     public GameObject canvasDownRight;
     public GameObject canvasDownLeft;
     public GameObject canvasPointLevelG;
-    public GameObject canvasPointLevelB;
 
     public TextMeshProUGUI textUpRight;
     public TextMeshProUGUI textUpLeft;
@@ -22,11 +21,8 @@ public class GuideScript : MonoBehaviour
     
     public GameObject room;
     public GameObject personGirl;
-    public GameObject personBoy;
     public Camera cameraPersonGirl;
-    public Camera cameraPersonBoy;
     TimerScript timerG;
-    TimerScript timerB;
     bool stop = false;
     public AudioSource talkingSound1;
     public AudioSource talkingSound2;
@@ -35,10 +31,7 @@ public class GuideScript : MonoBehaviour
     void Start(){
         canvasPointLevelG.SetActive(false);
         canvasPointLevelG.SetActive(true);
-        canvasPointLevelB.SetActive(false);
-        canvasPointLevelB.SetActive(true);
         timerG = personGirl.transform.Find("Point Level Canvas").GetComponent<TimerScript>();
-        timerB = personBoy.transform.Find("Point Level Canvas").GetComponent<TimerScript>();
         
         Plan();
     }
@@ -53,25 +46,17 @@ public class GuideScript : MonoBehaviour
         canvasDownLeft.SetActive(false);
 
         personGirl.GetComponent<PlayerMovement>().StartMovement();
-        personBoy.GetComponent<PlayerMovement>().StartMovement();
         cameraPersonGirl.GetComponent<RotatePlayer>().enabled = true;
-        cameraPersonBoy.GetComponent<RotatePlayer>().enabled = true;
         cameraPersonGirl.GetComponent<PlayerZoom>().enabled = true;
-        cameraPersonBoy.GetComponent<PlayerZoom>().enabled = true;
 
         Destroy(room);
-        timerG.SetTimer(300);
-        timerB.SetTimer(300);
+        timerG.SetTimer(600);
         timerG.AdjustWater();
-        timerB.AdjustWater();
     }
     void Plan(){
         personGirl.GetComponent<PlayerMovement>().StopMovement();
-        personBoy.GetComponent<PlayerMovement>().StopMovement();
         cameraPersonGirl.GetComponent<RotatePlayer>().enabled = false;
-        cameraPersonBoy.GetComponent<RotatePlayer>().enabled = false;
         cameraPersonGirl.GetComponent<PlayerZoom>().enabled = false;
-        cameraPersonBoy.GetComponent<PlayerZoom>().enabled = false;
         //PauseGame();
 		StartCoroutine(StartGuide());
     }

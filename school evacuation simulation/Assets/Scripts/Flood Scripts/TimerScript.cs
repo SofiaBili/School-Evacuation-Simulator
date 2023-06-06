@@ -7,7 +7,7 @@ using TMPro;
 public class TimerScript : MonoBehaviour
 {
 	public TextMeshProUGUI timer;
-    public static float timerValue = 300;
+    public static float timerValue = 600;
     public AudioSource countSound;
     bool playCountSound = true;
     public AudioSource lightningSound;
@@ -30,11 +30,12 @@ public class TimerScript : MonoBehaviour
         }
     }
     public void AdjustWater(){
+        Debug.Log("oooooooooooooooo");
         InvokeRepeating("AddWater", 0.1f, 0.1f);
     }
     void AddWater(){
-        if(timerValue>0 && timerValue<150){
-            waterPlane.transform.localPosition = new Vector3(waterPlane.transform.localPosition.x, waterPlane.transform.localPosition.y+(0.4f/(2.5f*60*24)), waterPlane.transform.localPosition.z);
+        if(timerValue>0 && timerValue<570 && waterPlane.transform.localPosition.y<0.4f){
+            waterPlane.transform.localPosition = new Vector3(waterPlane.transform.localPosition.x, waterPlane.transform.localPosition.y+(0.4f/(5700)), waterPlane.transform.localPosition.z);
         }
     }
     void DisplayTime(float timeToDisplay){
@@ -50,7 +51,7 @@ public class TimerScript : MonoBehaviour
                 playCountSound = false;
             } 
         }
-        if(minutes == 2 && seconds==30){ 
+        if(minutes == 9 && seconds==30){ 
             lightningSound.Play();
         }
         timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);

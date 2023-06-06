@@ -10,7 +10,6 @@ public class PortalDoorScript : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
 		    SceneManager.LoadScene(sceneName);
         }else{
-            Debug.Log(other);
             other.gameObject.SetActive(false);
         }
 	}
