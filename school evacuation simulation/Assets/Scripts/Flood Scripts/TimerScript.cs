@@ -12,12 +12,16 @@ public class TimerScript : MonoBehaviour
     bool playCountSound = true;
     public AudioSource lightningSound;
     public GameObject showLosingCanvas;
-    public bool stopTimer = false;
+    private static bool stopTimer;
     public GameObject waterPlane;
    
+    void Start(){
+        stopTimer = false;
+    }
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(stopTimer);
         if(!stopTimer){
             if(timerValue>0){
                 timerValue -= Time.deltaTime;
@@ -58,8 +62,13 @@ public class TimerScript : MonoBehaviour
     }
     
     public void StopTimer(){
+        Debug.Log("pppppppppppppppppppp");
         stopTimer = true;
     }
+    public void StartTimer(){
+        stopTimer = false;
+    }
+
     public void SetTimer(float val){
         timerValue = val;
     } 

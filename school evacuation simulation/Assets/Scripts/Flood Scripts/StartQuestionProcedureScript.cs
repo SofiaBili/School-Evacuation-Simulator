@@ -21,6 +21,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     MapCreation mapCreationScript;
     [SerializeField] GameObject mapCreationObject;
     FillBarScript fillBarScript;
+    TimerScript timerScript;
     
     public AudioSource audioData;
     public bool playSound = true;
@@ -30,6 +31,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     void Awake(){
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
         fillBarScript = toggleQuestionCanvasObject.transform.Find("Point Level Canvas").GetComponent<FillBarScript>();
+        timerScript = toggleQuestionCanvasObject.transform.Find("Point Level Canvas").GetComponent<TimerScript>();
     }
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             if(showQCanvas) pressQCanvas.SetActive(true);
             if(Input.GetKeyDown(KeyCode.Q) && showQCanvas){
+                timerScript.StopTimer();
                 pressQCanvas.SetActive(false);
                 showQCanvas = false;
                 //σταματάμε την κίνηση του χρήστη
@@ -65,6 +68,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
             if(playSound) audioData.Play(0);
             yield return new WaitForSeconds (1.9f);
             if(playSound) audioData.Stop();
+            timerScript.StartTimer();
             toggleQuestionCanvasScript.EnableRandomCanvas(hexagonHitbox);
             toggleCanvasFlag = false;
             closeCanvasFlag=true;
@@ -72,6 +76,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     }
     private IEnumerator CloseCanvas(bool check){
         if(closeCanvasFlag){
+            timerScript.StopTimer();
             if(!check)
                 yield return new WaitForSeconds (2.2f);
             ChangeAnimationState(secondCameraAnimationName);
@@ -100,6 +105,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
             GameObject.Find("Main Camera").GetComponent<PlayerZoom>().enabled = true;
             Cursor.lockState=CursorLockMode.Locked;
             showQCanvas = true;
+            
+            timerScript.StartTimer();
         }
     }
     //when user exits disable canvas and camera animation back
