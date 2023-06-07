@@ -16,10 +16,10 @@ public class RotatePlayer:MonoBehaviour {
     public bool isEarthquake = false;
     public bool isFire = false;
     void Update() {
-        if(isEarthquake || EarthquakeClassScript.stopMovement || isFire || FireClassScript.stopMovement){
+        if(isEarthquake || EarthquakeClassScript.stopMovement || isFire || FireClassScript.stopMovement || FireClassScript.stopMovementWhileWalking){
             if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
             if(FireGuideScript.guideIsOver) isFire = false;
-            if(EarthquakeClassScript.stopMovement || FireClassScript.stopMovement) Cursor.lockState=CursorLockMode.None;
+            if(EarthquakeClassScript.stopMovement || FireClassScript.stopMovement || FireClassScript.stopMovementWhileWalking) Cursor.lockState=CursorLockMode.None;
         }else{
             if(!escapeFlag){
                 Cursor.lockState=CursorLockMode.Locked;

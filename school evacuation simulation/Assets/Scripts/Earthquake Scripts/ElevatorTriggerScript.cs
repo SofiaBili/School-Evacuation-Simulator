@@ -6,16 +6,26 @@ using UnityEngine.SceneManagement;
 public class ElevatorTriggerScript : MonoBehaviour
 {
     public GameObject infoCanvas;
+    public static bool isIn = false;
     private void OnTriggerEnter(Collider other){
-        if(other.gameObject.CompareTag("Player")){
+        if(other.GetType().ToString().Equals("UnityEngine.CapsuleCollider") && other.gameObject.CompareTag("Player") && !isIn){
+			isIn = true;
+			Debug.Log("lllll");
 		    infoCanvas.SetActive(true);
-			EarthquakeClassScript.stopMovement = true;
-			FireClassScript.stopMovement = true;
+			FireClassScript.stopMovementWhileWalking=true;
+			EarthquakeClassScript.stopMovementWhileWalking=true;
+			PlayerMovement.StopFromFireMovement();
         }
 	}
-
+	void OnTriggerExit(Collider other){
+        if(other.GetType().ToString().Equals("UnityEngine.CapsuleCollider") && other.gameObject.CompareTag("Player")){
+			Debug.Log("ooooooooooooooo");
+			isIn = false;
+		}
+    }
 	public void ReturnElevator(){
-		EarthquakeClassScript.stopMovement = false;
-		FireClassScript.stopMovement = true;
+		PlayerMovement.StartFromFireMovement();
+		FireClassScript.stopMovementWhileWalking=false;
+		EarthquakeClassScript.stopMovementWhileWalking=false;
 	}
 }

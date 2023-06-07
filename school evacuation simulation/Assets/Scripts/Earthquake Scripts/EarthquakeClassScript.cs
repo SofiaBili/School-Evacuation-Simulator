@@ -42,7 +42,8 @@ public class EarthquakeClassScript : MonoBehaviour
 	public GameObject spawn1, spawn2, spawn3, spawn4;
 	GameObject thisPlayer;
 	public bool spawn1Free=false, spawn2Free=false, spawn3Free=false, spawn4Free=false;
-    // Start is called before the first frame update
+	public static bool stopMovementWhileWalking = false;
+	
     void Start(){
 		infoCanvas1Text = GetComponent<TextMeshProUGUI>();
 		infoCanvas1.SetActive(false);
@@ -210,7 +211,6 @@ public class EarthquakeClassScript : MonoBehaviour
 					break;
 				case 17:
 					CloseFlag();
-					stopMovement=false;
 					infoCanvas3.SetActive(false);
 					break;
 			}
@@ -219,12 +219,15 @@ public class EarthquakeClassScript : MonoBehaviour
 	public void AddStep(){
 		step++;
 	}
+	
 	public void CloseFlag(){
+		PlayerMovement.StartFromFireMovement();
 		flag = false;
+		stopMovementWhileWalking = false;
 	}
 	public static void LeaveRoomInfo(){
-		stopMovement=true;
 		flag = true;
+		stopMovementWhileWalking = true;
 		step++;
 	}
 	public void ReturnPlayer(){

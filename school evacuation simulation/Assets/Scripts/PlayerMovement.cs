@@ -43,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
                 velocity.y = -2f;
             }
             if(!stopMovement){
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-            
-            Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput ;
-            controller.Move(move*movementSpeed*Time.deltaTime);
+                float horizontalInput = Input.GetAxis("Horizontal");
+                float verticalInput = Input.GetAxis("Vertical");
+                
+                Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput ;
+                controller.Move(move*movementSpeed*Time.deltaTime);
             }
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
@@ -57,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
         stopMovement = true;
     }
 
+    public static void StopFromFireMovement(){
+        stopMovement = true;
+    }
+    public static void StartFromFireMovement(){
+        stopMovement = false;
+    }
     public void StartMovement(){
         stopMovement = false;
     }

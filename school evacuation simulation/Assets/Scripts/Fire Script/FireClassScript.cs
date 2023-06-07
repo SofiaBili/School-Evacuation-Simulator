@@ -42,6 +42,7 @@ public class FireClassScript : MonoBehaviour
 	public bool spawn1Free=false, spawn2Free=false, spawn3Free=false, spawn4Free=false;
 
 	public bool stopAnimation = false;
+	public static bool stopMovementWhileWalking = false;
     // Start is called before the first frame update
     void Start(){
 		infoCanvas.SetActive(false);
@@ -72,6 +73,7 @@ public class FireClassScript : MonoBehaviour
 	}
 	public IEnumerator StartFireDrill(){
 		if(FireGuideScript.guideIsOver && stopAnimation){
+			ElevatorTriggerScript.isIn = true;
 			stopMovement = false;
 			StartFireAnimation.destroyAnimation = true;
         	yield return new WaitForSeconds (6f);
@@ -186,10 +188,11 @@ public class FireClassScript : MonoBehaviour
 					break;
 				case 11:
 					exitCanvas.SetActive(true);
+					PausePlayer();
 					break;
 				case 12: 
 					CloseFlag();
-					stopMovement=false;
+					//stopMovement=false;
 					exitCanvas.SetActive(false);
 					break;
 			}
@@ -199,11 +202,14 @@ public class FireClassScript : MonoBehaviour
 		step++;
 	}
 	public void CloseFlag(){
+		ElevatorTriggerScript.isIn = false;
+		PlayerMovement.StartFromFireMovement();
 		flag = false;
+		stopMovementWhileWalking = false;
 	}
 	public static void LeaveRoomInfo(){
-		stopMovement=true;
 		flag = true;
+		stopMovementWhileWalking = true;
 		step++;
 	}
 	public void ReturnPlayer(){
@@ -216,6 +222,11 @@ public class FireClassScript : MonoBehaviour
 		thisPlayer.GetComponent<CapsuleCollider>().enabled=true;
 		thisPlayer.GetComponent<PlayerMovement>().enabled = true;
 		Cursor.lockState=CursorLockMode.Locked;
+
+	}
+	public void PausePlayer(){
+		PlayerMovement.StopFromFireMovement();
+		//stopMovement=true;
 
 	}
 	public static void NextMult3QuestionAndAnimation(int i){
