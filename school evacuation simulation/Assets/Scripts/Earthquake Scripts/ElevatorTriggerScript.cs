@@ -10,10 +10,12 @@ public class ElevatorTriggerScript : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
 		    infoCanvas.SetActive(true);
 			EarthquakeClassScript.stopMovement = true;
+			FireClassScript.stopMovement = true;
         }
 	}
 
 	public void ReturnElevator(){
 		EarthquakeClassScript.stopMovement = false;
+		FireClassScript.stopMovement = true;
 	}
 }

@@ -14,10 +14,12 @@ public class RotatePlayer:MonoBehaviour {
     public float zRotation = 63f;
     Vector3 startLocation;
     public bool isEarthquake = false;
+    public bool isFire = false;
     void Update() {
-        if(isEarthquake || EarthquakeClassScript.stopMovement){
+        if(isEarthquake || EarthquakeClassScript.stopMovement || isFire || FireClassScript.stopMovement){
             if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
-            if(EarthquakeClassScript.stopMovement) Cursor.lockState=CursorLockMode.None;
+            if(FireGuideScript.guideIsOver) isFire = false;
+            if(EarthquakeClassScript.stopMovement || FireClassScript.stopMovement) Cursor.lockState=CursorLockMode.None;
         }else{
             if(!escapeFlag){
                 Cursor.lockState=CursorLockMode.Locked;

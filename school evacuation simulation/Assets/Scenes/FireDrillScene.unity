@@ -9837,7 +9837,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
-  isEarthquake: 1
+  isEarthquake: 0
+  isFire: 1
 --- !u!82 &575536256
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9965,6 +9966,7 @@ MonoBehaviour:
   - {fileID: 162445151}
   - {fileID: 498197783}
   sceneName: LosingFireScene
+  isEarthquake: 0
 --- !u!1 &585953702
 GameObject:
   m_ObjectHideFlags: 0
@@ -11936,6 +11938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 787067056}
   isEarthquake: 0
+  isFire: 0
 --- !u!114 &787067054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11954,6 +11957,7 @@ MonoBehaviour:
   playerBody: {fileID: 940915790}
   zRotation: 63
   isEarthquake: 0
+  isFire: 0
 --- !u!114 &787067055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14466,6 +14470,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   isEarthquake: 0
+  isFire: 0
 --- !u!143 &940915792
 CharacterController:
   m_ObjectHideFlags: 0
@@ -22419,7 +22424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1370060685}
-  isEarthquake: 1
+  isEarthquake: 0
+  isFire: 1
 --- !u!114 &1370060683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22437,7 +22443,8 @@ MonoBehaviour:
   cameraBoardGirl: 1
   playerBody: {fileID: 575536251}
   zRotation: 30
-  isEarthquake: 1
+  isEarthquake: 0
+  isFire: 1
 --- !u!114 &1370060684
 MonoBehaviour:
   m_ObjectHideFlags: 0

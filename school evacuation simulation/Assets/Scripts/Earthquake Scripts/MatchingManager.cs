@@ -30,7 +30,10 @@ public class MatchingManager : MonoBehaviour
 	public GameObject girlImageD;
 	public GameObject boyImageD;
 	public static bool startFlag=false;
+	public bool isEarth = true;
 	
+	public string correctA = "3", correctB = "1", correctC = "4", correctD = "2";
+
 	public AudioSource corrSound, wrongSound;
 	
 	void Update(){
@@ -60,7 +63,8 @@ public class MatchingManager : MonoBehaviour
 		}
 	}
 	public void CheckAns(){
-		if(inputA.text != "3"){
+		countRight = 0;
+		if(inputA.text != correctA){
 			inputA.image.color = Color.red;
 			countRight=0;
 			StartCoroutine(WrongChoices());
@@ -68,7 +72,7 @@ public class MatchingManager : MonoBehaviour
 			inputA.image.color = Color.green;
 			countRight++;
 		}
-		if(inputB.text != "1"){
+		if(inputB.text != correctB){
 			inputB.image.color = Color.red;
 			countRight=0;
 			StartCoroutine(WrongChoices());
@@ -76,7 +80,7 @@ public class MatchingManager : MonoBehaviour
 			inputB.image.color = Color.green;
 			countRight++;
 		}
-		if(inputC.text != "4"){
+		if(inputC.text != correctC){
 			inputC.image.color = Color.red;
 			countRight=0;
 			StartCoroutine(WrongChoices());
@@ -84,7 +88,7 @@ public class MatchingManager : MonoBehaviour
 			inputC.image.color = Color.green;
 			countRight++;
 		}
-		if(inputD.text != "2"){
+		if(inputD.text != correctD){
 			inputD.image.color = Color.red;
 			countRight=0;
 			StartCoroutine(WrongChoices());
@@ -108,6 +112,7 @@ public class MatchingManager : MonoBehaviour
 		corrSound.Play();
 		yield return new WaitForSeconds (3f);
 		corrSound.Stop();
-		EarthquakeClassScript.step++;
+		if(isEarth) EarthquakeClassScript.step++;
+		else FireClassScript.step++;
 	}
 }

@@ -37,7 +37,10 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 
 	private HealthPlayer health;
 
+	public bool isEarthquake = true;
+	public static bool staticIsEarthquake;
 	void Awake(){
+		staticIsEarthquake = isEarthquake;
         slimeAnimator = slimeObject.GetComponent<Animator>();
 		//health = gameObject.transform.parent.parent.parent.transform.Find("Player").GetComponent<HealthPlayer>();
 	}
@@ -55,7 +58,11 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 		return true;
 	}
 	public static void GetQuestion(int index){
-		EarthquakeClassScript.flag = false;
+		if(staticIsEarthquake){
+			EarthquakeClassScript.flag = false;
+		}else {
+			FireClassScript.flag = false;
+		}
 		isAnsweredCorrect = false;
 		randomQuestionIndex = index;
 		currentQuestion = unansweredQuestions[randomQuestionIndex];
@@ -93,8 +100,13 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 		yield return new WaitForSeconds (2.3f);
 		isAnsweredCorrect = true;
 		HealthPlayer.RightAnswer();
-		EarthquakeClassScript.step++;
-		EarthquakeClassScript.flag = true;
+		if(isEarthquake){
+			EarthquakeClassScript.step++;
+			EarthquakeClassScript.flag = true;
+		}else{
+			FireClassScript.step++;
+			FireClassScript.flag = true;
+		}
 		transform.gameObject.SetActive(false);
 	}
 	public void UserSelect0(){

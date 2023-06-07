@@ -40,6 +40,8 @@ public class FireClassScript : MonoBehaviour
 	public GameObject spawn1, spawn2, spawn3, spawn4;
 	GameObject thisPlayer;
 	public bool spawn1Free=false, spawn2Free=false, spawn3Free=false, spawn4Free=false;
+
+	public bool stopAnimation = false;
     // Start is called before the first frame update
     void Start(){
 		infoCanvas.SetActive(false);
@@ -59,17 +61,20 @@ public class FireClassScript : MonoBehaviour
 	
 	public IEnumerator StartAnimation(){
 		if(FireGuideScript.guideIsOver){
+			stopMovement = true;
 			Cursor.lockState=CursorLockMode.Locked;
 			startFirstCoroutine = false;
 			StartFireAnimation.startAnimation = true;
 			yield return new WaitForSeconds (10f);
+			stopAnimation = true;
 			StartCoroutine(StartFireDrill());
 		}
 	}
 	public IEnumerator StartFireDrill(){
-		if(FireGuideScript.guideIsOver){
+		if(FireGuideScript.guideIsOver && stopAnimation){
+			stopMovement = false;
 			StartFireAnimation.destroyAnimation = true;
-        	yield return new WaitForSeconds (10f);
+        	yield return new WaitForSeconds (6f);
 			worriedTeacher = true;
 			alarm.Play(0);
         	yield return new WaitForSeconds (3f);
@@ -88,26 +93,47 @@ public class FireClassScript : MonoBehaviour
 					Multiple4EarthquakeManager.GetQuestion(0);
 					break;
 				case 1:
+					mult4Canvas.SetActive(false);
+					mult4Canvas.SetActive(true);
+					Multiple4EarthquakeManager.GetQuestion(1);
 					break;
 				case 2:
+					mult4Canvas.SetActive(false);
+					trueFalseCanvas.SetActive(true);
+					TrueFalseEarthquakeManager.GetQuestion(0);
 					break;
 				case 3:
+					trueFalseCanvas.SetActive(false);
+					numbersCanvas.SetActive(true);
 					break;
 				case 4:
+					numbersCanvas.SetActive(false);
+					trueFalseCanvas.SetActive(true);
+					TrueFalseEarthquakeManager.GetQuestion(1);
 					break;
 				case 5:
+					trueFalseCanvas.SetActive(false);
+					mult4Canvas.SetActive(true);
+					Multiple4EarthquakeManager.GetQuestion(2);
 					break;
 				case 6:
+					mult4Canvas.SetActive(false);
+					mult3Canvas.SetActive(true);
+					Multiple3EarthquakeManager.GetQuestion(1);
 					break;
 				case 7:
+					mult3Canvas.SetActive(false);
+					trueFalseCanvas.SetActive(true);
+					TrueFalseEarthquakeManager.GetQuestion(2);
 					break;
 				case 8:
+					trueFalseCanvas.SetActive(false);
+					putClassmatesInOrderCanvas.SetActive(true);
+					MatchingManager.startFlag = true;
 					break;
 				case 9:
+					putClassmatesInOrderCanvas.SetActive(false);
 					infoCanvas.SetActive(true);
-					break;
-				case 10:
-					
 					if(spawn1.GetComponent<WhatIsInSpawn>().human!=null){
 						spawn1.GetComponent<WhatIsInSpawn>().human.transform.position =  spawn1.GetComponent<WhatIsInSpawn>().hitbox.transform.position;
 						spawn1.GetComponent<WhatIsInSpawn>().human.GetComponent<CapsuleCollider>().enabled=true;
@@ -147,30 +173,33 @@ public class FireClassScript : MonoBehaviour
 					}else{
 						hitbox4.SetActive(true);
 					}
+					foreach(GameObject thing in chairs){
+						thing.GetComponent<MeshCollider>().enabled = false;
+					}
 					break;
-				case 11:
-					break;
-				case 12:
-					break;
-				case 13:
-					break;
-				case 14:
-					break;
-				case 15:
+				case 10:
+					infoCanvas.SetActive(false);
 					foreach(GameObject thing in chairs){
 						thing.GetComponent<MeshCollider>().enabled = false;
 					}
 					ReturnPlayer();
 					break;
-				case 16:
+				case 11:
+					exitCanvas.SetActive(true);
 					break;
-				case 17:
+				case 12: 
+					CloseFlag();
+					stopMovement=false;
+					exitCanvas.SetActive(false);
 					break;
 			}
 		}
 	}
 	public void AddStep(){
 		step++;
+	}
+	public void CloseFlag(){
+		flag = false;
 	}
 	public static void LeaveRoomInfo(){
 		stopMovement=true;

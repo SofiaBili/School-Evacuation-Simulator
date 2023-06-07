@@ -209,15 +209,18 @@ public class EarthquakeClassScript : MonoBehaviour
 					infoCanvas3.SetActive(true);
 					break;
 				case 17:
+					CloseFlag();
 					stopMovement=false;
 					infoCanvas3.SetActive(false);
-					flag = false;
 					break;
 			}
 		}
 	}
 	public void AddStep(){
 		step++;
+	}
+	public void CloseFlag(){
+		flag = false;
 	}
 	public static void LeaveRoomInfo(){
 		stopMovement=true;

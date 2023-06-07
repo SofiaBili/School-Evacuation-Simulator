@@ -30,7 +30,11 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 
 	private HealthPlayer health;
 
+	public bool isEarthquake = true;
+	
+	public static bool staticIsEarthquake;
 	void Awake(){
+		staticIsEarthquake = isEarthquake;
         slimeAnimator = slimeObject.GetComponent<Animator>();
 	}
 	void Start(){
@@ -38,7 +42,6 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 			unansweredQuestions = questions.ToList<TrueFalseQuestions>();
 		}
 		transform.gameObject.SetActive(false);
-		//health = gameObject.transform.parent.parent.parent.transform.Find("Player").GetComponent<HealthPlayer>();
 	}
 	public static bool UnansweredQuestionsCount(){
 		Debug.Log(unansweredQuestions.Count);
@@ -46,7 +49,11 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 		return true;
 	}
 	public static void GetQuestion(int index){
-		EarthquakeClassScript.flag = false;
+		if(staticIsEarthquake){
+			EarthquakeClassScript.flag = false;
+		}else {
+			FireClassScript.flag = false;
+		}
 		isAnsweredCorrect = false;
 		randomQuestionIndex = index;
 		currentQuestion = unansweredQuestions[randomQuestionIndex];
@@ -77,7 +84,13 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 		GetComponent<CanvasGroup>().interactable = false;
 		yield return new WaitForSeconds (2.3f);
 		isAnsweredCorrect = true;
-		EarthquakeClassScript.step++;
+		if(isEarthquake){
+			EarthquakeClassScript.step++;
+			EarthquakeClassScript.flag = true;
+		}else{
+			FireClassScript.step++;
+			FireClassScript.flag = true;
+		}
 		HealthPlayer.RightAnswer();
 		EarthquakeClassScript.flag = true;
 		transform.gameObject.SetActive(false);

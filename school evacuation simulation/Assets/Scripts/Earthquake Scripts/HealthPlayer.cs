@@ -11,8 +11,13 @@ public class HealthPlayer : MonoBehaviour
 	public static bool removing=false;
 	public static int rightAns = 0;
 	public static int totalAns = 13;
+	public static int totalFireAns = 10;
 	public string sceneName;
-
+	public bool isEarthquake=true;
+	public static bool staticIsEarthquake;
+	void Start(){
+		staticIsEarthquake = isEarthquake;
+	}
 	void Update(){
 		if(removing){
 			Process();
@@ -39,7 +44,8 @@ public class HealthPlayer : MonoBehaviour
         return rightAns;
     }
 	public static int GetTotalAns(){
-        return totalAns;
+        if(staticIsEarthquake) return totalAns;
+		else return totalFireAns;
     }
 	
 	public static int GetWrongAns(){
