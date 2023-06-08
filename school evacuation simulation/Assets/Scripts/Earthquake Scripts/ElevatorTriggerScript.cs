@@ -10,11 +10,12 @@ public class ElevatorTriggerScript : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if(other.GetType().ToString().Equals("UnityEngine.CapsuleCollider") && other.gameObject.CompareTag("Player") && !isIn){
 			isIn = true;
-			Debug.Log("lllll");
 		    infoCanvas.SetActive(true);
 			FireClassScript.stopMovementWhileWalking=true;
 			EarthquakeClassScript.stopMovementWhileWalking=true;
 			PlayerMovement.StopFromFireMovement();
+			FireClassScript.finishedQuestions=false;
+			EarthquakeClassScript.finishedQuestions=false;
         }
 	}
 	void OnTriggerExit(Collider other){
@@ -27,5 +28,7 @@ public class ElevatorTriggerScript : MonoBehaviour
 		PlayerMovement.StartFromFireMovement();
 		FireClassScript.stopMovementWhileWalking=false;
 		EarthquakeClassScript.stopMovementWhileWalking=false;
+		FireClassScript.finishedQuestions=true;
+		EarthquakeClassScript.finishedQuestions=true;
 	}
 }

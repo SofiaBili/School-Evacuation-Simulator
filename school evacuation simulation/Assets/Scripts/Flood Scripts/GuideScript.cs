@@ -26,6 +26,7 @@ public class GuideScript : MonoBehaviour
     bool stop = false;
     public AudioSource talkingSound1;
     public AudioSource talkingSound2;
+	public static bool finishedGuide = false;
 
     // Start is called before the first frame update
     void Start(){
@@ -52,6 +53,7 @@ public class GuideScript : MonoBehaviour
         Destroy(room);
         timerG.SetTimer(600);
         timerG.AdjustWater();
+        finishedGuide = true;
     }
     void Plan(){
         personGirl.GetComponent<PlayerMovement>().StopMovement();

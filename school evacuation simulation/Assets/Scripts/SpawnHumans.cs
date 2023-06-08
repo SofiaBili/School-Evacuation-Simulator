@@ -57,12 +57,17 @@ public class SpawnHumans : MonoBehaviour
         while (spawns.Count>0){
             randomPos = Random.Range(0, spawns.Count);
             if(playerSpawnFlag){
-                instantiatedObject=Instantiate(playerPrefab);
+                playerPrefab.transform.position = spawns[randomPos].transform.position;
+                playerPrefab.GetComponent<LookAt>().enabled=true;
+                playerPrefab.transform.SetParent(spawns[randomPos].transform.parent.transform.parent);
+                playerPrefab.name = "Player";
+                playerSpawnFlag = false;
+                /*instantiatedObject=Instantiate(playerPrefab);
                 instantiatedObject.name = "Player";
                 playerSpawnFlag = false;
                 instantiatedObject.transform.SetParent(spawns[randomPos].transform.parent.transform.parent);
                 instantiatedObject.transform.position = spawns[randomPos].transform.position;
-                instantiatedObject.GetComponent<LookAt>().enabled=true;
+                instantiatedObject.GetComponent<LookAt>().enabled=true;*/
                 if(SelectedCharacterScript.character==0)
                     spawns[randomPos].GetComponent<WhatIsInSpawn>().isGirl=true;
             }else{
@@ -84,7 +89,7 @@ public class SpawnHumans : MonoBehaviour
 
             spawns.RemoveAt(randomPos);
         }
-        playerPrefab.SetActive(false);
+        //playerPrefab.SetActive(false);
         femaleHumanPrefab.SetActive(false);
         maleHumanPrefab.SetActive(false);
         teacherPrefab.SetActive(false);

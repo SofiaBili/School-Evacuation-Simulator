@@ -43,6 +43,7 @@ public class FireClassScript : MonoBehaviour
 
 	public bool stopAnimation = false;
 	public static bool stopMovementWhileWalking = false;
+	public static bool finishedQuestions = false;
     // Start is called before the first frame update
     void Start(){
 		infoCanvas.SetActive(false);
@@ -192,8 +193,8 @@ public class FireClassScript : MonoBehaviour
 					break;
 				case 12: 
 					CloseFlag();
-					//stopMovement=false;
 					exitCanvas.SetActive(false);
+					finishedQuestions = true;
 					break;
 			}
 		}
@@ -226,8 +227,6 @@ public class FireClassScript : MonoBehaviour
 	}
 	public void PausePlayer(){
 		PlayerMovement.StopFromFireMovement();
-		//stopMovement=true;
-
 	}
 	public static void NextMult3QuestionAndAnimation(int i){
 		stopCoroutine = true;

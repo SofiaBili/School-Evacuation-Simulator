@@ -43,6 +43,7 @@ public class EarthquakeClassScript : MonoBehaviour
 	GameObject thisPlayer;
 	public bool spawn1Free=false, spawn2Free=false, spawn3Free=false, spawn4Free=false;
 	public static bool stopMovementWhileWalking = false;
+	public static bool finishedQuestions = false;
 	
     void Start(){
 		infoCanvas1Text = GetComponent<TextMeshProUGUI>();
@@ -64,6 +65,7 @@ public class EarthquakeClassScript : MonoBehaviour
 	
 	public IEnumerator StartEarthquake(){
 		if(EarthquakeGuideScript.guideIsOver){
+			ElevatorTriggerScript.isIn = true;
 			Cursor.lockState=CursorLockMode.Locked;
 			startFirstCoroutine = false;
         	yield return new WaitForSeconds (4f);
@@ -80,7 +82,6 @@ public class EarthquakeClassScript : MonoBehaviour
 		}
 	}
 	void Update(){
-		//Debug.Log(flag);
 		if(EarthquakeGuideScript.guideIsOver && flag && playerFlag){
 			switch(step) {
 				case 0:
@@ -201,6 +202,7 @@ public class EarthquakeClassScript : MonoBehaviour
 					infoCanvas2.SetActive(true);
 					break;
 				case 15:
+					infoCanvas2.SetActive(false);
 					foreach(GameObject thing in chairs){
 						thing.GetComponent<MeshCollider>().enabled = false;
 					}
@@ -208,10 +210,12 @@ public class EarthquakeClassScript : MonoBehaviour
 					break;
 				case 16:
 					infoCanvas3.SetActive(true);
+					PausePlayer();
 					break;
 				case 17:
 					CloseFlag();
 					infoCanvas3.SetActive(false);
+					finishedQuestions = true;
 					break;
 			}
 		}
@@ -221,6 +225,7 @@ public class EarthquakeClassScript : MonoBehaviour
 	}
 	
 	public void CloseFlag(){
+		ElevatorTriggerScript.isIn = false;
 		PlayerMovement.StartFromFireMovement();
 		flag = false;
 		stopMovementWhileWalking = false;
@@ -231,7 +236,6 @@ public class EarthquakeClassScript : MonoBehaviour
 		step++;
 	}
 	public void ReturnPlayer(){
-		infoCanvas2.SetActive(false);
 		flag = false;
 		stopMovement=false;
 		thisPlayer.transform.localPosition =  thisPlayer.transform.localPosition + new Vector3(0, 0, -0.3f);
@@ -241,7 +245,9 @@ public class EarthquakeClassScript : MonoBehaviour
 		thisPlayer.GetComponent<CapsuleCollider>().enabled=true;
 		thisPlayer.GetComponent<PlayerMovement>().enabled = true;
 		Cursor.lockState=CursorLockMode.Locked;
-
+	}
+	public void PausePlayer(){
+		PlayerMovement.StopFromFireMovement();
 	}
 	public static void NextMult3QuestionAndAnimation(int i){
 		stopCoroutine = true;
