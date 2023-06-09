@@ -6,6 +6,7 @@ public class ShowFloodMap : MonoBehaviour
 {
     public GameObject mapCanvas;
     public GameObject miniMapCanvas;
+	public bool isMap = true;
 
     void Start() {
     }
@@ -28,5 +29,10 @@ public class ShowFloodMap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M) && GuideScript.finishedGuide) {
             OpenMap();
         }
+		if(!isMap){
+			if (Input.GetKeyDown(KeyCode.Escape)) {
+				OpenMap();
+			}
+		}
     }
 }
