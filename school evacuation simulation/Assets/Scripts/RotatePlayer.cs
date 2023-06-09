@@ -32,7 +32,7 @@ public class RotatePlayer:MonoBehaviour {
                 transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
                 playerBody.Rotate(Vector3.up*X);
             }
-            if (Input.GetKeyDown(KeyCode.Escape)){
+            /*if (Input.GetKeyDown(KeyCode.Escape)){
                 if(!escapeFlag){
                     Cursor.lockState=CursorLockMode.None;
                     escapeFlag=true;
@@ -40,7 +40,7 @@ public class RotatePlayer:MonoBehaviour {
                 else{
                     escapeFlag=false;
                 }
-            }  
+            }  */
         }
     }
 }

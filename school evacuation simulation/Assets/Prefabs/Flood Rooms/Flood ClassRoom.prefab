@@ -2929,6 +2929,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 19324758387459074}
     m_Modifications:
+    - target: {fileID: 496512957723368044, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1718259731464144641, guid: 2d121a37aa5170444b38070944c46fc9, type: 2}
     - target: {fileID: 2576188389210703146, guid: 71cf4af9a865fa04e844bcce8aa937fa, type: 3}
       propertyPath: cameraAnimation
       value: 
