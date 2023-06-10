@@ -56,10 +56,12 @@ public class MapCreation : MonoBehaviour
 
     string[] splitAtHashtag;
     string[,,] schoolMapArray = new string[11,11,2];
+    
+    public static bool isDefault = true;
 
     void Awake(){
         savedPosition=mapGameObject.transform.position;
-        PlaceRoomsMethod();
+        Placement();
         //PlaceCustomRoomsMethod();
         ShowHitboxes();
     }
@@ -67,7 +69,16 @@ public class MapCreation : MonoBehaviour
     void Start(){
         
     }
-
+    public static void ChooseCustomOrDef(bool choice = true){
+        isDefault = choice;
+    }
+    public void Placement(){
+        if(isDefault){
+            PlaceRoomsMethod();
+        }else{
+            PlaceCustomRoomsMethod();
+        }
+    }
     void Update(){
         
     }

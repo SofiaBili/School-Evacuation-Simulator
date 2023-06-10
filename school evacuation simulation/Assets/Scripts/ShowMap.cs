@@ -9,20 +9,32 @@ public class ShowMap : MonoBehaviour
     public GameObject miniMapCanvas;
     public GameObject miniMapCanvasText;
     public bool canShowMapText = false;
-
+	public bool isMap = true;
+    AudioSource[] allAudioSources;
     void Start() {
-        //player = GameObject.Find("Player");
-        //miniMapCanvas = player.transform.Find("MiniMapCanvas").gameObject;
-        //miniMapCanvasText =  player.transform.Find("MiniMapCanvasText").gameObject;
+        allAudioSources = FindObjectsOfType<AudioSource>();
         miniMapCanvasText.SetActive(false);
     }
+    void PauseAllSources(){
+        AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+        foreach(AudioSource a in allAudioSources){
+            if (a.isActiveAndEnabled == true){
+                if (a.isPlaying) a.Pause();
+                else a.UnPause();
+            }
+        }
 
+    }
+    public void QuitGame(){
+      Application.Quit();
+    }
     public void OpenMap(){
         mapCanvas.SetActive(true);
         miniMapCanvas.SetActive(false);
         FireClassScript.stopMovementWhileWalking=true;
         EarthquakeClassScript.stopMovementWhileWalking=true;
         PlayerMovement.StopFromFireMovement();
+        PauseAllSources();
         Time.timeScale = 0;
     }
     public void CloseMap(){
@@ -31,6 +43,7 @@ public class ShowMap : MonoBehaviour
 		PlayerMovement.StartFromFireMovement();
 		FireClassScript.stopMovementWhileWalking=false;
 		EarthquakeClassScript.stopMovementWhileWalking=false;
+        PauseAllSources();
         Time.timeScale = 1;
     }
     public void ShowText(){
@@ -44,8 +57,13 @@ public class ShowMap : MonoBehaviour
         if(canShowMapText){
             ShowText();
         }
-        if (Input.GetKeyDown(KeyCode.M) && (EarthquakeClassScript.finishedQuestions || FireClassScript.finishedQuestions)) {
+        if (isMap && Input.GetKeyDown(KeyCode.M) && (EarthquakeClassScript.finishedQuestions || FireClassScript.finishedQuestions)) {
             OpenMap();
         }
+        if(!isMap){
+			if (Input.GetKeyDown(KeyCode.Escape)) {
+				OpenMap();
+			}
+		}
     }
 }
