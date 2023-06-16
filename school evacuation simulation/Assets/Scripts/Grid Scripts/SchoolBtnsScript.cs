@@ -19,6 +19,7 @@ public class SchoolBtnsScript : MonoBehaviour
 	public Button btn11;
 	public Button btn12;
 	public Button btn13;
+	public Button btn14;
 	
 	Button button1;
 	Button button2;
@@ -33,6 +34,7 @@ public class SchoolBtnsScript : MonoBehaviour
 	Button button11;
 	Button button12;
 	Button button13;
+	Button button14;
 	
 	public bool isSecondFloor = false;
 	int check = -1;
@@ -78,6 +80,9 @@ public class SchoolBtnsScript : MonoBehaviour
 		button13 = btn13.GetComponent<Button>();
 		button13.onClick.AddListener(TaskOnClick13);
 
+		button14 = btn14.GetComponent<Button>();
+		button14.onClick.AddListener(TaskOnClick14);
+
 	}
 	void Update(){
 		switch(check){
@@ -94,6 +99,7 @@ public class SchoolBtnsScript : MonoBehaviour
 			case 11: button11.Select(); break;
 			case 12: button12.Select(); break;
 			case 13: button13.Select(); break;
+			case 14: button14.Select(); break;
 		}
 	}
 	public void TaskOnClick1() {
@@ -134,5 +140,8 @@ public class SchoolBtnsScript : MonoBehaviour
     }
 	public void TaskOnClick13() {
 		check = 13;
+    }
+	public void TaskOnClick14() {
+		check = 14;
     }
 }

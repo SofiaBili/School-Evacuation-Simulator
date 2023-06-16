@@ -8580,6 +8580,7 @@ MonoBehaviour:
   btn11: {fileID: 1256753176}
   btn12: {fileID: 1273204899}
   btn13: {fileID: 1711859467}
+  btn14: {fileID: 629370697}
   isSecondFloor: 1
 --- !u!1 &666432213
 GameObject:
@@ -13024,6 +13025,7 @@ GameObject:
   - component: {fileID: 1063803409}
   - component: {fileID: 1063803408}
   - component: {fileID: 1063803407}
+  - component: {fileID: 1063803410}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -13096,26 +13098,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2104591315}
-        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
-        m_MethodName: CompleteMap
-        m_Mode: 3
+      - m_Target: {fileID: 1063803410}
+        m_TargetAssemblyTypeName: CompleteBtnMap, Assembly-CSharp
+        m_MethodName: Completion
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2083889215}
-        m_TargetAssemblyTypeName: PlacementSystem, Assembly-CSharp
-        m_MethodName: CompleteMap
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13158,6 +13148,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063803405}
   m_CullTransparentMesh: 1
+--- !u!114 &1063803410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063803405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5312a03cceb22264e8b2c720068742b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placement1: {fileID: 2104591315}
+  placement2: {fileID: 2083889215}
 --- !u!1 &1064574480
 GameObject:
   m_ObjectHideFlags: 0
@@ -24696,7 +24700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1907243908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24715,7 +24719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 8.002808, y: 21.901001}
+  m_AnchoredPosition: {x: 8.00293, y: 21.901001}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.0000000661239, y: -0.000000095615746}
 --- !u!114 &1907243909
@@ -26792,7 +26796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &2028527131
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26939,6 +26943,7 @@ MonoBehaviour:
   btn11: {fileID: 2116161266}
   btn12: {fileID: 1510479043}
   btn13: {fileID: 754187798}
+  btn14: {fileID: 1292656041}
   isSecondFloor: 0
 --- !u!1 &2030666828
 GameObject:
@@ -27496,6 +27501,9 @@ MonoBehaviour:
   preview: {fileID: 983080274}
   gridVisualization: {fileID: 528639551}
   objectPlacer: {fileID: 281128182}
+  isSecondFloor: 1
+  secondPlane: {fileID: 2028527130}
+  firstPlane: {fileID: 1745029799}
 --- !u!1 &2097859020
 GameObject:
   m_ObjectHideFlags: 0
@@ -27681,6 +27689,9 @@ MonoBehaviour:
   preview: {fileID: 143984546}
   gridVisualization: {fileID: 1025627975}
   objectPlacer: {fileID: 1820524973}
+  isSecondFloor: 0
+  secondPlane: {fileID: 2028527130}
+  firstPlane: {fileID: 1745029799}
 --- !u!1 &2106199391
 GameObject:
   m_ObjectHideFlags: 0

@@ -75,6 +75,17 @@ public class RotatingState : IBuildingState
         Vector3 cellPosition = grid.CellToWorld(gridPosition);
         previewSystem.UpdatePosition(cellPosition, CheckIfSelectionIsValid(gridPosition));
     }
+    public void OnLoad(Vector3Int gridPosition)
+    {
+        GridData selectedData = null;
+        selectedData = furnitureData;
+        gameObjectIndex = selectedData.GetRepresentationIndex(gridPosition);
+
+        objectPlacer.RotateObjectAt(gameObjectIndex);
+
+        Vector3 cellPosition = grid.CellToWorld(gridPosition);
+        previewSystem.UpdatePosition(cellPosition, CheckIfSelectionIsValid(gridPosition));
+    }
 
     private bool CheckIfSelectionIsValid(Vector3Int gridPosition)
     {

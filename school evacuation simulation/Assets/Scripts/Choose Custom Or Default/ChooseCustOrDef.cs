@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ChooseCustOrDef : MonoBehaviour
 {
-    public void Choose(bool choice){
+    public static void Choose(bool choice){
 		MapCreation.ChooseCustomOrDef(choice);
 	}
 }

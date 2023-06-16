@@ -193,8 +193,6 @@ public class FireClassScript : MonoBehaviour
 					break;
 				case 12: 
 					CloseFlag();
-					exitCanvas.SetActive(false);
-					finishedQuestions = true;
 					break;
 			}
 		}
@@ -203,10 +201,12 @@ public class FireClassScript : MonoBehaviour
 		step++;
 	}
 	public void CloseFlag(){
+		exitCanvas.SetActive(false);
 		ElevatorTriggerScript.isIn = false;
 		PlayerMovement.StartFromFireMovement();
 		flag = false;
 		stopMovementWhileWalking = false;
+		finishedQuestions = true;
 	}
 	public static void LeaveRoomInfo(){
 		flag = true;

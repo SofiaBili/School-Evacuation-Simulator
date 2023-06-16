@@ -10,9 +10,15 @@ public class SceneManagerScript : MonoBehaviour
     void Start(){
     }
     public void StartGame(string sceneName){
+      Time.timeScale = 1;
 		  SceneManager.LoadScene(sceneName);
     }
+    public static void StaticStartGame(string name){
+      Time.timeScale = 1;
+		  SceneManager.LoadScene(name);
+    }
     public void QuitGame(){
+      Time.timeScale = 1;
       Application.Quit();
     }
 }

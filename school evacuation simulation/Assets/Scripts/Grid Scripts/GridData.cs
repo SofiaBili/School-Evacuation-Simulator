@@ -9,8 +9,8 @@ public class GridData
     Dictionary<Vector3Int, PlacementData> placedObjects = new();
     
     public static string[,,] schoolMapArray = new string[11,11,2];//10x10x2
-    //ObjectPlacer objectPlacer;
-
+    string[] splitAtHashtag;
+    
     public void AddObjectAt(Vector3Int gridPosition, Vector2Int objectSize, int ID, int placedObjectIndex){
         List<Vector3Int> positionToOccupy = CalculatePosition(gridPosition, objectSize);
         PlacementData data = new PlacementData(positionToOccupy, ID, placedObjectIndex);
@@ -23,6 +23,7 @@ public class GridData
         }
     }
     public void CompeleteMap(ObjectPlacer objectPlacer, int floor){
+        
         int gameObjectIndex = -1;
         int i=0, j=0;
         for(int x=-5; x<=4; x++){
@@ -108,6 +109,8 @@ public class GridData
     public int GetId(Vector3Int gridPosition){
         return placedObjects[gridPosition].ID;
     }
+    
+    
 }
 
 

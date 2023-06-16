@@ -214,8 +214,6 @@ public class EarthquakeClassScript : MonoBehaviour
 					break;
 				case 17:
 					CloseFlag();
-					infoCanvas3.SetActive(false);
-					finishedQuestions = true;
 					break;
 			}
 		}
@@ -225,10 +223,12 @@ public class EarthquakeClassScript : MonoBehaviour
 	}
 	
 	public void CloseFlag(){
+		infoCanvas3.SetActive(false);
 		ElevatorTriggerScript.isIn = false;
 		PlayerMovement.StartFromFireMovement();
 		flag = false;
 		stopMovementWhileWalking = false;
+		finishedQuestions = true;
 	}
 	public static void LeaveRoomInfo(){
 		flag = true;

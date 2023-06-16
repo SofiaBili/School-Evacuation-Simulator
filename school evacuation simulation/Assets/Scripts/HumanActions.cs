@@ -12,6 +12,8 @@ public class HumanActions : MonoBehaviour
 
     FireDrillHuman fireDrillHuman;
     [SerializeField] GameObject fireDrillHumanObject;
+    public float humanPosX, humanPosZ;
+    public bool movementStarted = false;
 
     void Awake(){
         fireDrillHuman = fireDrillHumanObject.GetComponent<FireDrillHuman>();
@@ -32,13 +34,18 @@ public class HumanActions : MonoBehaviour
         }else if(earthquakeFlag && !fireFlag){
             ChangeAnimationState("Idle");
         }else{
-            ChangeAnimationState("Walking");
+            if(!movementStarted && (Mathf.Abs(gameObject.transform.position.x - humanPosX)>1 || Mathf.Abs(gameObject.transform.position.z - humanPosZ)>1)){
+                ChangeAnimationState("Walking");
+                movementStarted = true;
+            }
         }
         
         targetPos=transform.position;
     }
 
     public void FireDrillAction(){
+        humanPosX = gameObject.transform.position.x;
+        humanPosZ = gameObject.transform.position.z;
         fireFlag = true;
     }
 

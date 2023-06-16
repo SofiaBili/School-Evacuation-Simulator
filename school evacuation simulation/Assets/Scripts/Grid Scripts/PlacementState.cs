@@ -31,7 +31,7 @@ public class PlacementState : IBuildingState
 
         selectedObjectIndex = database.objectsData.FindIndex(data => data.ID == ID);
         //we have the correct index
-        if (selectedObjectIndex > -1)
+        if (selectedObjectIndex > -1 || EditOrNewFile.replacementOfFile)
         {
             previewSystem.StartShowingPlacementPreview(database.objectsData[selectedObjectIndex].Prefab, database.objectsData[selectedObjectIndex].Size);
         }
@@ -49,6 +49,7 @@ public class PlacementState : IBuildingState
     {
 
         bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
+        Debug.Log(placementValidity);
         if (placementValidity == false)
         {
             SpeachText.instance.SetAndShowPanel("Δεν μπορείς να τοποθετήσεις αυτό το αντικείμενο εδώ");
@@ -62,6 +63,15 @@ public class PlacementState : IBuildingState
         selectedData.AddObjectAt(gridPosition, database.objectsData[selectedObjectIndex].Size, database.objectsData[selectedObjectIndex].ID, index);
 
         previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), false);
+    }
+
+    public void OnLoad(Vector3Int gridPosition){
+        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPosition), parentObj);
+
+        GridData selectedData = database.objectsData[selectedObjectIndex].ID == -1 ? floorData : furnitureData;
+        selectedData.AddObjectAt(gridPosition, database.objectsData[selectedObjectIndex].Size, database.objectsData[selectedObjectIndex].ID, index);
+
+        //previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), false);
     }
 
     private bool CheckPlacementValidity(Vector3Int gridPosition, int selectedObjectIndex)
