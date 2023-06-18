@@ -561,10 +561,10 @@ Transform:
   - {fileID: 553461044}
   - {fileID: 770199411}
   - {fileID: 1723116841}
+  - {fileID: 1957763539}
   - {fileID: 338584871}
   - {fileID: 686079900}
   - {fileID: 219730422}
-  - {fileID: 1957763539}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1478,6 +1478,7 @@ GameObject:
   - component: {fileID: 336214868}
   - component: {fileID: 336214867}
   - component: {fileID: 336214871}
+  - component: {fileID: 336214872}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1586,6 +1587,19 @@ MonoBehaviour:
   totalAnsText: {fileID: 1368270555}
   totalWrongText: {fileID: 0}
   isWinScene: 0
+--- !u!114 &336214872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336214866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a973a0d5cc75b43a256be2f54954b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!1001 &338584870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1827,7 +1841,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 361379233}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336214872}
+        m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ChooseEvacuationType
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &361379233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4645,7 +4671,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1500745564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336214872}
+        m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1500745564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5712,7 +5750,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 97805756}
-  m_RootOrder: 24
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1957763540
 MeshCollider:
