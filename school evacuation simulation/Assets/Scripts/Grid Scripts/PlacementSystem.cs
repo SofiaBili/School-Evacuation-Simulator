@@ -136,13 +136,8 @@ public class PlacementSystem : MonoBehaviour
 		int rotationTimes;
         string saveString = File.ReadAllText(Application.dataPath + "/save.txt");
         splitAtHashtag = saveString.Split(char.Parse("#"));
-		string[] splitAtSlash;
-        Debug.Log(splitAtHashtag.Length-1);
         for(int i=0; i<splitAtHashtag.Length-1; i++){//-1 because last # is empty
-			Debug.Log(isSecondFloor);
-			Debug.Log(int.Parse(splitAtHashtag[i].Split(char.Parse("/"))[2]));
             if(int.Parse(splitAtHashtag[i].Split(char.Parse("/"))[2]) == 0 && !isSecondFloor){
-			Debug.Log("sssssssssssssssssss");
 				rotationTimes = 0;
 				rotation = 0;
                 schoolMapArray[x,y,0] = splitAtHashtag[i];
@@ -175,7 +170,6 @@ public class PlacementSystem : MonoBehaviour
                 schoolMapArray[k,l,1] = splitAtHashtag[i];
         		SplitBtn3Parameter(schoolMapArray[k,l,1]);
 				if(ID > -1){
-					Debug.Log(parentObj);
 					buildingState = new PlacementState(ID, grid, preview, database, floorData, furnitureData, objectPlacer, parentObj);
 					buildingState.EndState();
 					gridPosition = new Vector3Int(k-5,0,l-5);

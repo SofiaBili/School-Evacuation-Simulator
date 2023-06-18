@@ -58,7 +58,7 @@ public class GridData
             i++;   
         }
         Save(floor);
-        SceneManager.LoadScene("FloodDrillScene");
+        SceneManager.LoadScene("SelectCustomOrDefaultScene");
     }
     private void Save(int floor){
         string saveData = null;

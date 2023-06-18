@@ -180,8 +180,11 @@ public class MapCreation : MonoBehaviour
         int yflag,xflag;
         int roomID;
         string[] splitArray;
+        GameObject floorName;
         LoadFile();
         for(int f=0; f<2; f++){
+            if(f==0) floorName = emptyGameObjectPrefab1;
+            else floorName = emptyGameObjectPrefab2;
             yflag=1; xflag=0;
             for(int x=0; x<schoolMapArray.GetLength(0)-1; x++){
                 for(int y=0; y<schoolMapArray.GetLength(1)-1; y++){
@@ -194,89 +197,89 @@ public class MapCreation : MonoBehaviour
                     }
                     roomID = int.Parse(splitArray[0]);
                     if(roomID==-1){
-                        RoomName(empty,2,xflag,10*yflag,emptyGameObjectPrefab2,0,0f);
+                        RoomName(empty,2,xflag,10*yflag,floorName,0,0f);
                     }else if(roomID==0){
-                        RoomName(classRoom,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(classRoom,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==1){
-                        RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(labRoom1,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==-2){
-                        RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(labRoom2,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==2){
-                        RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
+                        RoomName(labRoom2,2,xflag,10*yflag,floorName,90,0f);
                     }else if(roomID==-3){
-                        RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
+                        RoomName(labRoom1,2,xflag,10*yflag,floorName,90,0f);
                     }else if(roomID==3){
-                        RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(labRoom2,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==-4){
-                        RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(labRoom1,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==4){
-                        RoomName(labRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
+                        RoomName(labRoom1,2,xflag,10*yflag,floorName,270,0f);
                     }else if(roomID==-5){
-                        RoomName(labRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
+                        RoomName(labRoom2,2,xflag,10*yflag,floorName,270,0f);
                     }else if(roomID==5){
-                        RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(theaterRoom2,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==-6){
-                        RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(theaterRoom1,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==10){
-                        RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
+                        RoomName(theaterRoom1,2,xflag,10*yflag,floorName,90,0f);
                     }else if(roomID==-11){
-                        RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,90,0f);
+                        RoomName(theaterRoom2,2,xflag,10*yflag,floorName,90,0f);
                     }else if(roomID==11){
-                        RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(theaterRoom1,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==-12){
-                        RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(theaterRoom2,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==12){
-                        RoomName(theaterRoom2,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
+                        RoomName(theaterRoom2,2,xflag,10*yflag,floorName,270,0f);
                     }else if(roomID==-13){
-                        RoomName(theaterRoom1,2,xflag,10*yflag,emptyGameObjectPrefab2,270,0f);
+                        RoomName(theaterRoom1,2,xflag,10*yflag,floorName,270,0f);
                     }else if(roomID==6){
-                        RoomName(office3,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(office3,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==7){
-                        RoomName(wc,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(wc,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==8){
-                        RoomName(stairs,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(stairs,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==9){
-                        RoomName(elevator,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(elevator,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==13){
-                        RoomName(corridorNoWall,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorNoWall,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==14){
-                        RoomName(corridorRightWallDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorRightWallDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==15){
-                        RoomName(corridorRightWall,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorRightWall,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==16){
-                        RoomName(corridorBothWalls,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorBothWalls,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==17){
-                        RoomName(corridorAllWallsFrontDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorAllWallsFrontDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==18){
-                        RoomName(corridorAllWallsLeftDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorAllWallsLeftDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==19){
-                        RoomName(corridorAllWallsRightDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorAllWallsRightDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==20){
-                        RoomName(corridorAllWalls,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorAllWalls,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==21){
-                        RoomName(corridorEndWallDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorEndWallDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==22){
-                        RoomName(corridorEndWallFrontDoorLeft,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorEndWallFrontDoorLeft,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==23){
-                        RoomName(corridorEndWallFrontDoorRight,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorEndWallFrontDoorRight,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==24){
-                        RoomName(corridorEndWallLeftDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorEndWallLeftDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==25){
-                        RoomName(corridorEndWallLeft,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorEndWallLeft,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==26){
-                        RoomName(corridorEndWallRightDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorEndWallRightDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==27){
-                        RoomName(corridorEndWallRight,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorEndWallRight,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==28){
-                        RoomName(corridorEndWall,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorEndWall,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==29){
-                        RoomName(corridorBothWallsLeftDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorBothWallsLeftDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==30){
-                        RoomName(corridorLeftWallDoor,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorLeftWallDoor,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==31){
-                        RoomName(corridorLeftWall,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(corridorLeftWall,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }else if(roomID==32){
-                        RoomName(informatics,2,xflag,10*yflag,emptyGameObjectPrefab2,int.Parse(splitArray[1]),0f);
+                        RoomName(informatics,2,xflag,10*yflag,floorName,int.Parse(splitArray[1]),0f);
                     }
                     if(changeRowFlag){
                         //empty room to go one right and one pos above grid
@@ -303,7 +306,7 @@ public class MapCreation : MonoBehaviour
                 }
                     
             }
-            RoomName(empty,2,-90,-10,emptyGameObjectPrefab2,0,-5.001f);
+            RoomName(empty,2,-90,-10,floorName,0,-5.001f);
         }
 
     }
@@ -311,7 +314,7 @@ public class MapCreation : MonoBehaviour
     void PlaceRoomsMethod(){
         //First Floor
         emptyGameObjectPrefab1.name = "First Floor";
-        RoomName(theaterRoom1,0,0,10,emptyGameObjectPrefab1);
+        RoomName(theaterRoom1,0, 50, 30,emptyGameObjectPrefab1);
         RoomName(corridorLeftWallDoor,2,0,10,emptyGameObjectPrefab1,-90);
         RoomName(corridorLeftWall,2,0,10,emptyGameObjectPrefab1,-90);
         RoomName(office1,0,0,10,emptyGameObjectPrefab1);

@@ -28,6 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 386744779236359867}
   - {fileID: 7843019301319862446}
   - {fileID: 7843019301041059909}
   - {fileID: 7843019302887525059}
@@ -37,7 +38,7 @@ Transform:
   - {fileID: 7843019301999606976}
   - {fileID: 2081776119685649670}
   m_Father: {fileID: 7843019301829500964}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4311115009410512757
 GameObject:
@@ -48,7 +49,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4548438049605034960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Toilet (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +74,7 @@ Transform:
   - {fileID: 8578982357806030769}
   - {fileID: 6881371566908633344}
   m_Father: {fileID: 7843019301829500964}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7030775637776054850
 GameObject:
@@ -84,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4962728485163140911}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Toilet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +110,7 @@ Transform:
   - {fileID: 4688709427512252418}
   - {fileID: 7655967208732250111}
   m_Father: {fileID: 7843019301829500964}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7843019301041059910
 GameObject:
@@ -140,7 +141,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613002466523299565}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7843019301319862447
 GameObject:
@@ -174,7 +175,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613002466523299565}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7843019301319862435
 MeshFilter:
@@ -272,7 +273,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613002466523299565}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7843019301370665973
 MeshFilter:
@@ -365,7 +366,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 386744779236359867}
   - {fileID: 1613002466523299565}
   - {fileID: 4962728485163140911}
   - {fileID: 4548438049605034960}
@@ -410,7 +410,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613002466523299565}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!33 &7843019301999606981
 MeshFilter:
@@ -508,7 +508,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613002466523299565}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7843019302419546741
 MeshFilter:
@@ -605,7 +605,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613002466523299565}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7843019302868959318
 MeshFilter:
@@ -699,7 +699,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1613002466523299565}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8783916337752745377
 GameObject:
@@ -710,7 +710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 580730399404919496}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Toilet (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,14 +735,14 @@ Transform:
   - {fileID: 7294990598363606317}
   - {fileID: 892894537612248113}
   m_Father: {fileID: 7843019301829500964}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &315465966582971537
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7843019301829500964}
+    m_TransformParent: {fileID: 1613002466523299565}
     m_Modifications:
     - target: {fileID: 89294585984549418, guid: a7d56200d6558b74b93f46af484b8020, type: 3}
       propertyPath: m_RootOrder
@@ -750,15 +750,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 89294585984549418, guid: a7d56200d6558b74b93f46af484b8020, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.6652403
       objectReference: {fileID: 0}
     - target: {fileID: 89294585984549418, guid: a7d56200d6558b74b93f46af484b8020, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.5676599
       objectReference: {fileID: 0}
     - target: {fileID: 89294585984549418, guid: a7d56200d6558b74b93f46af484b8020, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.033592224
       objectReference: {fileID: 0}
     - target: {fileID: 89294585984549418, guid: a7d56200d6558b74b93f46af484b8020, type: 3}
       propertyPath: m_LocalRotation.w
@@ -817,6 +817,10 @@ PrefabInstance:
     - target: {fileID: 4330104833031322714, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
       propertyPath: m_Name
       value: Partition_02_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330104833031322714, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5976586382661435027, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -927,6 +931,10 @@ PrefabInstance:
     - target: {fileID: 5149350279349469384, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
       propertyPath: m_Name
       value: Toilet_03_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149350279349469384, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6607666134807052944, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
       propertyPath: m_RootOrder
@@ -1090,6 +1098,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Partition_Door_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 5908847871415456862, guid: 6d7e23dbfb7dacf4d9ac57ffd2333314, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9085630009791522069, guid: 6d7e23dbfb7dacf4d9ac57ffd2333314, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1148,6 +1160,10 @@ PrefabInstance:
     - target: {fileID: 5149350279349469384, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
       propertyPath: m_Name
       value: Toilet_03_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149350279349469384, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6607666134807052944, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
       propertyPath: m_RootOrder
@@ -1254,6 +1270,10 @@ PrefabInstance:
     - target: {fileID: 4330104833031322714, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
       propertyPath: m_Name
       value: Partition_02_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330104833031322714, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5976586382661435027, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1421,6 +1441,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Partition_Door_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 5908847871415456862, guid: 6d7e23dbfb7dacf4d9ac57ffd2333314, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9085630009791522069, guid: 6d7e23dbfb7dacf4d9ac57ffd2333314, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1479,6 +1503,10 @@ PrefabInstance:
     - target: {fileID: 4330104833031322714, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
       propertyPath: m_Name
       value: Partition_02_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330104833031322714, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5976586382661435027, guid: b8ac467a4ff3d644d8c49db550637df5, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1620,7 +1648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4059617066090810036, guid: c1c40c34f6088cd40a9a584bedf014a3, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4059617066090810036, guid: c1c40c34f6088cd40a9a584bedf014a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1702,7 +1730,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a2e7c3309fe48f140a4aeea9b8a3ab56, type: 2}
     - target: {fileID: 6087755220500991717, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6087755220500991717, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
       propertyPath: m_LocalScale.x
@@ -1759,6 +1787,10 @@ PrefabInstance:
     - target: {fileID: 7460005237930485958, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
       propertyPath: m_Name
       value: Restroom_Sink_02_Snaps014 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460005237930485958, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
@@ -1838,6 +1870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Partition_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 7830356053000482127, guid: 0edbcfbf13434934e88362dbcc7528e1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0edbcfbf13434934e88362dbcc7528e1, type: 3}
 --- !u!4 &5890680693407819011 stripped
@@ -1894,7 +1930,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a2e7c3309fe48f140a4aeea9b8a3ab56, type: 2}
     - target: {fileID: 6087755220500991717, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6087755220500991717, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
       propertyPath: m_LocalScale.x
@@ -1952,6 +1988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Restroom_Sink_02_Snaps014 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7460005237930485958, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
 --- !u!4 &1522528116801462588 stripped
@@ -1969,6 +2009,10 @@ PrefabInstance:
     - target: {fileID: 5149350279349469384, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
       propertyPath: m_Name
       value: Toilet_03_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149350279349469384, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6607666134807052944, guid: 6042812f37f2b00438719e1775ea9b36, type: 3}
       propertyPath: m_RootOrder
@@ -2132,6 +2176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Holder_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 3643685372100157333, guid: 9f19cd65406161b479efb6513425a39e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7662864340940817048, guid: 9f19cd65406161b479efb6513425a39e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2246,6 +2294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Partition_Door_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 5908847871415456862, guid: 6d7e23dbfb7dacf4d9ac57ffd2333314, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9085630009791522069, guid: 6d7e23dbfb7dacf4d9ac57ffd2333314, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2311,7 +2363,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a2e7c3309fe48f140a4aeea9b8a3ab56, type: 2}
     - target: {fileID: 6087755220500991717, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6087755220500991717, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
       propertyPath: m_LocalScale.x
@@ -2368,6 +2420,10 @@ PrefabInstance:
     - target: {fileID: 7460005237930485958, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
       propertyPath: m_Name
       value: Restroom_Sink_02_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460005237930485958, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4acd8de00f609dd48b7c31d68b240bff, type: 3}
@@ -2443,6 +2499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Holder_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 3643685372100157333, guid: 9f19cd65406161b479efb6513425a39e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7662864340940817048, guid: 9f19cd65406161b479efb6513425a39e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2509,9 +2569,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brush_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 4897635728911215663, guid: 9c61282685dd10042ae11a4a7858c68b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8432915593999607682, guid: 9c61282685dd10042ae11a4a7858c68b, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8432915593999607682, guid: 9c61282685dd10042ae11a4a7858c68b, type: 3}
       propertyPath: m_LocalScale.x
@@ -2643,6 +2707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Partition_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 7830356053000482127, guid: 0edbcfbf13434934e88362dbcc7528e1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0edbcfbf13434934e88362dbcc7528e1, type: 3}
 --- !u!4 &254862155378692574 stripped
@@ -2753,6 +2821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Partition_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 7830356053000482127, guid: 0edbcfbf13434934e88362dbcc7528e1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0edbcfbf13434934e88362dbcc7528e1, type: 3}
 --- !u!1 &293532156835835782 stripped
@@ -2859,6 +2931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Holder_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 3643685372100157333, guid: 9f19cd65406161b479efb6513425a39e, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7662864340940817048, guid: 9f19cd65406161b479efb6513425a39e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2915,7 +2991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3216604429710358528, guid: ab2a0bce853442e4f9316bf9c12228ee, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3216604429710358528, guid: ab2a0bce853442e4f9316bf9c12228ee, type: 3}
       propertyPath: m_LocalScale.x
@@ -2972,6 +3048,10 @@ PrefabInstance:
     - target: {fileID: 5622764048753735729, guid: ab2a0bce853442e4f9316bf9c12228ee, type: 3}
       propertyPath: m_Name
       value: Bucket_01_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622764048753735729, guid: ab2a0bce853442e4f9316bf9c12228ee, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8664983340518036992, guid: ab2a0bce853442e4f9316bf9c12228ee, type: 3}
       propertyPath: m_Materials.Array.data[0]
