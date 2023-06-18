@@ -2332,7 +2332,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1863873214}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.30655518
+  m_Size: 0.40794903
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2907,8 +2907,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.999898, y: -450.17996}
-  m_SizeDelta: {x: -20, y: 900.3599}
+  m_AnchoredPosition: {x: -9.999893, y: -338.28983}
+  m_SizeDelta: {x: -20, y: 676.5797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375502531
 MonoBehaviour:
@@ -2930,7 +2930,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u0393\u03B5\u03B9\u03AC \u03C3\u03BF\u03C5 \u03C0\u03B1\u03AF\u03C7\u03C4\u03B7,
+    \u03BA\u03B1\u03BB\u03C9\u03C3\u03AE\u03C1\u03B8\u03B5\u03C2 \u03C3\u03C4\u03BF
+    \u03B2\u03B9\u03BD\u03C4\u03B5\u03BF\u03C0\u03B1\u03B9\u03C7\u03BD\u03AF\u03B4\u03B9
+    \u03C0\u03C1\u03BF\u03C3\u03BF\u03BC\u03BF\u03AF\u03C9\u03C3\u03B7\u03C2 \u03C6\u03C5\u03C3\u03B9\u03BA\u03CE\u03BD
+    \u03BA\u03B1\u03C4\u03B1\u03C3\u03C4\u03C1\u03BF\u03C6\u03CE\u03BD \u03B3\u03B9\u03B1
+    \u03C3\u03C7\u03BF\u03BB\u03B5\u03AF\u03B1. \u0395\u03AC\u03BD \u03B5\u03C0\u03B9\u03B8\u03C5\u03BC\u03B5\u03AF\u03C2
+    \u03BD\u03B1 \u03B1\u03C1\u03C7\u03AF\u03C3\u03B5\u03B9\u03C2 \u03C4\u03BF \u03C0\u03B1\u03B9\u03C7\u03BD\u03AF\u03B4\u03B9
+    \u03C0\u03AC\u03C4\u03B7\u03C3\u03B5 \u03C4\u03BF \u03BA\u03BF\u03C5\u03BC\u03C0\u03AF
+    \"\u03A0\u03B1\u03AF\u03BE\u03B5\", \u03B5\u03AC\u03BD \u03B5\u03C0\u03B9\u03B8\u03C5\u03BC\u03B5\u03AF\u03C2
+    \u03BD\u03B1 \u03B1\u03C0\u03BF\u03C7\u03C9\u03C1\u03AE\u03C3\u03B5\u03B9\u03C2
+    \u03C0\u03AC\u03C4\u03B7\u03C3\u03B5 \u03C4\u03BF \u03BA\u03BF\u03C5\u03BC\u03C0\u03AF
+    \"\u0388\u03BE\u03BF\u03B4\u03BF\u03C2\", \u03BC\u03C0\u03BF\u03C1\u03B5\u03AF\u03C2
+    \u03B5\u03C0\u03AF\u03C3\u03B7\u03C2 \u03BD\u03B1 \u03B4\u03B5\u03B9\u03C2 \u03C4\u03B9\u03C2
+    \u03C0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03AF\u03B5\u03C2 \u03B3\u03B9\u03B1
+    \u03C4\u03B7\u03BD \u03C0\u03C1\u03BF\u03B3\u03C1\u03B1\u03BC\u03BC\u03B1\u03C4\u03AF\u03C3\u03C4\u03C1\u03B9\u03B1
+    \u03C0\u03AC\u03C4\u03B7\u03C3\u03B5 \u03C4\u03BF \u03BA\u03BF\u03C5\u03BC\u03C0\u03AF
+    \"\u03A0\u03BB\u03B7\u03C1\u03BF\u03C6\u03BF\u03C1\u03AF\u03B5\u03C2\". \u039C\u03C0\u03BF\u03C1\u03B5\u03AF\u03C2
+    \u03C0\u03AC\u03BD\u03C4\u03B1 \u03BD\u03B1 \u03B1\u03BB\u03BB\u03AC\u03BE\u03B5\u03B9\u03C2
+    \u03C4\u03B9\u03C2 \u03C1\u03C5\u03B8\u03BC\u03AF\u03C3\u03B5\u03B9\u03C2 \u03B1\u03C0\u03CC
+    \u03C4\u03BF \u03BA\u03BF\u03C5\u03BC\u03C0\u03AF \"\u03A1\u03C5\u03B8\u03BC\u03AF\u03C3\u03B5\u03B9\u03C2\",
+    \u03CC\u03C0\u03BF\u03C5 \u03C3\u03BF\u03C5 \u03B4\u03AF\u03BD\u03B5\u03C4\u03B1\u03B9
+    \u03B7 \u03B4\u03C5\u03BD\u03B1\u03C4\u03CC\u03C4\u03B7\u03C4\u03B1 \u03BD\u03B1
+    \u03B5\u03BB\u03AD\u03B3\u03BE\u03B5\u03B9\u03C2 \u03C4\u03BF\u03BD \u03AE\u03C7\u03BF."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2964,8 +2986,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2993,7 +3015,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3.1478882, y: 3.4219666, z: 3.1153412, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4449,7 +4471,7 @@ RectTransform:
   m_Father: {fileID: 755624431}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.69344485}
+  m_AnchorMin: {x: 0, y: 0.59205097}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
