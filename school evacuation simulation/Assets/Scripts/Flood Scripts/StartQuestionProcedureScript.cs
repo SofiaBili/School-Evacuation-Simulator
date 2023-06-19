@@ -27,8 +27,13 @@ public class StartQuestionProcedureScript : MonoBehaviour
     public bool playSound = true;
 
     bool showQCanvas=true;
-
+    public GameObject userCamera;
+    public GameObject playerGirl;
+    public GameObject questCamera;
     void Awake(){
+        playerGirl = GameObject.Find("Player Girl");
+        userCamera = playerGirl.transform.Find("Main Camera").gameObject;
+        questCamera = playerGirl.transform.Find("Camera").gameObject;
         toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
         fillBarScript = toggleQuestionCanvasObject.transform.Find("Point Level Canvas").GetComponent<FillBarScript>();
         timerScript = toggleQuestionCanvasObject.transform.Find("Point Level Canvas").GetComponent<TimerScript>();
@@ -52,12 +57,11 @@ public class StartQuestionProcedureScript : MonoBehaviour
                 showQCanvas = false;
                 //σταματάμε την κίνηση του χρήστη
                 toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StopMovement();
-                GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = false;
-                GameObject.Find("Main Camera").GetComponent<PlayerZoom>().enabled = false;
+                userCamera.GetComponent<RotatePlayer>().enabled = false;
+                userCamera.GetComponent<PlayerZoom>().enabled = false;
                 Cursor.lockState=CursorLockMode.None;
-
                 cameraAnimation.targetDisplay = 0;
-                GameObject.Find("Camera").GetComponent<Camera>().cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
+                questCamera.GetComponent<Camera>().cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
                 ChangeAnimationState(firstCameraAnimationName);
                 StartCoroutine(ShowCanvas());
             }
@@ -68,6 +72,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
             if(playSound) audioData.Play(0);
             yield return new WaitForSeconds (1.9f);
             if(playSound) audioData.Stop();
+            questCamera.GetComponent<Camera>().targetDisplay = 0;
             timerScript.StartTimer();
             toggleQuestionCanvasScript.EnableRandomCanvas(hexagonHitbox);
             toggleCanvasFlag = false;
@@ -79,6 +84,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
             timerScript.StopTimer();
             if(!check)
                 yield return new WaitForSeconds (2.2f);
+            questCamera.GetComponent<Camera>().targetDisplay = 1;
             ChangeAnimationState(secondCameraAnimationName);
             yield return new WaitForSeconds (0.12f);
             if(playSound) audioData.Play(0);
@@ -101,8 +107,8 @@ public class StartQuestionProcedureScript : MonoBehaviour
             if(playSound) audioData.Stop();
             //επιτρέπουμε την κίνηση του χρήστη πάλι
             toggleQuestionCanvasObject.GetComponent<PlayerMovement>().StartMovement();
-            GameObject.Find("Main Camera").GetComponent<RotatePlayer>().enabled = true;
-            GameObject.Find("Main Camera").GetComponent<PlayerZoom>().enabled = true;
+            userCamera.GetComponent<RotatePlayer>().enabled = true;
+            userCamera.GetComponent<PlayerZoom>().enabled = true;
             Cursor.lockState=CursorLockMode.Locked;
             showQCanvas = true;
             
