@@ -254,7 +254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 344768722f7a149438c1559498759cca, type: 2}
+  - {fileID: 2100000, guid: 8734ce67f4208364fa67ec527f875e8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.22001356
+      value: 0.20191199
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.4671726
+      value: 7.4608936
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -396,15 +396,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6442744024126432008, guid: bda597d765ed1614e836ebc0c7ca91c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
