@@ -247,6 +247,7 @@ public class EarthquakeClassScript : MonoBehaviour
 		Cursor.lockState=CursorLockMode.Locked;
 	}
 	public void PausePlayer(){
+		flag = true;
 		PlayerMovement.StopFromFireMovement();
 	}
 	public static void NextMult3QuestionAndAnimation(int i){
