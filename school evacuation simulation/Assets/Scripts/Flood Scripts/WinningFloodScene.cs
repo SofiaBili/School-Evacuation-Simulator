@@ -23,7 +23,7 @@ public class WinningFloodScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTimer=180-TimerScript.GetTimer();
+        playerTimer=600-TimerScript.GetTimer();
         playerRightAns = FillBarScript.GetRightAns();
         playerWrongAns = FillBarScript.GetWrongAns();
         InvokeRepeating("RemoveWater", 0.3f, 0.1f);

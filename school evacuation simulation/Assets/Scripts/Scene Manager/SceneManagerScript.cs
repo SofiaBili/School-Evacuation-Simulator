@@ -8,6 +8,7 @@ public class SceneManagerScript : MonoBehaviour
     public string sceneName;
 
     void Start(){
+      Cursor.lockState=CursorLockMode.None;
     }
     public void StartGame(string sceneName){
       Time.timeScale = 1;

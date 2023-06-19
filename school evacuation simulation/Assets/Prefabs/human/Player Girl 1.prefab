@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 878041136598010317}
   - component: {fileID: 878041136598010170}
   - component: {fileID: 878041136598010161}
-  - component: {fileID: 878041136598010163}
   - component: {fileID: 878041136598010162}
   - component: {fileID: 878041136598010316}
   m_Layer: 0
@@ -247,18 +246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireDrillHumanObject: {fileID: 0}
---- !u!114 &878041136598010163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66995524700387826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d90d2be746cb9840ab46689508a51c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  humanPosX: 0
+  humanPosZ: 0
+  movementStarted: 0
 --- !u!114 &878041136598010162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +269,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+  isEarthquake: 0
+  isFire: 0
 --- !u!114 &878041136598010316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878041134750646986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dd6f3d6436009f4f843b4d787ec197d, type: 3}
   m_Name: 
@@ -1483,6 +1475,8 @@ MonoBehaviour:
   cameraBoardGirl: 1
   playerBody: {fileID: 839310825498796872}
   zRotation: 63
+  isEarthquake: 0
+  isFire: 0
 --- !u!114 &878041134750646983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,12 +1484,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878041134750646986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63c3e6297a2c3504bb5fdfa33536600d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 878041134750646976}
+  isEarthquake: 0
+  isFire: 0
 --- !u!81 &878041134750646980
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2533,7 +2529,6 @@ MonoBehaviour:
   countSound: {fileID: 0}
   lightningSound: {fileID: 0}
   showLosingCanvas: {fileID: 8790590575322918396}
-  stopTimer: 0
   waterPlane: {fileID: 0}
 --- !u!114 &6155072756457939746
 MonoBehaviour:

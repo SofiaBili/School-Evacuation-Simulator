@@ -8,6 +8,7 @@ public class ShowFloodMap : MonoBehaviour
     public GameObject miniMapCanvas;
 	public bool isMap = true;
     AudioSource[] allAudioSources;
+    CursorLockMode currState; 
     void Start() {
         allAudioSources = FindObjectsOfType<AudioSource>();
     }
@@ -41,8 +42,8 @@ public class ShowFloodMap : MonoBehaviour
         PauseAllSources();
         if(GuideScript.finishedGuide){
             RotatePlayer.escapeFlag = false;
-            Cursor.lockState=CursorLockMode.Locked;
         }
+        Cursor.lockState = currState;
     }
     void Update() {
         if (isMap && Input.GetKeyDown(KeyCode.M) && GuideScript.finishedGuide) {
@@ -50,7 +51,9 @@ public class ShowFloodMap : MonoBehaviour
         }
 		if(!isMap){
 			if (Input.GetKeyDown(KeyCode.Escape)) {
-				OpenMap();
+                Cursor.lockState = currState;
+				if(!mapCanvas.activeSelf) OpenMap();
+				else CloseMap();
 			}
 		}
     }

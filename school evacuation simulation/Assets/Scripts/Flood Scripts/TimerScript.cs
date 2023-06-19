@@ -21,7 +21,6 @@ public class TimerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(stopTimer);
         if(!stopTimer){
             if(timerValue>0){
                 timerValue -= Time.deltaTime;
@@ -34,7 +33,6 @@ public class TimerScript : MonoBehaviour
         }
     }
     public void AdjustWater(){
-        Debug.Log("oooooooooooooooo");
         InvokeRepeating("AddWater", 0.1f, 0.1f);
     }
     void AddWater(){

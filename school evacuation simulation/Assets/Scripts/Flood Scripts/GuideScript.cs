@@ -53,6 +53,7 @@ public class GuideScript : MonoBehaviour
         Destroy(room);
         timerG.SetTimer(600);
         timerG.AdjustWater();
+        Cursor.lockState=CursorLockMode.Locked;
         finishedGuide = true;
     }
     void Plan(){

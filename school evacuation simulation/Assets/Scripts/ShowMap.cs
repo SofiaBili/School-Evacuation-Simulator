@@ -11,6 +11,7 @@ public class ShowMap : MonoBehaviour
     public bool canShowMapText = false;
 	public bool isMap = true;
     AudioSource[] allAudioSources;
+    CursorLockMode currState; 
     void Start() {
         allAudioSources = FindObjectsOfType<AudioSource>();
         miniMapCanvasText.SetActive(false);
@@ -44,6 +45,7 @@ public class ShowMap : MonoBehaviour
 		FireClassScript.stopMovementWhileWalking=false;
 		EarthquakeClassScript.stopMovementWhileWalking=false;
         PauseAllSources();
+        Cursor.lockState = currState;
         Time.timeScale = 1;
     }
     public void ShowText(){
@@ -62,7 +64,9 @@ public class ShowMap : MonoBehaviour
         }
         if(!isMap){
 			if (Input.GetKeyDown(KeyCode.Escape)) {
-				OpenMap();
+                currState = Cursor.lockState;
+				if(!mapCanvas.activeSelf) OpenMap();
+				else CloseMap();
 			}
 		}
     }

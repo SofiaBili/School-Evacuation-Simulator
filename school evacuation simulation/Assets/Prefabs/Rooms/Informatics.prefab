@@ -745,7 +745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3921724944754566967}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Computers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,6 +828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: book2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 98a3eef7f73edd846970e62f64af6a46, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 98a3eef7f73edd846970e62f64af6a46, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -906,6 +910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: computer
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -972,6 +980,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: computer3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1037,6 +1049,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
       propertyPath: m_Name
       value: computer1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
       propertyPath: m_RootOrder
@@ -1182,6 +1198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: computer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1247,6 +1267,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
       propertyPath: m_Name
       value: computer1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
       propertyPath: m_RootOrder
@@ -1357,6 +1381,10 @@ PrefabInstance:
     - target: {fileID: 9016433002705325862, guid: 0f84739325a104d4d800736e7cd17c20, type: 3}
       propertyPath: m_Name
       value: Screen_02_Snaps014
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016433002705325862, guid: 0f84739325a104d4d800736e7cd17c20, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9156004318144340494, guid: 0f84739325a104d4d800736e7cd17c20, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1702,6 +1730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pen_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 9147149158629952206, guid: 854b888bca9f4a742b4aff3b2af75d0a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 854b888bca9f4a742b4aff3b2af75d0a, type: 3}
 --- !u!4 &7504136223636361478 stripped
@@ -1719,6 +1751,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
       propertyPath: m_Name
       value: computer2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
       propertyPath: m_RootOrder
@@ -1785,6 +1821,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
       propertyPath: m_Name
       value: computer2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
       propertyPath: m_RootOrder
@@ -1938,6 +1978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pen_02_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 5152562413707328229, guid: cfdbeebdaff898e4987d91e0358da9c5, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6306261016329913675, guid: cfdbeebdaff898e4987d91e0358da9c5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2016,6 +2060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: computer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2081,6 +2129,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
       propertyPath: m_Name
       value: computer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
       propertyPath: m_RootOrder
@@ -2233,6 +2285,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
       propertyPath: m_Name
       value: computer2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fade7d8b155c9e347935a5505346523d, type: 3}
       propertyPath: m_RootOrder
@@ -2442,6 +2498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pencil_Case_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 8647834308660878023, guid: 67ae3a12e0ec0914685be3595ad5f9fb, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8904907670132518732, guid: 67ae3a12e0ec0914685be3595ad5f9fb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2463,6 +2523,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 72270d1b0c152ed449c796ec8a390366, type: 3}
       propertyPath: m_Name
       value: projector (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 72270d1b0c152ed449c796ec8a390366, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 72270d1b0c152ed449c796ec8a390366, type: 3}
       propertyPath: m_RootOrder
@@ -2542,6 +2606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: computer3 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2608,6 +2676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: computer1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -2673,6 +2745,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
       propertyPath: m_Name
       value: computer1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f0d27de52a7134a4d9d1aab733f51841, type: 3}
       propertyPath: m_RootOrder
@@ -2882,6 +2958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Notebook_01_Snaps014
       objectReference: {fileID: 0}
+    - target: {fileID: 7146487279503166444, guid: 47fdfe6569c27e345a12fcbfeef71178, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8103796614767696118, guid: 47fdfe6569c27e345a12fcbfeef71178, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2907,6 +2987,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
       propertyPath: m_Name
       value: computer3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
       propertyPath: m_RootOrder
@@ -2973,6 +3057,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
       propertyPath: m_Name
       value: computer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 19da5e77d15e6b246ae6557f5f4c3cbe, type: 3}
       propertyPath: m_RootOrder
@@ -3191,6 +3279,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2096cda62bf772342bc7a4aeda6e4a67, type: 3}
       propertyPath: m_Name
       value: board1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2096cda62bf772342bc7a4aeda6e4a67, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2096cda62bf772342bc7a4aeda6e4a67, type: 3}
       propertyPath: m_RootOrder
@@ -3441,6 +3533,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
       propertyPath: m_Name
       value: computer3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f31be39be55038b4dbc591468d4b9ccf, type: 3}
       propertyPath: m_RootOrder
