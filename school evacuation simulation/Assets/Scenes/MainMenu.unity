@@ -482,6 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 129862607}
   - component: {fileID: 129862608}
+  - component: {fileID: 129862609}
   m_Layer: 5
   m_Name: Music Slider
   m_TagString: Untagged
@@ -556,13 +557,39 @@ MonoBehaviour:
   m_FillRect: {fileID: 20714119}
   m_HandleRect: {fileID: 2138821186}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -45
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129862609}
+        m_TargetAssemblyTypeName: SoundScript, Assembly-CSharp
+        m_MethodName: ChangeSfxVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &129862609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129862606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87f35d9889fbd1488b9a7c757c9291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSlider: {fileID: 129862608}
+  mixer: {fileID: 24100000, guid: 2d121a37aa5170444b38070944c46fc9, type: 2}
 --- !u!1 &161820456
 GameObject:
   m_ObjectHideFlags: 0

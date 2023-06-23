@@ -2171,7 +2171,7 @@ AudioSource:
   m_GameObject: {fileID: 150820745}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1718259731464144641, guid: 2d121a37aa5170444b38070944c46fc9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 95d947a073026374e914be93f35a4bd3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -7592,8 +7592,8 @@ RectTransform:
   m_Father: {fileID: 1257345883}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.3312988, y: 0}
   m_SizeDelta: {x: 21.905, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10231,6 +10231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 553542913}
   - component: {fileID: 553542914}
+  - component: {fileID: 553542915}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -10258,7 +10259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55.1, y: -45}
+  m_AnchoredPosition: {x: 40.9, y: -45}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553542914
@@ -10305,13 +10306,39 @@ MonoBehaviour:
   m_FillRect: {fileID: 1914124870}
   m_HandleRect: {fileID: 444309965}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -45
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &553542915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553542912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87f35d9889fbd1488b9a7c757c9291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSlider: {fileID: 553542914}
+  mixer: {fileID: 24100000, guid: 2d121a37aa5170444b38070944c46fc9, type: 2}
 --- !u!1 &560062946
 GameObject:
   m_ObjectHideFlags: 0
@@ -16816,7 +16843,7 @@ AudioSource:
   m_GameObject: {fileID: 976608810}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1718259731464144641, guid: 2d121a37aa5170444b38070944c46fc9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4eeec3924cb6c644ea2822c3d7235db5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
@@ -16912,7 +16939,7 @@ AudioSource:
   m_GameObject: {fileID: 976608810}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1718259731464144641, guid: 2d121a37aa5170444b38070944c46fc9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 95d947a073026374e914be93f35a4bd3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.14
@@ -28166,7 +28193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -62.449997, y: -43.8}
+  m_AnchoredPosition: {x: -76.64998, y: -43.8}
   m_SizeDelta: {x: 75.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1507936391
@@ -34278,7 +34305,7 @@ AudioSource:
   m_GameObject: {fileID: 1877430877}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1718259731464144641, guid: 2d121a37aa5170444b38070944c46fc9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4eeec3924cb6c644ea2822c3d7235db5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -34823,7 +34850,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
