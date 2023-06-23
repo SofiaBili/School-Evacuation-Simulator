@@ -21,7 +21,9 @@ public class FillBarScript : MonoBehaviour
     void Awake(){
 		timerScript = timerScriptObject.GetComponent<TimerScript>();
 	}
-
+    void OnDestroy(){
+        setLosingCanvasActive=false;
+	}
     // Start is called before the first frame update
     void Start()
     {
@@ -32,14 +34,15 @@ public class FillBarScript : MonoBehaviour
     void Update()
     {
         if(setLosingCanvasActive){
-            showLosingCanvas.SetActive(true);
+            //showLosingCanvas.SetActive(true);
+            ShowLosingScene();
         }
     }
     public bool ShowWinningCanvas(){
         if(currentPoints == 100){
             Cursor.lockState=CursorLockMode.None;
-            showWinningCanvas.SetActive(true);
             timerScript.StopTimer();
+            ShowWinningScene();
             return true;
         }
         return false;

@@ -14,7 +14,6 @@ public class StartQuestionProcedureScript : MonoBehaviour
     static bool toggleCanvasFlag = true;
     static bool closeCanvasFlag = true;
     static bool deleteHexagonFlag = false;
-    static public StartQuestionProcedureScript instance;
     public string firstCameraAnimationName;
     public string secondCameraAnimationName;
 
@@ -31,6 +30,9 @@ public class StartQuestionProcedureScript : MonoBehaviour
     public GameObject playerGirl;
     public GameObject questCamera;
     void Awake(){
+        toggleCanvasFlag = true;
+        closeCanvasFlag = true;
+        deleteHexagonFlag = false;
         playerGirl = GameObject.Find("Player Girl");
         userCamera = playerGirl.transform.Find("Main Camera").gameObject;
         questCamera = playerGirl.transform.Find("Camera").gameObject;
@@ -140,7 +142,7 @@ public class StartQuestionProcedureScript : MonoBehaviour
     public void DeleteHexagon(){
         deleteHexagonFlag = true;
         StopAnimationAndCloseCanvas();
-        Debug.Log(mapCreationScript.GetHexagonNumber());
+        //Debug.Log(mapCreationScript.GetHexagonNumber());
         
         //hexagonHitbox.SetActive(false);
         //hexagonHitbox.enabled = false;

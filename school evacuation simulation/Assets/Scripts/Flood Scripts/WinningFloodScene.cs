@@ -33,11 +33,7 @@ public class WinningFloodScene : MonoBehaviour
             waterPlane.transform.localPosition = new Vector3(waterPlane.transform.localPosition.x, waterPlane.transform.localPosition.y-(1.4f/180f), waterPlane.transform.localPosition.z);
         }
     }
-    /*void PutTime(){
-        if(waterPlane.transform.localPosition.y>0){
-            waterPlane.transform.localPosition = new Vector3(waterPlane.transform.localPosition.x, waterPlane.transform.localPosition.y-(1.4f/180f), waterPlane.transform.localPosition.z);
-        }
-    }*/
+    
     void Update(){
         if(currentPlayerTimer<playerTimer){
             currentPlayerTimer++;

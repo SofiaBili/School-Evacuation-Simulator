@@ -22,37 +22,52 @@ public class ToggleQuestionCanvas : MonoBehaviour
         return currHitbox;
     }
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
+        showCanvas = false;
+        closeCanvas = false;
         canvasCamera.enabled = false;
     }
-
+    void OnDestroy(){
+        showCanvas = false;
+        closeCanvas = false;
+    }
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         if(showCanvas){
             //canvasTrueFalse.SetActive(true);
             randomCanvas = Random.Range(0, 3);
-            while(previousRandom == randomCanvas){
+            /*while(previousRandom == randomCanvas){
                 randomCanvas = Random.Range(0, 3);
             }
-            previousRandom = randomCanvas;
-            ///Debug.Log(randomCanvas);
+            previousRandom = randomCanvas;*/
+            Debug.Log("CANVAS" + randomCanvas);
             if(randomCanvas==0){
-                if(Multiple3ChoiceManager.UnansweredQuestionsCount())
-                canvasMultiple1.SetActive(true);
+                if(Multiple3ChoiceManager.UnansweredQuestionsCount()){
+                    canvasMultiple1.SetActive(true);
+                    miniMapCanvas.SetActive(false);
+                    canvasCamera.enabled = true;
+                    showCanvas = false;
+                }
             }else if(randomCanvas==1){
-                if(Multiple4ChoiceManager.UnansweredQuestionsCount())
-                canvasMultiple2.SetActive(true);
+                if(Multiple4ChoiceManager.UnansweredQuestionsCount()){
+                    canvasMultiple2.SetActive(true);
+                    miniMapCanvas.SetActive(false);
+                    canvasCamera.enabled = true;
+                    showCanvas = false;
+                }
             }else{
-                if(TrueFalseManager.UnansweredQuestionsCount1())
+                if(TrueFalseManager.UnansweredQuestionsCount1()){
                     canvasTrueFalse.SetActive(true);
+                    miniMapCanvas.SetActive(false);
+                    canvasCamera.enabled = true;
+                    showCanvas = false;
+                }
             }
-            if(TrueFalseManager.UnansweredQuestionsCount1() || Multiple3ChoiceManager.UnansweredQuestionsCount() || Multiple4ChoiceManager.UnansweredQuestionsCount()){
+            /*if(TrueFalseManager.UnansweredQuestionsCount1() || Multiple3ChoiceManager.UnansweredQuestionsCount() || Multiple4ChoiceManager.UnansweredQuestionsCount()){
                 miniMapCanvas.SetActive(false);
                 canvasCamera.enabled = true;
                 showCanvas = false;
-            }
+            }*/
         }
         if(closeCanvas){
             //canvasTrueFalse.SetActive(false);

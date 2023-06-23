@@ -41,6 +41,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
     public AudioSource winAudio;
 
 	void Awake(){
+		if(unansweredQuestions != null) unansweredQuestions.Clear();
 		toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
 		fillBarScript = fillBarObject.GetComponent<FillBarScript>();
         slimeAnimator = slimeObject.GetComponent<Animator>();
@@ -54,18 +55,18 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		transform.gameObject.SetActive(false);
 	}
 	public static bool UnansweredQuestionsCount(){
-		Debug.Log(unansweredQuestions.Count);
 		if(unansweredQuestions.Count == 0) return false;
 		return true;
 	}
 	void SetCurrentQuestion(){
-		int randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
+		randomQuestionIndex = Random.Range(0, unansweredQuestions.Count);
 		currentQuestion = unansweredQuestions[randomQuestionIndex];
 		factText.text = currentQuestion.question;
 		ans0Text.text = currentQuestion.ans1;
 		ans1Text.text = currentQuestion.ans2;
 		ans2Text.text = currentQuestion.ans3;
 		ans3Text.text = currentQuestion.ans4;
+		//unansweredQuestions.RemoveAt(randomQuestionIndex);
 	}
 	
     private IEnumerator ChangeButtonColour(Button btn){
@@ -83,7 +84,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		yield return new WaitForSeconds (0.09f);
 		//canvasCamera.cullingMask |=  (1 << LayerMask.NameToLayer("QuestionCanvas"));
 		//canvasCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("QuestionCanvas"));
-		Debug.Log(unansweredQuestions.Count);
+		//Debug.Log(unansweredQuestions.Count);
 	}
 	public void UserSelectExit(){
 		GetComponent<CanvasGroup>().interactable = false;
@@ -96,7 +97,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 0){
 			winAudio.Play(0);
-			Debug.Log("Cor");
+			//Debug.Log("Cor");
 			but1.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
@@ -106,7 +107,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 			loseAudio.Play(0);
 			but1.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
-			Debug.Log("WRONG");
+			//Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
 			fillBarScript.WrongAnswer();
 		}
@@ -118,7 +119,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 1){
 			winAudio.Play(0);
-			Debug.Log("Cor");
+			//Debug.Log("Cor");
 			but2.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
@@ -128,7 +129,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 			loseAudio.Play(0);
 			but2.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
-			Debug.Log("WRONG");
+			//Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
 			fillBarScript.WrongAnswer();
 		}
@@ -140,7 +141,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 2){
 			winAudio.Play(0);
-			Debug.Log("Cor");
+			//Debug.Log("Cor");
 			but3.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
@@ -150,7 +151,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 			loseAudio.Play(0);
 			but3.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
-			Debug.Log("WRONG");
+			//Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
 			fillBarScript.WrongAnswer();
 		}
@@ -162,7 +163,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.corrAns == 3){
 			winAudio.Play(0);
-			Debug.Log("Cor");
+			//Debug.Log("Cor");
 			but4.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions.RemoveAt(randomQuestionIndex);
@@ -172,7 +173,7 @@ public class Multiple4ChoiceManager : MonoBehaviour
 			loseAudio.Play(0);
 			but4.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
-			Debug.Log("WRONG");
+			//Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
 			fillBarScript.WrongAnswer();
 		}

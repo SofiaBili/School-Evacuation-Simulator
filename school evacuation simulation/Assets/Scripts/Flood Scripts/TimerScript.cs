@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
@@ -30,10 +31,13 @@ public class TimerScript : MonoBehaviour
             }else{
                 timerValue = 0;
                 Cursor.lockState=CursorLockMode.None;
-                showLosingCanvas.SetActive(true);
+                ShowLosingScene();
             }
             DisplayTime(timerValue);
         }
+    }
+    public void ShowLosingScene(){
+        SceneManager.LoadScene("LosingFloodScene");
     }
     public void AdjustWater(){
         InvokeRepeating("AddWater", 0.1f, 0.1f);
@@ -63,7 +67,6 @@ public class TimerScript : MonoBehaviour
     }
     
     public void StopTimer(){
-        Debug.Log("pppppppppppppppppppp");
         stopTimer = true;
     }
     public void StartTimer(){

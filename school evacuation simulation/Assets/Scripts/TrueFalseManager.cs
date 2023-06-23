@@ -35,10 +35,9 @@ public class TrueFalseManager : MonoBehaviour
     public AudioSource winAudio;
 
 	void Awake(){
+		if(unansweredQuestions1 != null) unansweredQuestions1.Clear();
 		toggleQuestionCanvasScript = toggleQuestionCanvasObject.GetComponent<ToggleQuestionCanvas>();
-
 		fillBarScript = fillBarObject.GetComponent<FillBarScript>();
-
         slimeAnimator = slimeObject.GetComponent<Animator>();
 	}
 	void Start(){
@@ -49,7 +48,7 @@ public class TrueFalseManager : MonoBehaviour
 		transform.gameObject.SetActive(false);
 	}
 	public static bool UnansweredQuestionsCount1(){
-		Debug.Log(unansweredQuestions1.Count);
+		Debug.Log("ppppppppppppppppp"+unansweredQuestions1.Count);
 		if(unansweredQuestions1.Count == 0) return false;
 		return true;
 	}
@@ -83,7 +82,7 @@ public class TrueFalseManager : MonoBehaviour
 		startQuestionProcedureScript = toggleQuestionCanvasScript.GetCurrHitbox().GetComponent<StartQuestionProcedureScript>();
 		if(currentQuestion.isTrue){
 			winAudio.Play(0);
-			Debug.Log("Cor");
+			//Debug.Log("Cor");
 			trueButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions1.RemoveAt(randomQuestionIndex);
@@ -93,7 +92,7 @@ public class TrueFalseManager : MonoBehaviour
 			loseAudio.Play(0);
 			trueButton.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
-			Debug.Log("WRONG");
+			//Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
 			fillBarScript.WrongAnswer();
 		}
@@ -107,12 +106,12 @@ public class TrueFalseManager : MonoBehaviour
 			loseAudio.Play(0);
 			falseButton.GetComponent<Image>().color = Color.red;
 			startQuestionProcedureScript.StopAnimationAndCloseCanvas();
-			Debug.Log("WRONG");
+			//Debug.Log("WRONG");
 			ChangeAnimationState("disappoint");
 			fillBarScript.WrongAnswer();
 		}else{
 			winAudio.Play(0);
-			Debug.Log("Cor");
+			//Debug.Log("Cor");
 			falseButton.GetComponent<Image>().color = Color.green;
 			startQuestionProcedureScript.DeleteHexagon();
 			unansweredQuestions1.RemoveAt(randomQuestionIndex);
