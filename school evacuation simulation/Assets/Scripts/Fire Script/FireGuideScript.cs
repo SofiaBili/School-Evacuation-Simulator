@@ -7,13 +7,13 @@ public class FireGuideScript : MonoBehaviour
     public GameObject room;
 
     public static bool guideIsOver = false;
-
+    void Awake(){
+		guideIsOver = false;
+    }
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
 		StartCoroutine(StartGuide());
     }
-
     public void End(){
         StopAllCoroutines();
 

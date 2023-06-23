@@ -44,6 +44,29 @@ public class FireClassScript : MonoBehaviour
 	public bool stopAnimation = false;
 	public static bool stopMovementWhileWalking = false;
 	public static bool finishedQuestions = false;
+	void Awake(){
+		ResetAllFire();
+	}
+	void ResetAllFire(){
+		Cursor.lockState=CursorLockMode.None;
+		stopMovement = false;
+		worriedTeacher = false;
+		stopMovementWhileWalking = false;
+		finishedQuestions = false;
+		flag = true;
+		startFirstCoroutine = true;
+		stopCoroutine = false;
+		stopMult3 = true;
+		stopTrueFalse = true;
+		stopMult4 = true;
+		step=-1;
+		ElevatorTriggerScript.isIn = false;
+		Cursor.lockState=CursorLockMode.None;
+	}
+	void OnDestroy() {
+		ResetAllFire();
+		FireGuideScript.guideIsOver = false;
+	}
     // Start is called before the first frame update
     void Start(){
 		infoCanvas.SetActive(false);

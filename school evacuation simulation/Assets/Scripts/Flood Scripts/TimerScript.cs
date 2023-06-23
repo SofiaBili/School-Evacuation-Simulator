@@ -15,6 +15,9 @@ public class TimerScript : MonoBehaviour
     private static bool stopTimer;
     public GameObject waterPlane;
    
+    void Awake(){
+        timerValue = 600;
+    }
     void Start(){
         stopTimer = false;
     }

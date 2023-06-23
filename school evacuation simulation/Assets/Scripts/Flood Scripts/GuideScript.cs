@@ -28,6 +28,9 @@ public class GuideScript : MonoBehaviour
     public AudioSource talkingSound2;
 	public static bool finishedGuide = false;
 
+    void Awake(){
+        finishedGuide = false;
+    }
     // Start is called before the first frame update
     void Start(){
         canvasPointLevelG.SetActive(false);

@@ -44,7 +44,28 @@ public class EarthquakeClassScript : MonoBehaviour
 	public bool spawn1Free=false, spawn2Free=false, spawn3Free=false, spawn4Free=false;
 	public static bool stopMovementWhileWalking = false;
 	public static bool finishedQuestions = false;
-	
+	void Awake(){
+		ResetAll();
+	}
+	void ResetAll(){
+		stopMovement = false;
+		worriedTeacher = false;
+		startFirstCoroutine = true;
+		stopCoroutine = false;
+		stopMult3 = true;
+		stopTrueFalse = true;
+		stopMult4 = true;
+		step=-1;
+		flag = true;
+		stopMovementWhileWalking = false;
+		finishedQuestions = false;
+		Cursor.lockState=CursorLockMode.None;
+		ElevatorTriggerScript.isIn = false;
+	}
+	void OnDestroy() {
+		ResetAll();
+		EarthquakeGuideScript.guideIsOver = false;
+	}
     void Start(){
 		infoCanvas1Text = GetComponent<TextMeshProUGUI>();
 		infoCanvas1.SetActive(false);

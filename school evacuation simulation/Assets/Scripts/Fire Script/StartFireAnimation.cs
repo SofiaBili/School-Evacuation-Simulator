@@ -10,7 +10,14 @@ public class StartFireAnimation : MonoBehaviour
 
     public static bool startAnimation = false;
     public static bool destroyAnimation = false;
-
+	void Awake(){
+		startAnimation = false;
+		destroyAnimation = false;
+    }
+    void OnDestroy(){
+		startAnimation = false;
+		destroyAnimation = false;
+    }
     // Update is called once per frame
     void Update(){
         if(startAnimation){
@@ -26,6 +33,7 @@ public class StartFireAnimation : MonoBehaviour
 	}
 	public void DeleteThisRoom(){
 		destroyAnimation = false;
+		camFire.targetDisplay = 2;
 		Destroy(gameObject);
 	}
 }
