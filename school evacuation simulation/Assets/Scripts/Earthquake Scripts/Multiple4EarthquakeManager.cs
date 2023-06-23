@@ -40,6 +40,10 @@ public class Multiple4EarthquakeManager : MonoBehaviour
 	public bool isEarthquake = true;
 	public static bool staticIsEarthquake;
 	void Awake(){
+		if(unansweredQuestions != null) unansweredQuestions.Clear();
+		randomQuestionIndex = -1;
+		changeQuest = false;
+		isAnsweredCorrect = false;
 		staticIsEarthquake = isEarthquake;
         slimeAnimator = slimeObject.GetComponent<Animator>();
 		//health = gameObject.transform.parent.parent.parent.transform.Find("Player").GetComponent<HealthPlayer>();

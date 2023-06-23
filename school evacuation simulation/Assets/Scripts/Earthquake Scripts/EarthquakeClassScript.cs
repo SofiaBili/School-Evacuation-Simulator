@@ -86,6 +86,7 @@ public class EarthquakeClassScript : MonoBehaviour
 	
 	public IEnumerator StartEarthquake(){
 		if(EarthquakeGuideScript.guideIsOver){
+			Debug.Log("llllllllllll");
 			ElevatorTriggerScript.isIn = true;
 			Cursor.lockState=CursorLockMode.Locked;
 			startFirstCoroutine = false;

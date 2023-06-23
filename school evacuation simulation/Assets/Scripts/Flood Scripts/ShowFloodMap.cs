@@ -47,7 +47,9 @@ public class ShowFloodMap : MonoBehaviour
     }
     void Update() {
         if (isMap && Input.GetKeyDown(KeyCode.M) && GuideScript.finishedGuide) {
-            OpenMap();
+            currState = Cursor.lockState;
+            if(!mapCanvas.activeSelf) OpenMap();
+            else CloseMap();
         }
 		if(!isMap){
 			if (Input.GetKeyDown(KeyCode.Escape)) {

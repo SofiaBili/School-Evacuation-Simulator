@@ -19,6 +19,11 @@ public class FillBarScript : MonoBehaviour
     static bool setLosingCanvasActive = false;
     
     void Awake(){
+        maxPoints = 100;
+        currentPoints = 0;
+        rightAns=0;
+        wrongAns=0;
+        setLosingCanvasActive = false;
 		timerScript = timerScriptObject.GetComponent<TimerScript>();
 	}
     void OnDestroy(){

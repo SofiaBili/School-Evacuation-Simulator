@@ -9,6 +9,9 @@ public class ToggleCanvas : MonoBehaviour
 	public GameObject canvas;
 	static bool state = false;
 	static GameObject staticCanvas;
+	void Awake(){
+		state = false;
+	}
 	void Start(){
         canvas.SetActive(false);
 		staticCanvas = canvas;

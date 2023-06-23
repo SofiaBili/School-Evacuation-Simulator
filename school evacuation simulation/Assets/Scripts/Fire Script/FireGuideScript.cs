@@ -8,24 +8,24 @@ public class FireGuideScript : MonoBehaviour
 
     public static bool guideIsOver = false;
     void Awake(){
-		guideIsOver = false;
+		  guideIsOver = false;
     }
     // Start is called before the first frame update
     void Start(){
-		StartCoroutine(StartGuide());
+		  StartCoroutine(StartGuide());
     }
     public void End(){
-        StopAllCoroutines();
+      StopAllCoroutines();
 
-        Destroy(room);
-        LookAt.GuideEnd();
-        guideIsOver = true;
-        ToggleCanvas.ToggleOneCanvas();
+      Destroy(room);
+      LookAt.GuideEnd();
+      guideIsOver = true;
+      ToggleCanvas.ToggleOneCanvas();
     }
     
     public IEnumerator StartGuide(){
-        yield return new WaitForSeconds (40f);
-        End();
+      yield return new WaitForSeconds (40f);
+      End();
     }
 
     // Update is called once per frame

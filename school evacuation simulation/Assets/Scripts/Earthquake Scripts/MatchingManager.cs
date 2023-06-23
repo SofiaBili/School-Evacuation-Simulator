@@ -35,7 +35,9 @@ public class MatchingManager : MonoBehaviour
 	public string correctA = "3", correctB = "1", correctC = "4", correctD = "2";
 
 	public AudioSource corrSound, wrongSound;
-	
+	void Awake(){
+		startFlag=false;
+	}
 	void Update(){
 		if(startFlag) StartImageSpawn();
 	}

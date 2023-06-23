@@ -60,6 +60,8 @@ public class MapCreation : MonoBehaviour
     public static bool isDefault = true;
 
     void Awake(){
+        hexagonNumber=0;
+        isDefault = true;
         savedPosition=mapGameObject.transform.position;
         Placement();
         //PlaceCustomRoomsMethod();

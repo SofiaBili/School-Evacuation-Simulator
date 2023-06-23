@@ -97,6 +97,7 @@ public class FireClassScript : MonoBehaviour
 	}
 	public IEnumerator StartFireDrill(){
 		if(FireGuideScript.guideIsOver && stopAnimation){
+			Debug.Log("iiiiiiiiiiiiii");
 			ElevatorTriggerScript.isIn = true;
 			stopMovement = false;
 			StartFireAnimation.destroyAnimation = true;

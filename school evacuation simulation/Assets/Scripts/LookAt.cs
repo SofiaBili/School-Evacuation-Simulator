@@ -11,9 +11,8 @@ public class LookAt : MonoBehaviour
     public bool isPlayerFlag = false;
     static bool guideEnd = false;
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start(){
+        guideEnd = false;
     }
     public static void GuideEnd(){
         guideEnd=true;

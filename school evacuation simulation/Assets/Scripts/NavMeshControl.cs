@@ -10,8 +10,8 @@ public class NavMeshControl : MonoBehaviour
     [SerializeField] GameObject mapGameObject;
     [SerializeField] List<Transform> doors;
     public Transform closestDoor;
-    void Start()
-    {
+    void Start(){
+        startNavmesh = false;
         agent = GetComponent<NavMeshAgent>();
         //agent.enabled = false;
         foreach(Transform thing in mapGameObject.GetComponentsInChildren<Transform>()){

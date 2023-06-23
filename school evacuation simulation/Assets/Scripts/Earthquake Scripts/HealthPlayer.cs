@@ -16,6 +16,11 @@ public class HealthPlayer : MonoBehaviour
 	public bool isEarthquake=true;
 	public static bool staticIsEarthquake;
 	void Start(){
+		count=2;
+		removing=false;
+		rightAns = 0;
+		totalAns = 13;
+		totalFireAns = 10;
 		staticIsEarthquake = isEarthquake;
 	}
 	void Update(){

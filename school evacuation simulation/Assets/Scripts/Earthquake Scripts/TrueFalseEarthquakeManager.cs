@@ -34,6 +34,10 @@ public class TrueFalseEarthquakeManager : MonoBehaviour
 	
 	public static bool staticIsEarthquake;
 	void Awake(){
+		if(unansweredQuestions != null) unansweredQuestions.Clear();
+		randomQuestionIndex = -1;
+		changeQuest = false;
+		isAnsweredCorrect = false;
 		staticIsEarthquake = isEarthquake;
         slimeAnimator = slimeObject.GetComponent<Animator>();
 	}

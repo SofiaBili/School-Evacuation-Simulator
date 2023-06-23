@@ -37,7 +37,11 @@ public class Multiple3EarthquakeManager : MonoBehaviour
 
 	public static bool staticIsEarthquake;
 	void Awake(){
+		if(unansweredQuestions != null) unansweredQuestions.Clear();
+		randomQuestionIndex = -1;
 		staticIsEarthquake = isEarthquake;
+		changeQuest = false;
+		isAnsweredCorrect = false;
         slimeAnimator = slimeObject.GetComponent<Animator>();
 		//health = gameObject.transform.parent.parent.parent.transform.Find("Player").GetComponent<HealthPlayer>();
 	}

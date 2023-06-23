@@ -15,6 +15,10 @@ public class ToggleQuestionCanvas : MonoBehaviour
     static bool closeCanvas = false;
     int randomCanvas=-1;
     int previousRandom=-1;
+    void Awake(){
+        showCanvas = false;
+        closeCanvas = false;
+    }
     public void SetCurrHitbox(GameObject currentHitbox){
         currHitbox = currentHitbox;
     }

@@ -10,6 +10,7 @@ public class FireDrillHuman : MonoBehaviour
     public static bool startEvacFlag = false;
 
     void Awake(){
+        startEvacFlag = false;
         spawnHumansScript = spawnHumansObject.GetComponent<SpawnHumans>();
     }
 

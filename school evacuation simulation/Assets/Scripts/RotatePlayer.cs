@@ -15,6 +15,9 @@ public class RotatePlayer:MonoBehaviour {
     Vector3 startLocation;
     public bool isEarthquake = false;
     public bool isFire = false;
+    void Awake(){
+        escapeFlag=false;
+    }
     void Update() {
         if(isEarthquake || EarthquakeClassScript.stopMovement || isFire || FireClassScript.stopMovement || FireClassScript.stopMovementWhileWalking|| EarthquakeClassScript.stopMovementWhileWalking){
             if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;

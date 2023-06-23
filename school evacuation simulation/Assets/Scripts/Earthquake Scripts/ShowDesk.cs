@@ -11,6 +11,11 @@ public class ShowDesk : MonoBehaviour
 	public static bool stopShowDesk = false;
 	public static bool continueQuest = false;
 
+	void Awake(){
+		startShowDesk = false;
+		stopShowDesk = false;
+		continueQuest = false;
+	}
 	void Update(){
 		if(startShowDesk){
 			ChangeCamera();
