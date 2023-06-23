@@ -60,7 +60,9 @@ public class ShowMap : MonoBehaviour
             ShowText();
         }
         if (isMap && Input.GetKeyDown(KeyCode.M) && (EarthquakeClassScript.finishedQuestions || FireClassScript.finishedQuestions)) {
-            OpenMap();
+            currState = Cursor.lockState;
+            if(!mapCanvas.activeSelf) OpenMap();
+            else CloseMap();
         }
         if(!isMap){
 			if (Input.GetKeyDown(KeyCode.Escape)) {

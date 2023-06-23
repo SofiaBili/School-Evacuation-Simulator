@@ -8,10 +8,12 @@ public class SoundScript : MonoBehaviour
 {
     [SerializeField] Slider sfxSlider;
     [SerializeField] AudioMixer mixer;
+    [SerializeField] GameObject settings;
 
     void Start(){
         sfxSlider.value=PlayerPrefs.GetFloat("SfxVolume");
         ChangeMixerSfx();
+        settings.SetActive(false);
     }
 
     public void ChangeSfxVolume(){
