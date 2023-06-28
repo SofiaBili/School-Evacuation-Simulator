@@ -61,17 +61,17 @@ public class MapCreation : MonoBehaviour
 
     void Awake(){
         hexagonNumber=0;
-        isDefault = true;
+        //isDefault = true;
         savedPosition=mapGameObject.transform.position;
-        Placement();
         //PlaceCustomRoomsMethod();
         ShowHitboxes();
     }
 
     void Start(){
-        
+        Placement();
     }
-    public static void ChooseCustomOrDef(bool choice = true){
+    public static void ChooseCustomOrDef(bool choice){
+        Debug.Log(choice);
         isDefault = choice;
     }
     public void Placement(){
