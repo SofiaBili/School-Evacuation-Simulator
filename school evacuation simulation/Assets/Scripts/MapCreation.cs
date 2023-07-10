@@ -58,21 +58,45 @@ public class MapCreation : MonoBehaviour
     string[,,] schoolMapArray = new string[11,11,2];
     
     public static bool isDefault = true;
+    public bool mapIsInFlood=false;
+
+    [SerializeField] GameObject playerPrefab;
+
+    List<Transform> spawns = new List<Transform>();
 
     void Awake(){
         hexagonNumber=0;
-        //isDefault = true;
         savedPosition=mapGameObject.transform.position;
-        //PlaceCustomRoomsMethod();
-        ShowHitboxes();
     }
 
     void Start(){
         Placement();
+        ShowHitboxes();
+        if(mapIsInFlood) FindAllSpawns();
     }
     public static void ChooseCustomOrDef(bool choice){
         Debug.Log(choice);
         isDefault = choice;
+    }
+
+    void FindAllSpawns(){
+        foreach(Transform thing in mapGameObject.GetComponentsInChildren<Transform>()){
+            //Debug.Log(thing.name);
+            if(thing.name=="Spawn Point"){
+                spawns.Add(thing);
+                //Debug.Log(spawns);
+            }
+        }
+        SpawnAtRandomSpawnPoint();
+    }
+
+    void SpawnAtRandomSpawnPoint(){
+        int randomPos;
+        if(spawns.Count>0){
+            randomPos = Random.Range(0, spawns.Count);
+            playerPrefab.transform.position = spawns[randomPos].transform.position;
+            spawns.RemoveAt(randomPos);
+        }
     }
     public void Placement(){
         if(isDefault){

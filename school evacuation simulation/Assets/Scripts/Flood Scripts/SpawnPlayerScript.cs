@@ -9,9 +9,12 @@ public class SpawnPlayerScript : MonoBehaviour
     [SerializeField] GameObject mapGameObject;
 
     List<Transform> spawns = new List<Transform>();
-    // Start is called before the first frame update
-    void Start() {
-        FindAllSpawns();
+    
+    /*void Update() {
+        if(MapCreation.mapIsFinished){
+            FindAllSpawns();
+            MapCreation.mapIsFinished = false;
+        }
     }
 
     void FindAllSpawns(){
@@ -29,11 +32,14 @@ public class SpawnPlayerScript : MonoBehaviour
         int randomPos;
         if(spawns.Count>0){
             randomPos = Random.Range(0, spawns.Count);
-            //Debug.Log(spawns.Count);
-            //Debug.Log(randomPos);
-            playerPrefab.transform.position = spawns[randomPos].transform.position;
+            Debug.Log(spawns.Count);
+            Debug.Log(randomPos);
+            Debug.Log(playerPrefab.transform.position);
+            Debug.Log(spawns[randomPos].transform.position);
+            playerPrefab.transform.localPosition = spawns[randomPos].transform.localPosition;
+            Debug.Log(playerPrefab.transform.position);
             //instantiatedObject.GetComponent<LookAt>().enabled=false;
             spawns.RemoveAt(randomPos);
         }
-    }
+    }*/
 }

@@ -18,15 +18,15 @@ public class FireDrillHuman : MonoBehaviour
         if(startEvacFlag){
             humanStandUp();
         }
-    }
+    } 
     public void humanStandUp(){
         startEvacFlag=false;
         foreach (var pers in spawnHumansScript.humans){
             pers.GetComponent<CapsuleCollider>().enabled=true;
             pers.GetComponent<BoxCollider>().enabled=false;
+            pers.GetComponent<NavMeshControl>().enabled=true;
             pers.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
             pers.GetComponent<Rigidbody>().isKinematic = true; 
-            pers.GetComponent<NavMeshControl>().enabled=true;
         }
 		NavMeshControl.startNavmesh = true;
         foreach (var pers in spawnHumansScript.humans){

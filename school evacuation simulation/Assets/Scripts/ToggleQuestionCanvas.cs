@@ -14,7 +14,7 @@ public class ToggleQuestionCanvas : MonoBehaviour
     static bool showCanvas = false;
     static bool closeCanvas = false;
     int randomCanvas=-1;
-    int previousRandom=-1;
+    //int previousRandom=-1;
     void Awake(){
         showCanvas = false;
         closeCanvas = false;

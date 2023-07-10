@@ -191,7 +191,7 @@ Camera:
   far clip plane: 20
   field of view: 73
   orthographic: 1
-  orthographic size: 50
+  orthographic size: 55
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -12788,6 +12788,8 @@ MonoBehaviour:
   emptyGameObjectPrefab2: {fileID: 1948104693}
   hitboxes: []
   isFlood: 0
+  mapIsInFlood: 0
+  playerPrefab: {fileID: 0}
 --- !u!114 &940424397
 MonoBehaviour:
   m_ObjectHideFlags: 0

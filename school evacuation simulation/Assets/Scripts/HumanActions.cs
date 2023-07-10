@@ -59,16 +59,4 @@ public class HumanActions : MonoBehaviour
         }
     }
  
-    IEnumerator AfterXSeconds(int secs){
-        yield return new WaitForSeconds(secs);
-
-        gameObject.transform.localPosition =  gameObject.transform.localPosition + new Vector3(0, 0, -1.3f);
-        gameObject.GetComponent<CapsuleCollider>().enabled=true;
-        gameObject.GetComponent<BoxCollider>().enabled=false;
-        FireDrillAction();
-
-        yield return new WaitForSeconds(0.1f);
-        //gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled=true;
-        //gameObject.GetComponent<NavMeshControl>().enabled=true;
-    }
 }
