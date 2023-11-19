@@ -1,5 +1,5 @@
 # School Evacuation Simulator in cases of fire, earthquake and flood
-My thesis for my degree in the departement of Informatics and Computer Engineering at the University of West Attica.
+My thesis for my degree in the department of Informatics and Computer Engineering at the University of West Attica.
 
 ## Table of Contents
 - [About](#about)
