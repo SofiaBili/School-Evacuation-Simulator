@@ -4,5 +4,50 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7dd7bc4ba0a349446be33a55a38084a1
+  - enabled: 1
+    path: Assets/Scenes/SelectCustomOrDefaultScene.unity
+    guid: adaf1cbb5ffcc6c4fb1e0aa59763cb4f
+  - enabled: 1
+    path: Assets/Scenes/GridScene.unity
+    guid: cc4fb875f6b300e4f921c6373dc6ef19
+  - enabled: 1
+    path: Assets/Scenes/ChooseEvacuationType.unity
+    guid: eda28a7d56210a24791749780ecde992
+  - enabled: 1
+    path: Assets/Scenes/ChooseCharacter.unity
+    guid: 83e61febe14bc8642a6d90d1840f012c
+  - enabled: 1
+    path: Assets/Scenes/FireDrillScene.unity
+    guid: 6e723975b2809bb4bbe5dde7f5883e62
+  - enabled: 1
+    path: Assets/Scenes/InfoScene.unity
+    guid: b7728beb778a67c41a30c3b236108a3b
+  - enabled: 1
+    path: Assets/Scenes/LosingFireScene.unity
+    guid: 1197b6b06af34b9458135b7613c3040b
+  - enabled: 1
+    path: Assets/Scenes/WinningFireScene.unity
+    guid: 83beba3421600034d958fea708ae9882
+  - enabled: 1
+    path: Assets/Scenes/EarthquakeDrillScene.unity
+    guid: a5ad64290a7fcd44d8d43e893f20b24d
+  - enabled: 1
+    path: Assets/Scenes/FloodDrillScene.unity
+    guid: 056e43fdf7c29e940ac4b2c05f35135d
+  - enabled: 1
+    path: Assets/Scenes/LosingEarthquakeScene.unity
+    guid: ebc55e067895d4641b25ef9b877e0629
+  - enabled: 1
+    path: Assets/Scenes/LosingFloodScene.unity
+    guid: ccbfb162c68b5ad4b96301734bf44685
+  - enabled: 1
+    path: Assets/Scenes/WinningEarthquakeScene.unity
+    guid: f51b32a993fa07f4aa45e58f754a1736
+  - enabled: 1
+    path: Assets/Scenes/WinningFloodScene.unity
+    guid: f7aa098f807162e4cbffca81c6d7650e
   m_configObjects: {}

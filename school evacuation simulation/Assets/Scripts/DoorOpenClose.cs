@@ -16,7 +16,6 @@ public class DoorOpenClose : MonoBehaviour
 
     private void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("Player")){
-            Debug.Log(door.transform.localRotation.eulerAngles.z);
             if (Input.GetKeyDown("space")){
                 flag = true;
             }

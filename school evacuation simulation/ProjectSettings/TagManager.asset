@@ -7,14 +7,17 @@ TagManager:
   - Door
   - MiniMapIcon
   - Second Floor
+  - First Floor
+  - MiniMapCanvas
+  - MiniMapCanvasText
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Placement
   - Water
   - UI
-  - 
+  - Placement2
   - ' MiniMap'
   - FirstFloor
   - SecondFloor
@@ -22,9 +25,9 @@ TagManager:
   - Light
   - TopArrow
   - FloorArrow
-  - 
-  - 
-  - 
+  - StairArrow
+  - QuestionCanvas
+  - Player
   - 
   - 
   - 

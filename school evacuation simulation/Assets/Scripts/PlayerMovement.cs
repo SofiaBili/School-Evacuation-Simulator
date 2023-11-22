@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
 
     bool isGrounded;
 
+    static bool stopMovement;
+
+    public bool isEarthquake = false;
+    public bool isFire = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,19 +33,37 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
-        if(isGrounded && velocity.y<0){
-            velocity.y = -2f;
+        if(isEarthquake || isFire || EarthquakeClassScript.stopMovement || groundCheck==null || FireClassScript.stopMovement){
+            if(EarthquakeGuideScript.guideIsOver) isEarthquake = false;
+            if(FireGuideScript.guideIsOver) isFire = false;
+        }else{
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            
+            if(isGrounded && velocity.y<0){
+                velocity.y = -2f;
+            }
+            if(!stopMovement){
+                float horizontalInput = Input.GetAxis("Horizontal");
+                float verticalInput = Input.GetAxis("Vertical");
+                
+                Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput ;
+                controller.Move(move*movementSpeed*Time.deltaTime);
+            }
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
         }
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        
-        Vector3 move = transform.right * horizontalInput + transform.forward * verticalInput ;
-        controller.Move(move*movementSpeed*Time.deltaTime);
-        
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+    }
+    public void StopMovement(){
+        stopMovement = true;
     }
 
+    public static void StopFromFireMovement(){
+        stopMovement = true;
+    }
+    public static void StartFromFireMovement(){
+        stopMovement = false;
+    }
+    public void StartMovement(){
+        stopMovement = false;
+    }
 }
